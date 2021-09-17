@@ -1,0 +1,17 @@
+@import "~normalize.css";
+@import "./roboto.css";
+
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+.title {
+  color: green;
+  text-align: center;
+}
+
+/* .pic {
+  width: 200px;
+  height: 300px;
+  background-image: url();
+} */
