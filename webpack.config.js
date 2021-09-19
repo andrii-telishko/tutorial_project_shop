@@ -7,6 +7,7 @@ const TerserWebpackPlugin = require('terser-webpack-plugin');
 
 
 
+
 const devMode = process.env.NODE_ENV !== "production";
 
 const optimization = () => {
@@ -76,6 +77,7 @@ module.exports = {
             filename: '[name].[contenthash].css'
         }),
         
+        
     ],
     module: {
         rules: [
@@ -133,7 +135,8 @@ module.exports = {
             {
                 test: /\.html$/,
                 use: ['html-loader']
-            }
+            },
+            
             
 
         ]
