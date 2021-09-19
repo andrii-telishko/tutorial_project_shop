@@ -3,7 +3,8 @@ const HTMLWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCssAssetPlugin = require('optimize-css-assets-webpack-plugin');
-const TerserWebpackPlugin = require('terser-webpack-plugin')
+const TerserWebpackPlugin = require('terser-webpack-plugin');
+
 
 
 const devMode = process.env.NODE_ENV !== "production";
@@ -65,13 +66,14 @@ module.exports = {
     plugins: [
         new HTMLWebpackPlugin({
             template: './src/index.html',
+            filename: 'index.html',
             minify: {
-                collapseWhitespace: !devMode 
+                collapseWhitespace: !devMode
             }
         }),
         new CleanWebpackPlugin(),
         new MiniCssExtractPlugin({
-            filename: '[name].[contenthash].css' 
+            filename: '[name].[contenthash].css'
         }),
         
     ],
@@ -82,13 +84,28 @@ module.exports = {
                 use: cssLoader()
             },
             {
-    rules: [
-      {
-        test: /\.(png|jpe?g|gif)$/i,
-        use: [
-          
-            'file-loader',
+                test: /\.(ttf|woff|woff2|eot)$/,
+                use: ['file-loader']
+            },
             {
+                test: /\.s[ac]ss$/,
+                use: cssLoader('sass-loader')
+            },
+            {
+                test: /\.m?js$/,
+                exclude: /node_modules/,
+                use: {
+                    loader: 'babel-loader',
+                    options: {
+                        presets: ['@babel/preset-env']
+                    }
+                }
+            },
+            {
+                test: /\.(png|svg|jpg|jpeg|gif)$/i,
+                type: 'asset/resource',
+                use: [
+    {
       loader: 'image-webpack-loader',
       options: {
         mozjpeg: {
@@ -111,43 +128,14 @@ module.exports = {
         }
       }
     },
-              
-          
-        ],
-      },
-    ],
+  ],
             },
             {
-        test: /\.(png|jpg|gif)$/i,
-        use: [
-          {
-            loader: 'url-loader',
-            options: {
-              limit: 8192,
-            },
-          },
-        ],
-      },
-        
-      
-           {
-                test: /\.(ttf|woff|woff2|eot)$/,
-                use: ['file-loader']
-            },
-            {
-                test: /\.s[ac]ss$/,
-                use: cssLoader('sass-loader')
-            },
-            {
-                test: /\.m?js$/,
-                exclude: /node_modules/,
-                use: {
-                    loader: 'babel-loader',
-                    options: {
-                        presets: ['@babel/preset-env']
-                }
+                test: /\.html$/,
+                use: ['html-loader']
             }
-            },
+            
+
         ]
     }
 }
