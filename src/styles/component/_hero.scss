@@ -1,0 +1,129 @@
+.hero__wrapper {
+  height: 718px;
+  background-color: $hero-background;
+  position: relative;
+  max-width: 1920px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero__img {
+  position: absolute;
+  top: 32px;
+  left: 144px;
+  bottom: 32px;
+  width: 1632px;
+  height: 654px;
+  background-color: rgba(205, 207, 209, 1);
+}
+
+.hero__information {
+  position: absolute;
+  top: 157px;
+
+  left: 283px;
+}
+
+.hero__additional-information {
+  display: inline-block;
+  padding: 10px;
+  background-color: $white-color;
+  font-weight: 500;
+  margin-bottom: 32px;
+}
+
+.hero__title {
+  margin-top: 0;
+  margin-bottom: 40px;
+  font-family: Playfair Display;
+  font-weight: bold;
+  font-size: 72px;
+  line-height: 100%;
+}
+
+.hero__text {
+  font-size: 18px;
+  line-height: 1.78;
+  margin-bottom: 80px;
+  width: 678px;
+  margin-top: 0;
+}
+
+.hero__button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 245px;
+  height: 60px;
+  color: $white-color;
+  background-color: $dark-bcg-color;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 36px;
+
+  &-text {
+    margin-right: 10px;
+  }
+
+  &:hover,
+  &:focus {
+    background-color: $white-color;
+    transition: $animation-duration $animation-timing-function;
+  }
+}
+
+.hero__button:hover .hero__button-text,
+.hero__button:hover .hero__button-arrow,
+.hero__button:focus .hero__button-text,
+.hero__button:focus .hero__button-arrow {
+  color: $primary-text-color;
+  fill: $primary-text-color;
+}
+
+.hero__nav-btn {
+  position: absolute;
+  top: 319px;
+  width: 80px;
+  height: 80px;
+  background-color: $white-color;
+}
+
+.hero__nav-btn:hover,
+.hero__nav-btn:focus {
+  color: $primary-text-color;
+  transition: $animation-duration $animation-timing-function;
+}
+
+.hero__nav-btn:hover .hero__arrow-icon,
+.hero__nav-btn:focus .hero__arrow-icon {
+  fill: currentColor;
+}
+
+.right {
+  right: 104px;
+}
+
+.left {
+  left: 104px;
+}
+
+.slider-icons {
+  position: absolute;
+  bottom: 68px;
+  left: 904px;
+  right: 904px;
+  display: inline-flex;
+  justify-content: space-between;
+  width: 112px;
+}
+
+.hero__slider-btn:hover,
+.hero__slider-btn:focus {
+  color: $primary-text-color;
+  transition: $animation-duration $animation-timing-function;
+}
+
+.hero__slider-btn:hover .hero__slider-icon,
+.hero__slider-btn:focus .hero__slider-icon {
+  fill: currentColor;
+}

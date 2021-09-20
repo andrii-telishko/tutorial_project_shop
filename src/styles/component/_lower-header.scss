@@ -1,0 +1,36 @@
+.header__categories-list {
+  display: flex;
+  justify-content: center;
+}
+
+.header__categories-item {
+  width: 120px;
+  height: 120px;
+  display: inline-flex;
+  text-align: center;
+  justify-content: center;
+
+  &:not(:last-child) {
+    margin-right: 24px;
+  }
+}
+
+.header__categories-btn {
+  width: 100%;
+  color: inherit;
+}
+
+.header__categories-btn:hover,
+.header__categories-btn:focus {
+  transition: $animation-duration $animation-timing-function;
+  color: $primary-text-color;
+}
+
+.header__categories-icon {
+  fill: $first-photo-bcg;
+}
+
+.header__categories-btn:hover .header__categories-icon,
+.header__categories-btn:focus .header__categories-icon {
+  fill: currentColor;
+}

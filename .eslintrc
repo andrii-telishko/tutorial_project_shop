@@ -1,13 +1,19 @@
 {
     "parser": "babel-eslint",
     "rules": {
-        "no-unused-vars":"warn"
+        "no-unused-vars":"warn",
+        "comma-dangle": "off",
+    "space-before-function-paren": "off"
     },
     "env": {
-        "es6": true,
-        "browser": true
+        "commonjs": true,
+    "es2021": true,
+    "node": true
     },
     "extends": [
         "eslint:recommended"
     ]
 }
+
+
+
