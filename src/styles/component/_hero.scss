@@ -5,6 +5,7 @@
   max-width: 1920px;
   margin-left: auto;
   margin-right: auto;
+  background-image: url('../images/hero-images/hero-background.jpg');
 }
 
 .hero__img {
@@ -39,6 +40,7 @@
   font-weight: bold;
   font-size: 72px;
   line-height: 100%;
+  color: $white-color;
 }
 
 .hero__text {
@@ -47,6 +49,7 @@
   margin-bottom: 80px;
   width: 678px;
   margin-top: 0;
+  color: $white-color;
 }
 
 .hero__button {
