@@ -1,0 +1,33 @@
+.popular__list {
+  display: flex;
+}
+
+.popular__item:not(:last-child) {
+  margin-right: 26px;
+}
+
+.popular__card {
+  display: block;
+  text-align: center;
+}
+
+.popular__img {
+  width: 240px;
+  height: 245px;
+  margin-bottom: 16px;
+  background-color: $first-photo-bcg;
+}
+
+.popular__title {
+  margin: 0;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 1.5;
+  width: 198px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.popular__rating {
+  margin: 2px 0;
+}

@@ -1,58 +1,35 @@
-.feature-section__header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.feature-section__title {
-  margin: 32px 0;
-  font-weight: bold;
-  font-size: 36px;
-}
-
-.feature-section__link {
-  display: inline-flex;
-  align-items: center;
-  padding: 0 4px;
-  border: 1px solid transparent;
-  border-radius: 4px;
-
-  &-text {
-    margin-right: 8px;
-    font-weight: 500;
-    font-size: 18px;
-  }
-
-  &:hover,
-  &:focus {
-    border: 1px solid $primary-text-color;
-    transition: $animation-duration $animation-timing-function;
-  }
-}
-
 .feature-section__main-list {
   display: flex;
+  justify-content: space-between;
 }
 
 .feature-section__list {
   display: flex;
   flex-wrap: wrap;
-  margin-left: -32px;
-  margin-top: -32px;
 }
 
-.feature-section__list-item {
-  margin-left: 32px;
-  margin-top: 32px;
-  flex-basis: calc((100% - 64px) / 2);
+.feature-section__list-item:nth-child(-n + 2) {
+  margin-bottom: 32px;
+}
+.left-list > .feature-section__list-item:nth-child(2n + 1) {
+  margin-right: 12px;
+}
+
+.right-list > .feature-section__list-item:nth-child(2n) {
+  margin-left: 12px;
+}
+
+.right-list {
+  justify-content: end;
 }
 
 .feature-section__list-card {
   height: 368px;
-  border: 1px solid black;
+  text-align: center;
 }
 
 .feature-section__list-card-img {
+  width: 245px;
   height: 245px;
   background-color: burlywood;
   margin-bottom: 16px;
@@ -64,26 +41,66 @@
   line-height: 1.5;
 
   margin-bottom: 8px;
-  text-align: center;
   margin-top: 0;
-}
-
-.feature-section__list-card-price {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center;
-  color: $secondary-text-color;
-  font-size: 18px;
 }
 
 .feature-section__main-card {
   height: 769px;
-  border: 1px solid black;
+  background-color: $hero-background;
+  margin-right: 16px;
+  margin-left: 16px;
+  text-align: center;
 }
 
-// .feature-section__main-card-img {
-//   width: 521px;
-//   height: 400px;
-//   background-color: grey;
-// }
+.feature-section__main-card-img {
+  width: 521px;
+  height: 400px;
+  background-color: grey;
+  margin-bottom: 27px;
+}
+
+.feature-section__main-card-title {
+  margin-top: 0;
+  font-weight: 500;
+  font-size: 36px;
+  width: 286px;
+  margin-bottom: 16px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.feature-section__main-card-price {
+  display: inline-block;
+  color: $secondary-text-color;
+  font-weight: 500;
+  font-size: 36px;
+  margin-bottom: 48px;
+}
+
+.feature-section__main-card-btn {
+  display: inherit;
+  margin-left: auto;
+  margin-right: auto;
+  width: 200px;
+  height: 60px;
+  background-color: $dark-bcg-color;
+  padding: 16px 47px;
+  transition: $animation-duration $animation-timing-function;
+
+  &:hover,
+  &:focus {
+    background-color: $first-photo-bcg;
+    color: $primary-text-color;
+  }
+
+  &-txt {
+    color: $white-color;
+    font-weight: bold;
+    font-size: 18px;
+  }
+
+  &:hover &-txt,
+  &:focus &-txt {
+    color: $primary-text-color;
+  }
+}

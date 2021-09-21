@@ -1,0 +1,128 @@
+.footer {
+  background-color: $dark-bcg-color;
+  padding-top: 64px;
+  text-align: center;
+
+  &__info {
+    display: flex;
+    margin-bottom: 64px;
+  }
+
+  &__title {
+    color: $white-color;
+    margin: 0 0 32px 0;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 1.5;
+    font-style: normal;
+    text-align-last: left;
+  }
+
+  &__contacts {
+    margin-bottom: 48px;
+  }
+
+  &__contacts-item {
+    color: $secondary-text-color;
+    font-size: 18px;
+    transition: $animation-duration $animation-timing-function;
+  }
+
+  &__contacts-item:hover,
+  &__contacts-item:focus,
+  &__links-item:hover,
+  &__links-item:focus {
+    color: $white-color;
+  }
+
+  &__contacts-item:hover .footer__contacts-icon,
+  &__contacts-item:focus .footer__contacts-icon,
+  &__media-item:hover .footer__media-icon,
+  &__media-item:focus .footer__media-icon {
+    fill: $white-color;
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+  }
+
+  &__contacts-item:not(:last-child) {
+    margin-bottom: 16px;
+  }
+
+  &__contacts-icon {
+    margin-right: 8px;
+  }
+
+  &__media {
+    display: flex;
+  }
+
+  &__media-item {
+    transition: $animation-duration $animation-timing-function;
+  }
+
+  &__media-item:not(:last-child) {
+    margin-right: 24px;
+  }
+
+  &__links {
+    margin-left: 162px;
+    width: 245px;
+  }
+
+  &__links-item {
+    color: $secondary-text-color;
+    font-size: 18px;
+    transition: $animation-duration $animation-timing-function;
+  }
+
+  &__links-item:not(:last-child) {
+    margin-bottom: 16px;
+  }
+
+  &__form {
+    margin-left: 156px;
+    position: relative;
+    width: 384px;
+    text-align: left;
+  }
+
+  &__input-label {
+    color: $secondary-text-color;
+    font-size: 18px;
+  }
+
+  &__input {
+    width: 324px;
+    height: 60px;
+    margin-top: 35px;
+    padding-left: 24px;
+    color: $secondary-text-color;
+    font-size: 18px;
+    background-color: transparent;
+    border: 1px solid $white-color;
+  }
+
+  &__input::placeholder {
+    color: $secondary-text-color;
+    font-size: 18px;
+  }
+
+  &__btn {
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    right: 0;
+    bottom: 73px;
+    background-color: $white-color;
+  }
+}
+
+.copyright {
+  display: inline-block;
+  margin-bottom: 32px;
+  color: $secondary-text-color;
+  font-size: 18px;
+}
