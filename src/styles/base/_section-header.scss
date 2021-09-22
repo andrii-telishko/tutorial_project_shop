@@ -5,9 +5,14 @@
 }
 
 .section__title {
-  margin: 32px 0;
-  font-weight: bold;
-  font-size: 36px;
+  margin: 16px 0;
+  font-size: 24px;
+  font-weight: 700;
+
+  @media screen and (min-width: $desktop) {
+    margin: 32px 0;
+    font-size: 36px;
+  }
 }
 
 .section__link {
@@ -16,16 +21,21 @@
   padding: 0 4px;
   border: 1px solid transparent;
   border-radius: 4px;
+  transition: $animation-duration $animation-timing-function;
 
   &-text {
-    margin-right: 8px;
+    margin-right: 4px;
     font-weight: 500;
-    font-size: 18px;
+    font-size: 12px;
+
+    @media screen and (min-width: $desktop) {
+      font-size: 18px;
+      margin-right: 8px;
+    }
   }
 
   &:hover,
   &:focus {
     border: 1px solid $primary-text-color;
-    transition: $animation-duration $animation-timing-function;
   }
 }

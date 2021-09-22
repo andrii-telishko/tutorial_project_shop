@@ -1,42 +1,41 @@
 .choose {
-  height: 362px;
-  background-image: linear-gradient(
-    to bottom,
-    $dark-bcg-color 309px,
-    $white-color 309px
-  );
-  padding-top: 55px;
+  padding-top: 20px;
+  text-align: center;
 
   &__title {
     margin: 0;
     font-weight: 700;
-    font-size: 24px;
+    font-size: 16px;
     line-height: 1.5;
-    color: $white-color;
+    color: $primary-text-color;
   }
-
   &__list {
-    margin-top: 54px;
-    display: flex;
-    align-items: flex-end;
+    margin-top: 28px;
+    display: block;
+    text-align: center;
   }
 
   &__item {
     display: flex;
-    width: 380px;
-    height: 217px;
+    width: 340px;
+    height: 194px;
     padding: 64px 44px;
-    box-shadow: 0px 16px 50px rgba(0, 0, 0, 0.05);
-    background-color: $white-color;
+    box-shadow: none;
+    background-color: $dark-bcg-color;
     align-items: center;
   }
 
   &__item:not(:last-child) {
-    margin-right: 28px;
+    margin-bottom: 16px;
+  }
+
+  &__info {
+    text-align: left;
   }
 
   &__icon {
     margin-right: 28px;
+    fill: $white-color;
   }
 
   &__info-title {
@@ -44,11 +43,59 @@
     font-weight: 700;
     font-size: 18px;
     line-height: 1.5;
+    color: $white-color;
   }
 
   &__info-text {
     margin: 0;
     color: $secondary-text-color;
     font-size: 18px;
+  }
+}
+
+@media screen and (min-width: $desktop) {
+  .choose {
+    height: 362px;
+    background-image: linear-gradient(
+      to bottom,
+      $dark-bcg-color 309px,
+      $white-color 309px
+    );
+    padding-top: 55px;
+    text-align: left;
+
+    &__title {
+      font-weight: 700;
+      font-size: 24px;
+      line-height: 1.5;
+      color: $white-color;
+    }
+
+    &__list {
+      margin-top: 54px;
+      display: flex;
+      align-items: flex-end;
+    }
+
+    &__item {
+      width: 380px;
+      height: 217px;
+      padding: 64px 44px;
+      box-shadow: 0px 16px 50px rgba(0, 0, 0, 0.05);
+      background-color: $white-color;
+    }
+
+    &__item:not(:last-child) {
+      margin-right: 28px;
+      margin-bottom: 0;
+    }
+
+    &__icon {
+      fill: $primary-text-color;
+    }
+
+    &__info-title {
+      color: $primary-text-color;
+    }
   }
 }

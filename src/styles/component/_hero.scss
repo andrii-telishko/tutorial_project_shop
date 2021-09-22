@@ -1,53 +1,44 @@
 .hero__wrapper {
-  height: 718px;
+  height: 400px;
   background-color: $hero-background;
-  position: relative;
-  max-width: 1920px;
-  margin-left: auto;
-  margin-right: auto;
   background-image: url('../images/hero-images/hero-background.jpg');
+  padding: 16px 0;
+}
+
+.hero__container {
+  position: relative;
 }
 
 .hero__img {
-  position: absolute;
-  top: 32px;
-  left: 144px;
-  bottom: 32px;
-  width: 1600px;
-  height: 654px;
-  background-color: rgba(205, 207, 209, 1);
+  height: 368px;
+  object-fit: cover;
 }
 
 .hero__information {
   position: absolute;
-  top: 157px;
-
-  left: 283px;
+  top: 20px;
+  left: 20px;
+  text-align: center;
 }
 
 .hero__additional-information {
-  display: inline-block;
-  padding: 10px;
-  background-color: $white-color;
-  font-weight: 500;
-  margin-bottom: 32px;
+  display: none;
 }
 
 .hero__title {
   margin-top: 0;
-  margin-bottom: 40px;
+  margin-bottom: 10px;
   font-family: Playfair Display;
-  font-weight: bold;
-  font-size: 72px;
-  line-height: 100%;
-  color: $white-color;
+  font-weight: 700;
+  font-size: 42px;
+  color: $primary-text-color;
 }
 
 .hero__text {
-  font-size: 18px;
-  line-height: 1.78;
-  margin-bottom: 80px;
-  width: 678px;
+  display: inline-block;
+  font-size: 12px;
+  margin-bottom: 20px;
+  width: 286px;
   margin-top: 0;
   color: $white-color;
 }
@@ -56,13 +47,11 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 245px;
-  height: 60px;
+  width: 145px;
+  height: 30px;
   color: $white-color;
   background-color: $dark-bcg-color;
-  font-weight: 500;
-  font-size: 24px;
-  line-height: 36px;
+  font-size: 12px;
 
   &-text {
     margin-right: 10px;
@@ -84,40 +73,21 @@
 }
 
 .hero__nav-btn {
-  position: absolute;
-  top: 319px;
-  width: 80px;
-  height: 80px;
-  background-color: $white-color;
-}
-
-.hero__nav-btn:hover,
-.hero__nav-btn:focus {
-  color: $primary-text-color;
-  transition: $animation-duration $animation-timing-function;
-}
-
-.hero__nav-btn:hover .hero__arrow-icon,
-.hero__nav-btn:focus .hero__arrow-icon {
-  fill: currentColor;
-}
-
-.right {
-  right: 104px;
-}
-
-.left {
-  left: 104px;
+  display: none;
 }
 
 .slider-icons {
   position: absolute;
-  bottom: 68px;
-  left: 904px;
-  right: 904px;
+  bottom: 16px;
+  left: 132px;
   display: inline-flex;
   justify-content: space-between;
   width: 112px;
+}
+
+.hero__slider-icon {
+  width: 8px;
+  height: 8px;
 }
 
 .hero__slider-btn:hover,
@@ -129,4 +99,91 @@
 .hero__slider-btn:hover .hero__slider-icon,
 .hero__slider-btn:focus .hero__slider-icon {
   fill: currentColor;
+}
+
+@media screen and (min-width: $desktop) {
+  .hero__wrapper {
+    height: 718px;
+    padding: 32px 0;
+  }
+
+  .hero__img {
+    width: 1600px;
+    height: 654px;
+    background-color: rgba(205, 207, 209, 1);
+  }
+
+  .hero__information {
+    top: 145px;
+    left: 283px;
+  }
+
+  .hero__additional-information {
+    display: inline-block;
+    padding: 10px;
+    background-color: $white-color;
+    font-weight: 500;
+    margin-bottom: 32px;
+  }
+
+  .hero__title {
+    margin-bottom: 40px;
+    font-size: 72px;
+    color: $white-color;
+  }
+
+  .hero__text {
+    font-size: 18px;
+    line-height: 1.78;
+    margin-bottom: 80px;
+    width: 678px;
+    margin-top: 0;
+  }
+
+  .hero__button {
+    display: flex;
+    width: 245px;
+    height: 60px;
+    font-weight: 500;
+    font-size: 24px;
+  }
+
+  .hero__nav-btn {
+    display: block;
+    position: absolute;
+    top: 319px;
+    width: 80px;
+    height: 80px;
+    background-color: $white-color;
+  }
+
+  .hero__nav-btn:hover,
+  .hero__nav-btn:focus {
+    color: $primary-text-color;
+    transition: $animation-duration $animation-timing-function;
+  }
+
+  .hero__nav-btn:hover .hero__arrow-icon,
+  .hero__nav-btn:focus .hero__arrow-icon {
+    fill: currentColor;
+  }
+
+  .right {
+    right: -30px;
+  }
+
+  .left {
+    left: -30px;
+  }
+
+  .slider-icons {
+    bottom: 36px;
+    left: 760px;
+    width: 112px;
+  }
+
+  .hero__slider-icon {
+    width: 12px;
+    height: 12px;
+  }
 }

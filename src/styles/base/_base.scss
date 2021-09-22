@@ -11,14 +11,25 @@ body {
   font-size: 24px;
   line-height: 1.5;
   color: $primary-text-color;
+  overflow-x: hidden;
 }
 
 .container {
   margin-right: auto;
   margin-left: auto;
-  width: 1600px;
-  padding-left: 16px;
-  padding-right: 16px;
+  width: 100%;
+
+  @media screen and (min-width: $mobile) {
+    width: $mobile;
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    width: $desktop;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
 }
 
 img {
@@ -50,5 +61,30 @@ button {
 }
 
 .section {
-  margin-bottom: 100px;
+  padding: 10px 0;
+  position: relative;
+
+  &:after {
+    @extend %underline;
+  }
+
+  @media screen and (min-width: $desktop) {
+    padding-bottom: 100px;
+    padding-top: 0;
+
+    &:after {
+      display: none;
+    }
+  }
+}
+
+.visually-hidden {
+  position: absolute;
+  clip: rect(1px 1px 1px 1px);
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 0;
+  border: 0;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
 }

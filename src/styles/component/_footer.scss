@@ -1,31 +1,33 @@
 .footer {
   background-color: $dark-bcg-color;
-  padding-top: 64px;
-  text-align: center;
 
   &__info {
-    display: flex;
-    margin-bottom: 64px;
+    display: block;
+    padding: 20px;
   }
 
   &__title {
     color: $white-color;
-    margin: 0 0 32px 0;
+    margin: 0 0 12px 0;
     font-weight: 700;
     font-size: 24px;
     line-height: 1.5;
     font-style: normal;
-    text-align-last: left;
+    text-align: center;
   }
 
   &__contacts {
-    margin-bottom: 48px;
+    margin-bottom: 28px;
   }
 
   &__contacts-item {
     color: $secondary-text-color;
     font-size: 18px;
     transition: $animation-duration $animation-timing-function;
+  }
+
+  &__contacts-item:not(:last-child) {
+    margin-bottom: 10px;
   }
 
   &__contacts-item:hover,
@@ -47,16 +49,14 @@
     align-items: center;
   }
 
-  &__contacts-item:not(:last-child) {
-    margin-bottom: 16px;
-  }
-
   &__contacts-icon {
     margin-right: 8px;
   }
 
   &__media {
     display: flex;
+    justify-content: start;
+    margin-bottom: 24px;
   }
 
   &__media-item {
@@ -64,41 +64,29 @@
   }
 
   &__media-item:not(:last-child) {
-    margin-right: 24px;
+    margin-right: 18px;
   }
-
   &__links {
-    margin-left: 162px;
-    width: 245px;
-  }
-
-  &__links-item {
-    color: $secondary-text-color;
-    font-size: 18px;
-    transition: $animation-duration $animation-timing-function;
-  }
-
-  &__links-item:not(:last-child) {
-    margin-bottom: 16px;
+    display: none;
   }
 
   &__form {
-    margin-left: 156px;
     position: relative;
-    width: 384px;
+    width: 284px;
     text-align: left;
   }
 
   &__input-label {
     color: $secondary-text-color;
-    font-size: 18px;
+    font-size: 14px;
   }
 
   &__input {
-    width: 324px;
-    height: 60px;
-    margin-top: 35px;
-    padding-left: 24px;
+    display: block;
+    width: 244px;
+    height: 40px;
+    margin-top: 8px;
+    padding-left: 18px;
     color: $secondary-text-color;
     font-size: 18px;
     background-color: transparent;
@@ -111,18 +99,92 @@
   }
 
   &__btn {
-    width: 60px;
-    height: 60px;
+    width: 40px;
+    height: 40px;
     position: absolute;
     right: 0;
-    bottom: 73px;
+    bottom: 0;
     background-color: $white-color;
   }
 }
 
 .copyright {
-  display: inline-block;
-  margin-bottom: 32px;
-  color: $secondary-text-color;
-  font-size: 18px;
+  display: none;
+}
+
+@media screen and (min-width: $desktop) {
+  .footer {
+    padding-top: 64px;
+    text-align: center;
+
+    &__info {
+      display: flex;
+      margin-bottom: 64px;
+    }
+
+    &__title {
+      margin: 0 0 32px 0;
+      text-align: left;
+    }
+
+    &__contacts {
+      margin-bottom: 48px;
+    }
+
+    &__contacts-item:not(:last-child) {
+      margin-bottom: 16px;
+    }
+
+    &__media-item:not(:last-child) {
+      margin-right: 24px;
+    }
+
+    &__links {
+      display: block;
+      margin-left: 162px;
+      width: 245px;
+    }
+
+    &__links-item {
+      color: $secondary-text-color;
+      font-size: 18px;
+      transition: $animation-duration $animation-timing-function;
+    }
+
+    &__links-item:not(:last-child) {
+      margin-bottom: 16px;
+    }
+
+    &__form {
+      margin-left: 156px;
+      width: 384px;
+      text-align: left;
+    }
+
+    &__input-label {
+      font-size: 18px;
+    }
+
+    &__input {
+      width: 324px;
+      height: 60px;
+      margin-top: 35px;
+      padding-left: 24px;
+    }
+
+    &__btn {
+      width: 60px;
+      height: 60px;
+
+      right: 0;
+      bottom: 78px;
+    }
+  }
+
+  .copyright {
+    display: inline-block;
+    margin-bottom: 32px;
+    color: $secondary-text-color;
+    font-size: 18px;
+  }
 }
