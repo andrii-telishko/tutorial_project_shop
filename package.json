@@ -50,8 +50,6 @@
   },
   "dependencies": {
     "@babel/polyfill": "^7.12.1",
-    "jquery": "^3.6.0",
-    "normalize.css": "^8.0.1",
-    "slick": "^1.12.2"
+    "normalize.css": "^8.0.1"
   }
 }
