@@ -14,6 +14,70 @@
   object-fit: cover;
 }
 
+.slick-list {
+  overflow: hidden;
+}
+
+.slick-track {
+  display: flex;
+}
+
+.slick-arrow {
+  position: absolute;
+  top: 50%;
+  z-index: 10;
+  font-size: 0;
+  width: 80px;
+  height: 80px;
+  background-color: $white-color;
+  border: 15px solid $white-color;
+  background-size: contain;
+}
+
+.slick-arrow.slick-prev {
+  left: -30px;
+  background-image: url('../images/arrows/arrow-left-gray.png');
+}
+
+.slick-arrow.slick-next {
+  right: -30px;
+  background-image: url('../images/arrows/arrow-right-gray.png');
+}
+
+.slick-arrow.slick-prev:hover {
+  background-image: url('../images/arrows/left-black.jfif');
+}
+
+.slick-arrow.slick-next:hover {
+  background-image: url('../images/arrows/right-black.jfif');
+}
+
+.slick-dots {
+  position: absolute;
+  bottom: 10px;
+  left: 760px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slick-dots li {
+  list-style: none;
+  margin: 0 10px;
+}
+
+.slick-dots li.slick-active button {
+  background-color: $primary-text-color;
+}
+
+.slick-dots button {
+  font-size: 0;
+  width: 16px;
+  height: 16px;
+  background-color: $white-color;
+  border-radius: 50%;
+}
+
 .hero__information {
   position: absolute;
   top: 20px;
@@ -111,6 +175,70 @@
     width: 1600px;
     height: 654px;
     background-color: rgba(205, 207, 209, 1);
+  }
+
+  .slick-list {
+    overflow: hidden;
+  }
+
+  .slick-track {
+    display: flex;
+  }
+
+  .slick-arrow {
+    position: absolute;
+    top: 50%;
+    z-index: 10;
+    font-size: 0;
+    width: 80px;
+    height: 80px;
+    background-color: $white-color;
+    border: 15px solid $white-color;
+    background-size: contain;
+  }
+
+  .slick-arrow.slick-prev {
+    left: -30px;
+    background-image: url('../images/arrows/arrow-left-gray.png');
+  }
+
+  .slick-arrow.slick-next {
+    right: -30px;
+    background-image: url('../images/arrows/arrow-right-gray.png');
+  }
+
+  .slick-arrow.slick-prev:hover {
+    background-image: url('../images/arrows/left-black.jfif');
+  }
+
+  .slick-arrow.slick-next:hover {
+    background-image: url('../images/arrows/right-black.jfif');
+  }
+
+  .slick-dots {
+    position: absolute;
+    bottom: 10px;
+    left: 760px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .slick-dots li {
+    list-style: none;
+    margin: 0 10px;
+  }
+
+  .slick-dots li.slick-active button {
+    background-color: $primary-text-color;
+  }
+
+  .slick-dots button {
+    font-size: 0;
+    width: 16px;
+    height: 16px;
+    background-color: $white-color;
+    border-radius: 50%;
   }
 
   .hero__information {

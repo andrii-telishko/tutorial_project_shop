@@ -8,11 +8,22 @@
     "env": {
         "commonjs": true,
     "es2021": true,
-    "node": true
+    "node": true,
+    "browser": true
     },
+    
+        "globals": {
+            "document": false,
+            "_": "readonly"
+        },
+    
     "extends": [
         "eslint:recommended"
-    ]
+    ],
+    "parserOptions": {
+    "ecmaVersion": 12
+    },
+    
 }
 
 

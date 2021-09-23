@@ -1,4 +1,4 @@
-/* eslint-disable no-undef */
+import './js/slider'
 import helloFn from './helloFn';
 import './styles/main.scss';
 import 'normalize.css';

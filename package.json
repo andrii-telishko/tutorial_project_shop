@@ -36,14 +36,12 @@
     "eslint-loader": "^4.0.2",
     "file-loader": "^6.2.0",
     "html-loader": "^2.1.2",
-    
     "html-webpack-plugin": "^5.3.2",
     "mini-css-extract-plugin": "^2.3.0",
     "node-sass": "^6.0.1",
     "optimize-css-assets-webpack-plugin": "^6.0.1",
     "sass-loader": "^12.1.0",
     "style-loader": "^3.2.1",
-    
     "terser-webpack-plugin": "^5.2.4",
     "webpack": "^5.52.1",
     "webpack-cli": "^4.8.0",
@@ -52,7 +50,8 @@
   },
   "dependencies": {
     "@babel/polyfill": "^7.12.1",
-    
-    "normalize.css": "^8.0.1"
+    "jquery": "^3.6.0",
+    "normalize.css": "^8.0.1",
+    "slick": "^1.12.2"
   }
 }
