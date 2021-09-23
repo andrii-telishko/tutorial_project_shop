@@ -12,7 +12,7 @@ $(document).ready(function () {
                }
             },
             {
-              breakpoint:1632,
+              breakpoint:1631,
               settings: {
                 arrows:true
               }
