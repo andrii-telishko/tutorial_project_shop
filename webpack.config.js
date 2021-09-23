@@ -92,11 +92,11 @@ module.exports = {
                 test: /\.s[ac]ss$/,
                 use: cssLoader('sass-loader')
             },
-            // {
-            //     test: /\.m?js$/,
-            //     exclude: /node_modules/,
-            //     use: jsLoaders()
-            //     },
+            {
+                test: /\.m?js$/,
+                exclude: /node_modules/,
+                use: jsLoaders()
+                },
             {
                 test: /\.(png|svg|jpg|jpeg|gif)$/i,
                 type: 'asset/resource',
