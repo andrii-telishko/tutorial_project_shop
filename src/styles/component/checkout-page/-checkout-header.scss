@@ -1,0 +1,49 @@
+.checkout-header {
+  display: flex;
+  align-items: center;
+  height: 96px;
+  justify-content: space-between;
+  width: 100%;
+  position: relative;
+
+  &::after {
+    @extend %underline;
+  }
+}
+
+.checkout-header .header__logo {
+  margin: 0;
+
+  @media screen and (min-width: $desktop) {
+    margin-left: auto;
+  }
+}
+
+.checkout-nav {
+  display: flex;
+  margin-top: 16px;
+  margin-bottom: 28px;
+
+  @media screen and (min-width: $desktop) {
+    margin-top: 32px;
+    margin-bottom: 41px;
+  }
+
+  &__item {
+    color: $secondary-text-color;
+    font-weight: 500;
+    font-size: 18px;
+
+    @media screen and (min-width: $desktop) {
+      font-size: 12px;
+    }
+  }
+
+  &__item:last-child {
+    color: $primary-text-color;
+  }
+
+  &__item:not(:last-child) {
+    margin-right: 16px;
+  }
+}

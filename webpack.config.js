@@ -72,6 +72,13 @@ module.exports = {
                 collapseWhitespace: !devMode
             }
         }),
+        new HTMLWebpackPlugin({
+            template: './src/checkout.html',
+            filename: 'checkout.html',
+            minify: {
+                collapseWhitespace: !devMode
+            }
+        }),
         new CleanWebpackPlugin(),
         new MiniCssExtractPlugin({
             filename: '[name].[contenthash].css'
@@ -130,7 +137,18 @@ module.exports = {
                 test: /\.html$/,
                 use: ['html-loader']
             },
-            
+            // {
+            //     test: /\.html$/,
+            //     use: [
+            //         {
+            //             loader: 'file-loader',
+            //             options: {
+            //                 name: '[name].[ext]'
+            //             }
+            //         }
+            //     ],
+            //     exclude: path.resolve(__dirname, 'src/index.html')
+            // }
             
 
         ]

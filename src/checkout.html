@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Checkout Page</title>
+  </head>
+
+  <body>
+    <!-- Header -->
+
+    <header class="header">
+      <div class="container">
+        <div class="checkout-header">
+          <a href="/" class="header__logo">
+            <img src="./images/brands/logo.png" alt="page logo" />
+          </a>
+          <ul class="header-features-list list">
+            <li class="header-features-list__item">
+              <button type="button" class="header-features-list__btn">
+                <svg class="icon" width="24px" height="24px">
+                  <use href="./images/icons/sprite.svg#icon-Search"></use>
+                </svg>
+              </button>
+            </li>
+            <li class="header-features-list__item">
+              <button type="button" class="header-features-list__btn">
+                <svg class="icon" width="24px" height="24px">
+                  <use href="./images/icons/sprite.svg#icon-Cart"></use>
+                </svg>
+              </button>
+            </li>
+            <li class="header-features-list__item">
+              <button type="button" class="header-features-list__btn">
+                <svg class="icon" width="24px" height="24px">
+                  <use href="./images/icons/sprite.svg#icon-Email"></use>
+                </svg>
+              </button>
+            </li>
+          </ul>
+        </div>
+        <ul class="checkout-nav list">
+          <li class="checkout-nav__item">
+            <a href="index.html" class="checkout-nav__link link">Home ></a>
+          </li>
+          <li class="checkout-nav__item">
+            <a href="" class="checkout-nav__link link">Shopping Cart ></a>
+          </li>
+          <li class="checkout-nav__item">
+            <a href="" class="checkout-nav__link link">Checkout</a>
+          </li>
+        </ul>
+      </div>
+    </header>
+    <main>
+      <h1 class="checkout__title">Checkout</h1>
+
+      <section class="checkout-progress">
+        <div class="container">
+          <ul class="checkout-progress__list list">
+            <li class="checkout-progress__item">
+              <div class="circle">1</div>
+              <p class="checkout-progress__txt">Shopping Cart</p>
+            </li>
+            <li class="checkout-progress__item">
+              <div class="circle">2</div>
+              <p class="checkout-progress__txt">Checkout</p>
+            </li>
+            <li class="checkout-progress__item">
+              <div class="circle">3</div>
+              <p class="checkout-progress__txt">Completed</p>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section>
+        <div class="container">
+          <form name="checkout_form" class="checkout-form">
+            <div
+              class="checkout-form__group"
+              role="group"
+              aria-labelledby="buyer-head"
+            >
+              <p id="buyer-head" class="chehout-form__title">Buyer Info</p>
+              <label class="checkouform__label">
+                Full Name
+                <input type="text" name="name" class="checkout-form__inpun" />
+              </label>
+              <label class="checkouform__label">
+                Address
+                <input
+                  type="text"
+                  name="address"
+                  class="checkout-form__inpun"
+                />
+              </label>
+              <label class="checkouform__label">
+                Contact
+                <input
+                  type="tell"
+                  name="phone_number"
+                  class="checkout-form__inpun"
+                />
+              </label>
+              <label class="checkouform__label">
+                City
+                <input type="text" name="city" class="checkout-form__inpun" />
+              </label>
+              <label class="checkouform__label">
+                State
+                <select class="checkout-form__select" name="state">
+                  <option value="Kyiv">Kyiv region</option>
+                  <option value="Chernigiv">Chernigiv region</option>
+                  <option value="Ternopil">Ternopil region</option>
+                  <option value="Ivano-Frankivsk">
+                    Ivano-Frankivsk region
+                  </option>
+                </select>
+              </label>
+              <label class="checkouform__label">
+                Zip Code
+                <input
+                  type="number"
+                  name="zip_code"
+                  class="checkout-form__inpun"
+                />
+              </label>
+            </div>
+            <div
+              class="checkout-form__group"
+              role="group"
+              aria-labelledby="payment-head"
+            >
+              <p id="payment-head" class="chehout-form__title">
+                Payment Method
+              </p>
+              <button type="button" class="chekout-form__btn">
+                Credit Card
+              </button>
+              <button type="button" class="chekout-form__btn">
+                Bank Transfer
+              </button>
+              <button type="button" class="chekout-form__btn">Paypal</button>
+              <label class="checkouform__label">
+                Name on Card
+                <input
+                  type="text"
+                  name="name_on_card"
+                  class="checkout-form__inpun"
+                />
+              </label>
+              <label class="checkouform__label">
+                Card Number
+                <input
+                  type="number"
+                  name="curd_number"
+                  class="checkout-form__inpun"
+                />
+              </label>
+              <label class="checkouform__label">
+                CVV
+                <input
+                  type="number"
+                  name="cvv_number"
+                  class="checkout-form__inpun"
+                />
+              </label>
+              <label class="checkouform__label">
+                Month
+                <select class="checkout-form__select" name="month">
+                  <option value="jan">January</option>
+                  <option value="feb">February</option>
+                  <option value="mar">March</option>
+                  <option value="apr">April</option>
+                  <option value="may">May</option>
+                  <option value="jun">June</option>
+                  <option value="jul">July</option>
+                  <option value="aug">August</option>
+                  <option value="sep">September</option>
+                  <option value="oct">October</option>
+                  <option value="nov">November</option>
+                  <option value="dec">December</option>
+                </select>
+              </label>
+              <label class="checkouform__label">
+                Year
+                <select class="checkout-form__select" name="year">
+                  <option value="21">2021</option>
+                  <option value="22">2022</option>
+                  <option value="23">2023</option>
+                  <option value="24">2024</option>
+                  <option value="25">2025</option>
+                </select>
+              </label>
+              <button>Checkout</button>
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer__info">
+          <address class="footer__adress">
+            <h3 class="footer__title">Contacts</h3>
+            <ul class="footer__contacts list">
+              <li class="footer__contacts-item">
+                <a class="link footer__link" href="tel:+1234567890">
+                  <svg
+                    class="footer__contacts-icon"
+                    width="24px"
+                    height="24px"
+                    fill="rgba(159, 159, 159, 1)"
+                  >
+                    <use href="./images/icons/sprite.svg#icon-Call"></use>
+                  </svg>
+                  +1234567890</a
+                >
+              </li>
+              <li class="footer__contacts-item">
+                <a class="link footer__link" href="mailto:elliye@support.com">
+                  <svg
+                    class="footer__contacts-icon"
+                    width="24px"
+                    height="24px"
+                    fill="rgba(159, 159, 159, 1)"
+                  >
+                    <use href="./images/icons/sprite.svg#icon-EmailWhite"></use>
+                  </svg>
+                  elliye@support.com</a
+                >
+              </li>
+            </ul>
+            <h3 class="footer__title">Social Media</h3>
+            <ul class="footer__media list">
+              <li class="footer__media-item">
+                <a
+                  href="instagram.com"
+                  class="link"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                >
+                  <svg
+                    class="footer__media-icon"
+                    width="24px"
+                    height="24px"
+                    fill="rgba(159, 159, 159, 1)"
+                  >
+                    <use href="./images/icons/sprite.svg#icon-instagram"></use>
+                  </svg>
+                </a>
+              </li>
+              <li class="footer__media-item">
+                <a
+                  href="twittew.com"
+                  class="link"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                >
+                  <svg
+                    class="footer__media-icon"
+                    width="24px"
+                    height="24px"
+                    fill="rgba(159, 159, 159, 1)"
+                  >
+                    <use href="./images/icons/sprite.svg#icon-twitter"></use>
+                  </svg>
+                </a>
+              </li>
+              <li class="footer__media-item">
+                <a
+                  href="facebook.com"
+                  class="link"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                >
+                  <svg
+                    class="footer__media-icon"
+                    width="24px"
+                    height="24px"
+                    fill="rgba(159, 159, 159, 1)"
+                  >
+                    <use href="./images/icons/sprite.svg#icon-facebook"></use>
+                  </svg>
+                </a>
+              </li>
+            </ul>
+          </address>
+          <div class="footer__links">
+            <h3 class="footer__title">Product Links</h3>
+            <ul class="footer__links-list list">
+              <li class="footer__links-item">
+                <a
+                  href=""
+                  class="link footer__link"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                >
+                  Categories
+                </a>
+              </li>
+              <li class="footer__links-item">
+                <a
+                  href=""
+                  class="link footer__link"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                >
+                  New Arrival
+                </a>
+              </li>
+              <li class="footer__links-item">
+                <a
+                  href=""
+                  class="link footer__link"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                >
+                  Features
+                </a>
+              </li>
+              <li class="footer__links-item">
+                <a
+                  href=""
+                  class="link footer__link"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                >
+                  Collections
+                </a>
+              </li>
+              <li class="footer__links-item">
+                <a
+                  href=""
+                  class="link footer__link"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                >
+                  Discount
+                </a>
+              </li>
+              <li class="footer__links-item">
+                <a
+                  href=""
+                  class="link footer__link"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                >
+                  Special Offer
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="footer__links">
+            <h3 class="footer__title">Company</h3>
+            <ul class="footer__links-list list">
+              <li class="footer__links-item">
+                <a
+                  href=""
+                  class="link footer__link"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                >
+                  About
+                </a>
+              </li>
+              <li class="footer__links-item">
+                <a
+                  href=""
+                  class="link footer__link"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                >
+                  Blog
+                </a>
+              </li>
+              <li class="footer__links-item">
+                <a
+                  href=""
+                  class="link footer__link"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                >
+                  Careers
+                </a>
+              </li>
+              <li class="footer__links-item">
+                <a
+                  href=""
+                  class="link footer__link"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                >
+                  Services
+                </a>
+              </li>
+              <li class="footer__links-item">
+                <a
+                  href=""
+                  class="link footer__link"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                >
+                  Privacy Policy
+                </a>
+              </li>
+              <li class="footer__links-item">
+                <a
+                  href=""
+                  class="link footer__link"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                >
+                  Terms of Servise
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="footer__form">
+            <h3 class="footer__title">Join our Newsletter</h3>
+            <form name="email-form" autocomplete="off">
+              <label class="footer__input-label">
+                Drop your email below to get update, promotions, coupons, and
+                more!
+                <input
+                  class="footer__input"
+                  type="email"
+                  name="email"
+                  placeholder="Enter you email"
+                />
+              </label>
+              <button class="footer__btn">
+                <svg width="32px" height="32px" fill="rgba(57, 61, 70, 1)">
+                  <use href="./images/icons/sprite.svg#icon-Arrow"></use>
+                </svg>
+              </button>
+            </form>
+          </div>
+        </div>
+        <span class="copyright">
+          Copiright &copy; Elliye. All Rights reserved
+        </span>
+      </div>
+    </footer>
+    <script src=" https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="./js/slick.min.js"></script>
+    <script src="./index.js"></script>
+  </body>
+</html>

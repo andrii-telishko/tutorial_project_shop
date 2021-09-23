@@ -1,8 +1,6 @@
 import './js/slider';
-import helloFn from './helloFn';
 import './styles/main.scss';
 import 'normalize.css';
-import './index.html'
 
     const menuBtnRef = document.querySelector("[data-menu-button]")
     const mobileMenuRef = document.querySelector("[data-menu]")
@@ -16,8 +14,3 @@ import './index.html'
 
         mobileMenuRef.classList.toggle("is-open");
     });
-
-
-console.log('Hello world');
-
-helloFn();
