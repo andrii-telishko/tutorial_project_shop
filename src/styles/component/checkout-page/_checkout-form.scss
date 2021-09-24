@@ -7,9 +7,8 @@
   margin-bottom: 12px;
   padding-bottom: 12px;
   font-size: 18px;
+  font-weight: 500;
   position: relative;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .checkout-form__title::after {
@@ -94,5 +93,64 @@
     background-color: $white-color;
     border-color: $primary-text-color;
     color: $primary-text-color;
+  }
+}
+
+@media screen and (min-width: $desktop) {
+  .checkout-form {
+    display: flex;
+    justify-content: space-between;
+
+    &__group {
+      display: inline-flex;
+      flex-wrap: wrap;
+      width: 650px;
+    }
+
+    &__title {
+      display: block;
+      margin-bottom: 32px;
+      width: 100%;
+      text-align: left;
+      height: 59px;
+    }
+
+    &__title::after {
+      width: 650px;
+      left: 0;
+    }
+
+    &__label {
+      text-align: left;
+      margin-bottom: 32px;
+    }
+
+    &__select {
+      width: 374px;
+      font-size: 18px;
+      margin-top: 16px;
+      height: 60px;
+    }
+
+    &__input {
+      font-size: 18px;
+      margin-top: 16px;
+      height: 60px;
+      width: 650px;
+    }
+
+    &__btn {
+      width: 188px;
+      height: 100px;
+
+      margin: 0 14px;
+      font-size: 18px;
+
+      margin-bottom: 32px;
+    }
+  }
+  .input-small {
+    width: 235px;
+    margin-left: 22px;
   }
 }
