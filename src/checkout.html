@@ -81,38 +81,38 @@
 
       <section>
         <div class="container">
-          <form name="checkout_form" class="checkout-form">
+          <form name="checkout-form" class="checkout-form">
             <div
               class="checkout-form__group"
               role="group"
               aria-labelledby="buyer-head"
             >
-              <p id="buyer-head" class="chehout-form__title">Buyer Info</p>
-              <label class="checkouform__label">
+              <p id="buyer-head" class="checkout-form__title">Buyer Info</p>
+              <label class="checkout-form__label">
                 Full Name
-                <input type="text" name="name" class="checkout-form__inpun" />
+                <input type="text" name="name" class="checkout-form__input" />
               </label>
-              <label class="checkouform__label">
+              <label class="checkout-form__label">
                 Address
                 <input
                   type="text"
                   name="address"
-                  class="checkout-form__inpun"
+                  class="checkout-form__input"
                 />
               </label>
-              <label class="checkouform__label">
+              <label class="checkout-form__label">
                 Contact
                 <input
                   type="tell"
                   name="phone_number"
-                  class="checkout-form__inpun"
+                  class="checkout-form__input"
                 />
               </label>
-              <label class="checkouform__label">
+              <label class="checkout-form__label">
                 City
-                <input type="text" name="city" class="checkout-form__inpun" />
+                <input type="text" name="city" class="checkout-form__input" />
               </label>
-              <label class="checkouform__label">
+              <label class="checkout-form__label">
                 State
                 <select class="checkout-form__select" name="state">
                   <option value="Kyiv">Kyiv region</option>
@@ -123,12 +123,12 @@
                   </option>
                 </select>
               </label>
-              <label class="checkouform__label">
+              <label class="checkout-form__label">
                 Zip Code
                 <input
                   type="number"
                   name="zip_code"
-                  class="checkout-form__inpun"
+                  class="checkout-form__input"
                 />
               </label>
             </div>
@@ -137,43 +137,63 @@
               role="group"
               aria-labelledby="payment-head"
             >
-              <p id="payment-head" class="chehout-form__title">
+              <p id="payment-head" class="checkout-form__title">
                 Payment Method
               </p>
-              <button type="button" class="chekout-form__btn">
+              <button type="button" class="checkout-form__btn">
+                <svg width="20px" height="20px" class="checkout-form__btn-icon">
+                  <use
+                    href="./images/icons/checkout-sprite.svg#icon-card"
+                  ></use>
+                </svg>
                 Credit Card
               </button>
-              <button type="button" class="chekout-form__btn">
+              <button type="button" class="checkout-form__btn">
+                <svg width="20px" height="20px" class="checkout-form__btn-icon">
+                  <use
+                    href="./images/icons/checkout-sprite.svg#icon-transfer"
+                  ></use>
+                </svg>
                 Bank Transfer
               </button>
-              <button type="button" class="chekout-form__btn">Paypal</button>
-              <label class="checkouform__label">
+              <button type="button" class="checkout-form__btn">
+                <svg width="20px" height="20px" class="checkout-form__btn-icon">
+                  <use
+                    href="./images/icons/checkout-sprite.svg#icon-paypal"
+                  ></use>
+                </svg>
+                Paypal
+              </button>
+              <label class="checkout-form__label">
                 Name on Card
                 <input
                   type="text"
                   name="name_on_card"
-                  class="checkout-form__inpun"
+                  class="checkout-form__input"
                 />
               </label>
-              <label class="checkouform__label">
+              <label class="checkout-form__label">
                 Card Number
                 <input
                   type="number"
                   name="curd_number"
-                  class="checkout-form__inpun"
+                  class="checkout-form__input"
                 />
               </label>
-              <label class="checkouform__label">
+              <label class="checkout-form__label">
                 CVV
                 <input
                   type="number"
                   name="cvv_number"
-                  class="checkout-form__inpun"
+                  class="checkout-form__input"
                 />
               </label>
-              <label class="checkouform__label">
+              <label class="checkout-form__label payment-label">
                 Month
-                <select class="checkout-form__select" name="month">
+                <select
+                  class="checkout-form__select payment-select"
+                  name="month"
+                >
                   <option value="jan">January</option>
                   <option value="feb">February</option>
                   <option value="mar">March</option>
@@ -188,9 +208,12 @@
                   <option value="dec">December</option>
                 </select>
               </label>
-              <label class="checkouform__label">
+              <label class="checkout-form__label payment-label">
                 Year
-                <select class="checkout-form__select" name="year">
+                <select
+                  class="checkout-form__select payment-select"
+                  name="year"
+                >
                   <option value="21">2021</option>
                   <option value="22">2022</option>
                   <option value="23">2023</option>
@@ -198,7 +221,7 @@
                   <option value="25">2025</option>
                 </select>
               </label>
-              <button>Checkout</button>
+              <button class="checkout-form__submit-btn">Checkout</button>
             </div>
           </form>
         </div>

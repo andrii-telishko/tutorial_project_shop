@@ -22,7 +22,7 @@
 .checkout-nav {
   display: flex;
   margin-top: 16px;
-  margin-bottom: 28px;
+  margin-bottom: 22px;
 
   @media screen and (min-width: $desktop) {
     margin-top: 32px;
@@ -32,7 +32,7 @@
   &__item {
     color: $secondary-text-color;
     font-weight: 500;
-    font-size: 18px;
+    font-size: 12px;
 
     @media screen and (min-width: $desktop) {
       font-size: 12px;
