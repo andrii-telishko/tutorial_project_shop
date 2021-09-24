@@ -9,7 +9,7 @@
 }
 
 .collections__img {
-  width: 768px;
+  width: 684px;
   height: 400px;
   background-color: $first-photo-bcg;
 }
@@ -38,10 +38,10 @@
 }
 
 .collections__right-item {
-  left: 883px;
+  left: 798px;
 }
 
-@media screen and (max-width: 1633px) {
+@media screen and (max-width: 1431px) {
   .collection-section {
     display: none;
   }

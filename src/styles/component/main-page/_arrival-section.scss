@@ -71,10 +71,10 @@
     height: 426px;
     background-image: linear-gradient(
       to right,
-      $dark-bcg-color 384px,
-      $white-color 384px
+      $dark-bcg-color 344px,
+      $white-color 344px
     );
-    padding: 32px 0 32px 32px;
+    padding: 32px 0 32px 16px;
     display: flex;
     justify-content: end;
     border: none;
@@ -101,21 +101,23 @@
     }
 
     &__item:not(:last-child) {
-      margin-right: 18px;
+      margin-right: 10px;
       margin-bottom: 0;
     }
 
     &__card {
-      width: 310px;
+      width: 280px;
       height: 362px;
-      padding: 38px 59px;
+      padding: 38px 30px;
       border-bottom: none;
+      text-align: center;
     }
 
     &__img {
       width: 200px;
       height: 200px;
       margin-bottom: 16px;
+      display: inline-block;
     }
 
     &__card-title {

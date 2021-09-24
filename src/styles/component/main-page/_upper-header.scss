@@ -146,7 +146,7 @@
     position: static;
     padding: 0;
 
-    background-color: transparent;
+    // background-color: transparent;
     box-shadow: none;
     margin-right: 13px;
 
@@ -154,7 +154,7 @@
       position: relative;
 
       &:not(:last-child) {
-        margin-right: 56px;
+        margin-right: 20px;
         margin-bottom: 0;
       }
     }
