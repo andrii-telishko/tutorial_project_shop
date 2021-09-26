@@ -83,6 +83,22 @@
   }
 }
 
+.checkout-form__radio-bank-label {
+  font-size: 16px;
+}
+
+.checkout-form__checkbox-label {
+  color: $secondary-text-color;
+  font-size: 16px;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+}
+
+.checkbox {
+  margin-right: 8px;
+}
+
 @media screen and (min-width: $desktop) {
   .checkout-form {
     display: flex;
@@ -165,5 +181,41 @@
     margin-left: auto;
     width: 245px;
     height: 60px;
+  }
+
+  .payment-card,
+  .payment-bank,
+  .payment-paypal {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .checkout-form__radio-bank-label {
+    font-size: 20px;
+    margin: 24px 8px;
+  }
+
+  .payment-bank .label-small {
+    margin-left: 0;
+  }
+
+  .checkout-form__textarea {
+    width: 368px;
+    display: block;
+    padding: 6px;
+    font-size: 16px;
+
+    &::placeholder {
+      color: $secondary-text-color;
+    }
+  }
+
+  .label-textarea {
+    margin-left: 32px;
+  }
+
+  .checkout-form__checkbox-label {
+    font-size: 20px;
+    margin-bottom: 8px;
   }
 }

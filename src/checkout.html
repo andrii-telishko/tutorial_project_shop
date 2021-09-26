@@ -141,7 +141,13 @@
                 Payment Method
               </p>
               <label class="checkout-form__radio-label">
-                <input type="radio" name="payment_method" value="credit_card" />
+                <input
+                  type="radio"
+                  name="payment_method"
+                  value="credit_card"
+                  class="radio-btn"
+                  checked
+                />
                 <svg width="20px" height="20px" class="checkout-form__icon">
                   <use
                     href="./images/icons/checkout-sprite.svg#icon-card"
@@ -150,7 +156,12 @@
                 Credit Card
               </label>
               <label class="checkout-form__radio-label">
-                <input type="radio" name="payment_method" value="transfer" />
+                <input
+                  type="radio"
+                  name="payment_method"
+                  value="transfer"
+                  class="radio-btn"
+                />
                 <svg width="20px" height="20px" class="checkout-form__icon">
                   <use
                     href="./images/icons/checkout-sprite.svg#icon-transfer"
@@ -159,7 +170,12 @@
                 Bank Transfer
               </label>
               <label class="checkout-form__radio-label">
-                <input type="radio" name="payment_method" value="paypal" />
+                <input
+                  type="radio"
+                  name="payment_method"
+                  value="paypal"
+                  class="radio-btn"
+                />
                 <svg width="20px" height="20px" class="checkout-form__icon">
                   <use
                     href="./images/icons/checkout-sprite.svg#icon-paypal"
@@ -167,63 +183,173 @@
                 </svg>
                 Paypal
               </label>
-              <label class="checkout-form__label">
-                Name on Card
-                <input
-                  type="text"
-                  name="name_on_card"
-                  class="checkout-form__input"
-                />
-              </label>
-              <label class="checkout-form__label label-middle">
-                Card Number
-                <input
-                  type="number"
-                  name="curd_number"
-                  class="checkout-form__input input-middle"
-                />
-              </label>
-              <label class="checkout-form__label label-small">
-                CVV
-                <input
-                  type="number"
-                  name="cvv_number"
-                  class="checkout-form__input input-small"
-                />
-              </label>
-              <label class="checkout-form__label payment-label">
-                Month
-                <select
-                  class="checkout-form__select payment-select"
-                  name="month"
-                >
-                  <option value="jan">January</option>
-                  <option value="feb">February</option>
-                  <option value="mar">March</option>
-                  <option value="apr">April</option>
-                  <option value="may">May</option>
-                  <option value="jun">June</option>
-                  <option value="jul">July</option>
-                  <option value="aug">August</option>
-                  <option value="sep">September</option>
-                  <option value="oct">October</option>
-                  <option value="nov">November</option>
-                  <option value="dec">December</option>
-                </select>
-              </label>
-              <label class="checkout-form__label payment-label">
-                Year
-                <select
-                  class="checkout-form__select payment-select"
-                  name="year"
-                >
-                  <option value="21">2021</option>
-                  <option value="22">2022</option>
-                  <option value="23">2023</option>
-                  <option value="24">2024</option>
-                  <option value="25">2025</option>
-                </select>
-              </label>
+              <div class="payment-card">
+                <label class="checkout-form__label">
+                  Name on Card
+                  <input
+                    type="text"
+                    name="name_on_card"
+                    class="checkout-form__input"
+                  />
+                </label>
+                <label class="checkout-form__label label-middle">
+                  Card Number
+                  <input
+                    type="number"
+                    name="curd_number"
+                    class="checkout-form__input input-middle"
+                  />
+                </label>
+                <label class="checkout-form__label label-small">
+                  CVV
+                  <input
+                    type="number"
+                    name="cvv_number"
+                    class="checkout-form__input input-small"
+                  />
+                </label>
+                <label class="checkout-form__label payment-label">
+                  Month
+                  <select
+                    class="checkout-form__select payment-select"
+                    name="month"
+                  >
+                    <option value="jan">January</option>
+                    <option value="feb">February</option>
+                    <option value="mar">March</option>
+                    <option value="apr">April</option>
+                    <option value="may">May</option>
+                    <option value="jun">June</option>
+                    <option value="jul">July</option>
+                    <option value="aug">August</option>
+                    <option value="sep">September</option>
+                    <option value="oct">October</option>
+                    <option value="nov">November</option>
+                    <option value="dec">December</option>
+                  </select>
+                </label>
+                <label class="checkout-form__label payment-label">
+                  Year
+                  <select
+                    class="checkout-form__select payment-select"
+                    name="year"
+                  >
+                    <option value="21">2021</option>
+                    <option value="22">2022</option>
+                    <option value="23">2023</option>
+                    <option value="24">2024</option>
+                    <option value="25">2025</option>
+                  </select>
+                </label>
+              </div>
+              <div class="payment-bank visually-hidden">
+                <label class="checkout-form__radio-bank-label">
+                  <input
+                    type="radio"
+                    name="bank_name"
+                    value="privat_bank"
+                    class="radio-bank-btn"
+                    checked
+                  />
+                  PrivatBank
+                </label>
+                <label class="checkout-form__radio-bank-label">
+                  <input
+                    type="radio"
+                    name="bank_name"
+                    value="oschcad_bank"
+                    class="radio-bank-btn"
+                  />
+                  OschadBank
+                </label>
+                <label class="checkout-form__radio-bank-label">
+                  <input
+                    type="radio"
+                    name="bank_name"
+                    value="mono_bank"
+                    class="radio-bank-btn"
+                  />
+                  MomoBank
+                </label>
+                <label class="checkout-form__radio-bank-label">
+                  <input
+                    type="radio"
+                    name="bank_name"
+                    value="ukrsib_bank"
+                    class="radio-bank-btn"
+                  />
+                  UkrSibBank
+                </label>
+                <label class="checkout-form__label">
+                  Name of Receiver
+                  <input
+                    type="text"
+                    name="name_of_receiver"
+                    class="checkout-form__input"
+                  />
+                </label>
+                <label class="checkout-form__label">
+                  Name of Account
+                  <input
+                    type="text"
+                    name="name_of_account"
+                    class="checkout-form__input"
+                  />
+                </label>
+                <label class="checkout-form__label label-small">
+                  Date Received
+                  <input
+                    type="date"
+                    name="date_received"
+                    class="checkout-form__input input-small"
+                  />
+                </label>
+                <label class="checkout-form__label label-textarea">
+                  Purpose of payment
+                  <textarea
+                    name="purpose_of_payment"
+                    rows="5"
+                    placeholder="Type your message"
+                    class="checkout-form__textarea"
+                  ></textarea>
+                </label>
+              </div>
+              <div class="payment-paypal visually-hidden">
+                <label class="checkout-form__label">
+                  Name of Receiver
+                  <input
+                    type="text"
+                    name="name_of_receiver"
+                    class="checkout-form__input"
+                  />
+                </label>
+                <label class="checkout-form__label">
+                  Name of Account
+                  <input
+                    type="text"
+                    name="name_of_account"
+                    class="checkout-form__input"
+                  />
+                </label>
+                <label class="checkout-form__checkbox-label">
+                  <input
+                    type="checkbox"
+                    name="conditions"
+                    value="agreed with conditions"
+                    class="checkbox"
+                  />
+                  Agree with conditions
+                </label>
+                <label class="checkout-form__checkbox-label">
+                  <input
+                    type="checkbox"
+                    name="conditions"
+                    value="agreed for sending info"
+                    class="checkbox"
+                  />
+                  Agreed for sending info about new purpose
+                </label>
+              </div>
               <button class="checkout-form__submit-btn">Checkout</button>
             </div>
           </form>
