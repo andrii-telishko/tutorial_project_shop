@@ -56,6 +56,16 @@
   color: $primary-text-color;
 }
 
+.checkout-form__input:valid,
+.checkout-form__select:valid {
+  border: 1px solid green;
+}
+
+.checkout-form__input:invalid,
+.checkout-form__select:invalid {
+  border: 1px solid red;
+}
+
 .checkout-form__icon {
   margin: 0 6px;
 }
@@ -75,8 +85,13 @@
   transition: $animation-duration $animation-timing-function;
   border: 1px solid transparent;
 
-  &:hover,
-  &:focus {
+  &:disabled {
+    background-color: $second-photo-bcg;
+    color: $secondary-text-color;
+  }
+
+  &:enabled:hover,
+  &:enabled:focus {
     background-color: $white-color;
     border-color: $primary-text-color;
     color: $primary-text-color;

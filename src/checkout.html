@@ -81,7 +81,7 @@
 
       <section>
         <div class="container">
-          <form name="checkout-form" class="checkout-form">
+          <form name="checkout-form" class="checkout-form" novalidate>
             <div
               class="checkout-form__group"
               role="group"
@@ -90,14 +90,20 @@
               <p id="buyer-head" class="checkout-form__title">Buyer Info</p>
               <label class="checkout-form__label">
                 Full Name
-                <input type="text" name="name" class="checkout-form__input" />
+                <input
+                  type="text"
+                  name="name"
+                  class="checkout-form__input buyer-input"
+                  required
+                />
               </label>
               <label class="checkout-form__label">
                 Address
                 <input
                   type="text"
                   name="address"
-                  class="checkout-form__input"
+                  class="checkout-form__input buyer-input"
+                  required
                 />
               </label>
               <label class="checkout-form__label">
@@ -105,16 +111,28 @@
                 <input
                   type="tell"
                   name="phone_number"
-                  class="checkout-form__input"
+                  class="checkout-form__input buyer-input"
+                  required
+                  pattern="^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]\d{3}[\s.-]\d{4}$"
                 />
               </label>
               <label class="checkout-form__label">
                 City
-                <input type="text" name="city" class="checkout-form__input" />
+                <input
+                  type="text"
+                  name="city"
+                  class="checkout-form__input buyer-input"
+                  required
+                />
               </label>
               <label class="checkout-form__label">
                 State
-                <select class="checkout-form__select" name="state">
+                <select
+                  class="checkout-form__select buyer-input"
+                  name="state"
+                  required
+                >
+                  <option></option>
                   <option value="Kyiv">Kyiv region</option>
                   <option value="Chernigiv">Chernigiv region</option>
                   <option value="Ternopil">Ternopil region</option>
@@ -128,7 +146,8 @@
                 <input
                   type="number"
                   name="zip_code"
-                  class="checkout-form__input input-small"
+                  class="checkout-form__input input-small buyer-input"
+                  required
                 />
               </label>
             </div>
@@ -189,7 +208,8 @@
                   <input
                     type="text"
                     name="name_on_card"
-                    class="checkout-form__input"
+                    class="checkout-form__input card-input"
+                    required
                   />
                 </label>
                 <label class="checkout-form__label label-middle">
@@ -197,7 +217,8 @@
                   <input
                     type="number"
                     name="curd_number"
-                    class="checkout-form__input input-middle"
+                    class="checkout-form__input input-middle card-input"
+                    required
                   />
                 </label>
                 <label class="checkout-form__label label-small">
@@ -205,15 +226,20 @@
                   <input
                     type="number"
                     name="cvv_number"
-                    class="checkout-form__input input-small"
+                    class="checkout-form__input input-small card-input"
+                    required
+                    max="999"
+                    min="101"
                   />
                 </label>
                 <label class="checkout-form__label payment-label">
                   Month
                   <select
-                    class="checkout-form__select payment-select"
+                    class="checkout-form__select payment-select card-input"
                     name="month"
+                    required
                   >
+                    <option></option>
                     <option value="jan">January</option>
                     <option value="feb">February</option>
                     <option value="mar">March</option>
@@ -231,9 +257,11 @@
                 <label class="checkout-form__label payment-label">
                   Year
                   <select
-                    class="checkout-form__select payment-select"
+                    class="checkout-form__select payment-select card-input"
                     name="year"
+                    required
                   >
+                    <option></option>
                     <option value="21">2021</option>
                     <option value="22">2022</option>
                     <option value="23">2023</option>
@@ -286,6 +314,7 @@
                     type="text"
                     name="name_of_receiver"
                     class="checkout-form__input"
+                    required
                   />
                 </label>
                 <label class="checkout-form__label">
@@ -294,6 +323,7 @@
                     type="text"
                     name="name_of_account"
                     class="checkout-form__input"
+                    required
                   />
                 </label>
                 <label class="checkout-form__label label-small">
@@ -302,6 +332,8 @@
                     type="date"
                     name="date_received"
                     class="checkout-form__input input-small"
+                    required
+                    value="2021-01-01"
                   />
                 </label>
                 <label class="checkout-form__label label-textarea">
@@ -321,6 +353,7 @@
                     type="text"
                     name="name_of_receiver"
                     class="checkout-form__input"
+                    required
                   />
                 </label>
                 <label class="checkout-form__label">
@@ -329,6 +362,7 @@
                     type="text"
                     name="name_of_account"
                     class="checkout-form__input"
+                    required
                   />
                 </label>
                 <label class="checkout-form__checkbox-label">
@@ -346,11 +380,14 @@
                     name="conditions"
                     value="agreed for sending info"
                     class="checkbox"
+                    required
                   />
                   Agreed for sending info about new purpose
                 </label>
               </div>
-              <button class="checkout-form__submit-btn">Checkout</button>
+              <button class="checkout-form__submit-btn" disabled>
+                Checkout
+              </button>
             </div>
           </form>
         </div>
