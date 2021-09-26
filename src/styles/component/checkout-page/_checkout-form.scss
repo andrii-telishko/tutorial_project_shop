@@ -26,13 +26,27 @@
   color: $secondary-text-color;
 }
 
+.checkout-form__radio-label {
+  width: 94px;
+  height: 60px;
+  border: 1px solid $secondary-text-color;
+  margin: 0 8px;
+  font-size: 12px;
+  background-color: transparent;
+  color: $primary-text-color;
+  display: inline-flex;
+  margin-bottom: 10px;
+  align-items: center;
+  padding-left: 4px;
+}
+
 .checkout-form__input,
 .checkout-form__select {
   display: block;
   margin-left: auto;
   margin-right: auto;
   color: $secondary-text-color;
-  padding-left: 10px;
+  padding: 0 10px;
   font-size: 14px;
   border: 1px solid $secondary-text-color;
 }
@@ -42,35 +56,8 @@
   color: $primary-text-color;
 }
 
-.checkout-form__btn {
-  width: 94px;
-  height: 60px;
-  border: 1px solid $secondary-text-color;
-  margin: 0 8px;
-  font-size: 12px;
-  background-color: transparent;
-  color: $primary-text-color;
-  display: inline-block;
-  margin-bottom: 10px;
-  transition: $animation-duration $animation-timing-function;
-
-  &-icon {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 6px;
-  }
-
-  &:hover,
-  &:focus {
-    background-color: $dark-bcg-color;
-    color: $white-color;
-  }
-
-  &:hover &-icon,
-  &:focus &-icon {
-    fill: $white-color;
-  }
+.checkout-form__icon {
+  margin: 0 6px;
 }
 
 .payment-label,
@@ -123,10 +110,11 @@
     &__label {
       text-align: left;
       margin-bottom: 32px;
+      height: 103px;
     }
 
     &__select {
-      width: 374px;
+      width: 309px;
       font-size: 18px;
       margin-top: 16px;
       height: 60px;
@@ -139,18 +127,43 @@
       width: 650px;
     }
 
-    &__btn {
+    &__radio-label {
       width: 188px;
-      height: 100px;
-
       margin: 0 14px;
       font-size: 18px;
+      justify-content: center;
+      margin-bottom: 24px;
+    }
 
-      margin-bottom: 32px;
+    &__icon {
+      margin: 0 12px;
     }
   }
+
+  .payment-select {
+    display: block;
+  }
+
+  .payment-label {
+    margin: 0 8px 0 8px;
+    display: block;
+  }
+
+  .input-middle {
+    width: 393px;
+  }
+
   .input-small {
     width: 235px;
+  }
+
+  .label-small {
     margin-left: 22px;
+  }
+
+  .checkout-form__submit-btn {
+    margin-left: auto;
+    width: 245px;
+    height: 60px;
   }
 }

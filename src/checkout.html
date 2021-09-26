@@ -123,7 +123,7 @@
                   </option>
                 </select>
               </label>
-              <label class="checkout-form__label">
+              <label class="checkout-form__label label-small">
                 Zip Code
                 <input
                   type="number"
@@ -140,30 +140,33 @@
               <p id="payment-head" class="checkout-form__title">
                 Payment Method
               </p>
-              <button type="button" class="checkout-form__btn">
-                <svg width="20px" height="20px" class="checkout-form__btn-icon">
+              <label class="checkout-form__radio-label">
+                <input type="radio" name="payment_method" value="credit_card" />
+                <svg width="20px" height="20px" class="checkout-form__icon">
                   <use
                     href="./images/icons/checkout-sprite.svg#icon-card"
                   ></use>
                 </svg>
                 Credit Card
-              </button>
-              <button type="button" class="checkout-form__btn">
-                <svg width="20px" height="20px" class="checkout-form__btn-icon">
+              </label>
+              <label class="checkout-form__radio-label">
+                <input type="radio" name="payment_method" value="transfer" />
+                <svg width="20px" height="20px" class="checkout-form__icon">
                   <use
                     href="./images/icons/checkout-sprite.svg#icon-transfer"
                   ></use>
                 </svg>
                 Bank Transfer
-              </button>
-              <button type="button" class="checkout-form__btn">
-                <svg width="20px" height="20px" class="checkout-form__btn-icon">
+              </label>
+              <label class="checkout-form__radio-label">
+                <input type="radio" name="payment_method" value="paypal" />
+                <svg width="20px" height="20px" class="checkout-form__icon">
                   <use
                     href="./images/icons/checkout-sprite.svg#icon-paypal"
                   ></use>
                 </svg>
                 Paypal
-              </button>
+              </label>
               <label class="checkout-form__label">
                 Name on Card
                 <input
@@ -172,20 +175,20 @@
                   class="checkout-form__input"
                 />
               </label>
-              <label class="checkout-form__label">
+              <label class="checkout-form__label label-middle">
                 Card Number
                 <input
                   type="number"
                   name="curd_number"
-                  class="checkout-form__input"
+                  class="checkout-form__input input-middle"
                 />
               </label>
-              <label class="checkout-form__label">
+              <label class="checkout-form__label label-small">
                 CVV
                 <input
                   type="number"
                   name="cvv_number"
-                  class="checkout-form__input"
+                  class="checkout-form__input input-small"
                 />
               </label>
               <label class="checkout-form__label payment-label">
