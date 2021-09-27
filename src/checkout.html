@@ -270,7 +270,7 @@
                   </select>
                 </label>
               </div>
-              <div class="payment-bank visually-hidden">
+              <div class="payment-bank" style="display: none">
                 <label class="checkout-form__radio-bank-label">
                   <input
                     type="radio"
@@ -313,7 +313,7 @@
                   <input
                     type="text"
                     name="name_of_receiver"
-                    class="checkout-form__input"
+                    class="checkout-form__input bank-input"
                     required
                   />
                 </label>
@@ -322,7 +322,7 @@
                   <input
                     type="text"
                     name="name_of_account"
-                    class="checkout-form__input"
+                    class="checkout-form__input bank-input"
                     required
                   />
                 </label>
@@ -331,7 +331,7 @@
                   <input
                     type="date"
                     name="date_received"
-                    class="checkout-form__input input-small"
+                    class="checkout-form__input input-small bank-input"
                     required
                     value="2021-01-01"
                   />
@@ -346,13 +346,13 @@
                   ></textarea>
                 </label>
               </div>
-              <div class="payment-paypal visually-hidden">
+              <div class="payment-paypal" style="display: none">
                 <label class="checkout-form__label">
                   Name of Receiver
                   <input
                     type="text"
                     name="name_of_receiver"
-                    class="checkout-form__input"
+                    class="checkout-form__input paypal-input"
                     required
                   />
                 </label>
@@ -361,7 +361,7 @@
                   <input
                     type="text"
                     name="name_of_account"
-                    class="checkout-form__input"
+                    class="checkout-form__input paypal-input"
                     required
                   />
                 </label>
@@ -371,6 +371,7 @@
                     name="conditions"
                     value="agreed with conditions"
                     class="checkbox"
+                    required
                   />
                   Agree with conditions
                 </label>
@@ -380,7 +381,6 @@
                     name="conditions"
                     value="agreed for sending info"
                     class="checkbox"
-                    required
                   />
                   Agreed for sending info about new purpose
                 </label>
@@ -642,6 +642,5 @@
     </footer>
     <script src=" https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="./js/slick.min.js"></script>
-    <script src="./index.js"></script>
   </body>
 </html>
