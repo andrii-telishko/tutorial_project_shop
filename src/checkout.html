@@ -109,6 +109,7 @@
               <label class="checkout-form__label">
                 Contact
                 <input
+                  id="phone"
                   type="tell"
                   name="phone_number"
                   class="checkout-form__input buyer-input"
@@ -132,7 +133,7 @@
                   name="state"
                   required
                 >
-                  <option></option>
+                  <option value="">Choose your state</option>
                   <option value="Kyiv">Kyiv region</option>
                   <option value="Chernigiv">Chernigiv region</option>
                   <option value="Ternopil">Ternopil region</option>
@@ -144,7 +145,8 @@
               <label class="checkout-form__label label-small">
                 Zip Code
                 <input
-                  type="number"
+                  id="zip-code"
+                  type="text"
                   name="zip_code"
                   class="checkout-form__input input-small buyer-input"
                   required
@@ -215,8 +217,9 @@
                 <label class="checkout-form__label label-middle">
                   Card Number
                   <input
-                    type="number"
-                    name="curd_number"
+                    id="card-number"
+                    type="text"
+                    name="card_number"
                     class="checkout-form__input input-middle card-input"
                     required
                   />
@@ -239,7 +242,7 @@
                     name="month"
                     required
                   >
-                    <option></option>
+                    <option value="">Choose month</option>
                     <option value="jan">January</option>
                     <option value="feb">February</option>
                     <option value="mar">March</option>
@@ -261,7 +264,7 @@
                     name="year"
                     required
                   >
-                    <option></option>
+                    <option value="">Choose year</option>
                     <option value="21">2021</option>
                     <option value="22">2022</option>
                     <option value="23">2023</option>
@@ -641,6 +644,6 @@
       </div>
     </footer>
     <script src=" https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="./js/slick.min.js"></script>
+    <script src="./js/jquery.maskedinput.min.js"></script>
   </body>
 </html>

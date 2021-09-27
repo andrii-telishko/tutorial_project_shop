@@ -1,5 +1,6 @@
 import './styles/main.scss';
 import 'normalize.css';
+import './js/masks';
 
 const radioBtn = document.querySelectorAll('.radio-btn');
 const card = document.querySelector('.payment-card');
@@ -17,6 +18,10 @@ const error = document.querySelector('.error');
 const btn = document.querySelector('.checkout-form__submit-btn');
 const bankInput = document.querySelectorAll('.bank-input');
 const paypalInput = document.querySelectorAll('.paypal-input');
+console.log(select);
+[...select].map(item => {
+  [...item].map(item => console.log(item.value));
+});
 
 const resetInput = () => {
   return [...buyerInput].map(item => (item.value = ''));
