@@ -59,7 +59,7 @@ module.exports = {
     checkout: ['@babel/polyfill', './src/checkout.js'],
   },
   output: {
-    filename: 'js/[name].[contenthash].js',
+    filename: 'js/[name][contenthash].js',
     path: path.resolve(__dirname, 'dist'),
   },
 
