@@ -4,7 +4,6 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCssAssetPlugin = require('optimize-css-assets-webpack-plugin');
 const TerserWebpackPlugin = require('terser-webpack-plugin');
-const loader = require('sass-loader');
 
 const devMode = process.env.NODE_ENV !== 'production';
 
@@ -105,15 +104,24 @@ module.exports = {
       {
         test: /\.s[ac]ss$/,
         use: cssLoader('sass-loader'),
+        generator: {
+          filename: '[path][name].[ext]',
+        },
       },
       {
         test: /\.m?js$/,
         exclude: /node_modules/,
         use: jsLoaders(),
+        generator: {
+          filename: '[path][name].[ext]',
+        },
       },
       {
-        test: /\.(png|svg|jpg|jpeg|gif)$/i,
+        test: /\.(png|svg|jpg|jpeg|jfif|webp|gif)$/i,
         type: 'asset/resource',
+        generator: {
+          filename: '[path][name].[ext]',
+        },
         use: [
           {
             loader: 'image-webpack-loader',
@@ -121,7 +129,7 @@ module.exports = {
               mozjpeg: {
                 progressive: true,
               },
-              // optipng.enabled: false will disable optipng
+
               optipng: {
                 enabled: false,
               },
@@ -132,7 +140,7 @@ module.exports = {
               gifsicle: {
                 interlaced: false,
               },
-              // the webp option will enable WEBP
+
               webp: {
                 quality: 75,
               },
@@ -144,18 +152,6 @@ module.exports = {
         test: /\.html$/,
         use: ['html-loader'],
       },
-      // {
-      //     test: /\.html$/,
-      //     use: [
-      //         {
-      //             loader: 'file-loader',
-      //             options: {
-      //                 name: '[name].[ext]'
-      //             }
-      //         }
-      //     ],
-      //     exclude: path.resolve(__dirname, 'src/index.html')
-      // }
     ],
   },
 };

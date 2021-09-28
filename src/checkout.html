@@ -91,11 +91,14 @@
               <label class="checkout-form__label">
                 Full Name
                 <input
+                  id="name"
                   type="text"
                   name="name"
                   class="checkout-form__input buyer-input"
                   required
+                  pattern="[a-zA-Z -]+$"
                 />
+                <span class="error" aria-live="polite"></span>
               </label>
               <label class="checkout-form__label">
                 Address
@@ -124,7 +127,9 @@
                   name="city"
                   class="checkout-form__input buyer-input"
                   required
+                  pattern="^[a-zA-Z -]+$"
                 />
+                <span class="error" aria-live="polite"></span>
               </label>
               <label class="checkout-form__label">
                 State
@@ -212,7 +217,9 @@
                     name="name_on_card"
                     class="checkout-form__input card-input"
                     required
+                    pattern="^[a-zA-Z -]+$"
                   />
+                  <span class="error" aria-live="polite"></span>
                 </label>
                 <label class="checkout-form__label label-middle">
                   Card Number
@@ -227,7 +234,8 @@
                 <label class="checkout-form__label label-small">
                   CVV
                   <input
-                    type="number"
+                    id="cvv"
+                    type="text"
                     name="cvv_number"
                     class="checkout-form__input input-small card-input"
                     required
@@ -318,12 +326,14 @@
                     name="name_of_receiver"
                     class="checkout-form__input bank-input"
                     required
+                    pattern="^[a-zA-Z -]+$"
                   />
+                  <span class="error" aria-live="polite"></span>
                 </label>
                 <label class="checkout-form__label">
-                  Name of Account
+                  Account Number
                   <input
-                    type="text"
+                    type="number"
                     name="name_of_account"
                     class="checkout-form__input bank-input"
                     required
@@ -357,12 +367,14 @@
                     name="name_of_receiver"
                     class="checkout-form__input paypal-input"
                     required
+                    pattern="^[a-zA-Z -]+$"
                   />
+                  <span class="error" aria-live="polite"></span>
                 </label>
                 <label class="checkout-form__label">
-                  Name of Account
+                  Account Number
                   <input
-                    type="text"
+                    type="number"
                     name="name_of_account"
                     class="checkout-form__input paypal-input"
                     required
