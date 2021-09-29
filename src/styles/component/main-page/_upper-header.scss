@@ -37,7 +37,7 @@
 }
 
 .header__logo {
-  margin-right: 10px;
+  margin-left: auto;
 }
 
 .main-navigation__list {
@@ -144,17 +144,15 @@
   .main-navigation__list {
     display: flex;
     position: static;
-    margin-right: auto;
     padding: 0;
-    background-color: transparent;
     box-shadow: none;
-    margin-right: 213px;
+    margin-right: 13px;
 
     .main-navigation__item {
       position: relative;
 
       &:not(:last-child) {
-        margin-right: 56px;
+        margin-right: 20px;
         margin-bottom: 0;
       }
     }

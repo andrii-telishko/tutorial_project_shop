@@ -1,0 +1,248 @@
+.checkout-form {
+  text-align: center;
+}
+
+.checkout-form__title {
+  margin-top: 0;
+  margin-bottom: 12px;
+  padding-bottom: 12px;
+  font-size: 18px;
+  font-weight: 500;
+  position: relative;
+}
+
+.checkout-form__title::after {
+  content: '';
+  width: 125px;
+  border: 1px solid $secondary-text-color;
+  position: absolute;
+  bottom: 0;
+  right: 110px;
+}
+
+.checkout-form__label {
+  display: block;
+  font-size: 18px;
+  color: $secondary-text-color;
+}
+
+.checkout-form__radio-label {
+  width: 94px;
+  height: 60px;
+  border: 1px solid $secondary-text-color;
+  margin: 0 8px;
+  font-size: 12px;
+  background-color: transparent;
+  color: $primary-text-color;
+  display: inline-flex;
+  margin-bottom: 10px;
+  align-items: center;
+  padding-left: 4px;
+}
+
+.checkout-form__input,
+.checkout-form__select {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  color: $secondary-text-color;
+  padding: 0 10px;
+  font-size: 14px;
+  border: 1px solid $secondary-text-color;
+}
+
+.checkout-form__input:focus {
+  border-color: $primary-text-color;
+  color: $primary-text-color;
+}
+
+.checkout-form__input:valid,
+.checkout-form__select:valid {
+  border: 1px solid green;
+}
+
+.checkout-form__input:invalid,
+.checkout-form__select:invalid {
+  border: 1px solid red;
+}
+
+.checkout-form__icon {
+  margin: 0 6px;
+}
+
+.payment-label,
+.payment-select {
+  display: inline-block;
+}
+
+.checkout-form__submit-btn {
+  margin: 10px 0;
+  width: 145px;
+  height: 40px;
+  color: $white-color;
+  background-color: $dark-bcg-color;
+  font-size: 20px;
+  transition: $animation-duration $animation-timing-function;
+  border: 1px solid transparent;
+
+  &:disabled {
+    background-color: $second-photo-bcg;
+    color: $secondary-text-color;
+  }
+
+  &:enabled:hover,
+  &:enabled:focus {
+    background-color: $white-color;
+    border-color: $primary-text-color;
+    color: $primary-text-color;
+  }
+}
+
+.checkout-form__radio-bank-label {
+  font-size: 16px;
+}
+
+.checkout-form__checkbox-label {
+  color: $secondary-text-color;
+  font-size: 16px;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+}
+
+.checkbox {
+  margin-right: 8px;
+}
+
+.error {
+  width: 100%;
+  padding: 0;
+
+  font-size: 80%;
+  color: white;
+  background-color: #900;
+  border-radius: 0 0 5px 5px;
+
+  box-sizing: border-box;
+}
+
+@media screen and (min-width: $desktop) {
+  .checkout-form {
+    display: flex;
+    justify-content: space-between;
+
+    &__group {
+      display: inline-flex;
+      flex-wrap: wrap;
+      width: 650px;
+    }
+
+    &__title {
+      display: block;
+      margin-bottom: 32px;
+      width: 100%;
+      text-align: left;
+      height: 59px;
+    }
+
+    &__title::after {
+      width: 650px;
+      left: 0;
+    }
+
+    &__label {
+      text-align: left;
+      margin-bottom: 32px;
+      height: 103px;
+    }
+
+    &__select {
+      width: 309px;
+      font-size: 18px;
+      margin-top: 16px;
+      height: 60px;
+    }
+
+    &__input {
+      font-size: 18px;
+      margin-top: 16px;
+      height: 60px;
+      width: 650px;
+    }
+
+    &__radio-label {
+      width: 188px;
+      margin: 0 14px;
+      font-size: 18px;
+      justify-content: center;
+      margin-bottom: 24px;
+    }
+
+    &__icon {
+      margin: 0 12px;
+    }
+  }
+
+  .payment-select {
+    display: block;
+  }
+
+  .payment-label {
+    margin: 0 8px 0 8px;
+    display: block;
+  }
+
+  .input-middle {
+    width: 393px;
+  }
+
+  .input-small {
+    width: 235px;
+  }
+
+  .label-small {
+    margin-left: 22px;
+  }
+
+  .checkout-form__submit-btn {
+    margin-left: auto;
+    width: 245px;
+    height: 60px;
+  }
+
+  .payment-card,
+  .payment-bank,
+  .payment-paypal {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .checkout-form__radio-bank-label {
+    font-size: 20px;
+    margin: 24px 8px;
+  }
+
+  .payment-bank .label-small {
+    margin-left: 0;
+  }
+
+  .checkout-form__textarea {
+    width: 368px;
+    display: block;
+    padding: 6px;
+    font-size: 16px;
+
+    &::placeholder {
+      color: $secondary-text-color;
+    }
+  }
+
+  .label-textarea {
+    margin-left: 32px;
+  }
+
+  .checkout-form__checkbox-label {
+    font-size: 20px;
+    margin-bottom: 8px;
+  }
+}
