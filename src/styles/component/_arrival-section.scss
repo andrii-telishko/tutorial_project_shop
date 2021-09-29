@@ -1,0 +1,125 @@
+.arrival-section {
+  background-color: $dark-bcg-color;
+}
+
+.arrival {
+  padding: 0 16px;
+  text-align: center;
+  padding-top: 10px;
+
+  &__inform {
+    margin-bottom: 15px;
+  }
+
+  &__title {
+    color: $white-color;
+    font-weight: bold;
+    margin: 0;
+    font-size: 18px;
+    line-height: 1.5;
+  }
+
+  &__text {
+    color: $white-color;
+    font-size: 12px;
+  }
+
+  &__list {
+    display: block;
+  }
+
+  &__item:not(:last-child) {
+    margin-bottom: 10px;
+  }
+
+  &__card {
+    width: 300px;
+    height: 345px;
+    border-bottom: 1px solid $primary-text-color;
+    background-color: $white-color;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  &__img {
+    width: 100%;
+    height: 245px;
+    margin-bottom: 24px;
+    background-color: $first-photo-bcg;
+    object-fit: cover;
+  }
+
+  &__card-info {
+    text-align: center;
+    height: auto;
+  }
+
+  &__card-title {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.5;
+    margin: 0;
+  }
+}
+
+@media screen and (min-width: $desktop) {
+  .arrival-section {
+    background-color: transparent;
+  }
+
+  .arrival {
+    height: 426px;
+    background-image: linear-gradient(
+      to right,
+      $dark-bcg-color 384px,
+      $white-color 384px
+    );
+    padding: 32px 0 32px 32px;
+    display: flex;
+    justify-content: end;
+    border: none;
+
+    &__inform {
+      width: 213px;
+      margin-right: 30px;
+      margin-bottom: 0;
+      text-align: left;
+    }
+
+    &__title {
+      font-size: 24px;
+      line-height: 36px;
+    }
+
+    &__text {
+      font-size: 18px;
+      line-height: 1.78;
+    }
+
+    &__list {
+      display: flex;
+    }
+
+    &__item:not(:last-child) {
+      margin-right: 18px;
+      margin-bottom: 0;
+    }
+
+    &__card {
+      width: 310px;
+      height: 362px;
+      padding: 38px 59px;
+      border-bottom: none;
+    }
+
+    &__img {
+      width: 200px;
+      height: 200px;
+      margin-bottom: 16px;
+    }
+
+    &__card-title {
+      font-size: 24px;
+    }
+  }
+}

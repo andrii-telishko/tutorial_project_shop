@@ -1,0 +1,7 @@
+%underline {
+  position: absolute;
+  bottom: 0;
+  content: '';
+  border: 1px solid $hero-background;
+  width: 100%;
+}

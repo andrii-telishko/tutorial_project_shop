@@ -1,0 +1,41 @@
+.section__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.section__title {
+  margin: 16px 0;
+  font-size: 24px;
+  font-weight: 700;
+
+  @media screen and (min-width: $desktop) {
+    margin: 32px 0;
+    font-size: 36px;
+  }
+}
+
+.section__link {
+  display: inline-flex;
+  align-items: center;
+  padding: 0 4px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  transition: $animation-duration $animation-timing-function;
+
+  &-text {
+    margin-right: 4px;
+    font-weight: 500;
+    font-size: 12px;
+
+    @media screen and (min-width: $desktop) {
+      font-size: 18px;
+      margin-right: 8px;
+    }
+  }
+
+  &:hover,
+  &:focus {
+    border: 1px solid $primary-text-color;
+  }
+}

@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;500;700&display=swap"
+      rel="stylesheet">
+      <title>Intership Project</title>
+</head>
+<body>
+
+  <!-- Header -->
+
+  <header class="header">
+    <div class="container">
+      <div class="header__upper">
+              <button class="mobile-btn" type="button" data-menu-button aria-expanded="false" aria-controls="mobile-conteiner">
+                <svg aria-label="Кнопка меню" class="mobile-img" width="24" height="24" viewBox="0 0 32 32 " fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path class="icon-cross"
+                    d="M31.708 25.708 22 16l9.708-9.708a1 1 0 0 0 0-1.414L27.122.292a1 1 0 0 0-1.414-.001L16 9.999 6.292.291a.998.998 0 0 0-1.414.001L.292 4.878a1 1 0 0 0 0 1.414L10 16 .292 25.708a.999.999 0 0 0 0 1.414l4.586 4.586a1 1 0 0 0 1.414 0L16 22l9.708 9.708a1 1 0 0 0 1.414 0l4.586-4.586a.999.999 0 0 0 0-1.414z" />
+                  <path fill-rule="evenodd" clip-rule="evenodd" class="icon-menu"
+                    d="M0 6h28v6H0V6zm0 8h28v6H0v-6zm0 8h28v6H0v-6zM31 14l6 6 6-6z" />
+                </svg>
+              </button>
+        <nav class="main-navigation">
+          <ul class="main-navigation__list list" data-menu>
+            <li class="main-navigation__item">
+              <a href="#categories" class="main-navigation__link link">Categories</a>
+            </li>
+            <li class="main-navigation__item">
+              <a href="#arrivals" class="main-navigation__link link">New Arrival</a>
+            </li>
+            <li class="main-navigation__item">
+              <a href="#features" class="main-navigation__link link">Features</a>
+            </li>
+            <li class="main-navigation__item">
+              <a href="#collections" class="main-navigation__link link">Collections</a>
+            </li>
+          </ul>
+        </nav>
+        <a href="/" class="header__logo">
+          <img src="./images/brands/logo.png" alt="page logo">
+        </a>
+        <ul class="header-features-list list">
+          <li class="header-features-list__item">
+            <button type="button" class="header-features-list__btn">
+              <svg class="icon" width="24px" height="24px">
+                <use href="./images/icons/sprite.svg#icon-Search"> </use>
+              </svg>
+            </button>
+          </li>
+          <li class="header-features-list__item">
+            <button type="button" class="header-features-list__btn">
+              <svg class="icon" width="24px" height="24px">
+                <use href="./images/icons/sprite.svg#icon-Cart"> </use>
+              </svg>
+            </button>
+          </li>
+          <li class="header-features-list__item">
+            <button type="button" class="header-features-list__btn">
+              <svg class="icon" width="24px" height="24px">
+                <use href="./images/icons/sprite.svg#icon-Email"> </use>
+              </svg>
+            </button>
+          </li>
+        </ul>
+      </div>
+      <div class="header__lower" id="categories">
+        <ul class="header__categories-list list">
+          <li class="header__categories-item">
+            <button class="header__categories-btn">
+              <svg class="header__categories-icon">
+                <use href="./images/icons/sprite.svg#icon-content"> </use>
+              </svg>
+            </button>
+          </li>
+          <li class="header__categories-item">
+            <button class="header__categories-btn" type="button">
+              <svg class="header__categories-icon" width="48px" height="83px">
+                <use href="./images/icons/sprite.svg#icon-shirts"> </use>
+              </svg>
+            </button>
+          </li>
+          <li class="header__categories-item">
+            <button class="header__categories-btn">
+              <svg class="header__categories-icon" width="51px" height="83px">
+                <use href="./images/icons/sprite.svg#icon-pants"> </use>
+              </svg>
+            </button>
+          </li>
+          <li class="header__categories-item">
+            <button class="header__categories-btn">
+              <svg class="header__categories-icon" width="55px" height="83px">
+                <use href="./images/icons/sprite.svg#icon-shoes"> </use>
+              </svg>
+            </button>
+          </li>
+          <li class="header__categories-item">
+            <button class="header__categories-btn">
+              <svg class="header__categories-icon" width="50px" height="83px">
+                <use href="./images/icons/sprite.svg#icon-dress"> </use>
+              </svg>
+            </button>
+          </li>
+          <li class="header__categories-item">
+            <button class="header__categories-btn">
+              <svg class="header__categories-icon" width="98px" height="83px">
+                <use href="./images/icons/sprite.svg#icon-accesories"> </use>
+              </svg>
+            </button>
+          </li>
+          <li class="header__categories-item">
+            <button class="header__categories-btn">
+              <svg class="header__categories-icon" width="48px" height="83px">
+                <use href="./images/icons/sprite.svg#icon-skirt"> </use>
+              </svg>
+            </button>
+          </li>
+          <li class="header__categories-item">
+            <button class="header__categories-btn">
+              <svg class="header__categories-icon" width="99px" height="83px">
+                <use href="./images/icons/sprite.svg#icon-underwear"> </use>
+              </svg>
+            </button>
+          </li>
+          <li class="header__categories-item">
+            <button class="header__categories-btn">
+              <svg class="header__categories-icon" width="48px" height="83px">
+                <use href="./images/icons/sprite.svg#icon-more"> </use>
+              </svg>
+            </button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </header>
+  <main>
+
+   
+
+<!-- Hero-section -->
+
+    <section class="hero">
+      <div class="hero__wrapper">
+        <div class="container hero__container">
+          <div class="hero__slider">
+            <div class="hero__slider-item">
+              <img src="./images/hero-images/hero1.jpg" alt="clothes" class="hero__img">
+            </div>
+            <div class="hero__slider-item">
+              <img src="./images/hero-images/hero2.jpg" alt="clothes" class="hero__img">
+            </div>
+            <div class="hero__slider-item">
+              <img src="./images/hero-images/hero3.jpg" alt="clothes" class="hero__img">
+            </div>
+            <div class="hero__slider-item">
+              <img src="./images/hero-images/hero4.jpg" alt="clothes" class="hero__img">
+            </div>
+            <div class="hero__slider-item">
+              <img src="./images/hero-images/hero5.jpg" alt="clothes" class="hero__img">
+            </div>
+            <div class="hero__slider-item">
+              <img src="./images/hero-images/hero6.jpg" alt="clothes" class="hero__img">
+            </div>
+          </div>
+          
+          <div class="hero__information">
+            <span class="hero__additional-information">50% Off Limited Offer</span>
+            <h1 class="hero__title">Summer Collection</h1>
+            <p class="hero__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+              labore et dolore magna
+              aliqua.</p>
+            <button type="button" class="hero__button"><span class="hero__button-text">Shop Now</span>
+              <svg width="48px" height="48px" class="hero__button-arrow" fill="rgba(255, 255, 255, 1)"> 
+                <use href="./images/icons/sprite.svg#icon-Arrow"></use>
+              </svg>
+            </button>
+           
+          </div>
+          
+          
+        </div> 
+          
+       
+      </div>
+    </section>
+
+    <!-- Feature-section -->
+
+    <section class="feature-section section" id="features">
+      <div class="container">
+        <div class="section__header">
+          <h2 class="section__title">Featured</h2>
+          <a href="" class="section__link link">
+            <span class="section__link-text">View all</span>
+            <svg width="32px" height="32px" fill="rgba(57, 61, 70, 1)">
+              <use href="./images/icons/sprite.svg#icon-Arrow"></use>
+            </svg>
+          </a>
+        </div>
+        
+          <ul class="feature-section__main-list list">
+            <li>
+              <ul class="feature-section__list list left-list">
+                <li class="feature-section__list-item">
+                  <div class="feature-section__list-card">
+                    <img src="./images/feature-images/green-warm-jacket.jfif" alt="jacket" class="feature-section__list-card-img">
+                    <h3 class="feature-section__list-card-title">Green <br>
+                      Warm Jacket</h3>
+                    <span class="price">$299</span>
+                  </div>
+                </li>
+                <li class="feature-section__list-item">
+                  <div class="feature-section__list-card">
+                    <img src="./images/feature-images/blach-warm-jacket.webp" alt="black jacket" class="feature-section__list-card-img">
+                    <h3 class="feature-section__list-card-title">Black <br>
+                      Warm Jacket</h3>
+                    <span class="price">$299</span>
+                  </div>
+                </li>
+                <li class="feature-section__list-item">
+                  <div class="feature-section__list-card">
+                    <img src="./images/feature-images/black-warm-jacket2.jfif" alt="black jacket" class="feature-section__list-card-img">
+                    <h3 class="feature-section__list-card-title">Black <br>
+                      Warm Jacket</h3>
+                    <span class="price">$299</span>
+                  </div>
+                </li>
+                <li class="feature-section__list-item">
+                  <div class="feature-section__list-card">
+                    <img src="./images/feature-images/black-briefcaase.jfif" alt="black briefcase" class="feature-section__list-card-img">
+                    <h3 class="feature-section__list-card-title">Black <br> Brief Case</h3>
+                    <span class="price">$299</span>
+                  </div>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <div class="feature-section__main-card">
+                <img src="./images/feature-images/brown-casual-sneakers.jfif" alt="brown sneakers" class="feature-section__main-card-img">
+                <h3 class="feature-section__main-card-title">Brown <br> Casual Sneaker</h3>
+                <span class="feature-section__main-card-price">$299</span>
+                <button type="button" class="feature-section__main-card-btn">
+                  <span class="feature-section__main-card-btn-txt">Add to Cart</span></button>
+              </div>
+            </li>
+            <li>
+              <ul class="feature-section__list list right-list">
+                <li class="feature-section__list-item">
+                  <div class="feature-section__list-card">
+                    <img src="./images/feature-images/blue-grey-warm-jacket.jpg" alt="warm jacket" class="feature-section__list-card-img">
+                    <h3 class="feature-section__list-card-title">Blue Grey <br>
+                    Warm Jacket</h3>
+                    <span class="price">$299</span>
+                  </div>
+                </li>
+                <li class="feature-section__list-item">
+                  <div class="feature-section__list-card">
+                    <img src="./images/feature-images/blue-demin-jacket.jfif" alt="demin jacket" class="feature-section__list-card-img">
+                    <h3 class="feature-section__list-card-title">Blue Denim <br> Jacket</h3>
+                    <span class="price">$299</span>
+                  </div>
+                </li>
+                <li class="feature-section__list-item">
+                  <div class="feature-section__list-card">
+                    <img src="./images/feature-images/classic-watch.jfif" alt="classic watch" class="feature-section__list-card-img">
+                    <h3 class="feature-section__list-card-title">Modern Classic
+                      <br> Watch</h3>
+                    <span class="price">$299</span>
+                  </div>
+                </li>
+                <li class="feature-section__list-item">
+                  <div class="feature-section__list-card">
+                    <img src="./images/feature-images/casual-watch.jfif" alt="casual watch" class="feature-section__list-card-img">
+                    <h3 class="feature-section__list-card-title">Casual <br>
+                    Classic Watch</h3>
+                    <span class="price">$299</span>
+                  </div>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+    </section>
+
+<!-- Arrival section  -->
+
+    <section class="section arrival-section" id="arrivals">
+      <div class="container">
+        <div class="arrival">
+          <div class="arrival__inform">
+            <h3 class="arrival__title">New Arrival</h3>
+            <p class="arrival__text">Lorem ipsum dolor sit amet consectetur.</p>
+          </div>
+          <ul class="arrival__list list">
+            <li class="arrival__item">
+              <div class="arrival__card">
+                <img src="./images/arrival-images/briefcase.jpg" alt="briefcase" class="arrival__img">
+                <div class="arrival__card-info">
+                  <h4 class="arrival__card-title">Black Briefcase</h4>
+                  <p class="price">$299</p>
+                </div>
+              </div>
+            </li>
+            <li class="arrival__item">
+              <div class="arrival__card">
+                <img src="./images/arrival-images/pink-shirt.jpg" alt="pink shirt" class="arrival__img">
+                <div class="arrival__card-info">
+                  <h4 class="arrival__card-title">Pink Shirt</h4>
+                  <p class="price">$299</p>
+                </div>
+              </div>
+            </li>
+            <li class="arrival__item">
+              <div class="arrival__card">
+                <img src="./images/arrival-images/t-shirt.jfif" alt="t-shirt" class="arrival__img">
+                <div class="arrival__card-info">
+                  <h4 class="arrival__card-title">Gray T-shirt</h4>
+                  <p class="price">$299</p>
+                </div>
+              </div>
+            </li>
+            <li class="arrival__item">
+              <div class="arrival__card">
+                <img src="./images/arrival-images/flanner.jfif" alt="red flanner" class="arrival__img">
+                <div class="arrival__card-info">
+                  <h4 class="arrival__card-title">Red Flannel</h4>
+                  <p class="price">$299</p>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Collection Section  -->
+
+    <section class="section collection-section" id="collections">
+      <div class="container">
+        <ul class="collections__list list">
+          <li class="collection__item">
+            <img src="./images/collections/collection1.jpg" alt="clothes collection" class="collections__img">
+          <span class="collections__txt collections__left-item">Casual</span>
+          <h2 class="collections__title collections__left-item">Collection</h2>
+        </li>
+          <li class="collection__item">
+            <img src="./images/collections/collection2.jpg" alt="clothes collection" class="collections__img">
+          <span class="collections__txt collections__right-item">Big Vibe</span>
+          <h2 class="collections__title collections__right-item">Collection</h2>
+        </li>
+        </ul>
+        
+    </section>
+
+    <!-- Choose section -->
+
+    <section class="section choose">
+      <div class="container">
+
+        <h4 class="choose__title">Why Choose Us</h4>
+        <ul class="choose__list list">
+          <li class="choose__item">
+            <svg class="choose__icon" width="96px" height="96px" fill="rgba(57, 61, 70, 1)">
+              <use href="./images/icons/sprite.svg#icon-Truck"></use>
+            </svg>
+            <div class="choose__info">
+              <h5 class="choose__info-title">Free Delivery</h5>
+              <p class="choose__info-text">This free shipping
+                only for selected region</p>
+            </div>
+          </li>
+          <li class="choose__item">
+            <svg class="choose__icon" width="96px" height="96px" fill="rgba(57, 61, 70, 1)">
+              <use href="./images/icons/sprite.svg#icon-Card"></use>
+            </svg>
+            <div class="choose__info">
+              <h5 class="choose__info-title">Payment Method</h5>
+              <p class="choose__info-text">This free shipping
+                only for selected region</p>
+            </div>
+          </li>
+          <li class="choose__item">
+            <svg class="choose__icon" width="96px" height="96px" fill="rgba(57, 61, 70, 1)">
+              <use href="./images/icons/sprite.svg#icon-Broken"></use>
+            </svg>
+            <div class="choose__info">
+              <h5 class="choose__info-title">Warranty</h5>
+              <p class="choose__info-text">This free shipping
+                only for selected region</p>
+            </div>
+          </li>
+          <li class="choose__item">
+            <svg class="choose__icon" width="96px" height="96px" fill="rgba(57, 61, 70, 1)">
+              <use href="./images/icons/sprite.svg#icon-Call"></use>
+            </svg>
+            <div class="choose__info">
+              <h5 class="choose__info-title">Customer Support</h5>
+              <p class="choose__info-text">This free shipping
+                only for selected region</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+      
+    </section> 
+
+    <!-- Popular Section -->
+
+    <section class="section">
+      <div class="container">
+        <div class="section__header">
+          <h2 class="section__title">Popular this Week</h2>
+          <a href="" class="section__link link">
+            <span class="section__link-text">View all</span>
+            <svg width="32px" height="32px" fill="rgba(57, 61, 70, 1)">
+              <use href="./images/icons/sprite.svg#icon-Arrow"></use>
+            </svg>
+          </a>
+        </div>
+        <ul class="popular__list list">
+          <li class="popular__item">
+            <div class="popular__card">
+              <img src="./images/popular/black-boots.jfif" alt="black boots" class="popular__img">
+                <h3 class="popular__title">Black Adventure
+                Boots</h3>
+              <div class="popular__rating">
+                <button type="button">
+                  <svg width="16px" height="16px" fill="#c4c4c4">
+                    <use href="./images/icons/sprite.svg#icon-Star-6"></use>
+                  </svg>
+                </button>
+                <button type="button">
+                  <svg width="16px" height="16px" fill="#c4c4c4">
+                    <use href="./images/icons/sprite.svg#icon-Star-6"></use>
+                  </svg>
+                </button>
+                <button type="button">
+                  <svg width="16px" height="16px" fill="#c4c4c4">
+                    <use href="./images/icons/sprite.svg#icon-Star-6"></use>
+                  </svg>
+                </button>
+                <button type="button">
+                  <svg width="16px" height="16px" fill="#c4c4c4">
+                    <use href="./images/icons/sprite.svg#icon-Star-6"></use>
+                  </svg>
+                </button>
+                <button type="button">
+                  <svg width="16px" height="16px" fill="#c4c4c4">
+                    <use href="./images/icons/sprite.svg#icon-Star-6"></use>
+                  </svg>
+                </button>
+              </div>  
+              <span class="price">$299</span>
+            </div>
+          </li>
+          <li class="popular__item">
+            <div class="popular__card">
+              <img src="./images/popular/highheels.webp" alt="black highheels" class="popular__img">
+              <h3 class="popular__title">Black Formal
+              Highheels</h3>
+              <div class="popular__rating">
+                <button type="button">
+                  <svg width="16px" height="16px" fill="#c4c4c4">
+                    <use href="./images/icons/sprite.svg#icon-Star-6"></use>
+                  </svg>
+                </button>
+                <button type="button">
+                  <svg width="16px" height="16px" fill="#c4c4c4">
+                    <use href="./images/icons/sprite.svg#icon-Star-6"></use>
+                  </svg>
+                </button>
+                <button type="button">
+                  <svg width="16px" height="16px" fill="#c4c4c4">
+                    <use href="./images/icons/sprite.svg#icon-Star-6"></use>
+                  </svg>
+                </button>
+                <button type="button">
+                  <svg width="16px" height="16px" fill="#c4c4c4">
+                    <use href="./images/icons/sprite.svg#icon-Star-6"></use>
+                  </svg>
+                </button>
+                <button type="button">
+                  <svg width="16px" height="16px" fill="#c4c4c4">
+                    <use href="./images/icons/sprite.svg#icon-Star-6"></use>
+                  </svg>
+                </button>
+              </div>
+              <span class="price">$299</span>
+            </div>
+          </li>
+          <li class="popular__item">
+            <div class="popular__card">
+              <img src="./images/popular/brown-shoes.jfif" alt="brown shoes" class="popular__img">
+              <h3 class="popular__title">Brown
+              Casual Shoes</h3>
+              <div class="popular__rating">
+                <button type="button">
+                  <svg width="16px" height="16px" fill="#c4c4c4">
+                    <use href="./images/icons/sprite.svg#icon-Star-6"></use>
+                  </svg>
+                </button>
+                <button type="button">
+                  <svg width="16px" height="16px" fill="#c4c4c4">
+                    <use href="./images/icons/sprite.svg#icon-Star-6"></use>
+                  </svg>
+                </button>
+                <button type="button">
+                  <svg width="16px" height="16px" fill="#c4c4c4">
+                    <use href="./images/icons/sprite.svg#icon-Star-6"></use>
+                  </svg>
+                </button>
+                <button type="button">
+                  <svg width="16px" height="16px" fill="#c4c4c4">
+                    <use href="./images/icons/sprite.svg#icon-Star-6"></use>
+                  </svg>
+                </button>
+                <button type="button">
+                  <svg width="16px" height="16px" fill="#c4c4c4">
+                    <use href="./images/icons/sprite.svg#icon-Star-6"></use>
+                  </svg>
+                </button>
+              </div>
+              <span class="price">$299</span>
+            </div>
+          </li>
+          <li class="popular__item">
+            <div class="popular__card">
+              <img src="./images/popular/longpans.jfif" alt="gray longpants" class="popular__img">
+              <h3 class="popular__title">Gray <br>
+              Longpants</h3>
+              <div class="popular__rating">
+                <button type="button">
+                  <svg width="16px" height="16px" fill="#c4c4c4">
+                    <use href="./images/icons/sprite.svg#icon-Star-6"></use>
+                  </svg>
+                </button>
+                <button type="button">
+                  <svg width="16px" height="16px" fill="#c4c4c4">
+                    <use href="./images/icons/sprite.svg#icon-Star-6"></use>
+                  </svg>
+                </button>
+                <button type="button">
+                  <svg width="16px" height="16px" fill="#c4c4c4">
+                    <use href="./images/icons/sprite.svg#icon-Star-6"></use>
+                  </svg>
+                </button>
+                <button type="button">
+                  <svg width="16px" height="16px" fill="#c4c4c4">
+                    <use href="./images/icons/sprite.svg#icon-Star-6"></use>
+                  </svg>
+                </button>
+                <button type="button">
+                  <svg width="16px" height="16px" fill="#c4c4c4">
+                    <use href="./images/icons/sprite.svg#icon-Star-6"></use>
+                  </svg>
+                </button>
+              </div>
+              <span class="price">$299</span>
+            </div>
+          </li>
+          <li class="popular__item">
+            <div class="popular__card">
+              <img src="./images/popular/sport-jacket.jfif" alt="sport jacket" class="popular__img">
+              <h3 class="popular__title">Green
+              Sport Jacket</h3>
+              <div class="popular__rating">
+                <button type="button">
+                  <svg width="16px" height="16px" fill="#c4c4c4">
+                    <use href="./images/icons/sprite.svg#icon-Star-6"></use>
+                  </svg>
+                </button>
+                <button type="button">
+                  <svg width="16px" height="16px" fill="#c4c4c4">
+                    <use href="./images/icons/sprite.svg#icon-Star-6"></use>
+                  </svg>
+                </button>
+                <button type="button">
+                  <svg width="16px" height="16px" fill="#c4c4c4">
+                    <use href="./images/icons/sprite.svg#icon-Star-6"></use>
+                  </svg>
+                </button>
+                <button type="button">
+                  <svg width="16px" height="16px" fill="#c4c4c4">
+                    <use href="./images/icons/sprite.svg#icon-Star-6"></use>
+                  </svg>
+                </button>
+                <button type="button">
+                  <svg width="16px" height="16px" fill="#c4c4c4">
+                    <use href="./images/icons/sprite.svg#icon-Star-6"></use>
+                  </svg>
+                </button>
+              </div>
+              <span class="price">$299</span>
+            </div>
+          </li>
+          <li class="popular__item">
+            <div class="popular__card">
+              <img src="./images/popular/skirt.jfif" alt="denim skirt" class="popular__img">
+              <h3 class="popular__title">Blue Denim <br>
+              Skirt</h3>
+              <div class="popular__rating">
+                <button type="button">
+                  <svg width="16px" height="16px" fill="#c4c4c4">
+                    <use href="./images/icons/sprite.svg#icon-Star-6"></use>
+                  </svg>
+                </button>
+                <button type="button">
+                  <svg width="16px" height="16px" fill="#c4c4c4">
+                    <use href="./images/icons/sprite.svg#icon-Star-6"></use>
+                  </svg>
+                </button>
+                <button type="button">
+                  <svg width="16px" height="16px" fill="#c4c4c4">
+                    <use href="./images/icons/sprite.svg#icon-Star-6"></use>
+                  </svg>
+                </button>
+                <button type="button">
+                  <svg width="16px" height="16px" fill="#c4c4c4">
+                    <use href="./images/icons/sprite.svg#icon-Star-6"></use>
+                  </svg>
+                </button>
+                <button type="button">
+                  <svg width="16px" height="16px" fill="#c4c4c4">
+                    <use href="./images/icons/sprite.svg#icon-Star-6"></use>
+                  </svg>
+                </button>
+              </div>
+              <span class="price">$299</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Brands Section -->
+
+    <section class="section brands">
+      <ul class="brands__list list">
+        <li class="brands__item">
+          <img src="./images/brands/Bajuu.png" alt="name of the brand">
+        </li>
+        <li class="brands__item">
+          <img src="./images/brands/Kathoc.png" alt="name of the brand">
+        </li>
+        <li class="brands__item">
+          <img src="./images/brands/Pernik.png" alt="name of the brand">
+        </li>
+        <li class="brands__item">
+          <img src="./images/brands/Spatu.png" alt="name of the brand">
+        </li>
+      </ul>
+    </section>
+  </main>
+
+  <!-- Footer -->
+
+  <footer class="footer">
+
+    <div class="container">
+      <div class="footer__info">
+        
+          <address class="footer__adress">
+            <h3 class="footer__title">Contacts</h3>
+            <ul class="footer__contacts list">
+              <li class="footer__contacts-item">
+                
+                <a class="link footer__link" href="tel:+1234567890">
+                  <svg class="footer__contacts-icon" width="24px" height="24px" fill="rgba(159, 159, 159, 1)">
+                    <use href="./images/icons/sprite.svg#icon-Call"></use>
+                  </svg>
+                  +1234567890</a>
+              </li>
+              <li class="footer__contacts-item">
+                
+                <a class="link footer__link" href="mailto:elliye@support.com">
+                  <svg class="footer__contacts-icon" width="24px" height="24px" fill="rgba(159, 159, 159, 1)">
+                    <use href="./images/icons/sprite.svg#icon-EmailWhite"></use>
+                  </svg>
+                  elliye@support.com</a>
+              </li>
+            </ul>
+            <h3 class="footer__title">Social Media</h3>
+            <ul class="footer__media list">
+              <li class="footer__media-item">
+                <a href="instagram.com" class="link"  target="_blank" rel="noreferrer noopener">
+                  <svg class="footer__media-icon" width="24px" height="24px" fill="rgba(159, 159, 159, 1)">
+                    <use href="./images/icons/sprite.svg#icon-instagram"></use>
+                  </svg>
+                </a>
+                </li>
+                <li class="footer__media-item">
+                  <a href="twittew.com" class="link" target="_blank" rel="noreferrer noopener">
+                    <svg class="footer__media-icon" width="24px" height="24px" fill="rgba(159, 159, 159, 1)">
+                      <use href="./images/icons/sprite.svg#icon-twitter"></use>
+                    </svg>
+                  </a>
+                </li>
+                <li class="footer__media-item">
+                  <a href="facebook.com" class="link" target="_blank" rel="noreferrer noopener">
+                    <svg class="footer__media-icon" width="24px" height="24px" fill="rgba(159, 159, 159, 1)">
+                      <use href="./images/icons/sprite.svg#icon-facebook"></use>
+                    </svg>
+                  </a>
+                </li>
+              
+            </ul>
+          </address>
+          <div class="footer__links">
+            <h3 class="footer__title">Product Links</h3>
+            <ul class="footer__links-list list">
+              <li class="footer__links-item">
+                <a href="" class="link footer__link" target="_blank" rel="noreferrer noopener">
+                  Categories
+                </a>
+              </li>
+              <li class="footer__links-item">
+                <a href="" class="link footer__link" target="_blank" rel="noreferrer noopener">
+                  New Arrival
+                </a>
+              </li>
+              <li class="footer__links-item">
+                <a href="" class="link footer__link" target="_blank" rel="noreferrer noopener">
+                  Features
+                </a>
+              </li>
+              <li class="footer__links-item">
+                <a href="" class="link footer__link" target="_blank" rel="noreferrer noopener">
+                  Collections
+                </a>
+              </li>
+              <li class="footer__links-item">
+                <a href="" class="link footer__link" target="_blank" rel="noreferrer noopener">
+                  Discount
+                </a>
+              </li>
+              <li class="footer__links-item">
+                <a href="" class="link footer__link" target="_blank" rel="noreferrer noopener">
+                  Special Offer
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="footer__links">
+            <h3 class="footer__title">Company</h3>
+            <ul class="footer__links-list list">
+              <li class="footer__links-item">
+                <a href="" class="link footer__link" target="_blank" rel="noreferrer noopener">
+                  About
+                </a>
+              </li>
+              <li class="footer__links-item">
+                <a href="" class="link footer__link" target="_blank" rel="noreferrer noopener">
+                  Blog
+                </a>
+              </li>
+              <li class="footer__links-item">
+                <a href="" class="link footer__link" target="_blank" rel="noreferrer noopener">
+                  Careers
+                </a>
+              </li>
+              <li class="footer__links-item">
+                <a href="" class="link footer__link" target="_blank" rel="noreferrer noopener">
+                  Services
+                </a>
+              </li>
+              <li class="footer__links-item">
+                <a href="" class="link footer__link" target="_blank" rel="noreferrer noopener">
+                  Privacy Policy
+                </a>
+              </li>
+              <li class="footer__links-item">
+                <a href="" class="link footer__link" target="_blank" rel="noreferrer noopener">
+                  Terms of Servise
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="footer__form">
+            <h3 class="footer__title">Join our Newsletter</h3>
+            <form name="email-form" autocomplete="off">
+              <label class="footer__input-label">
+                Drop your email below to get update, promotions, coupons, and more!
+                <input class="footer__input" type="email" name="email" placeholder="Enter you email"/>
+              </label>
+              <button class="footer__btn">
+                <svg width="32px" height="32px" fill="rgba(57, 61, 70, 1)">
+                  <use href="./images/icons/sprite.svg#icon-Arrow"></use>
+                </svg> 
+              </button>
+            </form>
+            
+          </div>
+      </div>
+      <span class="copyright">
+        Copiright &copy; Elliye. All Rights reserved
+      </span>
+    </div>
+  </footer>
+  <script src=" https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="./js/slick.min.js"></script>
+  <script src="./index.js" ></script>
+</body>
+</html>

@@ -1,0 +1,122 @@
+.hero__wrapper {
+  height: 400px;
+  background-color: $hero-background;
+  background-image: url('../images/hero-images/hero-background.jpg');
+  padding: 16px 0;
+}
+
+.hero__container {
+  position: relative;
+}
+
+.hero__img {
+  height: 368px;
+  object-fit: cover;
+}
+
+.hero__information {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  text-align: center;
+}
+
+.hero__additional-information {
+  display: none;
+}
+
+.hero__title {
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-family: Playfair Display;
+  font-weight: 700;
+  font-size: 42px;
+  color: $primary-text-color;
+}
+
+.hero__text {
+  display: inline-block;
+  font-size: 12px;
+  margin-bottom: 20px;
+  width: 286px;
+  margin-top: 0;
+  color: $white-color;
+}
+
+.hero__button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 145px;
+  height: 30px;
+  color: $white-color;
+  background-color: $dark-bcg-color;
+  font-size: 12px;
+
+  &-text {
+    margin-right: 10px;
+  }
+
+  &:hover,
+  &:focus {
+    background-color: $white-color;
+    transition: $animation-duration $animation-timing-function;
+  }
+}
+
+.hero__button:hover .hero__button-text,
+.hero__button:hover .hero__button-arrow,
+.hero__button:focus .hero__button-text,
+.hero__button:focus .hero__button-arrow {
+  color: $primary-text-color;
+  fill: $primary-text-color;
+}
+
+@media screen and (min-width: $desktop) {
+  .hero__wrapper {
+    height: 718px;
+    padding: 32px 0;
+  }
+
+  .hero__img {
+    width: 1600px;
+    height: 654px;
+    background-color: rgba(205, 207, 209, 1);
+  }
+
+  .hero__information {
+    top: 100px;
+    left: 283px;
+    text-align: left;
+  }
+
+  .hero__additional-information {
+    display: inline-block;
+    padding: 10px;
+    background-color: $white-color;
+    font-weight: 500;
+    margin-bottom: 32px;
+  }
+
+  .hero__title {
+    margin-bottom: 40px;
+    font-size: 72px;
+    color: $white-color;
+  }
+
+  .hero__text {
+    font-size: 18px;
+    line-height: 1.78;
+    margin-bottom: 80px;
+    width: 678px;
+    margin-top: 0;
+  }
+
+  .hero__button {
+    display: flex;
+    width: 245px;
+    height: 60px;
+    font-weight: 500;
+    font-size: 24px;
+  }
+}
