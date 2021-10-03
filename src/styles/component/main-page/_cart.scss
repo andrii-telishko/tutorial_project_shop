@@ -6,7 +6,7 @@
   width: 100%;
   height: 100%;
   background-color: rgba(57, 61, 70, 0.2);
-  transition: $animation-duration, $animation-timing-function;
+  transition: opacity 500ms $animation-timing-function;
   opacity: 0;
   z-index: -1;
 
@@ -27,12 +27,12 @@
   max-width: 400px;
   background-color: $white-color;
   padding: 20px 10px;
-  transition: $animation-duration $animation-timing-function;
+  transition: transform 500ms $animation-timing-function;
   transform: translateX(100%);
   overflow: scroll;
 
   &.show {
-    transform: translateX(0);
+    transform: translateX(0%);
   }
 
   & .icon-cross {
@@ -79,17 +79,16 @@
   }
 }
 
-@media screen and (min-width: 1432px) {
-}
+@media screen and (min-width: 361px) {
+  .cart {
+    right: 0;
 
-.cart {
-  right: 0;
+    & .mobile-btn {
+      display: block;
+    }
 
-  & .mobile-btn {
-    display: block;
-  }
-
-  &__btn {
-    margin-bottom: 0;
+    &__btn {
+      margin-bottom: 0;
+    }
   }
 }
