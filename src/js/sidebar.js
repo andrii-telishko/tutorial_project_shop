@@ -1,4 +1,4 @@
-import refs from '../refs';
+import refs from './refs';
 
 const closeCartMenu = () => {
   const expanded =

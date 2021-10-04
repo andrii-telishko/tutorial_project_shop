@@ -29,10 +29,11 @@
               </button>
             </li>
             <li class="header-features-list__item">
-              <button type="button" class="header-features-list__btn">
+              <button type="button" class="header-features-list__btn cart-btn">
                 <svg class="icon" width="24px" height="24px">
                   <use href="./images/icons/sprite.svg#icon-Cart"></use>
                 </svg>
+                <span class="cart-item-count">0</span>
               </button>
             </li>
             <li class="header-features-list__item">
@@ -43,8 +44,42 @@
               </button>
             </li>
           </ul>
+          <div class="cart-overlay">
+          <aside class="cart">
+           <button class="mobile-btn sidebar-btn" type="button" data-menu-button aria-expanded="false" aria-controls="mobile-conteiner">
+                <svg aria-label="Кнопка меню" class="mobile-img" width="24" height="24" viewBox="0 0 32 32 " fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path class="icon-cross"
+                    d="M31.708 25.708 22 16l9.708-9.708a1 1 0 0 0 0-1.414L27.122.292a1 1 0 0 0-1.414-.001L16 9.999 6.292.291a.998.998 0 0 0-1.414.001L.292 4.878a1 1 0 0 0 0 1.414L10 16 .292 25.708a.999.999 0 0 0 0 1.414l4.586 4.586a1 1 0 0 0 1.414 0L16 22l9.708 9.708a1 1 0 0 0 1.414 0l4.586-4.586a.999.999 0 0 0 0-1.414z" />
+                </svg>
+              </button>
+            <h3 class="cart__title">Your cart</h3>
+            <div class="cart__item">
+              <img src="./images/feature-images/blue-demin-jacket.jfif" alt="cart-img" class="cart-img">
+              <div class="cart-item-info">
+                <h5 class="cart-item__title">Blue Demin Jacket</h5>
+                <p class="cart-item__price">$9.99</p>
+                <button class="cart-item__remove-btn" type="button">Remove</button>
+                
+              </div>
+              <div class="cart-item__counter">
+                  <button class="cart-item__mark mark-btn">+</button>
+                  <span class="cart-item__mark">0</span>
+                  <button class="cart-item__mark mark-btn">-</button>
+                </div>
+            </div>
+            <h3 class="cart__total">
+              Total: $0
+            </h3>
+            <button class="cart__btn checkout-cart-btn" type="button">
+              Checkout
+            </button>
+          </aside>
         </div>
-        <ul class="checkout-nav list">
+      </div>
+        </div>
+        <div class="container">
+          <ul class="checkout-nav list">
           <li class="checkout-nav__item">
             <a href="index.html" class="checkout-nav__link link">Home ></a>
           </li>
@@ -55,6 +90,7 @@
             <a href="" class="checkout-nav__link link">Checkout</a>
           </li>
         </ul>
+        </div>
       </div>
     </header>
     <main>
@@ -654,6 +690,9 @@
         </span>
       </div>
     </footer>
+    <div class="loader">
+      <h2>Loading...</h2>
+    </div>
     <script src=" https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="./js/libs/jquery.maskedinput.min.js"></script>
   </body>
