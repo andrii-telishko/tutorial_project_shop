@@ -18,6 +18,7 @@ const refs = {
   sidebarCart: document.querySelector('.cart'),
   cartBtn: document.querySelector('.cart-btn'),
   loader: document.querySelector('.loader'),
+  cartItem: document.querySelector('.cart__item'),
 };
 
 export default refs;
