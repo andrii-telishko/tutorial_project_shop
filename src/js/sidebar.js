@@ -1,5 +1,4 @@
 import refs from './refs';
-import displayItemCart from './cart/displayItemCart';
 
 const closeCartMenu = () => {
   const expanded =
@@ -14,7 +13,6 @@ const closeCartMenu = () => {
 const openCartMenu = () => {
   refs.sidebarCart.classList.add('show');
   refs.cartOverlay.classList.add('show');
-  displayItemCart();
 };
 
 export { closeCartMenu, openCartMenu };

@@ -21,6 +21,9 @@ const refs = {
   cartItem: document.querySelector('.cart__item'),
   cartItemCount: document.querySelector('.cart-item-count'),
   cartTotal: document.querySelector('.cart__total'),
+  featuresLeftList: document.querySelector('.left-list'),
+  featuresRightList: document.querySelector('.right-list'),
+  featuresCard: document.querySelector('.feature-section__main-card'),
 };
 
 export default refs;
