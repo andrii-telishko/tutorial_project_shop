@@ -8,3 +8,7 @@ import { closeCartMenu, openCartMenu } from './js/sidebar';
 refs.menuBtn.addEventListener('click', openMobileMenu);
 refs.sidebarBtn.addEventListener('click', closeCartMenu);
 refs.cartBtn.addEventListener('click', openCartMenu);
+
+refs.cartItemCount.textContent = JSON.parse(
+  localStorage.getItem('cart'),
+).length;

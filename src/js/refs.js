@@ -19,6 +19,8 @@ const refs = {
   cartBtn: document.querySelector('.cart-btn'),
   loader: document.querySelector('.loader'),
   cartItem: document.querySelector('.cart__item'),
+  cartItemCount: document.querySelector('.cart-item-count'),
+  cartTotal: document.querySelector('.cart__total'),
 };
 
 export default refs;
