@@ -32,10 +32,10 @@
 
 .feature-section__list-card-title {
   font-weight: 500;
-  font-size: 18px;
+  font-size: 26px;
   line-height: 1.5;
 
-  margin-bottom: 4px;
+  margin-bottom: 20px;
   margin-top: 0;
 }
 
@@ -97,9 +97,7 @@
   }
 
   .feature-section__list-card-title {
-    font-size: 18px;
-
-    margin-bottom: 16px;
+    font-size: 24px;
   }
 
   .feature-section__main-card {
@@ -140,12 +138,12 @@
 
   .feature-section__main-card-btn {
     display: inherit;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 2px auto;
+    border-radius: 6px;
     width: 200px;
     height: 60px;
     background-color: $dark-bcg-color;
-    padding: 16px 47px;
+    padding: 16px 0;
     transition: $animation-duration $animation-timing-function;
 
     &:hover,

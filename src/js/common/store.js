@@ -6,10 +6,14 @@ const setupStore = products => {
   store = products.map(product => {
     const {
       id,
-      fields: { name, price, image: img },
+      name,
+      price,
+      image = 'https://images.philips.com/is/image/PhilipsConsumer/47PFL6704D_F7-IMS-en_US?$jpglarge$&wid=1250',
     } = product;
-    const image = img[0].thumbnails.large.url;
-    return { id, name, price, image };
+
+    const convertName = name.split(' ').slice(0, 3).join('');
+
+    return { id, name: convertName, price, image };
   });
   setStorageItem('store', store);
 };

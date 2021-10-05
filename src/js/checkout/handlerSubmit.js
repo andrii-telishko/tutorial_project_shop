@@ -1,4 +1,4 @@
-import refs from '../refs';
+import refs from '../common/refs';
 
 const handlerSubmit = e => {
   e.preventDefault();

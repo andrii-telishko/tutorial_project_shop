@@ -1,4 +1,4 @@
-const allProductsUrl = 'https://course-api.com/javascript-store-products';
+const BASE_URL = 'http://localhost:3030';
 
 const getStorageItem = item => {
   let storageItem = localStorage.getItem(item);
@@ -15,4 +15,4 @@ const setStorageItem = (name, item) => {
   localStorage.setItem(name, JSON.stringify(item));
 };
 
-export { allProductsUrl, getStorageItem, setStorageItem };
+export { BASE_URL, getStorageItem, setStorageItem };

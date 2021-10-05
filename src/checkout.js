@@ -1,10 +1,10 @@
 import './styles/main.scss';
 import 'normalize.css';
 import './js/checkout/masks';
-import refs from './js/refs';
+import refs from './js/common/refs';
 import changePaymentForm from './js/checkout/changePaymentForm';
 import { enableSubmitBtn, errorShowFn } from './js/checkout/formValidation';
-import { closeCartMenu, openCartMenu } from './js/sidebar';
+import { closeCartMenu, openCartMenu } from './js/common/sidebar';
 import handlerSubmit from './js/checkout/handlerSubmit';
 
 refs.paymentMethodForm[1].addEventListener('click', changePaymentForm);
