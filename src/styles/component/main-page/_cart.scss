@@ -1,0 +1,163 @@
+.cart-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(57, 61, 70, 0.2);
+  transition: opacity 500ms $animation-timing-function;
+  opacity: 0;
+  z-index: -100;
+
+  &.show {
+    opacity: 1;
+    z-index: 100;
+  }
+}
+
+.cart {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  max-width: 400px;
+  background-color: $white-color;
+  padding: 20px 10px;
+  transition: 500ms $animation-timing-function;
+
+  transform: translateX(100%);
+  overflow: scroll;
+  opacity: 0;
+  @media screen and (max-width: 400px) {
+    left: 0;
+  }
+
+  &.show {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+
+  & .icon-cross {
+    display: block;
+  }
+
+  & .mobile-btn {
+    margin-left: 0;
+  }
+
+  &__item {
+    margin-bottom: 100px;
+    display: block;
+  }
+
+  &__item-box {
+    display: flex;
+  }
+
+  &-img {
+    width: 75px;
+    height: 75px;
+    object-fit: cover;
+    margin-right: 5px;
+  }
+
+  &-item-info {
+    margin-right: 50px;
+    width: 150px;
+  }
+
+  &-item__title {
+    margin-top: 10px;
+    font-size: 16px;
+    margin-bottom: 0;
+  }
+
+  &-item__price {
+    color: $secondary-text-color;
+    font-size: 12px;
+    margin-bottom: -5px;
+    margin-top: 0;
+  }
+
+  &-item__remove-btn {
+    display: inline-block;
+    color: $secondary-text-color;
+    font-size: 12px;
+    border: 1px solid $secondary-text-color;
+  }
+
+  &-item__counter {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 10px;
+  }
+
+  &-item__mark {
+    font-size: 16px;
+  }
+
+  &__title,
+  &__total {
+    font-size: 24px;
+    margin-top: 0;
+    text-align: center;
+  }
+
+  &__total {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  &__btn {
+    display: block;
+    font-size: 18px;
+    background-color: $dark-bcg-color;
+    color: $white-color;
+    padding: 5px 20px;
+    margin-left: auto;
+    margin-right: auto;
+    // margin-bottom: 220px;
+    transition: $animation-duration $animation-timing-function;
+    border-radius: 4px;
+  }
+
+  &__btn:hover,
+  &__btn:focus {
+    background-color: $secondary-text-color;
+    color: $primary-text-color;
+  }
+}
+
+.mark-btn {
+  border: 1px solid $primary-text-color;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.sidebar-btn {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+@media screen and (min-width: 361px) {
+  .cart {
+    right: 0;
+
+    & .mobile-btn {
+      display: block;
+    }
+
+    &__btn {
+      margin-bottom: 0;
+    }
+  }
+}

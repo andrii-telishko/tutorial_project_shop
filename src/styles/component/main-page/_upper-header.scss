@@ -114,6 +114,26 @@
   }
 }
 
+.cart-btn {
+  position: relative;
+}
+
+.cart-item-count {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  z-index: 20;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  background-color: $dark-bcg-color;
+  color: $white-color;
+  border-radius: 50%;
+  font-size: 16px;
+}
+
 .header-features-list__btn:hover .icon,
 .header-features-list__btn:focus .icon {
   fill: currentColor;
@@ -184,7 +204,7 @@
 
   .header-features-list {
     display: inline-flex;
-    margin-left: 530px;
+    margin-left: 430px;
     justify-content: space-between;
     height: 24px;
     width: 168px;

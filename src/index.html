@@ -17,7 +17,7 @@
   <header class="header">
     <div class="container">
       <div class="header__upper">
-              <button class="mobile-btn" type="button" data-menu-button aria-expanded="false" aria-controls="mobile-conteiner">
+              <button class="mobile-btn burger-btn" type="button" data-menu-button aria-expanded="false" aria-controls="mobile-conteiner">
                 <svg aria-label="Кнопка меню" class="mobile-img" width="24" height="24" viewBox="0 0 32 32 " fill="none"
                   xmlns="http://www.w3.org/2000/svg">
                   <path class="icon-cross"
@@ -58,10 +58,11 @@
             </button>
           </li>
           <li class="header-features-list__item">
-            <button type="button" class="header-features-list__btn">
+            <button type="button" class="header-features-list__btn cart-btn">
               <svg class="icon" width="24px" height="24px">
                 <use href="./images/icons/sprite.svg#icon-Cart"> </use>
               </svg>
+              <span class="cart-item-count"></span>
             </button>
           </li>
           <li class="header-features-list__item">
@@ -72,6 +73,25 @@
             </button>
           </li>
         </ul>
+        <div class="cart-overlay">
+          <aside class="cart">
+           <button class="mobile-btn sidebar-btn" type="button" data-menu-button aria-expanded="false" aria-controls="mobile-conteiner">
+                <svg aria-label="Кнопка меню" class="mobile-img" width="24" height="24" viewBox="0 0 32 32 " fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path class="icon-cross"
+                    d="M31.708 25.708 22 16l9.708-9.708a1 1 0 0 0 0-1.414L27.122.292a1 1 0 0 0-1.414-.001L16 9.999 6.292.291a.998.998 0 0 0-1.414.001L.292 4.878a1 1 0 0 0 0 1.414L10 16 .292 25.708a.999.999 0 0 0 0 1.414l4.586 4.586a1 1 0 0 0 1.414 0L16 22l9.708 9.708a1 1 0 0 0 1.414 0l4.586-4.586a.999.999 0 0 0 0-1.414z" />
+                </svg>
+              </button>
+            <h3 class="cart__title">Your cart</h3>
+            <ul class="cart__item list"></ul>
+            <h3 class="cart__total">
+              Total: $0
+            </h3>
+            <button class="cart__btn" type="button">
+              Checkout
+            </button>
+          </aside>
+        </div>
       </div>
       <div class="header__lower" id="categories">
         <ul class="header__categories-list list">
@@ -209,83 +229,13 @@
         
           <ul class="feature-section__main-list list">
             <li>
-              <ul class="feature-section__list list left-list">
-                <li class="feature-section__list-item">
-                  <div class="feature-section__list-card">
-                    <img src="./images/feature-images/green-warm-jacket.jfif" alt="jacket" class="feature-section__list-card-img">
-                    <h3 class="feature-section__list-card-title">Green <br>
-                      Warm Jacket</h3>
-                    <span class="price">$299</span>
-                  </div>
-                </li>
-                <li class="feature-section__list-item">
-                  <div class="feature-section__list-card">
-                    <img src="./images/feature-images/blach-warm-jacket.webp" alt="black jacket" class="feature-section__list-card-img">
-                    <h3 class="feature-section__list-card-title">Black <br>
-                      Warm Jacket</h3>
-                    <span class="price">$299</span>
-                  </div>
-                </li>
-                <li class="feature-section__list-item">
-                  <div class="feature-section__list-card">
-                    <img src="./images/feature-images/black-warm-jacket2.jfif" alt="black jacket" class="feature-section__list-card-img">
-                    <h3 class="feature-section__list-card-title">Black <br>
-                      Warm Jacket</h3>
-                    <span class="price">$299</span>
-                  </div>
-                </li>
-                <li class="feature-section__list-item">
-                  <div class="feature-section__list-card">
-                    <img src="./images/feature-images/black-briefcaase.jfif" alt="black briefcase" class="feature-section__list-card-img">
-                    <h3 class="feature-section__list-card-title">Black <br> Brief Case</h3>
-                    <span class="price">$299</span>
-                  </div>
-                </li>
-              </ul>
+              <ul class="feature-section__list list left-list"></ul>
             </li>
             <li>
-              <div class="feature-section__main-card">
-                <img src="./images/feature-images/brown-casual-sneakers.jfif" alt="brown sneakers" class="feature-section__main-card-img">
-                <h3 class="feature-section__main-card-title">Brown <br> Casual Sneaker</h3>
-                <span class="feature-section__main-card-price">$299</span>
-                <button type="button" class="feature-section__main-card-btn">
-                  <span class="feature-section__main-card-btn-txt">Add to Cart</span></button>
-              </div>
+              <div class="feature-section__main-card"></div>
             </li>
             <li>
-              <ul class="feature-section__list list right-list">
-                <li class="feature-section__list-item">
-                  <div class="feature-section__list-card">
-                    <img src="./images/feature-images/blue-grey-warm-jacket.jpg" alt="warm jacket" class="feature-section__list-card-img">
-                    <h3 class="feature-section__list-card-title">Blue Grey <br>
-                    Warm Jacket</h3>
-                    <span class="price">$299</span>
-                  </div>
-                </li>
-                <li class="feature-section__list-item">
-                  <div class="feature-section__list-card">
-                    <img src="./images/feature-images/blue-demin-jacket.jfif" alt="demin jacket" class="feature-section__list-card-img">
-                    <h3 class="feature-section__list-card-title">Blue Denim <br> Jacket</h3>
-                    <span class="price">$299</span>
-                  </div>
-                </li>
-                <li class="feature-section__list-item">
-                  <div class="feature-section__list-card">
-                    <img src="./images/feature-images/classic-watch.jfif" alt="classic watch" class="feature-section__list-card-img">
-                    <h3 class="feature-section__list-card-title">Modern Classic
-                      <br> Watch</h3>
-                    <span class="price">$299</span>
-                  </div>
-                </li>
-                <li class="feature-section__list-item">
-                  <div class="feature-section__list-card">
-                    <img src="./images/feature-images/casual-watch.jfif" alt="casual watch" class="feature-section__list-card-img">
-                    <h3 class="feature-section__list-card-title">Casual <br>
-                    Classic Watch</h3>
-                    <span class="price">$299</span>
-                  </div>
-                </li>
-              </ul>
+              <ul class="feature-section__list list right-list"></ul>
             </li>
           </ul>
         </div>

@@ -1,5 +1,5 @@
 const refs = {
-  menuBtn: document.querySelector('[data-menu-button]'),
+  menuBtn: document.querySelector('.burger-btn'),
   mobileMenu: document.querySelector('[data-menu]'),
   cardForm: document.querySelector('.payment-card'),
   transferForm: document.querySelector('.payment-bank'),
@@ -13,6 +13,17 @@ const refs = {
   paypalInput: document.querySelectorAll('.paypal-input'),
   agreeCheckbox: document.querySelector('.agree-checkbox'),
   errors: document.querySelectorAll('.error'),
+  sidebarBtn: document.querySelector('.sidebar-btn'),
+  cartOverlay: document.querySelector('.cart-overlay'),
+  sidebarCart: document.querySelector('.cart'),
+  cartBtn: document.querySelector('.cart-btn'),
+  loader: document.querySelector('.loader'),
+  cartItem: document.querySelector('.cart__item'),
+  cartItemCount: document.querySelector('.cart-item-count'),
+  cartTotal: document.querySelector('.cart__total'),
+  featuresLeftList: document.querySelector('.left-list'),
+  featuresRightList: document.querySelector('.right-list'),
+  featuresCard: document.querySelector('.feature-section__main-card'),
 };
 
 export default refs;
