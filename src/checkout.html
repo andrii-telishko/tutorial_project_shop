@@ -306,7 +306,6 @@
                     name="bank_name"
                     value="privat_bank"
                     class="radio-bank-btn"
-                    checked
                   />
                   PrivatBank
                 </label>
@@ -364,7 +363,6 @@
                     name="date_received"
                     class="checkout-form__input input-small bank-input"
                     required
-                    value="2021-01-01"
                   />
                 </label>
                 <label class="checkout-form__label label-textarea">
@@ -373,7 +371,7 @@
                     name="purpose_of_payment"
                     rows="5"
                     placeholder="Type your message"
-                    class="checkout-form__textarea"
+                    class="checkout-form__textarea bank-input"
                   ></textarea>
                 </label>
               </div>
@@ -382,7 +380,7 @@
                   Name of Receiver
                   <input
                     type="text"
-                    name="name_of_receiver"
+                    name="name_of_receiver_paypal"
                     class="checkout-form__input paypal-input"
                     required
                     pattern="^[a-zA-Z -]+$"
@@ -393,7 +391,7 @@
                   Account Number
                   <input
                     type="number"
-                    name="name_of_account"
+                    name="name_of_account_paypal"
                     class="checkout-form__input paypal-input"
                     required
                   />

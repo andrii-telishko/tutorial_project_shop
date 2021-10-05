@@ -5,6 +5,7 @@ import refs from './js/refs';
 import changePaymentForm from './js/checkout/changePaymentForm';
 import { enableSubmitBtn, errorShowFn } from './js/checkout/formValidation';
 import { closeCartMenu, openCartMenu } from './js/sidebar';
+import handlerSubmit from './js/checkout/handlerSubmit';
 
 refs.paymentMethodForm[1].addEventListener('click', changePaymentForm);
 refs.form.addEventListener('input', enableSubmitBtn);
@@ -32,6 +33,4 @@ window.addEventListener('DOMContentLoaded', () => {
   refs.loader.setAttribute('style', 'display: none');
 });
 
-refs.cartItemCount.textContent = JSON.parse(
-  localStorage.getItem('cart'),
-).length;
+refs.form.addEventListener('submit', handlerSubmit);
