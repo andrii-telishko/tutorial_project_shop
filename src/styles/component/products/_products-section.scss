@@ -1,0 +1,10 @@
+.products {
+  width: 100%;
+  border: 1px solid black;
+  background-color: burlywood;
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}

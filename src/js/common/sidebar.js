@@ -15,4 +15,14 @@ const openCartMenu = () => {
   refs.cartOverlay.classList.add('show');
 };
 
-export { closeCartMenu, openCartMenu };
+const addToCart = e => {
+  if (e.target.nodeName === 'BUTTON') {
+    openCartMenu();
+    console.log(e.target.dataset.id);
+  } else {
+    openCartMenu();
+    console.log(e.target.parentElement.dataset.id);
+  }
+};
+
+export { closeCartMenu, openCartMenu, addToCart };

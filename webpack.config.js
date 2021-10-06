@@ -56,6 +56,7 @@ module.exports = {
   entry: {
     index: ['@babel/polyfill', './src/index.js'],
     checkout: ['@babel/polyfill', './src/checkout.js'],
+    products: ['@babel/polyfill', './src/products.js'],
   },
   output: {
     filename: 'js/[name][contenthash].js',
@@ -82,6 +83,14 @@ module.exports = {
       template: './src/checkout.html',
       filename: 'checkout.html',
       chunks: ['checkout'],
+      minify: {
+        collapseWhitespace: !devMode,
+      },
+    }),
+    new HTMLWebpackPlugin({
+      template: './src/products.html',
+      filename: 'products.html',
+      chunks: ['products'],
       minify: {
         collapseWhitespace: !devMode,
       },
