@@ -1,4 +1,3 @@
-import refs from '../common/refs';
 import fetchProducts from './fetchProducts';
 import { setupStore, store } from '../common/store';
 import {

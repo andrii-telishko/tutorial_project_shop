@@ -6,7 +6,7 @@ const choosingCard = e => {
     const checkedId = e.target.getAttribute('data-id');
 
     renderMainCard(checkedId);
-  } else {
+  } else if (e.target.parentNode.nodeName === 'BUTTON') {
     const checkedId = e.target.parentNode.getAttribute('data-id');
     renderMainCard(checkedId);
   }
