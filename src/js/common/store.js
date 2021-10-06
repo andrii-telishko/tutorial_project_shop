@@ -4,13 +4,7 @@ let store = getStorageItem('store');
 
 const setupStore = products => {
   store = products.map(product => {
-    const {
-      id,
-      name,
-      price,
-      image = 'https://images.philips.com/is/image/PhilipsConsumer/47PFL6704D_F7-IMS-en_US?$jpglarge$&wid=1250',
-      updatedAt,
-    } = product;
+    const { id, name, price, image, updatedAt } = product;
 
     const convertName = name.split(' ').slice(0, 3).join('');
     const convertDate = updatedAt.split('').slice(14, 16).join('');
