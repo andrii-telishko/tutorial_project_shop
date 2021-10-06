@@ -23,8 +23,7 @@
   width: 100%;
   height: 245px;
   margin-bottom: 8px;
-  background-color: $first-photo-bcg;
-  object-fit: cover;
+  object-fit: contain;
 }
 
 .popular__title {
@@ -37,8 +36,10 @@
   margin-left: auto;
 }
 
-.popular__rating {
-  margin: 2px 0;
+.popular-btn {
+  display: inline-flex;
+  text-align: center;
+  align-items: center;
 }
 
 @media screen and (min-width: $desktop) {
@@ -58,8 +59,13 @@
   }
 
   .popular__card {
-    border: none;
+    border: 1px solid transparent;
     text-align: center;
+
+    &:hover {
+      background-color: $second-photo-bcg;
+      border: 1px solid $primary-text-color;
+    }
   }
 
   .popular__img {

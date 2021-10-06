@@ -1,8 +1,8 @@
 import { BASE_URL } from '../common/utils';
 
 const fetchProducts = async () => {
-  const response = await fetch(`${BASE_URL}/products?$limit=8`).catch(error =>
-    console.log(error),
+  const response = await fetch(`${BASE_URL}/products?type=Game&$limit=8`).catch(
+    error => console.log(error),
   );
 
   if (response) {

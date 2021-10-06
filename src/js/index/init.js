@@ -4,7 +4,6 @@ import { setupStore, store } from '../common/store';
 
 const init = async () => {
   const products = await fetchProducts();
-
   if (products) {
     setupStore(products.data);
 
@@ -13,7 +12,7 @@ const init = async () => {
 
     featuresLeftList
       .map(product => {
-        const { name, price, image, id } = product;
+        const { name, image, id } = product;
         refs.featuresLeftList.insertAdjacentHTML(
           'beforeend',
           `<li class="feature-section__list-item" >
@@ -62,6 +61,54 @@ const init = async () => {
         );
       })
       .join('');
+
+    const updatingStore = [...store].sort(
+      (firstProduct, secondProduct) =>
+        secondProduct.updatedAt - firstProduct.updatedAt,
+    );
+
+    updatingStore.slice(0, 4).map(product => {
+      const { id, name, price, image } = product;
+      refs.arrivalList.insertAdjacentHTML(
+        'beforeend',
+        `
+      <li class="arrival__item">
+              <div class="arrival__card">
+                <img src="${image}" alt="${name}" class="arrival__img">
+                <div class="arrival__card-info">
+                  <h4 class="arrival__card-title">${name}</h4>
+                  <p class="price arrival__price">$${price}</p>
+                </div>
+                <button type="button" class="arrival__btn-cart" data-id="${id}"></button>
+                <button type="button" class="arrival__btn-product" data-id="${id}"></button>
+              </div>
+            </li>`,
+      );
+    });
+
+    const popularityStore = [...store].sort(
+      (firstProduct, secondProduct) => secondProduct.price - firstProduct.price,
+    );
+
+    popularityStore.slice(0, 6).map(product => {
+      const { id, name, price, image } = product;
+      refs.popularList.insertAdjacentHTML(
+        'beforeend',
+        `
+      <li class="popular__item">
+            <div class="popular__card">
+              <img src="${image}" alt="${name}" class="popular__img">
+                <h3 class="popular__title">${name}</h3> 
+              <span class="price">$${price}</span>
+              <div class="popular__buttons">
+              
+ <button type="button" class="arrival__btn-cart popular-btn" data-id="${id}"></button>
+                <button type="button" class="arrival__btn-product popular-btn" data-id="${id}"></button>             </div>
+            </div>
+            
+          </li>`,
+      );
+    });
   }
 };
 

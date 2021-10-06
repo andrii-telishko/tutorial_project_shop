@@ -98,9 +98,19 @@
   }
 
   .feature-section__list-item {
-    border: none;
+    border: 1px solid transparent;
     width: 220px;
     position: static;
+
+    &:hover,
+    &:focus {
+      border: 1px solid $primary-text-color;
+      background-color: $dark-bcg-color;
+    }
+
+    &:hover .feature-section__list-card-title {
+      color: $white-color;
+    }
   }
 
   .feature-section__list-item-mobile-overlay {
@@ -138,10 +148,12 @@
   .feature-section__list-card-img {
     margin-bottom: 12px;
     height: 245px;
+    object-fit: contain;
+    background-color: transparent;
   }
 
   .feature-section__list-card-title {
-    font-size: 24px;
+    font-size: 20px;
   }
 
   .feature-section__main-card {
@@ -166,7 +178,6 @@
     margin-top: 0;
     font-weight: 500;
     font-size: 36px;
-    width: 286px;
     margin-bottom: 16px;
     margin-left: auto;
     margin-right: auto;
