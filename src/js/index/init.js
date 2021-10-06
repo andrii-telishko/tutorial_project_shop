@@ -20,8 +20,11 @@ const init = async () => {
                   <button class="feature-section__list-card" type="button" data-id="${id}">
                     <img src="${image}" alt="${name}" class="feature-section__list-card-img">
                     <h3 class="feature-section__list-card-title">${name}</h3>
-                    
-                  </button>
+                    </button>
+                    <div class="feature-section__list-item-mobile-overlay">
+                       <button type="button" class="feature-section__mobile-btn" data-id="${id}">
+                  <span class="feature-section__mobile-btn-txt">Product page</span></button>
+                    </div>
                 </li>`,
         );
       })
