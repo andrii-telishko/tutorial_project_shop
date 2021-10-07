@@ -30,6 +30,8 @@ const refs = {
   arrivalList: document.querySelector('.arrival__list'),
   popularList: document.querySelector('.popular__list'),
   productsList: document.querySelector('.products__list'),
+  priceRange: document.querySelector('.progress'),
+  priceFilter: document.querySelector('.price-filter'),
 };
 
 export default refs;
