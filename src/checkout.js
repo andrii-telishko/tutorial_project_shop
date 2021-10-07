@@ -1,10 +1,10 @@
 import './styles/main.scss';
 import 'normalize.css';
 import './js/checkout/masks';
+import './js/common/sidebar';
 import refs from './js/common/refs';
 import changePaymentForm from './js/checkout/changePaymentForm';
 import { enableSubmitBtn, errorShowFn } from './js/checkout/formValidation';
-import { closeCartMenu, openCartMenu } from './js/common/sidebar';
 import handlerSubmit from './js/checkout/handlerSubmit';
 
 refs.paymentMethodForm[1].addEventListener('click', changePaymentForm);
@@ -25,9 +25,6 @@ refs.transferForm.addEventListener('input', e => {
 refs.paypalForm.addEventListener('input', e => {
   errorShowFn(e, 'Please, enter name of receiver, using only letters');
 });
-
-refs.sidebarBtn.addEventListener('click', closeCartMenu);
-refs.cartBtn.addEventListener('click', openCartMenu);
 
 window.addEventListener('DOMContentLoaded', () => {
   refs.loader.setAttribute('style', 'display: none');
