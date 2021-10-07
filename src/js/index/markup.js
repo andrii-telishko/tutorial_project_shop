@@ -74,7 +74,7 @@ const markup = {
       <li class="popular__item products__item">
             <div class="popular__card">
               <img src="${image}" alt="${name}" class="popular__img">
-                <h3 class="popular__title">${name}</h3> 
+                <h3 class="popular__title products__title">${name}</h3> 
               <span class="price">$${price}</span>
               <div class="popular__buttons">
               <button type="button" class="arrival__btn-cart popular-btn" data-id="${id}"></button>
