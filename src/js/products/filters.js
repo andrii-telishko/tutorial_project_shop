@@ -34,4 +34,30 @@ refs.companiesFilter.addEventListener('click', e => {
     });
     renderProductsList(filteredProductsByCompanies);
   }
+
+  window.scrollTo({
+    top: 120,
+    behavior: 'smooth',
+  });
+});
+
+refs.priceFilter.addEventListener('input', e => {
+  refs.productsList.innerHTML = '';
+  const { value } = e.target;
+  const storePrices = store.map(({ price }) => price);
+  const maxPrice = Math.max(...storePrices);
+  const maxCeilPrice = Math.ceil(maxPrice);
+  refs.priceValue.textContent = `Value: $${value}`;
+  refs.priceRange.style.width = (value * 100) / maxCeilPrice + '%';
+
+  const filteredStoreByPrice = store.filter(product => {
+    const { price } = product;
+    if (price <= value) {
+      return product;
+    }
+  });
+  renderProductsList(filteredStoreByPrice);
+  if (filteredStoreByPrice.length === 0) {
+    refs.productsList.innerHTML = `<h2 class="error-message">Sorry, there is no games, you try to find</h2>`;
+  }
 });

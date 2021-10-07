@@ -20,8 +20,8 @@ const markup = {
                 <span class="feature-section__main-card-price">$${price}</span>
                 <button type="button" class="feature-section__main-card-btn" data-id="${id}">
                   <span class="feature-section__main-card-btn-txt">Add to Cart</span></button>
-                  <button type="button" class="feature-section__main-card-btn" data-id="${id}">
-                  <span class="feature-section__main-card-btn-txt">Product page</span></button>
+                  <a href="" type="button" class="feature-section__main-card-btn" data-id="${id}">
+                  <span class="feature-section__main-card-btn-txt">Product page</span></a>
               `;
   },
 
@@ -48,7 +48,7 @@ const markup = {
                   <p class="price arrival__price">$${price}</p>
                 </div>
                 <button type="button" class="arrival__btn-cart" data-id="${id}"></button>
-                <button type="button" class="arrival__btn-product" data-id="${id}"></button>
+                <a href="" type="button" class="arrival__btn-product" data-id="${id}"></a>
               </div>
             </li>`;
   },
@@ -62,7 +62,7 @@ const markup = {
               <span class="price">$${price}</span>
               <div class="popular__buttons">
               <button type="button" class="arrival__btn-cart popular-btn" data-id="${id}"></button>
-                <button type="button" class="arrival__btn-product popular-btn" data-id="${id}"></button> 
+                <a href=""  type="button" class="arrival__btn-product popular-btn" data-id="${id}"></a> 
                 </div>
             </div>
             
@@ -78,7 +78,7 @@ const markup = {
               <span class="price">$${price}</span>
               <div class="popular__buttons">
               <button type="button" class="arrival__btn-cart popular-btn" data-id="${id}"></button>
-                <button type="button" class="arrival__btn-product popular-btn" data-id="${id}"></button> 
+                <a h ref="" type="button" class="arrival__btn-product popular-btn" data-id="${id}"></a> 
                 </div>
             </div>
             

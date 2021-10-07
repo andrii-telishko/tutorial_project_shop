@@ -1,12 +1,8 @@
 import { openCartMenu } from './sidebar';
 
 const addToCart = e => {
-  if (e.target.nodeName === 'BUTTON') {
+  if (e.target.nodeName === 'BUTTON' || e.target.nodeName === 'SPAN') {
     openCartMenu();
-    console.log(e.target.dataset.id);
-  } else {
-    openCartMenu();
-    console.log(e.target.parentElement.dataset.id);
   }
 };
 

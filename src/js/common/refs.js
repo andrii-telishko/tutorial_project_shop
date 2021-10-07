@@ -35,6 +35,7 @@ const refs = {
   range: document.querySelector('.range'),
   searchFilter: document.querySelector('.search-filter'),
   companiesFilter: document.querySelector('.companies-list'),
+  priceValue: document.querySelector('.price-value'),
 };
 
 export default refs;
