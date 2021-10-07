@@ -32,6 +32,8 @@ const refs = {
   productsList: document.querySelector('.products__list'),
   priceRange: document.querySelector('.progress'),
   priceFilter: document.querySelector('.price-filter'),
+  range: document.querySelector('.range'),
+  searchFilter: document.querySelector('.search-filter'),
 };
 
 export default refs;

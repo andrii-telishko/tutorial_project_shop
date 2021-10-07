@@ -2,7 +2,7 @@ import { store } from '../common/store';
 import markup from '../index/markup';
 import refs from '../common/refs';
 
-const renderProductsList = () => {
+const renderProductsList = store => {
   store.map(({ id, name, price, image }) => {
     refs.productsList.insertAdjacentHTML(
       'beforeend',
