@@ -18,7 +18,6 @@ const changePaymentForm = e => {
 };
 
 const resetForm = (firstElement, secondElement) => {
-  [...refs.buyerFormInput].map(item => (item.value = ''));
   [...firstElement].map(item => (item.value = ''));
   [...secondElement].map(item => (item.value = ''));
 };
