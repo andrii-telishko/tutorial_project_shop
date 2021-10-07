@@ -20,3 +20,18 @@ refs.searchFilter.addEventListener('input', e => {
     renderProductsList(store);
   }
 });
+
+refs.companiesFilter.addEventListener('click', e => {
+  refs.productsList.innerHTML = '';
+  if (e.target.textContent === 'All') {
+    renderProductsList(store);
+  } else {
+    const filteredProductsByCompanies = store.filter(product => {
+      const { manufacturer } = product;
+      if (manufacturer === e.target.textContent) {
+        return product;
+      }
+    });
+    renderProductsList(filteredProductsByCompanies);
+  }
+});

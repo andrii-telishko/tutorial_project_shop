@@ -4,12 +4,19 @@ let store = getStorageItem('store');
 
 const setupStore = products => {
   store = products.map(product => {
-    const { id, name, price, image, updatedAt } = product;
+    const { id, name, price, image, updatedAt, manufacturer } = product;
 
     const convertName = name.split(' ').slice(0, 3).join('');
     const convertDate = updatedAt.split('').slice(14, 16).join('');
 
-    return { id, name: convertName, price, image, updatedAt: convertDate };
+    return {
+      id,
+      name: convertName,
+      price,
+      image,
+      updatedAt: convertDate,
+      manufacturer,
+    };
   });
   setStorageItem('store', store);
 };
