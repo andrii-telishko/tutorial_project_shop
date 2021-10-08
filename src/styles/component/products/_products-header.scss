@@ -1,0 +1,60 @@
+@media screen and (min-width: $desktop) {
+  .products-logo {
+    margin-left: 0;
+  }
+
+  .products__feature-list {
+    margin-left: 0;
+    width: auto;
+  }
+
+  .products-features-list__item:not(:last-child) {
+    margin-right: 26px;
+  }
+
+  .search-form {
+    position: relative;
+  }
+
+  .search-input {
+    border: $border $hero-background;
+    width: 500px;
+    height: 48px;
+    padding: 10px 0 10px 32px;
+
+    &::placeholder {
+      color: $secondary-text-color;
+      font-size: 18px;
+      line-height: 1.5;
+    }
+
+    &:focus {
+      border: $border $primary-text-color;
+    }
+  }
+
+  .search-button {
+    width: 48px;
+    height: 48px;
+    background-color: $dark-bcg-color;
+    position: absolute;
+  }
+
+  .login-button {
+    height: 48px;
+    padding: 0 16px;
+    color: $white-color;
+    background-color: $dark-bcg-color;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.5;
+    border: $border transparent;
+
+    &:hover,
+    &:focus {
+      color: $primary-text-color;
+      border: $border $dark-bcg-color;
+      background-color: transparent;
+    }
+  }
+}
