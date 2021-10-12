@@ -57,7 +57,7 @@ module.exports = {
     index: ['@babel/polyfill', './src/index.js'],
     checkout: ['@babel/polyfill', './src/js/checkout/checkout.js'],
     products: ['@babel/polyfill', './src/js/products/products.js'],
-    categories: ['@babel/polyfill', './src/js/categories.js'],
+    categories: ['@babel/polyfill', './src/js/category/categories.js'],
   },
   output: {
     filename: 'js/[name][contenthash].js',

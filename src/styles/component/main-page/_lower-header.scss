@@ -1,139 +1,63 @@
 .header__lower {
-  display: none;
+  position: relative;
 }
 
-// .header__categories-list {
-//   display: flex;
-//   flex-wrap: wrap;
-//   justify-content: center;
-//   padding: 10px 0;
-// }
+.header__categories-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 10px 0;
+}
 
-// .header__categories-item {
-//   text-align: center;
-//   width: 60px;
-//   margin: 2px;
-//   border: $border transparent;
+.categories-item {
+  border-radius: 4px;
+  font-size: 10px;
+  text-align: center;
+  margin: 2px;
 
-//   &:focus {
-//     border: $border $primary-text-color;
-//   }
-// }
+  &:hover,
+  &:focus {
+    color: $white-color;
+    background-color: $dark-bcg-color;
+  }
+}
 
-// .category-img {
-//   width: 50px;
-//   height: 50px;
-//   margin-left: auto;
-//   margin-right: auto;
-// }
+.category-img {
+  width: 35px;
+  height: 35px;
+  margin-left: auto;
+  margin-right: auto;
+}
 
-// .categories-title {
-//   margin: 0;
-//   font-weight: 700;
-//   font-size: 10px;
-// }
+.rest-categories-list {
+  background-color: rgba(159, 159, 159, 0.95);
+  position: absolute;
+  color: $white-color;
+  right: 0;
+  transform: translateY(-100%);
+  opacity: 0;
+  visibility: hidden;
+  transition: $animation-duration $animation-timing-function;
+  text-align: center;
 
-// .categories-total {
-//   font-size: 8px;
-//   margin: 0;
-// }
-
-// .category-games {
-//   width: 100%;
-//   background-color: $first-photo-bcg;
-//   position: absolute;
-//   bottom: 0;
-//   z-index: 50;
-//   transform: translateY(0);
-//   opacity: 0;
-//   visibility: hidden;
-//   transition: opacity $animation-duration $animation-timing-function;
-//   padding: 10px;
-
-//   &.visible {
-//     visibility: visible;
-//     opacity: 0.95;
-//     transform: translateY(100%);
-//   }
-// }
-
-// .category-product-item {
-//   margin: 4px;
-//   width: 100px;
-//   text-align: center;
-// }
-
-// .category-product-title {
-//   font-size: 10px;
-//   margin: 0;
-// }
-
-// .category-product-price {
-//   font-size: 12px;
-//   margin: 0;
-// }
-
-// .category-products-buttons {
-//   display: flex;
-//   justify-content: center;
-
-//   & .category-btn {
-//     width: 18px;
-//     height: 18px;
-//   }
-// }
-
-// .category-list {
-//   display: flex;
-//   flex-wrap: wrap;
-//   justify-content: center;
-// }
-
-// .header__categories-btn {
-//   width: 100%;
-//   color: inherit;
-// }
-
-// .header__categories-btn:hover,
-// .header__categories-btn:focus {
-//   transition: $animation-duration $animation-timing-function;
-//   color: $primary-text-color;
-// }
-
-// .header__categories-icon {
-//   width: 60px;
-//   height: 60px;
-//   fill: $first-photo-bcg;
-// }
-
-// .header__categories-btn:hover .header__categories-icon,
-// .header__categories-btn:focus .header__categories-icon {
-//   fill: currentColor;
-// }
+  &.open {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    z-index: 105;
+  }
+}
 
 @media screen and (min-width: $desktop) {
-  .header__lower {
-    position: relative;
-    display: block;
-  }
   .header__categories-list {
-    display: flex;
-    justify-content: center;
     padding: 0;
   }
 
   .categories-item {
     padding-top: 10px;
     padding-bottom: 10px;
-
-    border-radius: 4px;
+    margin: 0;
     font-size: 20px;
-
-    &:hover,
-    &:focus {
-      color: $white-color;
-      background-color: $dark-bcg-color;
-    }
 
     &:not(:last-child) {
       margin-right: 24px;
@@ -143,26 +67,5 @@
   .category-img {
     width: 65px;
     height: 65px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .rest-categories-list {
-    background-color: rgba(159, 159, 159, 0.95);
-    position: absolute;
-    color: $white-color;
-    right: 0;
-    transform: translateY(-100%);
-    opacity: 0;
-    visibility: hidden;
-    transition: $animation-duration $animation-timing-function;
-    text-align: center;
-
-    &.open {
-      opacity: 1;
-      visibility: visible;
-      transform: translateY(0);
-      z-index: 105;
-    }
   }
 }

@@ -35,6 +35,9 @@ const refs = {
   closeCategories: document.querySelector('.close-categories-btn'),
   categoriesProductsList: document.querySelector('.category-list'),
   restCategories: document.querySelector('.rest-categories-list'),
+  productsListByCategories: document.querySelector('.category__list'),
+  categoryTitle: document.querySelector('.category-title'),
+  totalProductsInfo: document.querySelector('.total-products'),
 };
 
 export default refs;
