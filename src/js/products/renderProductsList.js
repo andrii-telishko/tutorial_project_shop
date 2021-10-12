@@ -9,8 +9,6 @@ const renderProductsList = store => {
       markup.productsMarkup(id, name, price, image),
     );
   });
-
-  refs.loader.setAttribute('style', 'display: none');
 };
 
 export default renderProductsList;

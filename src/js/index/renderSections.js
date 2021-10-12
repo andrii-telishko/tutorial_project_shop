@@ -64,16 +64,6 @@ const renderPopularSection = store => {
 };
 
 const renderCategories = store => {
-  // const categories = store.map(({ categories }) => categories);
-  // const allCategories = [];
-  // categories.map(categories => {
-  //   categories.map(category => {
-  //     allCategories.push(category);
-  //   });
-  // });
-
-  // const sortCategories = [...new Set(allCategories.map(name => name))];
-  // console.log(sortCategories);
   const sortCategories = getCategories(store);
 
   sortCategories.slice(1).map(category => {
