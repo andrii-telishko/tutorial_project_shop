@@ -1,5 +1,6 @@
 import refs from '../common/refs';
 import markup from './markup';
+import getCategories from './getCategories';
 
 const renderFeatureSection = store => {
   const featuresLeftList = store.slice(0, 4);
@@ -62,4 +63,44 @@ const renderPopularSection = store => {
   });
 };
 
-export { renderFeatureSection, renderArrivalSection, renderPopularSection };
+const renderCategories = store => {
+  // const categories = store.map(({ categories }) => categories);
+  // const allCategories = [];
+  // categories.map(categories => {
+  //   categories.map(category => {
+  //     allCategories.push(category);
+  //   });
+  // });
+
+  // const sortCategories = [...new Set(allCategories.map(name => name))];
+  // console.log(sortCategories);
+  const sortCategories = getCategories(store);
+
+  sortCategories.slice(1).map(category => {
+    const productsByCategory = store.filter(product => {
+      if (product.categories.includes(category) && category !== 'Video Games') {
+        return product;
+      }
+    });
+
+    refs.categoriesList.insertAdjacentHTML(
+      'beforeend',
+      `<li class="header__categories-item">
+          <button type="button" data-name="${category}">
+          
+          <img src="${productsByCategory[0].image}" alt="${category}" class="category-img">
+          <h5 class="categories-title">${category}</h5>
+          <p class="categories-total">Total Games: ${productsByCategory.length}</p>
+          
+          </button>
+          </li>`,
+    );
+  });
+};
+
+export {
+  renderFeatureSection,
+  renderArrivalSection,
+  renderPopularSection,
+  renderCategories,
+};

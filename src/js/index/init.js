@@ -5,10 +5,10 @@ import {
   renderFeatureSection,
   renderArrivalSection,
   renderPopularSection,
+  renderCategories,
 } from './renderSections';
 
 const init = () => {
-  // const products = await fetchProducts();
   const xhr = new XMLHttpRequest();
   xhr.open('GET', `${BASE_URL}/products?type=Game&$limit=24`);
 
@@ -22,6 +22,8 @@ const init = () => {
       const products = xhr.response;
       if (products) {
         setupStore(products.data);
+
+        renderCategories(store);
 
         renderFeatureSection(store);
 

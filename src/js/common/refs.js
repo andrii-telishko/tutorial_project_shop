@@ -30,6 +30,10 @@ const refs = {
   arrivalList: document.querySelector('.arrival__list'),
   popularList: document.querySelector('.popular__list'),
   productsList: document.querySelector('.products__list'),
+  categoriesList: document.querySelector('.header__categories-list'),
+  categoriesOverlay: document.querySelector('.category-games'),
+  closeCategories: document.querySelector('.close-categories-btn'),
+  categoriesProductsList: document.querySelector('.category-list'),
 };
 
 export default refs;
