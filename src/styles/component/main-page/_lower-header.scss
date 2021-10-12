@@ -118,29 +118,25 @@
   }
   .header__categories-list {
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
     padding: 0;
   }
 
-  .header__categories-item {
+  .categories-item {
     padding-top: 10px;
     padding-bottom: 10px;
-    border: $border transparent;
+
     border-radius: 4px;
+    font-size: 20px;
 
     &:hover,
     &:focus {
-      border: $border $primary-text-color;
+      color: $white-color;
+      background-color: $dark-bcg-color;
     }
 
     &:not(:last-child) {
       margin-right: 24px;
-    }
-
-    & .category-btn {
-      width: 24px;
-      height: 24px;
     }
   }
 
@@ -151,70 +147,22 @@
     margin-right: auto;
   }
 
-  .categories-title {
-    margin: 0;
-    font-size: 16px;
-  }
-
-  .categories-total {
-    font-size: 12px;
-    margin: 0;
-  }
-
-  .category-games {
-    width: 100%;
-    background-color: $first-photo-bcg;
+  .rest-categories-list {
+    background-color: rgba(159, 159, 159, 0.95);
     position: absolute;
-    bottom: 0;
-    z-index: 50;
-    transform: translateY(0);
+    color: $white-color;
+    right: 0;
+    transform: translateY(-100%);
     opacity: 0;
     visibility: hidden;
-    transition: opacity $animation-duration $animation-timing-function;
-    padding: 10px;
-
-    &.visible {
-      visibility: visible;
-      opacity: 0.85;
-      transform: translateY(100%);
-    }
-  }
-
-  .category-product-item {
-    margin: 4px;
-    width: 140px;
+    transition: $animation-duration $animation-timing-function;
     text-align: center;
 
-    & button {
-      cursor: auto;
+    &.open {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+      z-index: 105;
     }
-  }
-
-  .category-product-title {
-    font-size: 14px;
-    margin: 0;
-  }
-
-  .category-product-price {
-    font-size: 14px;
-    margin: 0;
-  }
-
-  .category-products-buttons {
-    display: flex;
-    justify-content: center;
-
-    & .category-btn {
-      width: 24px;
-      height: 24px;
-      margin: 2px;
-      cursor: pointer;
-    }
-  }
-
-  .category-list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
   }
 }

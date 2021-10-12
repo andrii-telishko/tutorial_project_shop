@@ -9,7 +9,6 @@ const setupStore = products => {
 
     const convertName = name.split(' ').slice(0, 3).join('');
     const convertDate = updatedAt.split('').slice(14, 16).join('');
-    const convertCategories = categories.map(category => category.name);
 
     return {
       id,
@@ -18,7 +17,7 @@ const setupStore = products => {
       image,
       updatedAt: convertDate,
       manufacturer,
-      categories: convertCategories,
+      categories,
     };
   });
   setStorageItem('store', store);

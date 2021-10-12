@@ -34,6 +34,7 @@ const refs = {
   categoriesOverlay: document.querySelector('.category-games'),
   closeCategories: document.querySelector('.close-categories-btn'),
   categoriesProductsList: document.querySelector('.category-list'),
+  restCategories: document.querySelector('.rest-categories-list'),
 };
 
 export default refs;
