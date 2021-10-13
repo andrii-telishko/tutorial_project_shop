@@ -1,6 +1,6 @@
 import refs from '../common/refs';
 import { store } from '../common/store';
-import markup from './markup';
+import featuresCardTpl from '../../templates/main/featuresCard.hbs';
 
 const choosingCard = e => {
   if (e.target.nodeName === 'BUTTON') {
@@ -15,13 +15,7 @@ const choosingCard = e => {
 
 const renderMainCard = checkedId => {
   const checkedCard = store.find(({ id }) => id === +checkedId);
-  const { id, name, price, image } = checkedCard;
-  refs.featuresCard.innerHTML = markup.featureCardMarkup(
-    id,
-    name,
-    price,
-    image,
-  );
+  refs.featuresCard.innerHTML = featuresCardTpl(checkedCard);
 };
 
 export default choosingCard;

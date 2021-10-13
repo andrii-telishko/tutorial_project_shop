@@ -1,5 +1,6 @@
 import refs from '../common/refs';
 import { BASE_URL } from '../common/utils';
+import productsListTpl from '../../templates/common/productsList.hbs';
 
 const renderCategory = () => {
   const id = window.location.search.split('').slice(4).join('');
@@ -27,27 +28,16 @@ const renderCategory = () => {
           document.title = `${title} Category`;
         }
 
-        refs.totalProductsInfo.textContent = `${response.total} Products`;
-
-        products.map(({ id, name, price, image }) => {
-          const convertName = name.split(' ').slice(0, 3).join('');
-
-          refs.productsListByCategories.insertAdjacentHTML(
-            'beforeend',
-            `<li class="popular__item products__item">
-            <div class="popular__card">
-              <img src="${image}" alt="${name}" class="popular__img">
-                <h3 class="popular__title products__title">${convertName}</h3> 
-              <span class="price">$${price}</span>
-              <div class="popular__buttons">
-              <button type="button" class="arrival__btn-cart popular-btn" data-id="${id}"></button>
-                <a h ref="" type="button" class="arrival__btn-product popular-btn" data-id="${id}"></a> 
-                </div>
-            </div>
-            
-          </li>`,
-          );
+        const convertNameProducts = products.map(product => {
+          const convertName = product.name.split(' ').slice(0, 3).join('');
+          product.name = convertName;
+          return product;
         });
+
+        refs.productsListByCategories.innerHTML =
+          productsListTpl(convertNameProducts);
+
+        refs.totalProductsInfo.textContent = `${response.total} Products`;
       }
     }
   };

@@ -8,7 +8,7 @@ import { setupStore, store } from '../common/store';
 
 const initCards = () => {
   const xhr = new XMLHttpRequest();
-  xhr.open('GET', `${BASE_URL}/products?type=Game&$limit=100`);
+  xhr.open('GET', `${BASE_URL}/products?type=Game&$limit=60000`);
   xhr.responseType = 'json';
   xhr.send();
 
@@ -18,6 +18,7 @@ const initCards = () => {
     } else {
       const products = xhr.response;
       if (products) {
+        console.log(products.data);
         setupStore(products.data);
 
         renderFeatureSection(store);

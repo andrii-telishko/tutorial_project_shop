@@ -1,6 +1,7 @@
 import { BASE_URL } from '../common/utils';
 import refs from '../common/refs';
 import images from './images';
+import restCategoriesTpl from '../../templates/main/restCategories.hbs';
 
 const initCategories = () => {
   const xhr = new XMLHttpRequest();
@@ -42,14 +43,10 @@ const initCategories = () => {
 
         refs.categoriesList.innerHTML = [...categoriesMarkup, moreBtn].join('');
 
-        categories.map(({ id, name }) => {
-          refs.restCategories.insertAdjacentHTML(
-            'beforeend',
-            `<li>
-               <a class="link" href="categories.html?id=${id}">${name}</a>
-            </li>`,
-          );
-        });
+        refs.restCategories.insertAdjacentHTML(
+          'beforeend',
+          restCategoriesTpl(categories),
+        );
       }
     }
   };

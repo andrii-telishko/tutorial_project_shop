@@ -1,0 +1,13 @@
+{{#each this}}
+  <li class='arrival__item'>
+    <div class='arrival__card'>
+      <img src={{image}} alt={{name}} class='arrival__img' />
+      <div class='arrival__card-info'>
+        <h4 class='arrival__card-title'>{{name}}</h4>
+        <p class='price arrival__price'>${{price}}</p>
+      </div>
+      <button type='button' class='arrival__btn-cart' data-id={{id}}></button>
+      <a href='' type='button' class='arrival__btn-product' data-id={{id}}></a>
+    </div>
+  </li>
+{{/each}}

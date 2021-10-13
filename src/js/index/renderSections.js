@@ -1,36 +1,19 @@
 import refs from '../common/refs';
-import markup from './markup';
+import featuresLeftListTpl from '../../templates/main/featuresLeftList.hbs';
+import featuresCardTpl from '../../templates/main/featuresCard.hbs';
+import featuresRightListTpl from '../../templates/main/featuresRightList.hbs';
+import arrivalListTpl from '../../templates/main/arrivalList.hbs';
+import popularListTpl from '../../templates/main/popularList.hbs';
 
 const renderFeatureSection = store => {
   const featuresLeftList = store.slice(0, 4);
   const featuresRightList = store.slice(4, 8);
 
-  featuresLeftList
-    .map(product => {
-      const { name, image, id } = product;
-      refs.featuresLeftList.insertAdjacentHTML(
-        'beforeend',
-        markup.featureLeftListMarkup(id, name, image),
-      );
-    })
-    .join('');
+  refs.featuresLeftList.innerHTML = featuresLeftListTpl(featuresLeftList);
 
-  const { id, name, price, image } = store[0];
+  refs.featuresCard.insertAdjacentHTML('beforeend', featuresCardTpl(store[0]));
 
-  refs.featuresCard.insertAdjacentHTML(
-    'beforeend',
-    markup.featureCardMarkup(id, name, price, image),
-  );
-
-  featuresRightList
-    .map(product => {
-      const { name, image, id } = product;
-      refs.featuresRightList.insertAdjacentHTML(
-        'beforeend',
-        markup.featureRightListMarkup(id, name, image),
-      );
-    })
-    .join('');
+  refs.featuresRightList.innerHTML = featuresRightListTpl(featuresRightList);
 };
 
 const renderArrivalSection = store => {
@@ -39,13 +22,7 @@ const renderArrivalSection = store => {
       secondProduct.updatedAt - firstProduct.updatedAt,
   );
 
-  updatingStore.slice(0, 4).map(product => {
-    const { id, name, price, image } = product;
-    refs.arrivalList.insertAdjacentHTML(
-      'beforeend',
-      markup.arrivalMarkup(id, name, price, image),
-    );
-  });
+  refs.arrivalList.innerHTML = arrivalListTpl(updatingStore.slice(0, 4));
 };
 
 const renderPopularSection = store => {
@@ -53,13 +30,7 @@ const renderPopularSection = store => {
     (firstProduct, secondProduct) => secondProduct.price - firstProduct.price,
   );
 
-  popularityStore.slice(0, 6).map(product => {
-    const { id, name, price, image } = product;
-    refs.popularList.insertAdjacentHTML(
-      'beforeend',
-      markup.popularMarkup(id, name, price, image),
-    );
-  });
+  refs.popularList.innerHTML = popularListTpl(popularityStore.slice(0, 6));
 };
 
 export { renderFeatureSection, renderArrivalSection, renderPopularSection };
