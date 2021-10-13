@@ -38,6 +38,7 @@ const refs = {
   productsListByCategories: document.querySelector('.category__list'),
   categoryTitle: document.querySelector('.category-title'),
   totalProductsInfo: document.querySelector('.total-products'),
+  pagination: document.querySelector('.pagination-list'),
 };
 
 export default refs;

@@ -18,7 +18,6 @@ const initCards = () => {
     } else {
       const products = xhr.response;
       if (products) {
-        console.log(products.data);
         setupStore(products.data);
 
         renderFeatureSection(store);

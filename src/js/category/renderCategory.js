@@ -1,6 +1,6 @@
 import refs from '../common/refs';
 import { BASE_URL } from '../common/utils';
-import productsListTpl from '../../templates/common/productsList.hbs';
+import pagination from '../common/pagination';
 
 const renderCategory = () => {
   const id = window.location.search.split('').slice(4).join('');
@@ -34,10 +34,12 @@ const renderCategory = () => {
           return product;
         });
 
-        refs.productsListByCategories.innerHTML =
-          productsListTpl(convertNameProducts);
+        pagination(convertNameProducts);
 
-        refs.totalProductsInfo.textContent = `${response.total} Products`;
+        refs.totalProductsInfo.textContent =
+          products.length > 24
+            ? `Viewing 24 of ${response.total} products`
+            : `Viewing ${response.total} products`;
       }
     }
   };
