@@ -24,6 +24,12 @@ const refs = {
   featuresLeftList: document.querySelector('.left-list'),
   featuresRightList: document.querySelector('.right-list'),
   featuresCard: document.querySelector('.feature-section__main-card'),
+  radioBtnPaymentList: document.querySelectorAll('.radio-btn'),
+  radioBtnBankList: document.querySelectorAll('.radio-bank-btn'),
+  featureSection: document.querySelector('.feature-section__main-list'),
+  arrivalList: document.querySelector('.arrival__list'),
+  popularList: document.querySelector('.popular__list'),
+  productsList: document.querySelector('.products__list'),
 };
 
 export default refs;

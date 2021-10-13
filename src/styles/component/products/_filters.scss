@@ -1,0 +1,55 @@
+.products__filters {
+  display: none;
+}
+
+@media screen and (min-width: $desktop) {
+  .products__filters {
+    display: block;
+    width: 380px;
+    margin-right: 30px;
+    padding: 20px 10px;
+    margin-bottom: 10px;
+  }
+
+  .filter-title {
+    margin: 0;
+    margin-bottom: 32px;
+    color: $dark-bcg-color;
+    font-size: 18px;
+    line-height: 1.5;
+  }
+
+  .line {
+    border: 1px solid $first-photo-bcg;
+    width: 100%;
+    margin-bottom: 32px;
+  }
+
+  .categories-filter {
+    margin-bottom: 32px;
+  }
+
+  .price-form {
+    display: block;
+  }
+
+  .price-label {
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+  }
+
+  .price-text {
+    color: $secondary-text-color;
+    font-size: 18px;
+    display: flex;
+  }
+
+  .price-input {
+    margin-right: 16px;
+  }
+
+  .price-input:checked + .price-text {
+    color: $primary-text-color;
+  }
+}

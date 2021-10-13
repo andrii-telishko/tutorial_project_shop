@@ -10,9 +10,10 @@ const closeCartMenu = () => {
   refs.cartItem.innerHTML = '';
 };
 
-const openCartMenu = () => {
+export const openCartMenu = () => {
   refs.sidebarCart.classList.add('show');
   refs.cartOverlay.classList.add('show');
 };
 
-export { closeCartMenu, openCartMenu };
+refs.sidebarBtn.addEventListener('click', closeCartMenu);
+refs.cartBtn.addEventListener('click', openCartMenu);

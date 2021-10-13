@@ -18,7 +18,7 @@
       <div class="container">
         <div class="checkout-header">
           <a href="/" class="header__logo">
-            <img src="./images/brands/logo.png" alt="page logo" />
+            <img src="./images/logos/logo.png" alt="page logo" />
           </a>
           <ul class="header-features-list list">
             <li class="header-features-list__item">
@@ -66,10 +66,10 @@
             <a href="index.html" class="checkout-nav__link link">Home ></a>
           </li>
           <li class="checkout-nav__item">
-            <a href="" class="checkout-nav__link link">Shopping Cart ></a>
+            <a href="products.html" class="checkout-nav__link link">All Products ></a>
           </li>
           <li class="checkout-nav__item">
-            <a href="" class="checkout-nav__link link">Checkout</a>
+            <a href="" class="checkout-nav__link current link">Checkout</a>
           </li>
         </ul>
         </div>
@@ -77,25 +77,6 @@
     </header>
     <main>
       <h1 class="checkout__title">Checkout</h1>
-
-      <section class="checkout-progress">
-        <div class="container">
-          <ul class="checkout-progress__list list">
-            <li class="checkout-progress__item">
-              <div class="circle">1</div>
-              <p class="checkout-progress__txt">Shopping Cart</p>
-            </li>
-            <li class="checkout-progress__item">
-              <div class="circle">2</div>
-              <p class="checkout-progress__txt">Checkout</p>
-            </li>
-            <li class="checkout-progress__item">
-              <div class="circle">3</div>
-              <p class="checkout-progress__txt">Completed</p>
-            </li>
-          </ul>
-        </div>
-      </section>
 
       <section>
         <div class="container">
@@ -306,7 +287,6 @@
                     name="bank_name"
                     value="privat_bank"
                     class="radio-bank-btn"
-                    checked
                   />
                   PrivatBank
                 </label>
@@ -364,7 +344,6 @@
                     name="date_received"
                     class="checkout-form__input input-small bank-input"
                     required
-                    value="2021-01-01"
                   />
                 </label>
                 <label class="checkout-form__label label-textarea">
@@ -373,7 +352,7 @@
                     name="purpose_of_payment"
                     rows="5"
                     placeholder="Type your message"
-                    class="checkout-form__textarea"
+                    class="checkout-form__textarea bank-input"
                   ></textarea>
                 </label>
               </div>
@@ -382,7 +361,7 @@
                   Name of Receiver
                   <input
                     type="text"
-                    name="name_of_receiver"
+                    name="name_of_receiver_paypal"
                     class="checkout-form__input paypal-input"
                     required
                     pattern="^[a-zA-Z -]+$"
@@ -393,7 +372,7 @@
                   Account Number
                   <input
                     type="number"
-                    name="name_of_account"
+                    name="name_of_account_paypal"
                     class="checkout-form__input paypal-input"
                     required
                   />
