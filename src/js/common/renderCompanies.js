@@ -10,8 +10,8 @@ const renderCompanies = store => {
   companies.map(company => {
     refs.companiesFilter.insertAdjacentHTML(
       'beforeend',
-      `<li >
-        <button type="button" class="companies-filter__item">${company}</button>
+      `<li class="companies-filter__item">
+        <button type="button" class="companies-filter__button">${company}</button>
       </li>`,
     );
   });

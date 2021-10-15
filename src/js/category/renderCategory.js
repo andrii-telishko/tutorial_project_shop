@@ -1,6 +1,8 @@
 import refs from '../common/refs';
 import { BASE_URL } from '../common/utils';
 import pagination from '../common/pagination';
+import renderCompanies from '../common/renderCompanies';
+import filters from '../products/filters';
 
 const renderCategory = () => {
   const id = window.location.search.split('').slice(4).join('');
@@ -40,6 +42,9 @@ const renderCategory = () => {
           products.length > 24
             ? `Viewing 24 of ${response.total} products`
             : `Viewing ${response.total} products`;
+
+        renderCompanies(products);
+        filters(products);
       }
     }
   };
