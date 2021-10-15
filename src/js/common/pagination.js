@@ -13,7 +13,7 @@ const pagination = store => {
       const html = Handlebars.compile(productsListTpl(store));
       $('.products__list').html(html);
       window.scrollTo({
-        top: 120,
+        top: 0,
         behavior: 'smooth',
       });
     },

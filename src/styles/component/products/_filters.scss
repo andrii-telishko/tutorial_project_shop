@@ -5,9 +5,9 @@
 @media screen and (min-width: $desktop) {
   .products__filters {
     display: block;
-    width: 380px;
-    margin-right: 30px;
-    padding: 20px 10px;
+    width: 460px;
+    margin-right: 12px;
+    padding: 20px 4px;
     margin-bottom: 10px;
   }
 
@@ -25,8 +25,26 @@
     margin-bottom: 32px;
   }
 
-  .categories-filter {
+  .companies-filter {
     margin-bottom: 32px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: 840px;
+
+    &__item {
+      font-size: 16px;
+      color: $secondary-text-color;
+    }
+
+    &__item:focus,
+    &__item:hover {
+      color: $primary-text-color;
+    }
+
+    &__item.current {
+      color: $primary-text-color;
+    }
   }
 
   .price-form {

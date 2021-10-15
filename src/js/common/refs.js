@@ -39,6 +39,10 @@ const refs = {
   categoryTitle: document.querySelector('.category-title'),
   totalProductsInfo: document.querySelector('.total-products'),
   pagination: document.querySelector('.pagination-list'),
+  searchFilter: document.querySelector('.search-input'),
+  companiesFilter: document.querySelector('.companies-filter'),
+  priceFilter: document.querySelector('.price-form'),
+  priceInput: document.querySelectorAll('.price-input'),
 };
 
 export default refs;
