@@ -1,5 +1,5 @@
 import refs from '../common/refs';
-// import { store } from '../common/store';
+
 import companiesFilterBtn from '../common/companiesFilteredButtons';
 import {
   errorFn,
@@ -9,23 +9,49 @@ import {
 
 const filters = store => {
   let commonFilter = store;
+  const companiesFilterButtons = companiesFilterBtn();
 
   refs.searchFilter.addEventListener('input', e => {
+    const checkedBtn = companiesFilterButtons.find(button =>
+      button.classList.contains('current'),
+    );
     refs.productsList.innerHTML = '';
     const { value } = e.target;
     if (value) {
+      if (checkedBtn.textContent === 'All') {
+        commonFilter = store;
+      } else {
+        commonFilter = store.filter(product => {
+          const { manufacturer } = product;
+          if (manufacturer === checkedBtn.textContent) {
+            return product;
+          }
+        });
+      }
       const filteredStore = commonFilter.filter(product => {
         const { name } = product;
         if (name.toLowerCase().includes(value.toLowerCase())) {
           return product;
         }
       });
-      if (filteredStore.length === 0) {
+      commonFilter = filteredStore;
+      if (commonFilter.length === 0) {
         errorFn();
       } else {
-        renderFilteredProducts(filteredStore);
+        renderFilteredProducts(commonFilter);
       }
     } else {
+      if (checkedBtn.textContent === 'All') {
+        commonFilter = store;
+      } else {
+        commonFilter = store.filter(product => {
+          const { manufacturer } = product;
+          if (manufacturer === checkedBtn.textContent) {
+            return product;
+          }
+        });
+      }
+
       renderFilteredProducts(commonFilter);
     }
   });
@@ -34,7 +60,7 @@ const filters = store => {
     if (e.target.nodeName === 'BUTTON') {
       refs.productsList.innerHTML = '';
       refs.searchFilter.value = '';
-      const companiesFilterButtons = companiesFilterBtn();
+
       companiesFilterButtons.map(item => {
         if (item.classList.contains('current')) {
           item.classList.remove('current');
@@ -47,6 +73,7 @@ const filters = store => {
       if (e.target.textContent === 'All') {
         commonFilter = store;
         renderFilteredProducts(commonFilter);
+        [...refs.priceInput].forEach(input => (input.checked = false));
       } else {
         const filteredProductsByCompanies = store.filter(product => {
           const { manufacturer } = product;
@@ -67,7 +94,6 @@ const filters = store => {
   refs.priceFilter.addEventListener('change', () => {
     let priceStore = [];
     refs.productsList.innerHTML = '';
-
     const checkedInput = [...refs.priceInput].filter(input => input.checked);
 
     if (checkedInput.length === 0 || checkedInput.length === 4) {
@@ -97,7 +123,6 @@ const filters = store => {
             }
           });
         }
-
         if (priceStore.length > 0) {
           renderFilteredProducts(priceStore);
 
