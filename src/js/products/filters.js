@@ -79,6 +79,7 @@ const filters = store => {
       button.classList.contains('current'),
     );
     const company = checkedBtn.textContent;
+    refs.searchFilter.value = '';
 
     refs.productsList.innerHTML = '';
     const checkedInput = [...refs.priceInput].filter(input => input.checked);
