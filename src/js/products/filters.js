@@ -5,6 +5,9 @@ import {
   errorFn,
   renderFilteredProducts,
   topScroll,
+  findProductsByManufacturer,
+  addClassOnButton,
+  findProductsByPrice,
 } from '../common/filterFunctions';
 
 const filters = store => {
@@ -12,46 +15,23 @@ const filters = store => {
   const companiesFilterButtons = companiesFilterBtn();
 
   refs.searchFilter.addEventListener('input', e => {
-    const checkedBtn = companiesFilterButtons.find(button =>
-      button.classList.contains('current'),
-    );
     refs.productsList.innerHTML = '';
     const { value } = e.target;
+
     if (value) {
-      if (checkedBtn.textContent === 'All') {
-        commonFilter = store;
-      } else {
-        commonFilter = store.filter(product => {
-          const { manufacturer } = product;
-          if (manufacturer === checkedBtn.textContent) {
-            return product;
-          }
-        });
-      }
-      const filteredStore = commonFilter.filter(product => {
+      const filteredProducts = commonFilter.filter(product => {
         const { name } = product;
-        if (name.toLowerCase().includes(value.toLowerCase())) {
+        if (name.includes(value)) {
           return product;
         }
       });
-      commonFilter = filteredStore;
-      if (commonFilter.length === 0) {
-        errorFn();
+      if (filteredProducts.length > 0) {
+        renderFilteredProducts(filteredProducts);
       } else {
-        renderFilteredProducts(commonFilter);
+        renderFilteredProducts(filteredProducts);
+        errorFn();
       }
     } else {
-      if (checkedBtn.textContent === 'All') {
-        commonFilter = store;
-      } else {
-        commonFilter = store.filter(product => {
-          const { manufacturer } = product;
-          if (manufacturer === checkedBtn.textContent) {
-            return product;
-          }
-        });
-      }
-
       renderFilteredProducts(commonFilter);
     }
   });
@@ -60,30 +40,33 @@ const filters = store => {
     if (e.target.nodeName === 'BUTTON') {
       refs.productsList.innerHTML = '';
       refs.searchFilter.value = '';
+      const company = e.target.textContent;
+      const checkedInput = [...refs.priceInput].filter(input => input.checked);
 
-      companiesFilterButtons.map(item => {
-        if (item.classList.contains('current')) {
-          item.classList.remove('current');
-          return;
-        }
-      });
+      addClassOnButton(companiesFilterButtons, e.target);
 
-      e.target.classList.add('current');
-
-      if (e.target.textContent === 'All') {
+      if (checkedInput.length === 0 || checkedInput.length === 4) {
         commonFilter = store;
-        renderFilteredProducts(commonFilter);
-        [...refs.priceInput].forEach(input => (input.checked = false));
       } else {
-        const filteredProductsByCompanies = store.filter(product => {
-          const { manufacturer } = product;
-          if (manufacturer === e.target.textContent) {
-            return product;
-          }
-        });
+        commonFilter = findProductsByPrice(checkedInput, store);
+      }
 
-        renderFilteredProducts(filteredProductsByCompanies);
-        commonFilter = filteredProductsByCompanies;
+      if (company === 'All') {
+        if (commonFilter.length > 0) {
+          renderFilteredProducts(commonFilter);
+        } else {
+          renderFilteredProducts(commonFilter);
+          errorFn();
+        }
+      } else {
+        const companyFilter = findProductsByManufacturer(commonFilter, company);
+        if (companyFilter.length > 0) {
+          renderFilteredProducts(companyFilter);
+          commonFilter = companyFilter;
+        } else {
+          renderFilteredProducts(companyFilter);
+          errorFn();
+        }
       }
       topScroll();
     } else {
@@ -92,48 +75,36 @@ const filters = store => {
   });
 
   refs.priceFilter.addEventListener('change', () => {
-    let priceStore = [];
+    const checkedBtn = companiesFilterButtons.find(button =>
+      button.classList.contains('current'),
+    );
+    const company = checkedBtn.textContent;
+
     refs.productsList.innerHTML = '';
     const checkedInput = [...refs.priceInput].filter(input => input.checked);
+
+    if (company === 'All') {
+      commonFilter = store;
+    } else {
+      commonFilter = findProductsByManufacturer(store, company);
+    }
 
     if (checkedInput.length === 0 || checkedInput.length === 4) {
       renderFilteredProducts(commonFilter);
       topScroll();
     } else {
-      checkedInput.forEach(input => {
-        if (input.dataset.value === '10') {
-          commonFilter.forEach(product => {
-            if (product.price <= 10) {
-              priceStore.push(product);
-            }
-          });
-        } else if (input.dataset.value === '50') {
-          commonFilter.forEach(product => {
-            if (product.price >= 50) {
-              priceStore.push(product);
-            }
-          });
-        } else {
-          const minPrice = input.dataset.value.split('').slice(0, 2).join('');
-          const maxPrice = input.dataset.value.split('').slice(3).join('');
+      const priceStore = findProductsByPrice(checkedInput, commonFilter);
+      commonFilter = priceStore;
+      if (commonFilter.length > 0) {
+        renderFilteredProducts(commonFilter);
 
-          commonFilter.forEach(product => {
-            if (product.price >= minPrice && product.price <= maxPrice) {
-              priceStore.push(product);
-            }
-          });
-        }
-        if (priceStore.length > 0) {
-          renderFilteredProducts(priceStore);
+        topScroll();
+      } else {
+        renderFilteredProducts(commonFilter);
 
-          topScroll();
-        } else {
-          renderFilteredProducts(priceStore);
-
-          errorFn();
-          topScroll();
-        }
-      });
+        errorFn();
+        topScroll();
+      }
     }
   });
 };
