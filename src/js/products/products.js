@@ -7,6 +7,7 @@ import '../common/modal/modal';
 import refs from '../common/refs';
 import addToCart from '../common/addToCart';
 import { store } from '../common/store';
+
 import pagination from '../common/pagination';
 import renderCompanies from '../common/renderCompanies';
 import filters from '../common/filters/filters';
