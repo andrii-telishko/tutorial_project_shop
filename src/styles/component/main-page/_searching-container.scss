@@ -1,0 +1,53 @@
+.search-list {
+  padding: 8px;
+}
+
+.search-container__item {
+  margin-bottom: 12px;
+}
+
+.search-container__card {
+  display: flex;
+  align-items: center;
+}
+
+.search-container__img {
+  width: 100px;
+  height: 100px;
+  margin-right: 4px;
+}
+
+.search-container__title {
+  font-size: 16px;
+  margin: 0;
+}
+
+.search-container__price {
+  color: $secondary-text-color;
+  font-size: 16px;
+}
+
+.search-container__buttons {
+  margin-left: auto;
+}
+
+.search-container__button {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background-image: url('../images/icons/cart-icon.png');
+  background-position: center;
+  background-size: contain;
+  display: block;
+}
+
+.search-container__link {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+
+  display: block;
+  background-image: url('../images/icons/product-icon.png');
+  background-position: center;
+  background-size: contain;
+}

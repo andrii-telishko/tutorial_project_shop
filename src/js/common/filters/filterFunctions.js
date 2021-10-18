@@ -1,5 +1,5 @@
-import refs from './refs';
-import pagination from './pagination';
+import refs from '../refs';
+import pagination from '../pagination';
 
 const renderFilteredProducts = store => {
   pagination(store);

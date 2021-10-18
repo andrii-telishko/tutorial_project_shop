@@ -55,6 +55,7 @@
   line-height: 1.5;
   border: $border transparent;
   margin-bottom: 16px;
+  margin-left: 8px;
 
   &:hover,
   &:focus {
@@ -108,5 +109,6 @@
     padding: 0 16px;
     margin-bottom: 0;
     font-size: 14px;
+    margin-left: 8px;
   }
 }

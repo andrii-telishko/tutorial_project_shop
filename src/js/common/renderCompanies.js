@@ -1,5 +1,5 @@
-import refs from '../common/refs';
-import companiesFilterBtn from './companiesFilteredButtons';
+import refs from './refs';
+import companiesFilterBtn from './filters/companiesFilteredButtons';
 
 const renderCompanies = store => {
   const companies = [

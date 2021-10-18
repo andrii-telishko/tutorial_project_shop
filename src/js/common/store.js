@@ -23,6 +23,4 @@ const setupStore = products => {
   setStorageItem('store', store);
 };
 
-const findProduct = () => {};
-
-export { setupStore, store, findProduct };
+export { setupStore, store };

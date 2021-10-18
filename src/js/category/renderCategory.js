@@ -2,7 +2,7 @@ import refs from '../common/refs';
 import { BASE_URL } from '../common/utils';
 import pagination from '../common/pagination';
 import renderCompanies from '../common/renderCompanies';
-import filters from '../products/filters';
+import filters from '../common/filters/filters';
 
 const renderCategory = () => {
   const id = window.location.search.split('').slice(4).join('');

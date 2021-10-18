@@ -1,6 +1,21 @@
 const refs = {
+  // main page
+
   menuBtn: document.querySelector('.burger-btn'),
   mobileMenu: document.querySelector('[data-menu]'),
+  cartOverlay: document.querySelector('.cart-overlay'),
+  featuresLeftList: document.querySelector('.left-list'),
+  featuresRightList: document.querySelector('.right-list'),
+  featuresCard: document.querySelector('.feature-section__main-card'),
+  featureSection: document.querySelector('.feature-section__main-list'),
+  arrivalList: document.querySelector('.arrival__list'),
+  popularList: document.querySelector('.popular__list'),
+  searchBackdrop: document.querySelector('.search-backdrop'),
+  searchList: document.querySelector('.search-list'),
+  mainSearchInput: document.querySelector('.main-search__input'),
+
+  // checkout page
+
   cardForm: document.querySelector('.payment-card'),
   transferForm: document.querySelector('.payment-bank'),
   paypalForm: document.querySelector('.payment-paypal'),
@@ -13,29 +28,22 @@ const refs = {
   paypalInput: document.querySelectorAll('.paypal-input'),
   agreeCheckbox: document.querySelector('.agree-checkbox'),
   errors: document.querySelectorAll('.error'),
+  radioBtnPaymentList: document.querySelectorAll('.radio-btn'),
+  radioBtnBankList: document.querySelectorAll('.radio-bank-btn'),
+
+  // cart sidebar
+
   sidebarBtn: document.querySelector('.sidebar-btn'),
-  cartOverlay: document.querySelector('.cart-overlay'),
   sidebarCart: document.querySelector('.cart'),
   cartBtn: document.querySelector('.cart-btn'),
   loader: document.querySelector('.loader'),
   cartItem: document.querySelector('.cart__item'),
-  cartItemCount: document.querySelector('.cart-item-count'),
-  cartTotal: document.querySelector('.cart__total'),
-  featuresLeftList: document.querySelector('.left-list'),
-  featuresRightList: document.querySelector('.right-list'),
-  featuresCard: document.querySelector('.feature-section__main-card'),
-  radioBtnPaymentList: document.querySelectorAll('.radio-btn'),
-  radioBtnBankList: document.querySelectorAll('.radio-bank-btn'),
-  featureSection: document.querySelector('.feature-section__main-list'),
-  arrivalList: document.querySelector('.arrival__list'),
-  popularList: document.querySelector('.popular__list'),
+
+  // products and categories pages
+
   productsList: document.querySelector('.products__list'),
   categoriesList: document.querySelector('.header__categories-list'),
-  categoriesOverlay: document.querySelector('.category-games'),
-  closeCategories: document.querySelector('.close-categories-btn'),
-  categoriesProductsList: document.querySelector('.category-list'),
   restCategories: document.querySelector('.rest-categories-list'),
-  productsListByCategories: document.querySelector('.category__list'),
   categoryTitle: document.querySelector('.category-title'),
   totalProductsInfo: document.querySelector('.total-products'),
   pagination: document.querySelector('.pagination-list'),
@@ -43,6 +51,16 @@ const refs = {
   companiesFilter: document.querySelector('.companies-filter'),
   priceFilter: document.querySelector('.price-form'),
   priceInput: document.querySelectorAll('.price-input'),
+
+  // modal
+
+  modalInput: document.querySelectorAll('.modal-input'),
+  modalForm: document.querySelector('.modal-form'),
+  modalSubmitBtn: document.querySelector('.modal-submit-btn'),
+  modalCloseBtn: document.querySelector('.modal-btn'),
+  modalOpenBtn: document.querySelector('.login-button'),
+  modalBackdrop: document.querySelector('.backdrop'),
+  iconCross: document.querySelector('.modal-cross'),
 };
 
 export default refs;

@@ -1,6 +1,6 @@
-import refs from '../common/refs';
+import refs from '../refs';
 
-import companiesFilterBtn from '../common/companiesFilteredButtons';
+import companiesFilterBtn from './companiesFilteredButtons';
 import {
   errorFn,
   renderFilteredProducts,
@@ -8,7 +8,7 @@ import {
   findProductsByManufacturer,
   addClassOnButton,
   findProductsByPrice,
-} from '../common/filterFunctions';
+} from './filterFunctions';
 
 const filters = store => {
   let commonFilter = store;
@@ -79,6 +79,7 @@ const filters = store => {
       button.classList.contains('current'),
     );
     const company = checkedBtn.textContent;
+    refs.searchFilter.value = '';
 
     refs.productsList.innerHTML = '';
     const checkedInput = [...refs.priceInput].filter(input => input.checked);
