@@ -67,6 +67,11 @@ const refs = {
   productContainer: document.querySelector('.product'),
   productCount: document.querySelector('.product__total'),
   productQuantity: document.querySelector('.product__quantity'),
+  reviewForm: document.querySelector('.review__form'),
+  reviewFormButton: document.querySelector('.review__form-button'),
+  reviewFormInputs: document.querySelectorAll('.review__form-input'),
+  reviewList: document.querySelector('.review__list'),
+  reviewField: document.querySelector('.review__field'),
 };
 
 export default refs;
