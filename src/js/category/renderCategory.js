@@ -40,7 +40,7 @@ const renderCategory = () => {
 
         refs.totalProductsInfo.textContent =
           products.length > 24
-            ? `Viewing 24 of ${response.total} products`
+            ? `Viewing 24 of ${convertNameProducts.length} products`
             : `Viewing ${response.total} products`;
 
         renderCompanies(products);

@@ -58,6 +58,7 @@ module.exports = {
     checkout: ['@babel/polyfill', './src/js/checkout/checkout.js'],
     products: ['@babel/polyfill', './src/js/products/products.js'],
     categories: ['@babel/polyfill', './src/js/category/categories.js'],
+    productPage: ['@babel/polyfill', './src/js/productPage/productPage.js'],
   },
   output: {
     filename: 'js/[name][contenthash].js',
@@ -100,6 +101,14 @@ module.exports = {
       template: './src/categories.html',
       filename: 'categories.html',
       chunks: ['categories'],
+      minify: {
+        collapseWhitespace: !devMode,
+      },
+    }),
+    new HTMLWebpackPlugin({
+      template: './src/product-page.html',
+      filename: 'product-page.html',
+      chunks: ['productPage'],
       minify: {
         collapseWhitespace: !devMode,
       },
