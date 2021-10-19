@@ -1,9 +1,21 @@
-<div class='product'>
-  <img src='' alt='' />
-  <div class='product__info'>
-    <h2 class='product__title'></h2>
-    <span class='product__price price'></span>
-    <p class='product__description'></p>
-    <button type='button' class='product__button'>Add To Cart</button>
+<img src='{{image}}' alt='{{name}}' />
+<div class='product__info'>
+  <h2 class='product__title'>{{name}}</h2>
+  <span class='product__model'>Model: {{model}}</span>
+  <span class='product__manufacturer'>Manufacturer : {{manufacturer}}</span>
+  <div class='product__categories'>
+    <h5 class='product__categories-title'>Categories:</h5>
+    <ul class='product__categories-list list'>
+      {{#each categories}}
+        <li class='product__categories-item'><a
+            href='categories.html?id={{this.id}}'
+            class='link'
+          >{{this.name}}</a></li>
+      {{/each}}
+    </ul>
   </div>
+  <span class='product__price price'>${{price}}</span>
+  <div class='line'></div>
+  <p class='product__description'>{{description}}</p>
+  <button type='button' class='product__button'>Add To Cart</button>
 </div>

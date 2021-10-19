@@ -61,6 +61,10 @@ const refs = {
   modalOpenBtn: document.querySelector('.login-button'),
   modalBackdrop: document.querySelector('.backdrop'),
   iconCross: document.querySelector('.modal-cross'),
+
+  //product page
+
+  productContainer: document.querySelector('.product'),
 };
 
 export default refs;
