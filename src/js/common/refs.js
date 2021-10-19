@@ -65,6 +65,8 @@ const refs = {
   //product page
 
   productContainer: document.querySelector('.product'),
+  productCount: document.querySelector('.product__total'),
+  productQuantity: document.querySelector('.product__quantity'),
 };
 
 export default refs;

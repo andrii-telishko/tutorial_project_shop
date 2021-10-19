@@ -21,7 +21,7 @@ const initProductPage = () => {
       const convertName = product.name.split(' ').slice(0, 2).join(' ');
 
       document.title = convertName;
-      console.log(product);
+
       refs.productContainer.innerHTML = renderProduct(product);
     }
   };

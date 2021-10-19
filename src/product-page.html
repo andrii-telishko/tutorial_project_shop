@@ -68,7 +68,26 @@
     <main>
       <div class="container">
         <div class="product"></div>
-      </div>
+        <div class="review__container">
+          <div class="review__field">
+            <ul class="review__list list"></ul>
+          </div>
+          <div class="review__form-container">
+            <h3 class="review__form-title">Leave Review</h3>
+            <form class="review__form">
+            <label class="review__form-label">
+              Name
+              <input type="text" class="review__form-input" name="name">
+            </label>
+            <label class="review__form-label">
+              Right your message here
+              <textarea class="review__form-input" rows="8" placeholder="Type here..." name='message'></textarea>
+            </label>
+            <button class="review__form-button">Leave Review</button>
+          </form>
+          </div>
+        </div>
+      </div>  
     </main>
     <footer class="footer">
       <div class="container">
@@ -97,7 +116,7 @@
                     height="24px"
                     fill="rgba(159, 159, 159, 1)"
                   >
-                    <use href="./images/icons/sprite.svg#icon-EmailWhite"></use>
+                    <use href='./images/icons/sprite.svg#icon-EmailWhite'></use>
                   </svg>
                   elliye@support.com</a
                 >
