@@ -1,3 +1,7 @@
+.similar-section {
+  background-color: $first-photo-bcg;
+}
+
 .similar-products {
   padding: 12px;
   position: relative;
@@ -37,22 +41,22 @@
 
 .similar-slider .slick-arrow {
   position: absolute;
-  top: 10px;
+  top: 20px;
   font-size: 0;
   background-size: contain;
   background-repeat: no-repeat;
-  width: 80px;
-  height: 30px;
+  width: 60px;
+  height: 20px;
 }
 
 .similar-slider .slick-arrow.slick-prev {
   right: 60px;
-  background-image: url('../images/arrows/left-thin-arrow.jpg');
+  background-image: url('../images/arrows/left.png');
 }
 
 .similar-slider .slick-arrow.slick-next {
   right: 0;
-  background-image: url('../images/arrows/right-thin-arrow.png');
+  background-image: url('../images/arrows/right.png');
 }
 
 .similar-products__header {

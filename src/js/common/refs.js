@@ -75,6 +75,7 @@ const refs = {
   ratingList: document.querySelector('.product__rating-list'),
   ratingStars: document.querySelectorAll('.star'),
   sliderList: document.querySelector('.similar-slider'),
+  latestList: document.querySelector('.latest-slider'),
 };
 
 export default refs;
