@@ -72,6 +72,8 @@ const refs = {
   reviewFormInputs: document.querySelectorAll('.review__form-input'),
   reviewList: document.querySelector('.review__list'),
   reviewField: document.querySelector('.review__field'),
+  ratingList: document.querySelector('.product__rating-list'),
+  ratingStars: document.querySelectorAll('.star'),
 };
 
 export default refs;
