@@ -1,6 +1,7 @@
 import { BASE_URL } from '../common/utils';
 import renderProduct from '../../templates/product-page/product.hbs';
 import refs from '../common/refs';
+import initSimilarProducts from './initSimilarProducts';
 
 const initProductPage = () => {
   const id = window.location.search.split('').slice(4).join('');
@@ -23,6 +24,8 @@ const initProductPage = () => {
       document.title = convertName;
 
       refs.productContainer.innerHTML = renderProduct(product);
+
+      initSimilarProducts(convertName);
     }
   };
 

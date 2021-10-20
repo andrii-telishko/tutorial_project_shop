@@ -74,6 +74,7 @@ const refs = {
   reviewField: document.querySelector('.review__field'),
   ratingList: document.querySelector('.product__rating-list'),
   ratingStars: document.querySelectorAll('.star'),
+  sliderList: document.querySelector('.similar-slider'),
 };
 
 export default refs;

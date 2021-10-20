@@ -1,0 +1,9 @@
+{{#each this}}
+  <li class='similar-slider__item'>
+    <a href='product-page.html?id={{id}}' class='link'>
+      <img src={{image}} alt={{name}} class='similar-slider__img' />
+      <h5 class='similar-slider__title'>{{name}}</h5>
+      <span class='price'>${{price}}</span>
+    </a>
+  </li>
+{{/each}}
