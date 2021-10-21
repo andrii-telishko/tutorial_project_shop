@@ -76,6 +76,7 @@ const refs = {
   ratingStars: document.querySelectorAll('.star'),
   sliderList: document.querySelector('.similar-slider'),
   latestList: document.querySelector('.latest-slider'),
+  similarProductsBlock: document.querySelector('.similar-section'),
 };
 
 export default refs;

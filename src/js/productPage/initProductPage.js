@@ -5,6 +5,7 @@ import initSimilarProducts from './initSimilarProducts';
 import addToLatestProducts from './latestProductsData';
 import initCommonRatting from './initCommonRating';
 import initLatestProducts from './initLatestProducts';
+import renderReviews from './renderReviews';
 
 const initProductPage = () => {
   const id = window.location.search.split('').slice(4).join('');
@@ -29,10 +30,12 @@ const initProductPage = () => {
       document.title = convertName;
 
       refs.productContainer.innerHTML = renderProduct(product);
-      initCommonRatting(id);
+
       initSimilarProducts(convertName);
 
       initLatestProducts();
+      renderReviews();
+      initCommonRatting(id);
     }
   };
 

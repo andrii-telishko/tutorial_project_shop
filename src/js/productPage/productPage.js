@@ -12,8 +12,6 @@ import renderReviews from './renderReviews';
 
 initProductPage();
 
-renderReviews();
-
 refs.productContainer.addEventListener('click', incrementProduct);
 
 refs.reviewForm.addEventListener('input', enableReviewForm);

@@ -11,17 +11,18 @@ const initCommonRatting = id => {
 
   const ratings = storage.map(({ review_rating }) => +review_rating);
 
-  const commonRating =
-    ratings.reduce((sum, item) => {
-      return sum + item;
-    }, 0) / ratings.length;
+  let commonRating;
 
-  if (storage.length === 0) {
-    commonRatingElement.setAttribute('style', 'display: none');
+  if (ratings.length === 0) {
+    commonRating = 0;
+  } else {
+    commonRating =
+      ratings.reduce((sum, item) => {
+        return sum + item;
+      }, 0) / ratings.length;
   }
-  {
-    commonRatingElement.innerHTML = commonRating;
-  }
+
+  commonRatingElement.innerHTML = commonRating;
 };
 
 export default initCommonRatting;

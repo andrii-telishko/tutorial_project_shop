@@ -1,6 +1,8 @@
 import { setStorageItem, getStorageItem, USER_IMG } from '../common/utils';
 import refs from '../common/refs';
 import oneReview from '../../templates/product-page/oneReview.hbs';
+import initCommonRatting from './initCommonRating';
+import renderReviews from './renderReviews';
 
 const submitReviewForm = e => {
   e.preventDefault();
@@ -29,6 +31,10 @@ const submitReviewForm = e => {
   });
 
   setStorageItem(id, storage);
+
+  initCommonRatting(id);
+
+  renderReviews();
 
   e.target.reset();
 

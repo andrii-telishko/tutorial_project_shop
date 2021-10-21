@@ -10,7 +10,7 @@ const renderReviews = () => {
   if (storage.length === 0) {
     refs.reviewList.innerHTML = '<h4>There is no reviews yet</h4>';
   } else {
-    refs.reviewList.insertAdjacentHTML('beforeend', reviewItem(storage));
+    refs.reviewList.innerHTML = reviewItem(storage);
     productRating(storage);
   }
 };
