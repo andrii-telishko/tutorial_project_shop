@@ -7,7 +7,7 @@ const setupStore = products => {
     const { id, name, price, image, updatedAt, manufacturer, categories } =
       product;
 
-    const convertName = name.split(' ').slice(0, 3).join('');
+    const convertName = name.split(' ').slice(0, 3).join(' ');
     const convertDate = updatedAt.split('').slice(14, 16).join('');
 
     return {

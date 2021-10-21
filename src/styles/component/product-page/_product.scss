@@ -1,6 +1,24 @@
 .product {
   padding: 8px;
 
+  &__title {
+    margin-top: 24px;
+    margin-bottom: 0;
+  }
+
+  &__common-rating {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    border: $border $dark-bcg-color;
+    width: 40px;
+    height: 40px;
+    border-radius: 4px;
+    background-color: $second-photo-bcg;
+    font-size: 20px;
+    margin-bottom: 8px;
+  }
+
   &__price {
     font-size: 32px;
 
@@ -125,6 +143,13 @@
 
     &__info {
       margin-left: 40px;
+    }
+
+    &__common-rating {
+      width: 50px;
+      height: 50px;
+
+      font-size: 24px;
     }
 
     &__price {

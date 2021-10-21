@@ -3,8 +3,8 @@ import renderProduct from '../../templates/product-page/product.hbs';
 import refs from '../common/refs';
 import initSimilarProducts from './initSimilarProducts';
 import addToLatestProducts from './latestProductsData';
-import { getStorageItem } from '../common/utils';
-import sliderItem from '../../templates/product-page/sliderItem.hbs';
+import initCommonRatting from './initCommonRating';
+import initLatestProducts from './initLatestProducts';
 
 const initProductPage = () => {
   const id = window.location.search.split('').slice(4).join('');
@@ -29,12 +29,10 @@ const initProductPage = () => {
       document.title = convertName;
 
       refs.productContainer.innerHTML = renderProduct(product);
-
+      initCommonRatting(id);
       initSimilarProducts(convertName);
 
-      const latestProducts = getStorageItem('latestProducts');
-
-      refs.latestList.innerHTML = sliderItem(latestProducts);
+      initLatestProducts();
     }
   };
 

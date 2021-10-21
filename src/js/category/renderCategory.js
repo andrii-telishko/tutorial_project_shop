@@ -31,7 +31,7 @@ const renderCategory = () => {
         }
 
         const convertNameProducts = products.map(product => {
-          const convertName = product.name.split(' ').slice(0, 3).join('');
+          const convertName = product.name.split(' ').slice(0, 3).join(' ');
           product.name = convertName;
           return product;
         });
