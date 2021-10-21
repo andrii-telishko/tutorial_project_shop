@@ -1,4 +1,4 @@
-import { BASE_URL } from '../common/utils';
+import { BASE_URL, convertName } from '../common/utils';
 import renderProduct from '../../templates/product-page/product.hbs';
 import refs from '../common/refs';
 import initSimilarProducts from './initSimilarProducts';
@@ -25,13 +25,13 @@ const initProductPage = () => {
       const product = xhr.response.data[0];
 
       addToLatestProducts(product);
-      const convertName = product.name.split(' ').slice(0, 2).join(' ');
+      const newName = convertName(product.name);
 
-      document.title = convertName;
+      document.title = newName;
 
       refs.productContainer.innerHTML = renderProduct(product);
 
-      initSimilarProducts(convertName);
+      initSimilarProducts(newName);
 
       initLatestProducts();
       renderReviews();

@@ -18,4 +18,8 @@ const setStorageItem = (name, item) => {
   localStorage.setItem(name, JSON.stringify(item));
 };
 
-export { BASE_URL, getStorageItem, setStorageItem, USER_IMG };
+const convertName = name => {
+  return name.split(' ').slice(0, 3).join(' ');
+};
+
+export { BASE_URL, getStorageItem, setStorageItem, USER_IMG, convertName };

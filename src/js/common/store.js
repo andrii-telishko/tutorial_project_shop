@@ -1,4 +1,4 @@
-import { getStorageItem, setStorageItem } from './utils.js';
+import { getStorageItem, setStorageItem, convertName } from './utils.js';
 
 let store = getStorageItem('store');
 
@@ -7,12 +7,12 @@ const setupStore = products => {
     const { id, name, price, image, updatedAt, manufacturer, categories } =
       product;
 
-    const convertName = name.split(' ').slice(0, 3).join(' ');
+    const newName = convertName(name);
     const convertDate = updatedAt.split('').slice(14, 16).join('');
 
     return {
       id,
-      name: convertName,
+      name: newName,
       price,
       image,
       updatedAt: convertDate,
