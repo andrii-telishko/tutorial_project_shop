@@ -1,5 +1,6 @@
 .products-container {
   display: block;
+  position: relative;
 
   @media screen and (min-width: $desktop) {
     display: flex;

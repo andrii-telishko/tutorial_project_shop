@@ -61,7 +61,9 @@
                
                  <ul class="rest-categories-list list"></ul>
                
-            
+            <div class="loader">
+          <h2>Loading...</h2>
+        </div>
           </div>
           <ul class="checkout-nav list">
           <li class="checkout-nav__item">
@@ -106,6 +108,17 @@
            <section class="products">
               <div class="categories__header">
                 <span class="total-products"></span>
+                <form class="products__select-form">
+                  <label class='products__label'>
+                  Sort by
+                  <select name="sorting" class="products__select">
+                    <option value="no_select" class="products__select-option" selected>Please, select</option>
+                    <option value="new" class="products__select-option">Newer Items</option>
+                    <option value="old" class="products__select-option">Older Items</option>
+                    
+                  </select>
+                </label>
+                </form>
               </div>
               <ul class="products__list category__list  list"></ul>
               <div class="pagination-block"></div>

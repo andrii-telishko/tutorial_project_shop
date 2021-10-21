@@ -13,6 +13,7 @@ const refs = {
   searchBackdrop: document.querySelector('.search-backdrop'),
   searchList: document.querySelector('.search-list'),
   mainSearchInput: document.querySelector('.main-search__input'),
+  loader: document.querySelector('.loader'),
 
   // checkout page
 
@@ -51,6 +52,8 @@ const refs = {
   companiesFilter: document.querySelector('.companies-filter'),
   priceFilter: document.querySelector('.price-form'),
   priceInput: document.querySelectorAll('.price-input'),
+  select: document.querySelector('.products__select'),
+  selectForm: document.querySelector('.products__select-form'),
 
   // modal
 

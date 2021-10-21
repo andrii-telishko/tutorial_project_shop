@@ -36,7 +36,13 @@ const renderCategory = () => {
           return product;
         });
 
-        pagination(convertNameProducts);
+        const convertDataProducts = convertNameProducts.map(product => {
+          const newDate = product.updatedAt.split('').slice(14, 16).join('');
+          product.updatedAt = newDate;
+          return product;
+        });
+
+        pagination(convertDataProducts);
 
         refs.totalProductsInfo.textContent =
           products.length > 24

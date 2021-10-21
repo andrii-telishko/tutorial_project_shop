@@ -100,12 +100,25 @@
            <section class="products">
              <div class="categories__header">
                 <span class="total-products"></span>
+                <form class="products__select-form">
+                  <label class='products__label'>
+                  Sort by
+                  <select name="sorting" class="products__select">
+                    <option value="no_select" class="products__select-option" selected>Please, select</option>
+                    <option value="new" class="products__select-option">Newer Items</option>
+                    <option value="old" class="products__select-option">Older Items</option>
+                    
+                  </select>
+                </label>
+                </form>
               </div>
                <ul class="products__list list"></ul>
                <div class="pagination-block">
            </div>
            </section>
-           
+           <div class="loader">
+              <h2>Loading...</h2>
+           </div>
         </div>
     </main>
         <footer class="footer">
@@ -375,9 +388,7 @@
         </form>
       </div>
     </div>
-    <!-- <div class="loader">
-      <h2>Loading...</h2>
-    </div> -->
+    
     <script src=" https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="./js/libs/pagination.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"></script>
