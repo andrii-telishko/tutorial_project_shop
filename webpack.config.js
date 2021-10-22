@@ -55,8 +55,9 @@ module.exports = {
   mode: 'development',
   entry: {
     index: ['@babel/polyfill', './src/index.js'],
-    checkout: ['@babel/polyfill', './src/checkout.js'],
-    products: ['@babel/polyfill', './src/products.js'],
+    checkout: ['@babel/polyfill', './src/js/checkout/checkout.js'],
+    products: ['@babel/polyfill', './src/js/products/products.js'],
+    categories: ['@babel/polyfill', './src/js/category/categories.js'],
   },
   output: {
     filename: 'js/[name][contenthash].js',
@@ -91,6 +92,14 @@ module.exports = {
       template: './src/products.html',
       filename: 'products.html',
       chunks: ['products'],
+      minify: {
+        collapseWhitespace: !devMode,
+      },
+    }),
+    new HTMLWebpackPlugin({
+      template: './src/categories.html',
+      filename: 'categories.html',
+      chunks: ['categories'],
       minify: {
         collapseWhitespace: !devMode,
       },
@@ -160,6 +169,10 @@ module.exports = {
       {
         test: /\.html$/,
         use: ['html-loader'],
+      },
+      {
+        test: /\.hbs$/,
+        use: 'handlebars-loader',
       },
     ],
   },

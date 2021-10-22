@@ -1,11 +1,11 @@
-import './styles/main.scss';
+import '../../styles/main.scss';
 import 'normalize.css';
-import './js/checkout/masks';
-import './js/common/sidebar';
-import refs from './js/common/refs';
-import changePaymentForm from './js/checkout/changePaymentForm';
-import { enableSubmitBtn, errorShowFn } from './js/checkout/formValidation';
-import handlerSubmit from './js/checkout/handlerSubmit';
+import './masks';
+import '../common/sidebar';
+import refs from '../common/refs';
+import changePaymentForm from './changePaymentForm';
+import { enableSubmitBtn, errorShowFn } from './formValidation';
+import handlerSubmit from './handlerSubmit';
 
 refs.paymentMethodForm[1].addEventListener('click', changePaymentForm);
 refs.form.addEventListener('input', enableSubmitBtn);

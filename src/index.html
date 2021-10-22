@@ -30,9 +30,6 @@
           <ul class="main-navigation__list list" data-menu>
             
             <li class="main-navigation__item">
-              <a href="#categories" class="main-navigation__link link">Categories</a>
-            </li>
-            <li class="main-navigation__item">
               <a href="#arrivals" class="main-navigation__link link">New Arrival</a>
             </li>
             <li class="main-navigation__item">
@@ -49,14 +46,9 @@
         <a href="/" class="header__logo">
           <img src="./images/logos/logo.png" alt="page logo">
         </a>
+         <input type="text" name="main-search" placeholder="search" class="main-search__input">    
         <ul class="header-features-list list">
-          <li class="header-features-list__item">
-            <button type="button" class="header-features-list__btn">
-              <svg class="icon" width="24px" height="24px">
-                <use href="./images/icons/sprite.svg#icon-Search"> </use>
-              </svg>
-            </button>
-          </li>
+          
           <li class="header-features-list__item">
             <button type="button" class="header-features-list__btn cart-btn">
               <svg class="icon" width="24px" height="24px">
@@ -65,14 +57,15 @@
               <span class="cart-item-count">0</span>
             </button>
           </li>
-          <li class="header-features-list__item">
-            <button type="button" class="header-features-list__btn">
-              <svg class="icon" width="24px" height="24px">
-                <use href="./images/icons/sprite.svg#icon-Email"> </use>
-              </svg>
-            </button>
-          </li>
+          <li class="products-features-list__item">
+              <button type="button" class="login-button">Login</button>
+            </li>
         </ul>
+        <div class="search-backdrop is-hidden">
+          <div class="search-container">
+            <ul class="search-list list"></ul>
+          </div>
+        </div>
         <div class="cart-overlay">
           <aside class="cart">
            <button class="mobile-btn sidebar-btn" type="button" data-menu-button aria-expanded="false" aria-controls="mobile-conteiner">
@@ -94,71 +87,13 @@
         </div>
       </div>
       <div class="header__lower" id="categories">
-        <ul class="header__categories-list list">
-          <li class="header__categories-item">
-            <button class="header__categories-btn">
-              <svg class="header__categories-icon">
-                <use href="./images/icons/sprite.svg#icon-content"> </use>
-              </svg>
-            </button>
-          </li>
-          <li class="header__categories-item">
-            <button class="header__categories-btn" type="button">
-              <svg class="header__categories-icon" width="48px" height="83px">
-                <use href="./images/icons/sprite.svg#icon-shirts"> </use>
-              </svg>
-            </button>
-          </li>
-          <li class="header__categories-item">
-            <button class="header__categories-btn">
-              <svg class="header__categories-icon" width="51px" height="83px">
-                <use href="./images/icons/sprite.svg#icon-pants"> </use>
-              </svg>
-            </button>
-          </li>
-          <li class="header__categories-item">
-            <button class="header__categories-btn">
-              <svg class="header__categories-icon" width="55px" height="83px">
-                <use href="./images/icons/sprite.svg#icon-shoes"> </use>
-              </svg>
-            </button>
-          </li>
-          <li class="header__categories-item">
-            <button class="header__categories-btn">
-              <svg class="header__categories-icon" width="50px" height="83px">
-                <use href="./images/icons/sprite.svg#icon-dress"> </use>
-              </svg>
-            </button>
-          </li>
-          <li class="header__categories-item">
-            <button class="header__categories-btn">
-              <svg class="header__categories-icon" width="98px" height="83px">
-                <use href="./images/icons/sprite.svg#icon-accesories"> </use>
-              </svg>
-            </button>
-          </li>
-          <li class="header__categories-item">
-            <button class="header__categories-btn">
-              <svg class="header__categories-icon" width="48px" height="83px">
-                <use href="./images/icons/sprite.svg#icon-skirt"> </use>
-              </svg>
-            </button>
-          </li>
-          <li class="header__categories-item">
-            <button class="header__categories-btn">
-              <svg class="header__categories-icon" width="99px" height="83px">
-                <use href="./images/icons/sprite.svg#icon-underwear"> </use>
-              </svg>
-            </button>
-          </li>
-          <li class="header__categories-item">
-            <button class="header__categories-btn">
-              <svg class="header__categories-icon" width="48px" height="83px">
-                <use href="./images/icons/sprite.svg#icon-more"> </use>
-              </svg>
-            </button>
-          </li>
-        </ul>
+        <ul class="header__categories-list list"></ul>
+            <div class="cart-overlay"></div>
+               
+                 <ul class="rest-categories-list list"></ul>
+               
+            
+          </div>
       </div>
     </div>
   </header>
@@ -515,6 +450,29 @@
       </span>
     </div>
   </footer>
+  <div class="backdrop is-hidden">
+      <div class="modal">
+        <button class="modal-btn" type="button" data-menu-button aria-expanded="false" aria-controls="mobile-conteiner">
+                <svg aria-label="Кнопка меню" class="modal-img" width="24" height="24" viewBox="0 0 32 32 " fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path class="icon-cross modal-cross"
+                    d="M31.708 25.708 22 16l9.708-9.708a1 1 0 0 0 0-1.414L27.122.292a1 1 0 0 0-1.414-.001L16 9.999 6.292.291a.998.998 0 0 0-1.414.001L.292 4.878a1 1 0 0 0 0 1.414L10 16 .292 25.708a.999.999 0 0 0 0 1.414l4.586 4.586a1 1 0 0 0 1.414 0L16 22l9.708 9.708a1 1 0 0 0 1.414 0l4.586-4.586a.999.999 0 0 0 0-1.414z" />
+                </svg>
+        </button>
+        <h4 class="modal-title">Log In</h4>
+        <form class="modal-form">
+          <label class='modal-label'>
+            Email
+            <input type="text" name="email" class="modal-input" placeholder="Email" required pattern="^[A-Za-z0-9](([a-zA-Z0-9,=\.!\-#|\$%\^&\*\+/\?_`\{\}~]+)*)@(?:[0-9a-zA-Z-]+\.)+[a-zA-Z]{2,9}$">
+          </label>
+          <label class='modal-label'>
+            Password
+            <input type="password" name="password" class="modal-input" placeholder="Password" required minlength="10">
+          </label>
+          <button class='modal-submit-btn' disabled>Log In</button>
+        </form>
+      </div>
+    </div>
   <script src=" https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="./js/libs/slick.min.js"></script>
 </body>

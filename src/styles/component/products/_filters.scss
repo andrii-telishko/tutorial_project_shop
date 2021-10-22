@@ -1,17 +1,54 @@
 .products__filters {
+  display: block;
+  width: 100%;
+
+  padding: 10px 4px;
+  margin-bottom: 8px;
+}
+
+.filter-title {
   display: none;
+}
+
+.companies-filter {
+  display: none;
+}
+
+.price-form {
+  display: inline;
+}
+
+.price-label {
+  display: inline-flex;
+  align-items: center;
+
+  margin-right: 14px;
+}
+
+.price-text {
+  color: $secondary-text-color;
+  font-size: 18px;
+  display: flex;
+}
+
+.price-input {
+  margin-right: 6px;
+}
+
+.price-input:checked + .price-text {
+  color: $primary-text-color;
 }
 
 @media screen and (min-width: $desktop) {
   .products__filters {
-    display: block;
-    width: 380px;
-    margin-right: 30px;
-    padding: 20px 10px;
+    width: 460px;
+    margin-right: 12px;
+    padding: 20px 4px;
     margin-bottom: 10px;
   }
 
   .filter-title {
+    display: block;
     margin: 0;
     margin-bottom: 32px;
     color: $dark-bcg-color;
@@ -25,8 +62,29 @@
     margin-bottom: 32px;
   }
 
-  .categories-filter {
+  .companies-filter {
     margin-bottom: 32px;
+    display: flex;
+
+    flex-wrap: wrap;
+
+    &__button {
+      font-size: 16px;
+      color: $secondary-text-color;
+    }
+
+    &__item:not(:last-child) {
+      margin-right: 45px;
+    }
+
+    &__button:focus,
+    &__button:hover {
+      color: $primary-text-color;
+    }
+
+    &__button.current {
+      color: $primary-text-color;
+    }
   }
 
   .price-form {
@@ -35,21 +93,11 @@
 
   .price-label {
     display: flex;
-    align-items: center;
+    margin-right: 0;
     margin-bottom: 12px;
-  }
-
-  .price-text {
-    color: $secondary-text-color;
-    font-size: 18px;
-    display: flex;
   }
 
   .price-input {
     margin-right: 16px;
-  }
-
-  .price-input:checked + .price-text {
-    color: $primary-text-color;
   }
 }

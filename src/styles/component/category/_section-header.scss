@@ -1,0 +1,14 @@
+.total-products {
+  font-size: 12px;
+  color: $secondary-text-color;
+}
+
+@media screen and (min-width: $desktop) {
+  .categories__header {
+    margin-bottom: 10px;
+  }
+
+  .total-products {
+    font-size: 18px;
+  }
+}

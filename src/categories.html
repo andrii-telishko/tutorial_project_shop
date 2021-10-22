@@ -7,18 +7,17 @@
     <link
       href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;500;700&display=swap"
       rel="stylesheet">
-    <title>All Products</title>
+    <title>Category</title>
   </head>
   <body>
     <header class="header">
       <div class="container">
-        <div class="products-header">
+        <div class="checkout-header">
           <a href="/" class="products-logo">
             <img src="./images/logos/logo.png" alt="page logo" />
           </a>
           <form class="search-form">
              <input type="text" class="search-input" placeholder="Search here">
-
           </form>
           <ul class="header-features-list products__feature-list list">
             <li class="products-features-list__item">
@@ -29,7 +28,6 @@
                 <span class="cart-item-count">0</span>
               </button>
             </li>
-            
             <li class="products-features-list__item">
               <button type="button" class="login-button">Login</button>
             </li>
@@ -62,14 +60,14 @@
             <a href="index.html" class="checkout-nav__link link">Home ></a>
           </li>
           <li class="checkout-nav__item">
-            <a href="" class="checkout-nav__link link current">Products List</a>
+            <a href="" class="checkout-nav__link link current">Category</a>
           </li>
         </ul>
         </div> 
       </div>
     </header>
     <main>
-        <h1 class="checkout__title">Products List</h1>
+        <h1 class="checkout__title category-title"></h1>
         <div class="container products-container">
            <div class="products__filters">
              <h3 class="filter-title">Companies</h3>
@@ -98,14 +96,12 @@
              </form>
            </div>
            <section class="products">
-             <div class="categories__header">
+              <div class="categories__header">
                 <span class="total-products"></span>
               </div>
-               <ul class="products__list list"></ul>
-               <div class="pagination-block">
-           </div>
+              <ul class="products__list category__list  list"></ul>
+              <div class="pagination-block"></div>
            </section>
-           
         </div>
     </main>
         <footer class="footer">

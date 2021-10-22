@@ -1,0 +1,25 @@
+{{#each this}}
+  <li class='search-container__item'>
+    <div class='search-container__card'>
+      <img src={{image}} alt={{name}} class='search-container__img' />
+      <div class='search-container__info'>
+        <h3 class='search-container__title'>{{name}}</h3>
+        <span class='search-container__price'>${{price}}</span>
+      </div>
+      <div class='search-container__buttons'>
+        <button
+          type='button'
+          class='search-container__button'
+          data-id={{id}}
+        ></button>
+        <a
+          href=''
+          type='button'
+          class='search-container__link link'
+          data-id={{id}}
+        ></a>
+      </div>
+    </div>
+
+  </li>
+{{/each}}

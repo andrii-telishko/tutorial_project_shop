@@ -21,13 +21,7 @@
             <img src="./images/logos/logo.png" alt="page logo" />
           </a>
           <ul class="header-features-list list">
-            <li class="header-features-list__item">
-              <button type="button" class="header-features-list__btn">
-                <svg class="icon" width="24px" height="24px">
-                  <use href="./images/icons/sprite.svg#icon-Search"></use>
-                </svg>
-              </button>
-            </li>
+            
             <li class="header-features-list__item">
               <button type="button" class="header-features-list__btn cart-btn">
                 <svg class="icon" width="24px" height="24px">
@@ -36,13 +30,7 @@
                 <span class="cart-item-count">0</span>
               </button>
             </li>
-            <li class="header-features-list__item">
-              <button type="button" class="header-features-list__btn">
-                <svg class="icon" width="24px" height="24px">
-                  <use href="./images/icons/sprite.svg#icon-Email"></use>
-                </svg>
-              </button>
-            </li>
+            
           </ul>
           <div class="cart-overlay">
           <aside class="cart">
@@ -154,6 +142,7 @@
                   name="zip_code"
                   class="checkout-form__input input-small buyer-input"
                   required
+                  pattern="^[0-9]{2}(?:-[0-9]{3})?$"
                 />
               </label>
             </div>
@@ -228,6 +217,7 @@
                     name="card_number"
                     class="checkout-form__input input-middle card-input"
                     required
+                    pattern="^[0-9]{4}(?:-[0-9]{4})(?:-[0-9]{4})(?:-[0-9]{4})?$"
                   />
                 </label>
                 <label class="checkout-form__label label-small">
@@ -238,8 +228,7 @@
                     name="cvv_number"
                     class="checkout-form__input input-small card-input"
                     required
-                    max="999"
-                    min="101"
+                    pattern="^[0-9]{3}?$"
                   />
                 </label>
                 <label class="checkout-form__label payment-label">
