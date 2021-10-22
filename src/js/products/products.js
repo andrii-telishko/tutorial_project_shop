@@ -14,8 +14,6 @@ import filters from '../common/filters/filters';
 
 pagination(store);
 
-refs.totalProductsInfo.textContent = `Viewing 24 of ${store.length} products`;
-
 renderCompanies(store);
 
 refs.loader.setAttribute('style', 'display:none');

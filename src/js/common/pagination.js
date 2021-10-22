@@ -16,6 +16,7 @@ const pagination = store => {
         top: 0,
         behavior: 'smooth',
       });
+      refs.totalProductsInfo.textContent = `Viewing 24 of ${this.dataSource.length} products`;
     },
     afterIsLastPage: function () {
       refs.totalProductsInfo.textContent = `Viewing ${store.length % 24} of ${

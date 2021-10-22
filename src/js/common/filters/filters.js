@@ -21,7 +21,7 @@ const filters = store => {
     if (value) {
       const filteredProducts = commonFilter.filter(product => {
         const { name } = product;
-        if (name.includes(value)) {
+        if (name.toLowerCase().includes(value.toLowerCase())) {
           return product;
         }
       });
@@ -40,16 +40,35 @@ const filters = store => {
     if (e.target.nodeName === 'BUTTON') {
       refs.productsList.innerHTML = '';
       refs.searchFilter.value = '';
-      refs.selectForm.reset();
+      // refs.selectForm.reset();
       const company = e.target.textContent;
       const checkedInput = [...refs.priceInput].filter(input => input.checked);
 
       addClassOnButton(companiesFilterButtons, e.target);
 
-      if (checkedInput.length === 0 || checkedInput.length === 4) {
-        commonFilter = store;
+      let sortingData = [];
+
+      if (refs.select.value === 'new') {
+        const updatingStore = [...store].sort(
+          (firstProduct, secondProduct) =>
+            secondProduct.updatedAt - firstProduct.updatedAt,
+        );
+
+        sortingData = updatingStore;
+      } else if (refs.select.value === 'old') {
+        const updatingStore = [...store].sort(
+          (firstProduct, secondProduct) =>
+            firstProduct.updatedAt - secondProduct.updatedAt,
+        );
+        sortingData = updatingStore;
       } else {
-        commonFilter = findProductsByPrice(checkedInput, store);
+        sortingData = store;
+      }
+
+      if (checkedInput.length === 0 || checkedInput.length === 4) {
+        commonFilter = sortingData;
+      } else {
+        commonFilter = findProductsByPrice(checkedInput, sortingData);
       }
 
       if (company === 'All') {
@@ -81,15 +100,33 @@ const filters = store => {
     );
     const company = checkedBtn.textContent;
     refs.searchFilter.value = '';
-    refs.selectForm.reset();
 
     refs.productsList.innerHTML = '';
     const checkedInput = [...refs.priceInput].filter(input => input.checked);
 
-    if (company === 'All') {
-      commonFilter = store;
+    let sortingData = [];
+
+    if (refs.select.value === 'new') {
+      const updatingStore = [...store].sort(
+        (firstProduct, secondProduct) =>
+          secondProduct.updatedAt - firstProduct.updatedAt,
+      );
+
+      sortingData = updatingStore;
+    } else if (refs.select.value === 'old') {
+      const updatingStore = [...store].sort(
+        (firstProduct, secondProduct) =>
+          firstProduct.updatedAt - secondProduct.updatedAt,
+      );
+      sortingData = updatingStore;
     } else {
-      commonFilter = findProductsByManufacturer(store, company);
+      sortingData = store;
+    }
+
+    if (company === 'All') {
+      commonFilter = sortingData;
+    } else {
+      commonFilter = findProductsByManufacturer(sortingData, company);
     }
 
     if (checkedInput.length === 0 || checkedInput.length === 4) {
@@ -112,8 +149,30 @@ const filters = store => {
   });
 
   refs.select.addEventListener('change', e => {
+    const checkedBtn = companiesFilterButtons.find(button =>
+      button.classList.contains('current'),
+    );
+    const company = checkedBtn.textContent;
+
+    const checkedInput = [...refs.priceInput].filter(input => input.checked);
+
     refs.productsList.innerHTML = '';
     refs.searchFilter.value = '';
+
+    let filteredCompanies = [];
+
+    if (company === 'All') {
+      filteredCompanies = store;
+    } else {
+      filteredCompanies = findProductsByManufacturer(store, company);
+    }
+
+    if (checkedInput.length === 0 || checkedInput.length === 4) {
+      commonFilter = filteredCompanies;
+    } else {
+      commonFilter = findProductsByPrice(checkedInput, filteredCompanies);
+    }
+
     if (e.target.value === 'new') {
       const updatingStore = [...commonFilter].sort(
         (firstProduct, secondProduct) =>
