@@ -1,4 +1,4 @@
-const BASE_URL = 'http://localhost:3030';
+const BASE_URL = 'https://shrouded-taiga-44041.herokuapp.com';
 
 const USER_IMG =
   'http://1.bp.blogspot.com/-8INpbfQJJDU/T4DTA4aGGlI/AAAAAAAAANk/GDjrpjyh8m0/s1600/Alf_digital_painting_by_ezekdesigns.png';
