@@ -1,11 +1,11 @@
 import refs from '../common/refs';
-import { BASE_URL, convertName } from '../common/utils';
+import { BASE_URL, convertName, findId } from '../common/utils';
 import pagination from '../common/pagination';
 import renderCompanies from '../common/renderCompanies';
 import filters from '../common/filters/filters';
 
 const renderCategory = () => {
-  const id = window.location.search.split('').slice(4).join('');
+  const id = findId();
 
   const xhr = new XMLHttpRequest();
   xhr.open('GET', `${BASE_URL}/products?category.id=${id}&$limit=100`);

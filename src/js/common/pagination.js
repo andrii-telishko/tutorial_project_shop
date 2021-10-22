@@ -1,5 +1,5 @@
-// import { store } from './store';
 import productsListTpl from '../../templates/common/productsList.hbs';
+import refs from './refs';
 
 const pagination = store => {
   $('.pagination-block').pagination({
@@ -16,6 +16,11 @@ const pagination = store => {
         top: 0,
         behavior: 'smooth',
       });
+    },
+    afterIsLastPage: function () {
+      refs.totalProductsInfo.textContent = `Viewing ${store.length % 24} of ${
+        store.length
+      } products`;
     },
   });
 

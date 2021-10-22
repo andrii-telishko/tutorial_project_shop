@@ -1,4 +1,4 @@
-import { BASE_URL, convertName } from '../common/utils';
+import { BASE_URL, convertName, findId } from '../common/utils';
 import renderProduct from '../../templates/product-page/product.hbs';
 import refs from '../common/refs';
 import initSimilarProducts from './initSimilarProducts';
@@ -8,7 +8,7 @@ import initLatestProducts from './initLatestProducts';
 import renderReviews from './renderReviews';
 
 const initProductPage = () => {
-  const id = window.location.search.split('').slice(4).join('');
+  const id = findId();
 
   const xhr = new XMLHttpRequest();
 

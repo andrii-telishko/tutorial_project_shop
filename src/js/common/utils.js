@@ -22,4 +22,13 @@ const convertName = name => {
   return name.split(' ').slice(0, 3).join(' ');
 };
 
-export { BASE_URL, getStorageItem, setStorageItem, USER_IMG, convertName };
+const findId = () => window.location.search.split('').slice(4).join('');
+
+export {
+  BASE_URL,
+  getStorageItem,
+  setStorageItem,
+  USER_IMG,
+  convertName,
+  findId,
+};
