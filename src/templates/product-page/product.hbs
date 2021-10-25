@@ -1,4 +1,4 @@
-<img src='{{image}}' alt='{{name}}' />
+<img src='{{image}}' alt='{{name}}' class="product__img" />
 <div class='product__info'>
   <h2 class='product__title'>{{name}}</h2>
   <span class='product__common-rating'>0</span>
@@ -24,7 +24,7 @@
     <span class='product__total'>1</span>
     <button type='button' class='quantity plus'>+</button>
   </div>
-  <button type='button' class='product__button'>
+  <button type='button' class='product__button' data-id={{id}}>
     Add To Cart
     <span class='product__icon'></span>
   </button>

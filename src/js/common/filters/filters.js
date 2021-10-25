@@ -40,7 +40,6 @@ const filters = store => {
     if (e.target.nodeName === 'BUTTON') {
       refs.productsList.innerHTML = '';
       refs.searchFilter.value = '';
-      // refs.selectForm.reset();
       const company = e.target.textContent;
       const checkedInput = [...refs.priceInput].filter(input => input.checked);
 

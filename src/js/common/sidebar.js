@@ -7,7 +7,7 @@ const closeCartMenu = () => {
   refs.sidebarCart.classList.remove('show');
   refs.cartOverlay.classList.remove('show');
   refs.sidebarBtn.setAttribute('aria-expanded', !expanded);
-  refs.cartItem.innerHTML = '';
+  refs.cartSidebarList.innerHTML = '';
 };
 
 export const openCartMenu = () => {

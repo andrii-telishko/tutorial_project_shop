@@ -38,7 +38,7 @@ const refs = {
   sidebarCart: document.querySelector('.cart'),
   cartBtn: document.querySelector('.cart-btn'),
   loader: document.querySelector('.loader'),
-  cartItem: document.querySelector('.cart__item'),
+  cartSidebarList: document.querySelector('.cart__list'),
 
   // products and categories pages
 
@@ -54,6 +54,7 @@ const refs = {
   priceInput: document.querySelectorAll('.price-input'),
   select: document.querySelector('.products__select'),
   selectForm: document.querySelector('.products__select-form'),
+  searchCompanyInput: document.querySelector('.company__search-input'),
 
   // modal
 

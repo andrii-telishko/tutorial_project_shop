@@ -8,7 +8,7 @@ import refs from '../common/refs';
 import incrementProduct from './incrementProduct';
 import submitReviewForm from './submitReviewForm';
 import enableReviewForm from './enableReviewForm';
-import renderReviews from './renderReviews';
+import addToCart from '../common/addToCart';
 
 initProductPage();
 
@@ -17,3 +17,5 @@ refs.productContainer.addEventListener('click', incrementProduct);
 refs.reviewForm.addEventListener('input', enableReviewForm);
 
 refs.reviewForm.addEventListener('submit', submitReviewForm);
+
+refs.productContainer.addEventListener('click', addToCart);

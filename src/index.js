@@ -26,3 +26,4 @@ refs.cartOverlay.addEventListener('click', closeRestCategories);
 refs.mainSearchInput.addEventListener('input', searchProducts);
 refs.searchBackdrop.addEventListener('click', closeSearchContainer);
 window.addEventListener('keydown', closeSearchContainer);
+refs.searchList.addEventListener('click', addToCart);

@@ -1,5 +1,5 @@
 import refs from '../common/refs';
-import { BASE_URL, convertName, findId } from '../common/utils';
+import { BASE_URL, convertName, findId, setStorageItem } from '../common/utils';
 import pagination from '../common/pagination';
 import renderCompanies from '../common/renderCompanies';
 import filters from '../common/filters/filters';
@@ -41,6 +41,8 @@ const renderCategory = () => {
           product.updatedAt = newDate;
           return product;
         });
+
+        setStorageItem('category', convertDataProducts);
 
         pagination(convertDataProducts);
 

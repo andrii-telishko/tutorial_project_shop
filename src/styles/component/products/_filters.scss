@@ -59,7 +59,7 @@
   .line {
     border: 1px solid $first-photo-bcg;
     width: 100%;
-    margin-bottom: 32px;
+    margin-bottom: 20px;
   }
 
   .companies-filter {
@@ -99,5 +99,12 @@
 
   .price-input {
     margin-right: 16px;
+  }
+
+  .company__search-input {
+    border: $border $secondary-text-color;
+    font-size: 16px;
+    color: $secondary-text-color;
+    padding: 2px 6px;
   }
 }
