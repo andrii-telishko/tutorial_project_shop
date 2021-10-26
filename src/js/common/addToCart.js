@@ -1,8 +1,9 @@
 import { openCartMenu } from './sidebar';
-import cartSidebarItem from '../../templates/common/cartSidebarItem.hbs';
+import countProductsInCart from './countProductsInCart';
 import { store } from './store';
 import refs from './refs';
-import { getStorageItem } from './utils';
+import { getStorageItem, setStorageItem } from './utils';
+import initCart from './initCart';
 
 const addToCart = e => {
   const id = e.target.dataset.id || e.target.parentNode.dataset.id;
@@ -14,28 +15,29 @@ const addToCart = e => {
     }
   }
 
+  let cartStorage = getStorageItem('cart');
+
   if (
     e.target.nodeName === 'BUTTON' ||
     e.target.textContent === 'Add to Cart'
   ) {
-    openCartMenu();
-    const product = store.find(product => product.id === +id);
+    const item = cartStorage.find(product => product.id === +id);
 
-    if (product) {
-      refs.cartSidebarList.insertAdjacentHTML(
-        'beforeend',
-        cartSidebarItem(product),
-      );
+    if (!item) {
+      let product =
+        store.find(product => product.id === +id) ||
+        getStorageItem('category').find(product => product.id === +id);
+
+      product = { ...product, amount: 1 };
+
+      cartStorage = [...cartStorage, product];
     } else {
-      const productInCategory = getStorageItem('category').find(
-        product => product.id === +id,
-      );
-
-      refs.cartSidebarList.insertAdjacentHTML(
-        'beforeend',
-        cartSidebarItem(productInCategory),
-      );
+      item.amount += 1;
     }
+
+    setStorageItem('cart', cartStorage);
+    initCart();
+    openCartMenu();
   }
 };
 

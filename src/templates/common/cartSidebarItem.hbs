@@ -1,12 +1,22 @@
-<li class='cart__item'>
-  <img src={{image}} alt={{name}} class='cart__img' />
-  <div class='cart__info'>
-    <h5 class='cart__item-title'>{{name}}</h5>
-    <span class='cart__item-price price'>${{price}}</span>
-  </div>
-  <div class='cart__counter'>
-    <button class='cart__counter-button' type='button'>-</button>
-    <span class='cart__product-count'>1</span>
-    <button class='cart__counter-button' type='button'>+</button>
-  </div>
-</li>
+{{#each this}}
+  <li class='cart__item'>
+    <img src={{image}} alt={{name}} class='cart__img' />
+    <div class='cart__info'>
+      <h5 class='cart__item-title'>{{name}}</h5>
+      <span class='cart__item-price price'>${{price}}</span>
+    </div>
+    <div class='cart__counter'>
+      <button
+        class='cart__counter-button'
+        type='button'
+        data-id={{id}}
+      >-</button>
+      <span class='cart__product-count'>{{amount}}</span>
+      <button
+        class='cart__counter-button'
+        type='button'
+        data-id={{id}}
+      >+</button>
+    </div>
+  </li>
+{{/each}}

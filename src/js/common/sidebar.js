@@ -1,4 +1,6 @@
 import refs from './refs';
+import { getStorageItem } from './utils';
+import cartSidebarItem from '../../templates/common/cartSidebarItem.hbs';
 
 const closeCartMenu = () => {
   const expanded =
@@ -10,10 +12,14 @@ const closeCartMenu = () => {
   refs.cartSidebarList.innerHTML = '';
 };
 
-export const openCartMenu = () => {
+const openCartMenu = () => {
   refs.sidebarCart.classList.add('show');
   refs.cartOverlay.classList.add('show');
+
+  refs.cartSidebarList.insertAdjacentHTML(
+    'beforeend',
+    cartSidebarItem(getStorageItem('cart')),
+  );
 };
 
-refs.sidebarBtn.addEventListener('click', closeCartMenu);
-refs.cartBtn.addEventListener('click', openCartMenu);
+export { closeCartMenu, openCartMenu };

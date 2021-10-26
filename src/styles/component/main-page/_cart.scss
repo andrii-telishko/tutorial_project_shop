@@ -29,6 +29,7 @@
   transition: transform $animation-duration $animation-timing-function;
   background-color: $white-color;
   padding: 10px;
+  overflow: auto;
 
   &.show {
     transform: translateX(0);
@@ -71,6 +72,7 @@
   &__item {
     display: flex;
     align-items: center;
+    margin-bottom: 12px;
   }
 
   &__img {

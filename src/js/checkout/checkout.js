@@ -1,11 +1,15 @@
 import '../../styles/main.scss';
 import 'normalize.css';
 import './masks';
-import '../common/sidebar';
+
 import refs from '../common/refs';
 import changePaymentForm from './changePaymentForm';
 import { enableSubmitBtn, errorShowFn } from './formValidation';
 import handlerSubmit from './handlerSubmit';
+import { openCartMenu, closeCartMenu } from '../common/sidebar';
+import initCart from '../common/initCart';
+
+initCart();
 
 refs.paymentMethodForm[1].addEventListener('click', changePaymentForm);
 refs.form.addEventListener('input', enableSubmitBtn);
@@ -31,3 +35,5 @@ window.addEventListener('DOMContentLoaded', () => {
 });
 
 refs.form.addEventListener('submit', handlerSubmit);
+refs.cartBtn.addEventListener('click', openCartMenu);
+refs.sidebarBtn.addEventListener('click', closeCartMenu);

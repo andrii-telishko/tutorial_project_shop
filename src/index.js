@@ -1,7 +1,6 @@
 import './styles/main.scss';
 import 'normalize.css';
 import './js/index/slider';
-import './js/common/sidebar';
 import './js/common/modal/modal';
 
 import refs from './js/common/refs';
@@ -13,6 +12,8 @@ import openRestCategories from './js/index/openRestCategories';
 import closeRestCategories from './js/index/closeRestCategories';
 import searchProducts from './js/index/searchProducts';
 import closeSearchContainer from './js/index/closeSearchContainer';
+import { openCartMenu, closeCartMenu } from './js/common/sidebar';
+import incrementProducts from './js/common/incrementProducts';
 
 window.addEventListener('DOMContentLoaded', init);
 
@@ -27,3 +28,6 @@ refs.mainSearchInput.addEventListener('input', searchProducts);
 refs.searchBackdrop.addEventListener('click', closeSearchContainer);
 window.addEventListener('keydown', closeSearchContainer);
 refs.searchList.addEventListener('click', addToCart);
+refs.cartBtn.addEventListener('click', openCartMenu);
+refs.sidebarBtn.addEventListener('click', closeCartMenu);
+refs.cartSidebarList.addEventListener('click', incrementProducts);

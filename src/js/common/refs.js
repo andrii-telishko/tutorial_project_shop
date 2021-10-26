@@ -39,6 +39,9 @@ const refs = {
   cartBtn: document.querySelector('.cart-btn'),
   loader: document.querySelector('.loader'),
   cartSidebarList: document.querySelector('.cart__list'),
+  productsInCart: document.querySelector('.cart-item-count'),
+  cartTotalPrice: document.querySelector('.cart__total'),
+  productAmount: document.querySelector('.cart__product-count'),
 
   // products and categories pages
 
