@@ -1,5 +1,4 @@
 import { openCartMenu } from './sidebar';
-import countProductsInCart from './countProductsInCart';
 import { store } from './store';
 import refs from './refs';
 import { getStorageItem, setStorageItem } from './utils';

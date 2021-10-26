@@ -22,6 +22,8 @@ const initCommonRatting = id => {
       }, 0) / ratings.length;
   }
 
+  commonRating = (Math.round(commonRating * 100) / 100).toFixed(2);
+
   commonRatingElement.innerHTML = commonRating;
 };
 

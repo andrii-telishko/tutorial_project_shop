@@ -8,6 +8,8 @@ import { enableSubmitBtn, errorShowFn } from './formValidation';
 import handlerSubmit from './handlerSubmit';
 import { openCartMenu, closeCartMenu } from '../common/sidebar';
 import initCart from '../common/initCart';
+import incrementProducts from '../common/incrementProducts';
+import deleteProduct from '../common/deleteProduct';
 
 initCart();
 
@@ -37,3 +39,6 @@ window.addEventListener('DOMContentLoaded', () => {
 refs.form.addEventListener('submit', handlerSubmit);
 refs.cartBtn.addEventListener('click', openCartMenu);
 refs.sidebarBtn.addEventListener('click', closeCartMenu);
+
+refs.cartSidebarList.addEventListener('click', incrementProducts);
+refs.cartSidebarList.addEventListener('click', deleteProduct);

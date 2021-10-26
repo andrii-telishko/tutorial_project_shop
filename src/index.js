@@ -14,6 +14,7 @@ import searchProducts from './js/index/searchProducts';
 import closeSearchContainer from './js/index/closeSearchContainer';
 import { openCartMenu, closeCartMenu } from './js/common/sidebar';
 import incrementProducts from './js/common/incrementProducts';
+import deleteProduct from './js/common/deleteProduct';
 
 window.addEventListener('DOMContentLoaded', init);
 
@@ -31,3 +32,4 @@ refs.searchList.addEventListener('click', addToCart);
 refs.cartBtn.addEventListener('click', openCartMenu);
 refs.sidebarBtn.addEventListener('click', closeCartMenu);
 refs.cartSidebarList.addEventListener('click', incrementProducts);
+refs.cartSidebarList.addEventListener('click', deleteProduct);

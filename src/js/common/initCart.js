@@ -7,10 +7,11 @@ const initCart = () => {
 
   refs.productsInCart.innerHTML = countProductsInCart();
 
-  const totalPrice = cart.reduce((reducer, { price, amount }) => {
+  let totalPrice = cart.reduce((reducer, { price, amount }) => {
     return (reducer += price * amount);
   }, 0);
 
+  totalPrice = (Math.round(totalPrice * 100) / 100).toFixed(2);
   refs.cartTotalPrice.innerHTML = `Total: $${totalPrice}`;
 };
 

@@ -11,6 +11,8 @@ import pagination from '../common/pagination';
 import renderCompanies from '../common/renderCompanies';
 import filters from '../common/filters/filters';
 import initCart from '../common/initCart';
+import incrementProducts from '../common/incrementProducts';
+import deleteProduct from '../common/deleteProduct';
 
 pagination(store);
 
@@ -25,3 +27,5 @@ filters(store);
 refs.productsList.addEventListener('click', addToCart);
 refs.cartBtn.addEventListener('click', openCartMenu);
 refs.sidebarBtn.addEventListener('click', closeCartMenu);
+refs.cartSidebarList.addEventListener('click', incrementProducts);
+refs.cartSidebarList.addEventListener('click', deleteProduct);

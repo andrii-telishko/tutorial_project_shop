@@ -10,6 +10,8 @@ import refs from '../common/refs';
 import addToCart from '../common/addToCart';
 import { openCartMenu, closeCartMenu } from '../common/sidebar';
 import initCart from '../common/initCart';
+import incrementProducts from '../common/incrementProducts';
+import deleteProduct from '../common/deleteProduct';
 
 window.addEventListener('DOMContentLoaded', renderCategory);
 
@@ -22,3 +24,5 @@ refs.cartOverlay.addEventListener('click', closeRestCategories);
 refs.productsList.addEventListener('click', addToCart);
 refs.cartBtn.addEventListener('click', openCartMenu);
 refs.sidebarBtn.addEventListener('click', closeCartMenu);
+refs.cartSidebarList.addEventListener('click', incrementProducts);
+refs.cartSidebarList.addEventListener('click', deleteProduct);

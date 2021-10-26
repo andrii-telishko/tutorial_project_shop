@@ -11,6 +11,8 @@ import enableReviewForm from './enableReviewForm';
 import addToCart from '../common/addToCart';
 import { openCartMenu, closeCartMenu } from '../common/sidebar';
 import initCart from '../common/initCart';
+import incrementProducts from '../common/incrementProducts';
+import deleteProduct from '../common/deleteProduct';
 
 initProductPage();
 
@@ -26,3 +28,6 @@ refs.productContainer.addEventListener('click', addToCart);
 
 refs.cartBtn.addEventListener('click', openCartMenu);
 refs.sidebarBtn.addEventListener('click', closeCartMenu);
+
+refs.cartSidebarList.addEventListener('click', incrementProducts);
+refs.cartSidebarList.addEventListener('click', deleteProduct);

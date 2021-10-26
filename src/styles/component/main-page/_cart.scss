@@ -115,6 +115,14 @@
   &__product-count {
     font-size: 18px;
   }
+
+  &__remove-button {
+    display: block;
+    font-size: 16px;
+    color: $secondary-text-color;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
 @media screen and (min-width: $desktop) {
