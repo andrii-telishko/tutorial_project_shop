@@ -40,6 +40,7 @@ const filters = store => {
     if (e.target.nodeName === 'BUTTON') {
       refs.productsList.innerHTML = '';
       refs.searchFilter.value = '';
+      refs.selectForm.reset();
       const company = e.target.textContent;
       const checkedInput = [...refs.priceInput].filter(input => input.checked);
 
@@ -80,6 +81,7 @@ const filters = store => {
     );
     const company = checkedBtn.textContent;
     refs.searchFilter.value = '';
+    refs.selectForm.reset();
 
     refs.productsList.innerHTML = '';
     const checkedInput = [...refs.priceInput].filter(input => input.checked);
@@ -106,6 +108,26 @@ const filters = store => {
         errorFn();
         topScroll();
       }
+    }
+  });
+
+  refs.select.addEventListener('change', e => {
+    refs.productsList.innerHTML = '';
+    refs.searchFilter.value = '';
+    if (e.target.value === 'new') {
+      const updatingStore = [...commonFilter].sort(
+        (firstProduct, secondProduct) =>
+          secondProduct.updatedAt - firstProduct.updatedAt,
+      );
+      renderFilteredProducts(updatingStore);
+    } else if (e.target.value === 'old') {
+      const updatingStore = [...commonFilter].sort(
+        (firstProduct, secondProduct) =>
+          firstProduct.updatedAt - secondProduct.updatedAt,
+      );
+      renderFilteredProducts(updatingStore);
+    } else {
+      renderFilteredProducts(commonFilter);
     }
   });
 };

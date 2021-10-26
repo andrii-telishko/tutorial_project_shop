@@ -1,5 +1,5 @@
 import refs from '../common/refs';
-import { BASE_URL } from '../common/utils';
+import { BASE_URL, convertName } from '../common/utils';
 import pagination from '../common/pagination';
 import renderCompanies from '../common/renderCompanies';
 import filters from '../common/filters/filters';
@@ -31,16 +31,22 @@ const renderCategory = () => {
         }
 
         const convertNameProducts = products.map(product => {
-          const convertName = product.name.split(' ').slice(0, 3).join('');
-          product.name = convertName;
+          const newName = convertName(product.name);
+          product.name = newName;
           return product;
         });
 
-        pagination(convertNameProducts);
+        const convertDataProducts = convertNameProducts.map(product => {
+          const newDate = product.updatedAt.split('').slice(14, 16).join('');
+          product.updatedAt = newDate;
+          return product;
+        });
+
+        pagination(convertDataProducts);
 
         refs.totalProductsInfo.textContent =
           products.length > 24
-            ? `Viewing 24 of ${response.total} products`
+            ? `Viewing 24 of ${convertNameProducts.length} products`
             : `Viewing ${response.total} products`;
 
         renderCompanies(products);

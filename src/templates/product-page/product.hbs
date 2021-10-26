@@ -1,0 +1,32 @@
+<img src='{{image}}' alt='{{name}}' />
+<div class='product__info'>
+  <h2 class='product__title'>{{name}}</h2>
+  <span class='product__common-rating'>0</span>
+  <span class='product__model'>Model: {{model}}</span>
+  <span class='product__manufacturer'>Manufacturer : {{manufacturer}}</span>
+  <div class='product__categories'>
+    <h5 class='product__categories-title'>Categories:</h5>
+    <ul class='product__categories-list list'>
+      {{#each categories}}
+        <li class='product__categories-item'><a
+            href='categories.html?id={{this.id}}'
+            class='link'
+          >{{this.name}}</a></li>
+      {{/each}}
+    </ul>
+  </div>
+  <span class='product__price price'>${{price}}</span>
+  <div class='line'></div>
+  <p class='product__description'>{{description}}</p>
+  <div class='product__quantity'>
+    <h6 class='product__quantity-title'>Quantity</h6>
+    <button type='button' class='quantity minus'>-</button>
+    <span class='product__total'>1</span>
+    <button type='button' class='quantity plus'>+</button>
+  </div>
+  <button type='button' class='product__button'>
+    Add To Cart
+    <span class='product__icon'></span>
+  </button>
+      </div>
+</div>

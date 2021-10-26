@@ -13,6 +13,7 @@ const refs = {
   searchBackdrop: document.querySelector('.search-backdrop'),
   searchList: document.querySelector('.search-list'),
   mainSearchInput: document.querySelector('.main-search__input'),
+  loader: document.querySelector('.loader'),
 
   // checkout page
 
@@ -51,6 +52,8 @@ const refs = {
   companiesFilter: document.querySelector('.companies-filter'),
   priceFilter: document.querySelector('.price-form'),
   priceInput: document.querySelectorAll('.price-input'),
+  select: document.querySelector('.products__select'),
+  selectForm: document.querySelector('.products__select-form'),
 
   // modal
 
@@ -61,6 +64,22 @@ const refs = {
   modalOpenBtn: document.querySelector('.login-button'),
   modalBackdrop: document.querySelector('.backdrop'),
   iconCross: document.querySelector('.modal-cross'),
+
+  //product page
+
+  productContainer: document.querySelector('.product'),
+  productCount: document.querySelector('.product__total'),
+  productQuantity: document.querySelector('.product__quantity'),
+  reviewForm: document.querySelector('.review__form'),
+  reviewFormButton: document.querySelector('.review__form-button'),
+  reviewFormInputs: document.querySelectorAll('.review__form-input'),
+  reviewList: document.querySelector('.review__list'),
+  reviewField: document.querySelector('.review__field'),
+  ratingList: document.querySelector('.product__rating-list'),
+  ratingStars: document.querySelectorAll('.star'),
+  sliderList: document.querySelector('.similar-slider'),
+  latestList: document.querySelector('.latest-slider'),
+  similarProductsBlock: document.querySelector('.similar-section'),
 };
 
 export default refs;

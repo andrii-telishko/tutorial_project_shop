@@ -1,4 +1,7 @@
-const BASE_URL = 'http://localhost:3030';
+const BASE_URL = 'https://shrouded-taiga-44041.herokuapp.com';
+
+const USER_IMG =
+  'http://1.bp.blogspot.com/-8INpbfQJJDU/T4DTA4aGGlI/AAAAAAAAANk/GDjrpjyh8m0/s1600/Alf_digital_painting_by_ezekdesigns.png';
 
 const getStorageItem = item => {
   let storageItem = localStorage.getItem(item);
@@ -15,4 +18,8 @@ const setStorageItem = (name, item) => {
   localStorage.setItem(name, JSON.stringify(item));
 };
 
-export { BASE_URL, getStorageItem, setStorageItem };
+const convertName = name => {
+  return name.split(' ').slice(0, 3).join(' ');
+};
+
+export { BASE_URL, getStorageItem, setStorageItem, USER_IMG, convertName };

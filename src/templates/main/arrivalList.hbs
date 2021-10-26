@@ -7,7 +7,12 @@
         <p class='price arrival__price'>${{price}}</p>
       </div>
       <button type='button' class='arrival__btn-cart' data-id={{id}}></button>
-      <a href='' type='button' class='arrival__btn-product' data-id={{id}}></a>
+      <a
+        href='product-page.html?id={{id}}'
+        type='button'
+        class='arrival__btn-product'
+        data-id={{id}}
+      ></a>
     </div>
   </li>
 {{/each}}

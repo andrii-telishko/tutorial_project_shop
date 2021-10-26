@@ -1,0 +1,29 @@
+.latest-section {
+  background-color: $dark-bcg-color;
+}
+
+.latest-title {
+  color: $white-color;
+}
+
+.latest-slider .similar-slider__title {
+  color: $white-color;
+}
+
+.latest-slider .similar-slider__item:hover,
+.latest-slider .similar-slider__item:focus {
+  background-color: $white-color;
+}
+
+.latest-slider .similar-slider__item:hover .similar-slider__title,
+.latest-slider .similar-slider__item:focus .similar-slider__title {
+  color: $primary-text-color;
+}
+
+.latest-slider .slick-arrow.slick-prev {
+  background-image: url('../images/arrows/left-white.png');
+}
+
+.latest-slider .slick-arrow.slick-next {
+  background-image: url('../images/arrows/right-white.png');
+}

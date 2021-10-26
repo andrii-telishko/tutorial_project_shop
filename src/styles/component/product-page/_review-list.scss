@@ -1,0 +1,59 @@
+.review {
+  display: flex;
+  padding: 10px;
+  align-items: center;
+
+  &__item {
+    margin-bottom: 8px;
+  }
+
+  &__user-img {
+    width: 60px;
+    height: 60px;
+    margin-right: 12px;
+  }
+
+  &__user-name {
+    font-weight: 700;
+    font-size: 18px;
+  }
+
+  &__message {
+    margin-top: 6px;
+    margin-bottom: 0;
+    color: $secondary-text-color;
+    font-size: 14px;
+  }
+
+  .stars-list {
+    display: flex;
+  }
+
+  .star {
+    color: grey;
+  }
+}
+
+@media screen and (min-width: $desktop) {
+  .review {
+    padding: 22px;
+
+    &__item {
+      margin-bottom: 12px;
+    }
+
+    &__user-img {
+      width: 80px;
+      height: 80px;
+      margin-right: 26px;
+    }
+
+    &__user-name {
+      font-size: 24px;
+    }
+
+    &__message {
+      font-size: 20px;
+    }
+  }
+}

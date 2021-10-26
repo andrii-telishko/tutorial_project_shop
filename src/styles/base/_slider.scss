@@ -7,7 +7,7 @@
   display: flex;
 }
 
-.slick-arrow {
+.hero__slider .slick-arrow {
   font-size: 0;
   position: absolute;
   top: 50%;
@@ -40,7 +40,7 @@
 }
 
 @media screen and (min-width: $desktop) {
-  .slick-arrow {
+  .hero__slider .slick-arrow {
     position: absolute;
     top: 50%;
     z-index: 10;
@@ -52,21 +52,21 @@
     background-size: contain;
   }
 
-  .slick-arrow.slick-prev {
+  .hero__slider .slick-arrow.slick-prev {
     left: 0;
     background-image: url('../images/arrows/arrow-left-gray.png');
   }
 
-  .slick-arrow.slick-next {
+  .hero__slider .slick-arrow.slick-next {
     right: 0;
     background-image: url('../images/arrows/arrow-right-gray.png');
   }
 
-  .slick-arrow.slick-prev:hover {
+  .hero__slider .slick-arrow.slick-prev:hover {
     background-image: url('../images/arrows/left-black.jfif');
   }
 
-  .slick-arrow.slick-next:hover {
+  .hero__slider .slick-arrow.slick-next:hover {
     background-image: url('../images/arrows/right-black.jfif');
   }
 

@@ -1,0 +1,95 @@
+.review__container {
+  display: block;
+  margin-bottom: 10px;
+  background-color: $hero-background;
+  padding: 22px;
+}
+
+.review__field {
+  width: 100%;
+
+  margin-bottom: 12px;
+}
+
+.review__form {
+  display: block;
+
+  &-title {
+    margin-top: 0;
+    margin-bottom: 8px;
+    text-align: center;
+  }
+
+  &-label {
+    display: block;
+    font-size: 16px;
+    color: $secondary-text-color;
+    margin-bottom: 10px;
+  }
+
+  &-input {
+    display: block;
+    font-size: 18px;
+    width: 100%;
+    padding: 8px;
+
+    &::placeholder {
+      font-size: 16px;
+    }
+  }
+
+  &-button {
+    margin-left: 80px;
+    margin-top: 12px;
+    color: $white-color;
+    padding: 8px 12px;
+    border: $border transparent;
+    background-color: $dark-bcg-color;
+    border-radius: 6px;
+
+    &:focus,
+    &:hover {
+      color: $primary-text-color;
+      border-color: $dark-bcg-color;
+      background-color: $hero-background;
+    }
+
+    &:disabled {
+      color: $secondary-text-color;
+      border-color: $secondary-text-color;
+      background-color: $white-color;
+      cursor: auto;
+    }
+  }
+}
+
+@media screen and (min-width: $desktop) {
+  .review__container {
+    display: flex;
+    margin-bottom: 20px;
+  }
+
+  .review__field {
+    width: 900px;
+    height: 600px;
+    margin-right: 36px;
+    margin-bottom: 0;
+  }
+
+  .review__form {
+    &-title {
+      margin-bottom: 16px;
+    }
+
+    &-input {
+      width: 420px;
+      margin-top: 2px;
+      border: 1px solid $secondary-text-color;
+    }
+
+    &-button {
+      margin-left: 100px;
+      margin-top: 24px;
+    }
+  }
+}

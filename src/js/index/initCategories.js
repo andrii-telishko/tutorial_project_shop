@@ -48,6 +48,7 @@ const initCategories = () => {
           restCategoriesTpl(categories),
         );
       }
+      refs.loader.setAttribute('style', 'display: none');
     }
   };
 
