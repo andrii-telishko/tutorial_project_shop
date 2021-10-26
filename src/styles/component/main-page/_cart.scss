@@ -101,14 +101,11 @@
     flex-direction: column;
 
     &-button {
-      display: inline-flex;
-      justify-content: center;
-      align-items: center;
-      border: $border $primary-text-color;
-      border-radius: 50%;
-      width: 20px;
-      height: 20px;
-      font-size: 14px;
+      width: 30px;
+      height: 30px;
+
+      background-size: contain;
+      background-position: center;
     }
   }
 
@@ -123,6 +120,14 @@
     margin-left: auto;
     margin-right: auto;
   }
+}
+
+.decrement {
+  background-image: url('../images/arrows/1uparrow.png');
+}
+
+.increment {
+  background-image: url('../images/arrows/Small-arrow-down-icon.png');
 }
 
 @media screen and (min-width: $desktop) {

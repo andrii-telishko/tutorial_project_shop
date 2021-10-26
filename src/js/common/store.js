@@ -1,4 +1,9 @@
-import { getStorageItem, setStorageItem, convertName } from './utils.js';
+import {
+  getStorageItem,
+  setStorageItem,
+  convertName,
+  createStockForProduct,
+} from './utils.js';
 
 let store = getStorageItem('store');
 
@@ -20,6 +25,9 @@ const setupStore = products => {
       categories,
     };
   });
+
+  store = createStockForProduct(store);
+
   setStorageItem('store', store);
 };
 

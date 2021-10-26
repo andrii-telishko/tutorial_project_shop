@@ -6,7 +6,7 @@ import cartSidebarItem from '../../templates/common/cartSidebarItem.hbs';
 const incrementProducts = e => {
   const { id } = e.target.dataset;
   let cart = getStorageItem('cart');
-  if (e.target.textContent === '+') {
+  if (e.target.dataset.add === 'increment') {
     const amount = e.target.previousElementSibling;
     cart = cart.map(product => {
       let newAmount;
@@ -23,7 +23,7 @@ const incrementProducts = e => {
       }
       return newAmount;
     }).amount;
-  } else if (e.target.textContent === '-') {
+  } else if (e.target.dataset.add === 'decrement') {
     const amount = e.target.nextElementSibling;
     if (amount.textContent > 1) {
       cart = cart.map(product => {

@@ -1,10 +1,10 @@
-import { openCartMenu } from './sidebar';
-import { store } from './store';
-import refs from './refs';
-import { getStorageItem, setStorageItem } from './utils';
-import initCart from './initCart';
+import { openCartMenu } from '../common/sidebar';
+import { store } from '../common/store';
+import refs from '../common/refs';
+import { getStorageItem, setStorageItem } from '../common/utils';
+import initCart from '../common/initCart';
 
-const addToCart = e => {
+const addProductToCart = e => {
   const id = e.target.dataset.id || e.target.parentNode.dataset.id;
 
   if (refs.searchBackdrop) {
@@ -22,19 +22,24 @@ const addToCart = e => {
   ) {
     const item = cartStorage.find(product => product.id === +id);
 
+    const productCount =
+      +refs.productContainer.lastElementChild.lastElementChild
+        .previousElementSibling.lastElementChild.previousElementSibling
+        .textContent;
+
     if (!item) {
       let product =
         store.find(product => product.id === +id) ||
         getStorageItem('category').find(product => product.id === +id);
 
-      product = { ...product, amount: 1 };
+      product = { ...product, amount: productCount };
 
       cartStorage = [...cartStorage, product];
     } else {
-      if (item.amount >= item.stock) {
+      if (item.amount + productCount > item.stock) {
         alert('No more games to add');
       } else {
-        item.amount += 1;
+        item.amount += productCount;
       }
     }
 
@@ -44,4 +49,4 @@ const addToCart = e => {
   }
 };
 
-export default addToCart;
+export default addProductToCart;

@@ -1,5 +1,6 @@
 import productsListTpl from '../../templates/common/productsList.hbs';
 import refs from './refs';
+import initStock from './initStock';
 
 const pagination = store => {
   $('.pagination-block').pagination({
@@ -12,6 +13,7 @@ const pagination = store => {
     callback: function (store, pagination) {
       const html = Handlebars.compile(productsListTpl(store));
       $('.products__list').html(html);
+      initStock(store);
       window.scrollTo({
         top: 0,
         behavior: 'smooth',

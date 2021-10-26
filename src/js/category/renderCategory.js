@@ -3,6 +3,7 @@ import { BASE_URL, convertName, findId, setStorageItem } from '../common/utils';
 import pagination from '../common/pagination';
 import renderCompanies from '../common/renderCompanies';
 import filters from '../common/filters/filters';
+import { createStockForProduct } from '../common/utils';
 
 const renderCategory = () => {
   const id = findId();
@@ -18,7 +19,9 @@ const renderCategory = () => {
     } else {
       const { response } = xhr;
       if (response) {
-        const products = response.data;
+        let products = response.data;
+
+        products = createStockForProduct(products);
 
         if (products.length === 0) {
           refs.categoryTitle.textContent = 'There is products in this category';

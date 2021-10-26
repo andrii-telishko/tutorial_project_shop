@@ -6,6 +6,7 @@ import addToLatestProducts from './latestProductsData';
 import initCommonRatting from './initCommonRating';
 import initLatestProducts from './initLatestProducts';
 import renderReviews from './renderReviews';
+import renderStock from './renderStock';
 
 const initProductPage = () => {
   const id = findId();
@@ -30,6 +31,8 @@ const initProductPage = () => {
       document.title = newName;
 
       refs.productContainer.innerHTML = renderProduct(product);
+
+      renderStock(id);
 
       initSimilarProducts(newName);
 

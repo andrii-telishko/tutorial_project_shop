@@ -1,6 +1,5 @@
 import '../../styles/main.scss';
 import 'normalize.css';
-import '../common/sidebar';
 import '../common/modal/modal';
 
 import initProductPage from './initProductPage';
@@ -8,7 +7,7 @@ import refs from '../common/refs';
 import incrementProduct from './incrementProduct';
 import submitReviewForm from './submitReviewForm';
 import enableReviewForm from './enableReviewForm';
-import addToCart from '../common/addToCart';
+import addProductToCart from './addProductToCart';
 import { openCartMenu, closeCartMenu } from '../common/sidebar';
 import initCart from '../common/initCart';
 import incrementProducts from '../common/incrementProducts';
@@ -24,7 +23,7 @@ refs.reviewForm.addEventListener('input', enableReviewForm);
 
 refs.reviewForm.addEventListener('submit', submitReviewForm);
 
-refs.productContainer.addEventListener('click', addToCart);
+refs.productContainer.addEventListener('click', addProductToCart);
 
 refs.cartBtn.addEventListener('click', openCartMenu);
 refs.sidebarBtn.addEventListener('click', closeCartMenu);

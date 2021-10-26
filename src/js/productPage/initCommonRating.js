@@ -5,7 +5,8 @@ const initCommonRatting = id => {
   const productContainerChildren = [...refs.productContainer.children];
   const productInfo =
     productContainerChildren[productContainerChildren.length - 1];
-  const commonRatingElement = productInfo.firstElementChild.nextElementSibling;
+
+  const commonRatingElement = productInfo.children[2];
 
   const storage = getStorageItem(id);
 

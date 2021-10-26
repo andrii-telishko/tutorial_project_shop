@@ -12,16 +12,18 @@
     </div>
     <div class='cart__counter'>
       <button
-        class='cart__counter-button'
+        class='cart__counter-button decrement'
         type='button'
         data-id={{id}}
-      >-</button>
+        data-add='decrement'
+      ></button>
       <span class='cart__product-count'>{{amount}}</span>
       <button
-        class='cart__counter-button'
+        class='cart__counter-button increment'
         type='button'
         data-id={{id}}
-      >+</button>
+        data-add='increment'
+      ></button>
     </div>
   </li>
 {{/each}}

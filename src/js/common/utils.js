@@ -24,6 +24,15 @@ const convertName = name => {
 
 const findId = () => window.location.search.split('').slice(4).join('');
 
+const createStockForProduct = store => {
+  return store.map(product => {
+    return (product = {
+      ...product,
+      stock: Math.ceil((Math.random() * 100) / 2),
+    });
+  });
+};
+
 export {
   BASE_URL,
   getStorageItem,
@@ -31,4 +40,5 @@ export {
   USER_IMG,
   convertName,
   findId,
+  createStockForProduct,
 };
