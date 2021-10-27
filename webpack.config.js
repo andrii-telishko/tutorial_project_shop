@@ -59,6 +59,7 @@ module.exports = {
     products: ['@babel/polyfill', './src/js/products/products.js'],
     categories: ['@babel/polyfill', './src/js/category/categories.js'],
     productPage: ['@babel/polyfill', './src/js/productPage/productPage.js'],
+    cart: ['@babel/polyfill', './src/js/cart/cart.js'],
   },
   output: {
     filename: 'js/[name][contenthash].js',
@@ -109,6 +110,14 @@ module.exports = {
       template: './src/product-page.html',
       filename: 'product-page.html',
       chunks: ['productPage'],
+      minify: {
+        collapseWhitespace: !devMode,
+      },
+    }),
+    new HTMLWebpackPlugin({
+      template: './src/cart.html',
+      filename: 'cart.html',
+      chunks: ['cart'],
       minify: {
         collapseWhitespace: !devMode,
       },

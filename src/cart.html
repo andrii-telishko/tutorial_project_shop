@@ -4,126 +4,76 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;500;700&display=swap"
-      rel="stylesheet">
-    <title>Category</title>
+    <title>Cart</title>
   </head>
   <body>
-    <header class="header">
+    <header class="cart__header">
       <div class="container">
-        <div class="checkout-header">
+        <div class="products-header">
           <a href="/" class="products-logo">
             <img src="./images/logos/logo.png" alt="page logo" />
           </a>
-          <form class="search-form">
-             <input type="text" class="search-input" placeholder="Search here">
-          </form>
-          <ul class="header-features-list products__feature-list list">
-            <li class="products-features-list__item">
-              <button type="button" class="header-features-list__btn cart-btn">
-                <svg class="icon" width="24px" height="24px">
-                  <use href="./images/icons/sprite.svg#icon-Cart"></use>
-                </svg>
-                <span class="cart-item-count">0</span>
-              </button>
-            </li>
-            <li class="products-features-list__item">
-              <button type="button" class="login-button">Login</button>
-            </li>
-          </ul>
-          <div class="cart-overlay">
-          <aside class="cart">
-           <button class="mobile-btn sidebar-btn" type="button" data-menu-button aria-expanded="false" aria-controls="mobile-conteiner">
-                <svg aria-label="Кнопка меню" class="mobile-img" width="24" height="24" viewBox="0 0 32 32 " fill="none"
-                  xmlns="http://www.w3.org/2000/svg">
-                  <path class="icon-cross"
-                    d="M31.708 25.708 22 16l9.708-9.708a1 1 0 0 0 0-1.414L27.122.292a1 1 0 0 0-1.414-.001L16 9.999 6.292.291a.998.998 0 0 0-1.414.001L.292 4.878a1 1 0 0 0 0 1.414L10 16 .292 25.708a.999.999 0 0 0 0 1.414l4.586 4.586a1 1 0 0 0 1.414 0L16 22l9.708 9.708a1 1 0 0 0 1.414 0l4.586-4.586a.999.999 0 0 0 0-1.414z" />
-                </svg>
-              </button>
-            <h3 class="cart__title">Your cart</h3>
-            <ul class="cart__list list"></ul>
-            <h3 class="cart__total">
-              Total: $0
-            </h3>
-            <a class="cart__btn link" href="./cart.html">Cart Page</a>
-          </aside>
         </div>
-        
-      </div>
-        </div>
-        <div class="container">
-          <div class="header__lower" id="categories">
-        <ul class="header__categories-list list"></ul>
-            <div class="cart-overlay"></div>
-               
-                 <ul class="rest-categories-list list"></ul>
-               
-            <div class="loader">
-          <h2>Loading...</h2>
-        </div>
-          </div>
-          <ul class="checkout-nav list">
+
+        <ul class="checkout-nav list">
           <li class="checkout-nav__item">
             <a href="index.html" class="checkout-nav__link link">Home ></a>
           </li>
           <li class="checkout-nav__item">
-            <a href="" class="checkout-nav__link link current">Category</a>
+            <a href="" class="checkout-nav__link link current">Cart</a>
           </li>
         </ul>
-        </div> 
       </div>
     </header>
     <main>
-        <h1 class="checkout__title category-title"></h1>
-        <div class="container products-container">
-           <div class="products__filters">
-             <h3 class="filter-title">Companies</h3>
-             <div class="line"></div>
-             <ul class="companies-filter list"></ul>
-             <div class="line"></div>
-             <h3 class="filter-title">Filter by Price</h3>
-             <form class="price-form">
-               <label class="price-label">
-                 <input type="checkbox" class="price-input" data-value='10'>
-                 <span class="price-text" >&lt; $10</span>
-               </label>
-               <label class="price-label">
-                 <input type="checkbox" class="price-input" data-value='10-30'>
-                 <span class="price-text">$10 - $30</span>
-               </label>
-               <label class="price-label">
-                 <input type="checkbox" class="price-input" data-value='30-50'>
-                 <span class="price-text">$30 - $50</span>
-               </label>
-               <label class="price-label">
-                 <input type="checkbox" class="price-input" data-value='50'>
-                 <span class="price-text">&gt; $50</span>
-               </label>
-               
-             </form>
-           </div>
-           <section class="products">
-              <div class="categories__header">
-                <span class="total-products"></span>
-                <form class="products__select-form">
-                  <label class='products__label'>
-                  Sort by
-                  <select name="sorting" class="products__select">
-                    <option value="no_select" class="products__select-option" selected>Please, select</option>
-                    <option value="new" class="products__select-option">Newer Items</option>
-                    <option value="old" class="products__select-option">Older Items</option>
-                    
-                  </select>
-                </label>
-                </form>
-              </div>
-              <ul class="products__list category__list  list"></ul>
-              <div class="pagination-block"></div>
-           </section>
+      <h1 class="checkout__title">Shopping Cart</h1>
+      <div class="container">
+        <table class="table">
+          <thead class="table-head">
+            <tr>
+              <th class="product-column">Product</th>
+              <th class="column">Quantity</th>
+              <th class="column">Price</th>
+              <th class="column">Total</th>
+              <th class="column"></th>
+            </tr>
+          </thead>
+          <tbody class="table-body"></tbody>
+        </table>
+        <div class="table-footer">
+          <form class="coupon-form">
+            <input
+              type="text"
+              name="coupon"
+              placeholder="Enter coupon code"
+              class="coupon-input"
+            />
+            <button class="coupon-button">Apply Code</button>
+          </form>
+          <div class="cart__total-block">
+            <span>Total</span>
+            <span class="cart__total-price"></span>
+          </div>
         </div>
+        <ul class="cart__links list">
+          <li class="cart__links-item">
+            <a
+              href="./products.html"
+              class="link cart__link cart__link-products"
+              >Continue Shopping</a
+            >
+          </li>
+          <li class="cart__links-item">
+            <a
+              href="./checkout.html"
+              class="link cart__link cart__link-checkout"
+              >Checkout</a
+            >
+          </li>
+        </ul>
+      </div>
     </main>
-        <footer class="footer">
+    <footer class="footer">
       <div class="container">
         <div class="footer__info">
           <address class="footer__adress">
@@ -367,34 +317,5 @@
         </span>
       </div>
     </footer>
-    <div class="backdrop is-hidden">
-      <div class="modal">
-        <button class="modal-btn" type="button" data-menu-button aria-expanded="false" aria-controls="mobile-conteiner">
-                <svg aria-label="Кнопка меню" class="modal-img" width="24" height="24" viewBox="0 0 32 32 " fill="none"
-                  xmlns="http://www.w3.org/2000/svg">
-                  <path class="icon-cross modal-cross"
-                    d="M31.708 25.708 22 16l9.708-9.708a1 1 0 0 0 0-1.414L27.122.292a1 1 0 0 0-1.414-.001L16 9.999 6.292.291a.998.998 0 0 0-1.414.001L.292 4.878a1 1 0 0 0 0 1.414L10 16 .292 25.708a.999.999 0 0 0 0 1.414l4.586 4.586a1 1 0 0 0 1.414 0L16 22l9.708 9.708a1 1 0 0 0 1.414 0l4.586-4.586a.999.999 0 0 0 0-1.414z" />
-                </svg>
-        </button>
-        <h4 class="modal-title">Log In</h4>
-        <form class="modal-form">
-          <label class='modal-label'>
-            Email
-            <input type="text" name="email" class="modal-input" placeholder="Email" required pattern="^[A-Za-z0-9](([a-zA-Z0-9,=\.!\-#|\$%\^&\*\+/\?_`\{\}~]+)*)@(?:[0-9a-zA-Z-]+\.)+[a-zA-Z]{2,9}$">
-          </label>
-          <label class='modal-label'>
-            Password
-            <input type="password" name="password" class="modal-input" placeholder="Password" required minlength="10">
-          </label>
-          <button class='modal-submit-btn' disabled>Log In</button>
-        </form>
-      </div>
-    </div>
-    <!-- <div class="loader">
-      <h2>Loading...</h2>
-    </div> -->
-    <script src=" https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="./js/libs/pagination.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"></script>
   </body>
 </html>

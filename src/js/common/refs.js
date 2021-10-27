@@ -84,6 +84,10 @@ const refs = {
   sliderList: document.querySelector('.similar-slider'),
   latestList: document.querySelector('.latest-slider'),
   similarProductsBlock: document.querySelector('.similar-section'),
+
+  // Cart Page
+
+  tableBody: document.querySelector('.table-body'),
 };
 
 export default refs;

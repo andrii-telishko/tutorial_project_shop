@@ -1,6 +1,5 @@
 import './styles/main.scss';
 import 'normalize.css';
-import './js/index/slider';
 import './js/common/modal/modal';
 
 import refs from './js/common/refs';
