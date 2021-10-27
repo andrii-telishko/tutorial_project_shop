@@ -1,12 +1,13 @@
 import { getStorageItem, setStorageItem } from '../common/utils';
-import initCartPage from './initCartPage';
 import refs from '../common/refs';
+import initCartPage from './initCartPage';
+// import renderTotal from './renderTotal';
+// import findStockEl from './findStockEl';
 
 const incrementProductOnCartPage = e => {
-  refs.tableBody.innerHTML = '';
   let store = getStorageItem('cart');
   const { id } = e.target.dataset;
-
+  refs.tableBody.innerHTML = '';
   if (e.target.dataset.add === 'increment') {
     store = store.map(product => {
       let newProduct = {};
@@ -38,9 +39,11 @@ const incrementProductOnCartPage = e => {
       return newProduct;
     });
   }
+  // findStockEl(store);
+  // renderTotal(store);
 
-  initCartPage(store);
   setStorageItem('cart', store);
+  initCartPage(store);
 };
 
 export default incrementProductOnCartPage;

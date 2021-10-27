@@ -60,7 +60,7 @@
   height: 24px;
 }
 
-.table .mobile-img {
+.table .cart-page__cross-img {
   fill: $primary-text-color;
   width: 16px;
   height: 16px;
@@ -119,7 +119,13 @@
     height: 32px;
   }
 
-  .table .mobile-img {
+  .table .main__remove-button {
+    margin-right: 8px;
+    width: 24px;
+    height: 24px;
+  }
+
+  .table .cart-page__cross-img {
     margin-right: 8px;
     width: 24px;
     height: 24px;

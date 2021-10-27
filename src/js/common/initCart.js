@@ -1,12 +1,10 @@
 import refs from './refs';
 import { getStorageItem, setStorageItem } from './utils';
 import countProductsInCart from './countProductsInCart';
-import { store } from '../common/store';
 import changeStock from './changeStock';
 
 const initCart = () => {
   let cart = getStorageItem('cart');
-  console.log(cart);
 
   changeStock(cart);
 
