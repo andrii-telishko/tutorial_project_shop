@@ -4,7 +4,6 @@ import cartSidebarItem from '../../templates/common/cartSidebarItem.hbs';
 import initCart from './initCart';
 
 const deleteProduct = e => {
-  console.log(e.target);
   const { id } = e.target.dataset;
   let cart = getStorageItem('cart');
   if (e.target.textContent === 'Remove') {

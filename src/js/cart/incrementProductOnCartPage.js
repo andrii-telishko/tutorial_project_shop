@@ -1,10 +1,9 @@
 import { getStorageItem, setStorageItem } from '../common/utils';
 import refs from '../common/refs';
 import initCartPage from './initCartPage';
-// import renderTotal from './renderTotal';
-// import findStockEl from './findStockEl';
 
 const incrementProductOnCartPage = e => {
+  refs.couponForm.reset();
   let store = getStorageItem('cart');
   const { id } = e.target.dataset;
   refs.tableBody.innerHTML = '';
@@ -39,8 +38,6 @@ const incrementProductOnCartPage = e => {
       return newProduct;
     });
   }
-  // findStockEl(store);
-  // renderTotal(store);
 
   setStorageItem('cart', store);
   initCartPage(store);

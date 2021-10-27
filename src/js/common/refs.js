@@ -89,6 +89,8 @@ const refs = {
 
   tableBody: document.querySelector('.table-body'),
   cartTotalPriceOnPage: document.querySelector('.cart__total-price'),
+  couponForm: document.querySelector('.coupon-form'),
+  couponButton: document.querySelector('.coupon-button'),
 };
 
 export default refs;

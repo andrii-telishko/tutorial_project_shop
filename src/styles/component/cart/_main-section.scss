@@ -25,7 +25,8 @@
   transition: $animation-duration $animation-timing-function;
 
   &:hover,
-  &:focus {
+  &:focus,
+  &:disabled {
     color: $primary-text-color;
     border-color: $dark-bcg-color;
     background-color: $first-photo-bcg;
