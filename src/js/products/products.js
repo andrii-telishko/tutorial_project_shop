@@ -13,7 +13,6 @@ import filters from '../common/filters/filters';
 import initCart from '../common/initCart';
 import incrementProducts from '../common/incrementProducts';
 import deleteProduct from '../common/deleteProduct';
-import initStock from '../common/initStock';
 
 pagination(store);
 

@@ -1,6 +1,7 @@
 import './styles/main.scss';
 import 'normalize.css';
 import './js/common/modal/modal';
+import './js/index/slider';
 
 import refs from './js/common/refs';
 import openMobileMenu from './js/index/burger';

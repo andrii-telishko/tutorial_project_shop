@@ -32,7 +32,7 @@ const initProductPage = () => {
 
       refs.productContainer.innerHTML = renderProduct(product);
 
-      renderStock(id);
+      renderStock(id, refs.productContainer.lastElementChild.children[1]);
 
       initSimilarProducts(newName);
 

@@ -1,9 +1,4 @@
-import {
-  getStorageItem,
-  setStorageItem,
-  convertName,
-  createStockForProduct,
-} from './utils.js';
+import { getStorageItem, setStorageItem, convertName } from './utils.js';
 
 let store = getStorageItem('store');
 
@@ -14,6 +9,7 @@ const setupStore = products => {
 
     const newName = convertName(name);
     const convertDate = updatedAt.split('').slice(14, 16).join('');
+    const stock = Math.ceil((Math.random() * 100) / 2);
 
     return {
       id,
@@ -23,10 +19,9 @@ const setupStore = products => {
       updatedAt: convertDate,
       manufacturer,
       categories,
+      stock,
     };
   });
-
-  store = createStockForProduct(store);
 
   setStorageItem('store', store);
 };

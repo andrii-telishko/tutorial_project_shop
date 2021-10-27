@@ -66,6 +66,11 @@
   height: 16px;
 }
 
+.table .stock {
+  font-size: 14px;
+  padding: 2px;
+}
+
 @media screen and (min-width: $desktop) {
   .table {
     & th,
@@ -118,5 +123,10 @@
     margin-right: 8px;
     width: 24px;
     height: 24px;
+  }
+
+  .table .stock {
+    font-size: 24px;
+    padding: 8px;
   }
 }

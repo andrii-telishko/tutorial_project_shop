@@ -51,6 +51,21 @@
     margin-bottom: 16px;
   }
 
+  &__button:disabled {
+    color: $secondary-text-color;
+    cursor: auto;
+    border-color: $dark-bcg-color;
+    background-color: $first-photo-bcg;
+  }
+
+  &__button:disabled:hover,
+  &__button:disabled:focus {
+    color: $secondary-text-color;
+    cursor: auto;
+    border-color: $dark-bcg-color;
+    background-color: $first-photo-bcg;
+  }
+
   &__button:hover,
   &_button:focus {
     color: $primary-text-color;

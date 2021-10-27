@@ -88,6 +88,7 @@ const refs = {
   // Cart Page
 
   tableBody: document.querySelector('.table-body'),
+  cartTotalPriceOnPage: document.querySelector('.cart__total-price'),
 };
 
 export default refs;

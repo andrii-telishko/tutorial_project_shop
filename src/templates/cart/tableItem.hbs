@@ -5,21 +5,34 @@
         <div class='main-cart__img-container'>
           <img src={{image}} alt={{name}} class='main-cart__img' />
         </div>
-        <h3 class='main-cart__title'>{{name}}</h3>
+        <div class='cart-page__product-name'>
+          <h3 class='main-cart__title'>{{name}}</h3>
+          <span class='stock'></span>
+        </div>
       </div>
     </td>
     <td class='table-row'>
       <div class='product__quantity table-row'>
-        <span type='button' class='quantity minus'>-</span>
+        <span
+          type='button'
+          class='quantity minus'
+          data-add='decrement'
+          data-id={{id}}
+        >-</span>
         <span class='product__total'>{{amount}}</span>
-        <span type='button' class='quantity plus'>+</span>
+        <span
+          type='button'
+          class='quantity plus'
+          data-add='increment'
+          data-id={{id}}
+        >+</span>
       </div>
     </td>
     <td class='table-row'>
       <h3 class='main-cart__title table-row'>{{price}}</h3>
     </td>
     <td class='table-row'>
-      <h3 class='main-cart__title table-row'></h3>
+      <h3 class='main-cart__title table-row one-product-total'></h3>
     </td>
     <td class='table-row'>
       <button type='button' class='main__remove-button'>
