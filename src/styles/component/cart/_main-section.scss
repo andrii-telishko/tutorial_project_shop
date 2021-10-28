@@ -95,6 +95,10 @@
   }
 }
 
+.also-buy__section {
+  display: none;
+}
+
 @media screen and (min-width: $desktop) {
   .table-footer {
     display: flex;
@@ -141,5 +145,15 @@
     &-item:first-child {
       margin-right: 32px;
     }
+  }
+
+  .also-buy__section {
+    display: block;
+    position: relative;
+    height: 455px;
+  }
+
+  .also-buy__list {
+    display: flex;
   }
 }

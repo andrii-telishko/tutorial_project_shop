@@ -11,8 +11,13 @@ const incrementProducts = e => {
     cart = cart.map(product => {
       let newAmount;
       if (product.id === +id) {
-        newAmount = product.amount + 1;
-        product = { ...product, amount: newAmount };
+        if (product.amount < product.stock) {
+          newAmount = product.amount + 1;
+          product = { ...product, amount: newAmount };
+        } else {
+          alert('There is no more this game in stock');
+          product = { ...product };
+        }
       }
       return product;
     });

@@ -1,4 +1,5 @@
 import refs from '../common/refs';
+import { getStorageItem } from '../common/utils';
 
 const incrementProduct = e => {
   const counter =

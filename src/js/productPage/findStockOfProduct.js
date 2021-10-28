@@ -16,7 +16,13 @@ const findStockOfProduct = id => {
         if (product.id === +id) {
           return product.stock;
         }
-      }) || '0';
+      }) ||
+      getStorageItem('game').find(product => {
+        if (product.id === +id) {
+          return product.stock;
+        }
+      }) ||
+      '0';
   }
 
   return stock;

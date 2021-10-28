@@ -7,11 +7,6 @@ const renderStock = (id, selector) => {
 
   if (stock === undefined) {
     stockEl.textContent = "This game didn't left";
-    refs.productContainer.lastElementChild.lastElementChild.setAttribute(
-      'disabled',
-      true,
-    );
-    console.log(refs.productContainer.lastElementChild.lastElementChild);
   } else {
     stockEl.textContent = `Left ${stock} games`;
 

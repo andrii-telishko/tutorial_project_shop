@@ -91,6 +91,7 @@ const refs = {
   cartTotalPriceOnPage: document.querySelector('.cart__total-price'),
   couponForm: document.querySelector('.coupon-form'),
   couponButton: document.querySelector('.coupon-button'),
+  alsoBuyList: document.querySelector('.also-buy__list'),
 };
 
 export default refs;

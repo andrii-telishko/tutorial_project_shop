@@ -8,13 +8,19 @@ import refs from '../common/refs';
 import changeStock from '../common/changeStock';
 import deleteProductFromCartPage from './deleteProductFromCartPage';
 import useCoupons from './useCoupons';
+import initAlsoByList from './initAlsoBuyList';
+import addToCartFromAlsoList from './addToCartFromAlsoList';
 
 changeStock(getStorageItem('cart'));
 
 initCartPage(getStorageItem('cart'));
+
+initAlsoByList();
 
 refs.tableBody.addEventListener('click', incrementProductsOnCartPage);
 
 refs.tableBody.addEventListener('click', deleteProductFromCartPage);
 
 refs.couponForm.addEventListener('submit', useCoupons);
+
+refs.alsoBuyList.addEventListener('click', addToCartFromAlsoList);

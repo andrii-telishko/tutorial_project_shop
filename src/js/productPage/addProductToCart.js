@@ -30,7 +30,8 @@ const addProductToCart = e => {
     if (!item) {
       let product =
         store.find(product => product.id === +id) ||
-        getStorageItem('category').find(product => product.id === +id);
+        getStorageItem('category').find(product => product.id === +id) ||
+        getStorageItem('game').find(product => product.id === +id);
 
       product = { ...product, amount: productCount };
 

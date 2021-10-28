@@ -5,7 +5,6 @@ import countTotalPrice from './countTotalPrice';
 
 const initCartPage = store => {
   refs.tableBody.insertAdjacentHTML('beforeend', tableItem(store));
-
   countTotalPrice(store);
 
   [...refs.tableBody.children].forEach((item, index) => {

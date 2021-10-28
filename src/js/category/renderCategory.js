@@ -1,9 +1,14 @@
 import refs from '../common/refs';
-import { BASE_URL, convertName, findId, setStorageItem } from '../common/utils';
+import {
+  BASE_URL,
+  convertName,
+  findId,
+  setStorageItem,
+  createStockForProduct,
+} from '../common/utils';
 import pagination from '../common/pagination';
 import renderCompanies from '../common/renderCompanies';
 import filters from '../common/filters/filters';
-import { createStockForProduct } from '../common/utils';
 
 const renderCategory = () => {
   const id = findId();
