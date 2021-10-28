@@ -33,6 +33,9 @@ const createStockForProduct = store => {
   });
 };
 
+const message =
+  'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quo doloremque itaque autem illum reiciendis est!';
+
 export {
   BASE_URL,
   getStorageItem,
@@ -41,4 +44,5 @@ export {
   convertName,
   findId,
   createStockForProduct,
+  message,
 };

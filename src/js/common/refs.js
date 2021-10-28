@@ -84,6 +84,7 @@ const refs = {
   sliderList: document.querySelector('.similar-slider'),
   latestList: document.querySelector('.latest-slider'),
   similarProductsBlock: document.querySelector('.similar-section'),
+  textArea: document.querySelector('.textarea-input'),
 
   // Cart Page
 

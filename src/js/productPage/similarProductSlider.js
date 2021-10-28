@@ -18,7 +18,6 @@ const similarProductSlider = () => {
           },
         },
       ],
-      mobileFirst: true,
     });
   });
 };

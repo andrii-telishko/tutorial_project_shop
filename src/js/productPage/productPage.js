@@ -12,10 +12,13 @@ import { openCartMenu, closeCartMenu } from '../common/sidebar';
 import initCart from '../common/initCart';
 import incrementProducts from '../common/incrementProducts';
 import deleteProduct from '../common/deleteProduct';
+import { message } from '../common/utils';
 
 initProductPage();
 
 initCart();
+
+refs.textArea.value = message;
 
 refs.productContainer.addEventListener('click', incrementProduct);
 

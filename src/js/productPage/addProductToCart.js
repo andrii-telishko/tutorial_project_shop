@@ -33,9 +33,12 @@ const addProductToCart = e => {
         getStorageItem('category').find(product => product.id === +id) ||
         getStorageItem('game').find(product => product.id === +id);
 
-      product = { ...product, amount: productCount };
-
-      cartStorage = [...cartStorage, product];
+      if (!product) {
+        alert('Sorry, you can not add this game to cart');
+      } else {
+        product = { ...product, amount: productCount };
+        cartStorage = [...cartStorage, product];
+      }
     } else {
       if (item.amount + productCount > item.stock) {
         alert('No more games to add');

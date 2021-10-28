@@ -1,4 +1,9 @@
-import { setStorageItem, getStorageItem, USER_IMG } from '../common/utils';
+import {
+  setStorageItem,
+  getStorageItem,
+  USER_IMG,
+  message,
+} from '../common/utils';
 import refs from '../common/refs';
 import oneReview from '../../templates/product-page/oneReview.hbs';
 import initCommonRatting from './initCommonRating';
@@ -39,6 +44,8 @@ const submitReviewForm = e => {
   e.target.reset();
 
   refs.reviewFormButton.setAttribute('disabled', true);
+
+  refs.textArea.value = message;
 };
 
 export default submitReviewForm;

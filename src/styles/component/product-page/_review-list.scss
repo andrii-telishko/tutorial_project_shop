@@ -38,6 +38,10 @@
   .review {
     padding: 22px;
 
+    &__field {
+      overflow: auto;
+    }
+
     &__item {
       margin-bottom: 12px;
     }
