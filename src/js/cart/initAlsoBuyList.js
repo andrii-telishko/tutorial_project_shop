@@ -8,6 +8,7 @@ import {
 import randomProductsArray from './createRandomArrayOfProducts';
 import refs from '../common/refs';
 import popularList from '../../templates/main/popularList.hbs';
+import addService from './addService';
 
 const initAlsoBuyList = () => {
   const xhr = new XMLHttpRequest();
@@ -45,11 +46,13 @@ const initAlsoBuyList = () => {
           return product;
         });
 
-        const alsoBuyProducts = randomProductsArray(convertNameProducts);
+        addService(convertNameProducts, 'game');
+
+        const productsWithService = getStorageItem('game');
+
+        const alsoBuyProducts = randomProductsArray(productsWithService);
 
         refs.alsoBuyList.innerHTML = popularList(alsoBuyProducts);
-
-        setStorageItem('game', convertNameProducts);
 
         refs.loader.setAttribute('style', 'display:none');
       }

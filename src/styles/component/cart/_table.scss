@@ -159,4 +159,30 @@
       background-repeat: no-repeat;
     }
   }
+
+  .cart-page__additional-form {
+    margin-left: 20px;
+    margin-top: 12px;
+  }
+
+  // .cart-page__additional-input {
+  //   display: inline-block;
+  //   width: 16px;
+  //   height: 16px;
+  //   border: $border $secondary-text-color;
+  //   border-radius: 4px;
+
+  //   &.checked {
+  //     background-image: url('../images/nxt-checkbox-checked-ok-hi.png');
+  //     background-size: contain;
+  //     background-position: center;
+  //     border: none;
+  //   }
+  // }
+
+  .cart-page__additional-label {
+    display: block;
+    color: $secondary-text-color;
+    font-size: 18px;
+  }
 }

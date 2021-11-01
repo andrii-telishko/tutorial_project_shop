@@ -10,6 +10,45 @@
           <span class='stock'></span>
         </div>
       </div>
+      <form class='cart-page__additional-form'>
+        <label
+          class='cart-page__additional-label'
+          data-id={{id}}
+          data-service='first'
+        >
+          <input
+            type='checkbox'
+            {{service.first}}
+            data-id={{id}}
+            data-service='first'
+          />
+          Automatic updating game every 6 month ($15)
+        </label>
+        <label
+          class='cart-page__additional-label'
+          data-id={{id}}
+          data-service='second'
+        >
+          <input
+            type='checkbox'
+            {{service.second}}
+            data-id={{id}}
+            data-service='second'
+          />
+          Language patch ($15)
+        </label>
+      </form>
+      {{! <ul class='list cart-page__additional-form'>
+        <li class='cart-page__additional-item'>
+          <div class='cart-page__additional-input'></div>
+          <p class='cart-page__additional-label'>Automatic updating game every 6
+            month ($15)</p>
+        </li>
+        <li class='cart-page__additional-item'>
+          <div class='cart-page__additional-input'></div>
+          <p class='cart-page__additional-label'>Language patch ($15)</p>
+        </li>
+      </ul> }}
     </td>
     <td class='table-row'>
       <div class='product__quantity table-row'>
