@@ -142,7 +142,7 @@
     justify-content: end;
     margin-bottom: 100px;
 
-    &-item:first-child {
+    &-item:not(:last-child) {
       margin-right: 32px;
     }
   }
@@ -155,5 +155,10 @@
 
   .also-buy__list {
     display: flex;
+  }
+
+  .credit-modal {
+    max-width: 900px;
+    width: 100%;
   }
 }

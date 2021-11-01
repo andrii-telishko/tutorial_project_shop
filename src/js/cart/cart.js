@@ -12,6 +12,9 @@ import initAlsoByList from './initAlsoBuyList';
 import addToCartFromAlsoList from './addToCartFromAlsoList';
 import changeAdditionalInput from './changeAdditionalInput';
 import addService from './addService';
+import { openModal } from '../common/modal/toggleModal';
+import closeModal from './closeModal';
+import initModal from './initModal';
 
 changeStock(getStorageItem('cart'));
 
@@ -20,6 +23,8 @@ addService(getStorageItem('cart'), 'cart');
 initCartPage(getStorageItem('cart'));
 
 initAlsoByList();
+
+initModal();
 
 refs.tableBody.addEventListener('click', incrementProductsOnCartPage);
 
@@ -30,3 +35,11 @@ refs.couponForm.addEventListener('submit', useCoupons);
 refs.alsoBuyList.addEventListener('click', addToCartFromAlsoList);
 
 refs.tableBody.addEventListener('click', changeAdditionalInput);
+
+refs.creditButton.addEventListener('click', openModal);
+
+refs.modalBackdrop.addEventListener('click', closeModal);
+
+window.addEventListener('keydown', closeModal);
+
+refs.creditModal.addEventListener('change', initModal);

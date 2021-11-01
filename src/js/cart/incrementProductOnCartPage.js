@@ -1,6 +1,7 @@
 import { getStorageItem, setStorageItem } from '../common/utils';
 import refs from '../common/refs';
 import initCartPage from './initCartPage';
+import initModal from './initModal';
 
 const incrementProductOnCartPage = e => {
   refs.couponForm.reset();
@@ -41,6 +42,7 @@ const incrementProductOnCartPage = e => {
 
   setStorageItem('cart', store);
   initCartPage(store);
+  initModal();
 };
 
 export default incrementProductOnCartPage;

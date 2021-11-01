@@ -93,6 +93,12 @@ const refs = {
   couponForm: document.querySelector('.coupon-form'),
   couponButton: document.querySelector('.coupon-button'),
   alsoBuyList: document.querySelector('.also-buy__list'),
+  creditButton: document.querySelector('.credit-button'),
+  modalTotal: document.querySelectorAll('.modal-table__total'),
+  creditPercent: document.querySelectorAll('.modal-table__credit-text'),
+  priceForMonth: document.querySelectorAll('.modal-table__credit'),
+  modalSelect: document.querySelectorAll('.modal-table__select'),
+  creditModal: document.querySelector('.credit-modal'),
 };
 
 export default refs;

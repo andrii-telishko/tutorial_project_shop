@@ -2,6 +2,7 @@ import { getStorageItem, setStorageItem } from '../common/utils';
 import { store } from '../common/store';
 import initCartPage from './initCartPage';
 import refs from '../common/refs';
+import initModal from './initModal';
 
 const addToCartFromAlsoList = e => {
   refs.tableBody.innerHTML = '';
@@ -31,6 +32,7 @@ const addToCartFromAlsoList = e => {
 
   setStorageItem('cart', cart);
   initCartPage(cart);
+  initModal();
 };
 
 export default addToCartFromAlsoList;
