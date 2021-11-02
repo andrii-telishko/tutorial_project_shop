@@ -15,6 +15,8 @@ import addService from './addService';
 import { openModal } from '../common/modal/toggleModal';
 import closeModal from './closeModal';
 import initModal from './initModal';
+import enableModalButton from './enableModalButton';
+import renderCreditPrice from './renderCreditPrice';
 
 changeStock(getStorageItem('cart'));
 
@@ -43,3 +45,7 @@ refs.modalBackdrop.addEventListener('click', closeModal);
 window.addEventListener('keydown', closeModal);
 
 refs.creditModal.addEventListener('change', initModal);
+
+refs.creditModal.addEventListener('change', enableModalButton);
+
+refs.modalButton.addEventListener('click', renderCreditPrice);

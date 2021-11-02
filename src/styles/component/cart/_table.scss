@@ -88,6 +88,98 @@
   font-size: 12px;
 }
 
+.credit-modal {
+  transform: translateY(0);
+}
+
+.modal-table {
+  border-collapse: collapse;
+  width: 100%;
+  overflow: scroll;
+
+  &__name-container {
+    display: flex;
+    align-items: center;
+  }
+
+  &__bank-logo {
+    width: 30px;
+    height: 30px;
+    margin-right: 2px;
+  }
+
+  &__label {
+    font-weight: 500;
+    font-size: 14px;
+  }
+
+  &__select {
+    padding: 0;
+    font-size: 14px;
+
+    & option {
+      font-size: 12px;
+    }
+  }
+
+  &__bank-info {
+    font-size: 12px;
+    color: $secondary-text-color;
+    padding-bottom: 12px;
+    border-bottom: $border $first-photo-bcg;
+    margin: 0;
+  }
+
+  &__total {
+    margin-top: 10px;
+    margin-bottom: 0;
+    font-size: 14px;
+  }
+
+  &__credit {
+    font-size: 12px;
+    color: $secondary-text-color;
+  }
+
+  &__credit-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__credit-text {
+    color: $secondary-text-color;
+    font-size: 10px;
+  }
+
+  &__button {
+    margin-top: 4px;
+    display: block;
+    padding: 4px;
+    border: $border transparent;
+    color: $white-color;
+    background-color: $dark-bcg-color;
+    cursor: pointer;
+    font-size: 18px;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+
+    &:hover,
+    &:focus {
+      border-color: $dark-bcg-color;
+      color: $primary-text-color;
+      background-color: $first-photo-bcg;
+    }
+
+    &:disabled {
+      border-color: $dark-bcg-color;
+      color: $primary-text-color;
+      background-color: $first-photo-bcg;
+      cursor: auto;
+    }
+  }
+}
+
 @media screen and (min-width: $desktop) {
   .table {
     & th,
@@ -181,25 +273,16 @@
     font-size: 18px;
   }
 
+  .credit-modal {
+    transform: translate(-50%, -50%);
+  }
+
   .modal-table {
-    border-collapse: collapse;
-    width: 100%;
-    overflow: scroll;
-
-    &__name-container {
-      display: flex;
-      align-items: center;
-    }
-
     &__bank-logo {
       width: 60px;
       height: 60px;
       margin-right: 6px;
     }
-
-    // &__radio {
-    //   visibility: hidden;
-    // }
 
     &__label {
       font-weight: 700;
@@ -217,52 +300,18 @@
 
     &__bank-info {
       font-size: 16px;
-      color: $secondary-text-color;
-      padding-bottom: 12px;
-      border-bottom: $border $first-photo-bcg;
-      margin: 0;
     }
 
     &__total {
-      margin-top: 10px;
-      margin-bottom: 0;
       font-size: 22px;
     }
 
     &__credit {
       font-size: 18px;
-      color: $secondary-text-color;
-    }
-
-    &__credit-container {
-      display: flex;
-      flex-direction: column;
     }
 
     &__credit-text {
-      color: $secondary-text-color;
       font-size: 16px;
-    }
-
-    &__button {
-      margin-top: 4px;
-      display: block;
-      padding: 4px;
-      border: $border transparent;
-      color: $white-color;
-      background-color: $dark-bcg-color;
-      cursor: pointer;
-      font-size: 18px;
-      justify-content: center;
-      margin-left: auto;
-      margin-right: auto;
-
-      &:hover,
-      &:focus {
-        border-color: $dark-bcg-color;
-        color: $primary-text-color;
-        background-color: $first-photo-bcg;
-      }
     }
   }
 }

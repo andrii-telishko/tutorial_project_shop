@@ -57,15 +57,15 @@
   justify-content: center;
   margin-bottom: 50px;
 
-  &-item:first-child {
-    margin-right: 16px;
+  &-item:not(:last-child) {
+    margin-right: 8px;
   }
 }
 
 .cart__link {
-  padding: 10px 16px;
+  padding: 4px 8px;
   font-weight: 500;
-  font-size: 18px;
+  font-size: 14px;
   transition: $animation-duration $animation-timing-function;
 
   &.cart__link-products {
@@ -96,6 +96,11 @@
 }
 
 .also-buy__section {
+  display: none;
+}
+
+.credit-block,
+.payment-block {
   display: none;
 }
 
@@ -147,6 +152,12 @@
     }
   }
 
+  .cart__link {
+    padding: 10px 16px;
+    font-weight: 500;
+    font-size: 18px;
+  }
+
   .also-buy__section {
     display: block;
     position: relative;
@@ -160,5 +171,10 @@
   .credit-modal {
     max-width: 900px;
     width: 100%;
+  }
+
+  .credit-block,
+  .payment-block {
+    display: none;
   }
 }

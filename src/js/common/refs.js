@@ -99,6 +99,12 @@ const refs = {
   priceForMonth: document.querySelectorAll('.modal-table__credit'),
   modalSelect: document.querySelectorAll('.modal-table__select'),
   creditModal: document.querySelector('.credit-modal'),
+  bankInputs: document.querySelectorAll('.modal-table__radio'),
+  creditPrice: document.querySelector('.credit-price'),
+  paymentPrice: document.querySelector('.payment-price'),
+  modalButton: document.querySelector('.modal-table__button'),
+  creditPriceBlock: document.querySelector('.credit-block'),
+  paymentPriceBlock: document.querySelector('.payment-block'),
 };
 
 export default refs;

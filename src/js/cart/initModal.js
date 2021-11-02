@@ -1,6 +1,9 @@
 import refs from '../common/refs';
 
 const initModal = () => {
+  // console.log(refs.bankInputs[0].value);
+  // const string = refs.bankInputs[0].value;
+  // console.log(JSON.parse(string));
   const selectOptions = [...refs.modalSelect].map(item => {
     return [...item.children].map(select => {
       return select.value;
@@ -45,15 +48,24 @@ const initModal = () => {
     item.textContent = `$${(pageTotal / selectValue[index]).toFixed(
       2,
     )} per/month`;
+
+    let newValue = JSON.parse(refs.bankInputs[index].value);
+    newValue.credit = (pageTotal / selectValue[index]).toFixed(2);
+    refs.bankInputs[index].value = JSON.stringify(newValue);
   });
 
-  [...refs.modalTotal].forEach(
-    (item, index) =>
-      (item.textContent = `Total: ${(
-        pageTotal +
-        (pageTotal * bankPercents[index]) / 100
-      ).toFixed(2)}`),
-  );
+  [...refs.modalTotal].forEach((item, index) => {
+    item.textContent = `Total: ${(
+      pageTotal +
+      (pageTotal * bankPercents[index]) / 100
+    ).toFixed(2)}`;
+    let newValue = JSON.parse(refs.bankInputs[index].value);
+    newValue.total = (
+      pageTotal +
+      (pageTotal * bankPercents[index]) / 100
+    ).toFixed(2);
+    refs.bankInputs[index].value = JSON.stringify(newValue);
+  });
 };
 
 export default initModal;

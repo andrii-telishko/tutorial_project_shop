@@ -54,6 +54,14 @@
             <span class="cart__total-text">Total</span>
             <span class="cart__total-price"></span>
           </div>
+          <div class="cart__total-block credit-block">
+            <span class="cart__total-text">Total With Credit</span>
+            <span class="cart__total-price credit-price"></span>
+          </div>
+          <div class="cart__total-block payment-block">
+            <span class="cart__total-text">Payment For Month</span>
+            <span class="cart__total-price payment-price"></span>
+          </div>
         </div>
         <ul class="cart__links list">
           <li class="cart__links-item">
@@ -369,6 +377,7 @@
                         type="radio"
                         name="bank"
                         class="modal-table__radio"
+                        value='{"total":"null","credit":"null"}'
                       />
                       Private-Bank
                     </label>
@@ -413,8 +422,9 @@
                         type="radio"
                         name="bank"
                         class="modal-table__radio"
+                        value='{"total":"null","credit":"null"}'
                       />
-                      MonoBank
+                      Mono-Bank
                     </label>
                     <span class="modal-table__credit-text">10% commission</span>
                   </div>
@@ -457,6 +467,7 @@
                         type="radio"
                         name="bank"
                         class="modal-table__radio"
+                        value='{"total":"null","credit":"null"}'
                       />
                       Alfa-Bank
                     </label>
@@ -501,8 +512,9 @@
                         type="radio"
                         name="bank"
                         class="modal-table__radio"
+                        value='{"total":"null","credit":"null"}'
                       />
-                      UkrSibBank
+                      UkrSib-Bank
                     </label>
                     <span class="modal-table__credit-text">10% commission</span>
                   </div>
@@ -533,7 +545,9 @@
             </tr>
           </tbody>
         </table>
-        <button type="button" class="modal-table__button">Use Credit</button>
+        <button type="button" class="modal-table__button" disabled>
+          Use Credit
+        </button>
       </div>
     </div>
   </body>
