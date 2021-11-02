@@ -2,7 +2,7 @@ import '../../styles/main.scss';
 import 'normalize.css';
 
 import initCartPage from './initCartPage';
-import { getStorageItem } from '../common/utils';
+import { getStorageItem, setStorageItem } from '../common/utils';
 import incrementProductsOnCartPage from './incrementProductOnCartPage';
 import refs from '../common/refs';
 import changeStock from '../common/changeStock';
@@ -27,6 +27,8 @@ initCartPage(getStorageItem('cart'));
 initAlsoByList();
 
 initModal();
+
+setStorageItem('credit', []);
 
 refs.tableBody.addEventListener('click', incrementProductsOnCartPage);
 

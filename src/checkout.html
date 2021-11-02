@@ -20,33 +20,6 @@
           <a href="/" class="header__logo">
             <img src="./images/logos/logo.png" alt="page logo" />
           </a>
-          <ul class="header-features-list list">
-            
-            <li class="header-features-list__item">
-              <button type="button" class="header-features-list__btn cart-btn">
-                <svg class="icon" width="24px" height="24px">
-                  <use href="./images/icons/sprite.svg#icon-Cart"></use>
-                </svg>
-                <span class="cart-item-count">0</span>
-              </button>
-            </li>
-            
-          </ul>
-          <div class="cart-overlay">
-          <aside class="cart">
-           <button class="mobile-btn sidebar-btn" type="button" data-menu-button aria-expanded="false" aria-controls="mobile-conteiner">
-                <svg aria-label="Кнопка меню" class="mobile-img" width="24" height="24" viewBox="0 0 32 32 " fill="none"
-                  xmlns="http://www.w3.org/2000/svg">
-                  <path class="icon-cross"
-                    d="M31.708 25.708 22 16l9.708-9.708a1 1 0 0 0 0-1.414L27.122.292a1 1 0 0 0-1.414-.001L16 9.999 6.292.291a.998.998 0 0 0-1.414.001L.292 4.878a1 1 0 0 0 0 1.414L10 16 .292 25.708a.999.999 0 0 0 0 1.414l4.586 4.586a1 1 0 0 0 1.414 0L16 22l9.708 9.708a1 1 0 0 0 1.414 0l4.586-4.586a.999.999 0 0 0 0-1.414z" />
-                </svg>
-              </button>
-            <h3 class="cart__title">Your cart</h3>
-            <ul class="cart__list list"></ul>
-            <h3 class="cart__total"></h3>
-            <a class="cart__btn link" href="./cart.html">Cart Page</a>
-          </aside>
-        </div>
       </div>
         </div>
         <div class="container">
@@ -66,7 +39,27 @@
     </header>
     <main>
       <h1 class="checkout__title">Checkout</h1>
-
+      <section>
+        <div class="container">
+          <ul class="list checkout__final-list"></ul>
+          <div class="checkout__prices">
+            <div class="checkout__total-block">
+          <span class="checkout__total-title">Total:</span>
+          <span class="checkout__total-price"></span>
+          </div>
+        <div class="checkout__credit-block">
+          <span class="checkout__total-credit">Total With Credit:</span>
+          <span class="checkout__total-price checkout__credit-price"></span>
+        </div>
+        <div class="checkout__payment-block">
+          <span class="checkout__total-payment">Payment For Month:</span>
+          <span class="checkout__total-price checkout__payment-price"></span>
+        </div>
+          </div>
+        <p class="checkout__credit-info"></p>
+      </div>
+        
+      </section>
       <section>
         <div class="container">
           <form name="checkout-form" class="checkout-form" novalidate>

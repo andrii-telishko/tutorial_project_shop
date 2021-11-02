@@ -4,7 +4,7 @@ const countTotalPrice = store => {
   const total = [...refs.tableBody.children].reduce((reducer, item, index) => {
     const service = Object.values(store[index].service);
     let totalProduct;
-    if (service.includes('checked') && service.includes('null')) {
+    if (service.includes('checked') && service.includes(false)) {
       totalProduct = store[index].price * store[index].amount + 15;
     } else if (service.includes('checked')) {
       totalProduct = store[index].price * store[index].amount + 30;

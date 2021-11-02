@@ -1,0 +1,125 @@
+.checkout__final-list {
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+.checkout__final-item {
+  border-bottom: $border $first-photo-bcg;
+  padding-bottom: 8px;
+}
+
+.checkout__final-item:not(:last-child) {
+  margin-bottom: 8px;
+}
+
+.checkout__final-img {
+  display: inline-block;
+  width: 240px;
+  height: 240px;
+  object-fit: contain;
+}
+
+.checkout__final-title {
+  margin: 0;
+}
+
+.checkout__final-info {
+  margin: 0;
+  color: $secondary-text-color;
+  font-size: 18px;
+}
+
+.checkout__total-title,
+.checkout__total-credit,
+.checkout__total-payment {
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.checkout__total-price {
+  font-weight: 700;
+  font-size: 22px;
+  margin-left: 6px;
+}
+
+.checkout__credit-info {
+  margin-top: 10px;
+  color: $secondary-text-color;
+  font-size: 16px;
+}
+
+.checkout__credit-block,
+.checkout__payment-block {
+  display: none;
+}
+
+.checkout__prices {
+  display: block;
+}
+
+@media screen and (min-width: $desktop) {
+  .checkout__final-list {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 26px;
+  }
+
+  .checkout__final-item {
+    border-bottom: none;
+    padding-bottom: 0px;
+  }
+
+  .checkout__final-item:not(:last-child) {
+    margin-bottom: 0px;
+  }
+
+  .checkout__final-item:not(:last-child) {
+    margin-right: 20px;
+  }
+
+  .checkout__final-img {
+    width: 240px;
+    height: 240px;
+    object-fit: contain;
+  }
+
+  .checkout__final-title {
+    margin: 0;
+  }
+
+  .checkout__final-info {
+    margin: 0;
+    color: $secondary-text-color;
+    font-size: 18px;
+  }
+
+  .checkout__total-block {
+    margin-bottom: 32px;
+  }
+
+  .checkout__total-title,
+  .checkout__total-credit,
+  .checkout__total-payment {
+    font-size: 28px;
+  }
+
+  .checkout__total-price {
+    font-size: 36px;
+    margin-left: 12px;
+  }
+
+  .checkout__credit-info {
+    font-size: 22px;
+    margin-top: 0;
+  }
+
+  .checkout__credit-block,
+  .checkout__payment-block {
+    display: none;
+  }
+
+  .checkout__prices {
+    display: flex;
+    justify-content: space-between;
+  }
+}

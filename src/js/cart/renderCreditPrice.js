@@ -1,4 +1,5 @@
 import refs from '../common/refs';
+import { setStorageItem } from '../common/utils';
 
 const renderCreditPrice = () => {
   const checkedInput = [...refs.bankInputs].find(input => input.checked);
@@ -16,6 +17,8 @@ const renderCreditPrice = () => {
   refs.paymentPriceBlock.setAttribute('style', 'display: grid');
 
   refs.modalBackdrop.classList.add('is-hidden');
+
+  setStorageItem('credit', value);
 };
 
 export default renderCreditPrice;
