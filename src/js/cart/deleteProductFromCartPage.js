@@ -2,6 +2,7 @@ import refs from '../common/refs';
 import { getStorageItem, setStorageItem } from '../common/utils';
 import initCartPage from './initCartPage';
 import initModal from './initModal';
+import renderCreditPrice from './renderCreditPrice';
 
 const deleteProductFromCartPage = e => {
   const { id } = e.target.dataset;
@@ -25,6 +26,7 @@ const deleteProductFromCartPage = e => {
     setStorageItem('store', store);
     initCartPage(cart);
     initModal();
+    renderCreditPrice();
   }
 };
 

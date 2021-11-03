@@ -4,6 +4,7 @@ import initCartPage from './initCartPage';
 import initModal from './initModal';
 import changeStock from '../common/changeStock';
 import renderStock from '../productPage/renderStock';
+import renderCreditPrice from './renderCreditPrice';
 
 const incrementProductOnCartPage = e => {
   refs.couponForm.reset();
@@ -70,6 +71,7 @@ const incrementProductOnCartPage = e => {
   initCartPage(cart);
   setStorageItem('cart', cart);
   setStorageItem('store', store);
+  renderCreditPrice();
 
   initModal();
 };
