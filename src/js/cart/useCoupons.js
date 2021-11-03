@@ -1,15 +1,19 @@
-import { getStorageItem } from '../common/utils';
+import { getStorageItem, setStorageItem } from '../common/utils';
 import refs from '../common/refs';
 import countTotalPrice from './countTotalPrice';
 
 const useCoupons = e => {
   e.preventDefault();
 
+  let coupons = getStorageItem('coupons');
+
   const formData = new FormData(e.target);
   const value = Object.fromEntries(formData.entries());
   let cart = getStorageItem('cart');
 
-  switch (value.coupon) {
+  const appliedCoupon = coupons.find(coupon => coupon === value.coupon);
+
+  switch (appliedCoupon) {
     case 'shara':
       [...refs.tableBody.children].forEach((item, index) => {
         const newPrice = item.children[2].lastElementChild;
@@ -76,6 +80,10 @@ const useCoupons = e => {
       alert('Please enter right coupon');
       refs.couponForm.reset();
   }
+
+  const restCoupons = coupons.filter(coupon => coupon !== value.coupon);
+
+  setStorageItem('coupons', restCoupons);
 };
 
 export default useCoupons;
