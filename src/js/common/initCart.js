@@ -6,7 +6,7 @@ import changeStock from './changeStock';
 const initCart = () => {
   let cart = getStorageItem('cart');
 
-  changeStock(cart);
+  // changeStock(cart);
 
   refs.productsInCart.innerHTML = countProductsInCart();
 

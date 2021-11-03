@@ -1,15 +1,17 @@
-import { getStorageItem, setStorageItem } from './utils';
-import initCart from './initCart';
-import refs from './refs';
+import { getStorageItem, setStorageItem, findId } from '../common/utils';
+import initCart from '../common/initCart';
+import refs from '../common/refs';
 import cartSidebarItem from '../../templates/common/cartSidebarItem.hbs';
-import pagination from './pagination';
+import renderStock from './renderStock';
 
-const incrementProducts = e => {
+const incrementProductsOnProductPage = e => {
+  const productId = findId();
+
   let store = getStorageItem('store');
   const { id } = e.target.dataset;
+
   let cart = getStorageItem('cart');
   if (e.target.dataset.add === 'increment') {
-    refs.productsList.innerHTML = '';
     const amount = e.target.previousElementSibling;
 
     cart = cart.map(product => {
@@ -43,7 +45,6 @@ const incrementProducts = e => {
       return product;
     });
   } else if (e.target.dataset.add === 'decrement') {
-    refs.productsList.innerHTML = '';
     const amount = e.target.nextElementSibling;
     if (amount.textContent > 1) {
       cart = cart.map(product => {
@@ -84,7 +85,9 @@ const incrementProducts = e => {
   setStorageItem('cart', cart);
   setStorageItem('store', store);
   initCart();
-  pagination(getStorageItem('store'));
+  if (productId === id) {
+    renderStock(id, refs.productContainer.lastElementChild.children[1]);
+  }
 };
 
-export default incrementProducts;
+export default incrementProductsOnProductPage;

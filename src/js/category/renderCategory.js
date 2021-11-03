@@ -4,6 +4,7 @@ import {
   convertName,
   findId,
   setStorageItem,
+  getStorageItem,
   createStockForProduct,
 } from '../common/utils';
 import pagination from '../common/pagination';
@@ -12,6 +13,8 @@ import filters from '../common/filters/filters';
 
 const renderCategory = () => {
   const id = findId();
+  const store = getStorageItem('store');
+  const productsStock = getStorageItem('productsStock');
 
   const xhr = new XMLHttpRequest();
   xhr.open('GET', `${BASE_URL}/products?category.id=${id}&$limit=100`);
@@ -26,7 +29,16 @@ const renderCategory = () => {
       if (response) {
         let products = response.data;
 
-        products = createStockForProduct(products);
+        products = products.map((product, index) => {
+          let newProduct;
+          const sameProduct = store.find(item => item.id === product.id);
+          if (sameProduct) {
+            newProduct = { ...product, stock: sameProduct.stock };
+          } else {
+            newProduct = { ...product, stock: productsStock[index] };
+          }
+          return newProduct;
+        });
 
         if (products.length === 0) {
           refs.categoryTitle.textContent = 'There is products in this category';

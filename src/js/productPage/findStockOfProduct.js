@@ -4,26 +4,28 @@ import { store } from '../common/store';
 const findStockOfProduct = id => {
   let stock;
 
-  stock = store.find(product => {
-    if (product.id === +id) {
-      return product.stock;
-    }
-  });
-
-  if (!stock) {
-    stock =
-      getStorageItem('category').find(product => {
-        if (product.id === +id) {
-          return product.stock;
-        }
-      }) ||
-      getStorageItem('game').find(product => {
-        if (product.id === +id) {
-          return product.stock;
-        }
-      }) ||
-      '0';
-  }
+  stock =
+    getStorageItem('cart').find(product => {
+      if (product.id === +id) {
+        return product.stock;
+      }
+    }) ||
+    store.find(product => {
+      if (product.id === +id) {
+        return product.stock;
+      }
+    }) ||
+    getStorageItem('category').find(product => {
+      if (product.id === +id) {
+        return product.stock;
+      }
+    }) ||
+    getStorageItem('game').find(product => {
+      if (product.id === +id) {
+        return product.stock;
+      }
+    }) ||
+    '0';
 
   return stock;
 };

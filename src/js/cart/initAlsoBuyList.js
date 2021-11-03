@@ -22,7 +22,7 @@ const initAlsoBuyList = () => {
 
   xhr.open(
     'GET',
-    `${BASE_URL}/products?category.id=${mainId}&price[$lte]=${max}&price[$gt]=${min}&$limit=3000`,
+    `${BASE_URL}/products?category.id=${mainId}&price[$lte]=${max}&price[$gt]=${min}&$limit=158`,
   );
 
   xhr.responseType = 'json';

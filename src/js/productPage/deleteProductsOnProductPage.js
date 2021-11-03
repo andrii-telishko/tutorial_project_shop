@@ -1,16 +1,16 @@
-import { getStorageItem, setStorageItem } from './utils';
-import refs from './refs';
+import { getStorageItem, setStorageItem, findId } from '../common/utils';
+import refs from '../common/refs';
 import cartSidebarItem from '../../templates/common/cartSidebarItem.hbs';
-import initCart from './initCart';
-import pagination from './pagination';
+import initCart from '../common/initCart';
+import renderStock from './renderStock';
 
-const deleteProduct = e => {
+const deleteProductsOnProductPage = e => {
+  const productId = findId();
   const { id } = e.target.dataset;
   let cart = getStorageItem('cart');
   let store = getStorageItem('store');
   if (e.target.textContent === 'Remove') {
     refs.cartSidebarList.innerHTML = '';
-    refs.productsList.innerHTML = '';
 
     const deletedCart = cart.find(product => product.id === +id);
 
@@ -26,10 +26,13 @@ const deleteProduct = e => {
     cart = cart.filter(product => product.id !== +id);
     refs.cartSidebarList.insertAdjacentHTML('beforeend', cartSidebarItem(cart));
   }
+
   setStorageItem('cart', cart);
   initCart();
   setStorageItem('store', store);
-  pagination(getStorageItem('store'));
+  if (productId === id) {
+    renderStock(id, refs.productContainer.lastElementChild.children[1]);
+  }
 };
 
-export default deleteProduct;
+export default deleteProductsOnProductPage;

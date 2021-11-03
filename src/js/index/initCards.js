@@ -1,4 +1,4 @@
-import { BASE_URL } from '../common/utils';
+import { BASE_URL, createStock, getStorageItem } from '../common/utils';
 import {
   renderFeatureSection,
   renderArrivalSection,
@@ -18,7 +18,18 @@ const initCards = () => {
     } else {
       const products = xhr.response;
       if (products) {
-        setupStore(products.data);
+        createStock(products.data, 'productsStock');
+
+        const stockProducts = products.data.map((product, index) => {
+          let newProduct;
+          newProduct = {
+            ...product,
+            stock: getStorageItem('productsStock')[index],
+          };
+          return newProduct;
+        });
+
+        setupStore(stockProducts);
 
         renderFeatureSection(store);
 
