@@ -9,8 +9,8 @@ const addService = (store, storageItem) => {
       newProduct = {
         ...product,
         service: {
-          first: 'null',
-          second: 'null',
+          first: false,
+          second: false,
         },
       };
     }
