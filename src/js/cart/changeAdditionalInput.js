@@ -9,16 +9,16 @@ const changeAdditionalInput = e => {
   let store = getStorageItem('cart');
   const product = store.find(product => product.id === +id);
   if (e.target.dataset.service === 'first') {
-    if (product.service.first === 'null') {
+    if (product.service.first === false) {
       product.service.first = 'checked';
     } else {
-      product.service.first = 'null';
+      product.service.first = false;
     }
   } else if (e.target.dataset.service === 'second') {
-    if (product.service.second === 'null') {
+    if (product.service.second === false) {
       product.service.second = 'checked';
     } else {
-      product.service.second = 'null';
+      product.service.second = false;
     }
   } else {
     setStorageItem('cart', store);

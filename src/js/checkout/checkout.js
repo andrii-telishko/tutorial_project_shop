@@ -6,12 +6,9 @@ import refs from '../common/refs';
 import changePaymentForm from './changePaymentForm';
 import { enableSubmitBtn, errorShowFn } from './formValidation';
 import handlerSubmit from './handlerSubmit';
-import { openCartMenu, closeCartMenu } from '../common/sidebar';
-import initCart from '../common/initCart';
-import incrementProducts from '../common/incrementProducts';
-import deleteProduct from '../common/deleteProduct';
+import initCartInCheckout from './initCartInCheckout';
 
-initCart();
+initCartInCheckout();
 
 refs.paymentMethodForm[1].addEventListener('click', changePaymentForm);
 refs.form.addEventListener('input', enableSubmitBtn);
@@ -37,8 +34,3 @@ window.addEventListener('DOMContentLoaded', () => {
 });
 
 refs.form.addEventListener('submit', handlerSubmit);
-refs.cartBtn.addEventListener('click', openCartMenu);
-refs.sidebarBtn.addEventListener('click', closeCartMenu);
-
-refs.cartSidebarList.addEventListener('click', incrementProducts);
-refs.cartSidebarList.addEventListener('click', deleteProduct);

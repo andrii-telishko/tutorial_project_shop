@@ -1,9 +1,6 @@
 import refs from '../common/refs';
 
 const initModal = () => {
-  // console.log(refs.bankInputs[0].value);
-  // const string = refs.bankInputs[0].value;
-  // console.log(JSON.parse(string));
   const selectOptions = [...refs.modalSelect].map(item => {
     return [...item.children].map(select => {
       return select.value;
@@ -17,22 +14,36 @@ const initModal = () => {
     [3, 6, 10],
   ];
 
-  const selectValue = [...refs.modalSelect].map(item => +item.value);
+  const selectValue = [...refs.modalSelect].map((item, index) => {
+    let newValue = JSON.parse(refs.bankInputs[index].value);
+    newValue.period = +item.value;
+    refs.bankInputs[index].value = JSON.stringify(newValue);
+
+    return +item.value;
+  });
 
   selectOptions.forEach((options, index) => {
+    let percentValue;
     if (selectValue[index] === Math.max(...options)) {
       refs.creditPercent[index].textContent = `${Math.max(
         ...percent[index],
       )}% commission`;
+      percentValue = Math.max(...percent[index]);
     } else if (selectValue[index] === Math.min(...options)) {
       refs.creditPercent[index].textContent = `${Math.min(
         ...percent[index],
       )}% commission`;
+      percentValue = Math.min(...percent[index]);
     } else {
       refs.creditPercent[
         index
       ].textContent = `${percent[index][1]}% commission`;
+      percentValue = percent[index][1];
     }
+
+    let newValue = JSON.parse(refs.bankInputs[index].value);
+    newValue.percent = percentValue;
+    refs.bankInputs[index].value = JSON.stringify(newValue);
   });
 
   const bankPercents = [...refs.creditPercent].map(item =>
@@ -45,12 +56,16 @@ const initModal = () => {
     .join('');
 
   [...refs.priceForMonth].forEach((item, index) => {
-    item.textContent = `$${(pageTotal / selectValue[index]).toFixed(
-      2,
-    )} per/month`;
+    item.textContent = `$${(
+      (pageTotal + (pageTotal * bankPercents[index]) / 100) /
+      selectValue[index]
+    ).toFixed(2)} per/month`;
 
     let newValue = JSON.parse(refs.bankInputs[index].value);
-    newValue.credit = (pageTotal / selectValue[index]).toFixed(2);
+    newValue.credit = (
+      (pageTotal + (pageTotal * bankPercents[index]) / 100) /
+      selectValue[index]
+    ).toFixed(2);
     refs.bankInputs[index].value = JSON.stringify(newValue);
   });
 

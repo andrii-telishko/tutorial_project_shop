@@ -1,0 +1,13 @@
+{{#each this}}
+  <li class='checkout__final-item'>
+    <img src={{image}} alt={{name}} class='checkout__final-img' />
+    <h4 class='checkout__final-title'>{{name}}: ${{price}}</h4>
+    <p class='checkout__final-info'>Amount: {{amount}}</p>
+    {{#if service.first}}
+      <p class='checkout__final-info'>updating game: $15</p>
+    {{/if}}
+    {{#if service.second}}
+      <p class='checkout__final-info'>language patch: $15</p>
+    {{/if}}
+  </li>
+{{/each}}
