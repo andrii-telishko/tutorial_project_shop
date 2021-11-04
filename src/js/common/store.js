@@ -3,12 +3,16 @@ import { getStorageItem, setStorageItem, convertName } from './utils.js';
 let store = getStorageItem('store');
 
 const setupStore = products => {
-  store = products.map(product => {
-    const { id, name, price, image, updatedAt, manufacturer, categories } =
+  store = products.map((product, index) => {
+    let { id, name, price, image, updatedAt, manufacturer, categories, stock } =
       product;
 
     const newName = convertName(name);
     const convertDate = updatedAt.split('').slice(14, 16).join('');
+
+    if (store.length !== 0) {
+      stock = store[index].stock;
+    }
 
     return {
       id,
@@ -18,8 +22,10 @@ const setupStore = products => {
       updatedAt: convertDate,
       manufacturer,
       categories,
+      stock,
     };
   });
+
   setStorageItem('store', store);
 };
 

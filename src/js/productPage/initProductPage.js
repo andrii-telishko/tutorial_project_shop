@@ -1,4 +1,4 @@
-import { BASE_URL, convertName } from '../common/utils';
+import { BASE_URL, convertName, findId } from '../common/utils';
 import renderProduct from '../../templates/product-page/product.hbs';
 import refs from '../common/refs';
 import initSimilarProducts from './initSimilarProducts';
@@ -6,9 +6,10 @@ import addToLatestProducts from './latestProductsData';
 import initCommonRatting from './initCommonRating';
 import initLatestProducts from './initLatestProducts';
 import renderReviews from './renderReviews';
+import renderStock from './renderStock';
 
 const initProductPage = () => {
-  const id = window.location.search.split('').slice(4).join('');
+  const id = findId();
 
   const xhr = new XMLHttpRequest();
 
@@ -30,6 +31,8 @@ const initProductPage = () => {
       document.title = newName;
 
       refs.productContainer.innerHTML = renderProduct(product);
+
+      renderStock(id, refs.productContainer.lastElementChild.children[1]);
 
       initSimilarProducts(newName);
 

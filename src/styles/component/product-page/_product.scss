@@ -1,6 +1,11 @@
 .product {
   padding: 8px;
 
+  &__img {
+    width: 100%;
+    height: auto;
+  }
+
   &__title {
     margin-top: 24px;
     margin-bottom: 0;
@@ -17,6 +22,7 @@
     background-color: $second-photo-bcg;
     font-size: 20px;
     margin-bottom: 8px;
+    margin-left: 12px;
   }
 
   &__price {
@@ -43,6 +49,21 @@
     padding: 10px 14px;
     transition: $animation-duration $animation-timing-function;
     margin-bottom: 16px;
+  }
+
+  &__button:disabled {
+    color: $secondary-text-color;
+    cursor: auto;
+    border-color: $dark-bcg-color;
+    background-color: $first-photo-bcg;
+  }
+
+  &__button:disabled:hover,
+  &__button:disabled:focus {
+    color: $secondary-text-color;
+    cursor: auto;
+    border-color: $dark-bcg-color;
+    background-color: $first-photo-bcg;
   }
 
   &__button:hover,
@@ -124,6 +145,10 @@
   width: 32px;
   height: 32px;
   border: $border $secondary-text-color;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
 }
 
 .minus {
@@ -135,11 +160,21 @@
   color: $white-color;
 }
 
+.stock {
+  border: $border;
+  padding: 6px 8px;
+  border-radius: 6px;
+}
+
 @media screen and (min-width: $desktop) {
   .product {
     padding: 16px;
     display: flex;
     margin-bottom: 32px;
+
+    &__img {
+      width: 380px;
+    }
 
     &__info {
       margin-left: 40px;

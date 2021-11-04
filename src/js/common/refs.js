@@ -38,7 +38,10 @@ const refs = {
   sidebarCart: document.querySelector('.cart'),
   cartBtn: document.querySelector('.cart-btn'),
   loader: document.querySelector('.loader'),
-  cartItem: document.querySelector('.cart__item'),
+  cartSidebarList: document.querySelector('.cart__list'),
+  productsInCart: document.querySelector('.cart-item-count'),
+  cartTotalPrice: document.querySelector('.cart__total'),
+  productAmount: document.querySelector('.cart__product-count'),
 
   // products and categories pages
 
@@ -54,6 +57,7 @@ const refs = {
   priceInput: document.querySelectorAll('.price-input'),
   select: document.querySelector('.products__select'),
   selectForm: document.querySelector('.products__select-form'),
+  searchCompanyInput: document.querySelector('.company__search-input'),
 
   // modal
 
@@ -80,6 +84,27 @@ const refs = {
   sliderList: document.querySelector('.similar-slider'),
   latestList: document.querySelector('.latest-slider'),
   similarProductsBlock: document.querySelector('.similar-section'),
+  textArea: document.querySelector('.textarea-input'),
+
+  // Cart Page
+
+  tableBody: document.querySelector('.table-body'),
+  cartTotalPriceOnPage: document.querySelector('.cart__total-price'),
+  couponForm: document.querySelector('.coupon-form'),
+  couponButton: document.querySelector('.coupon-button'),
+  alsoBuyList: document.querySelector('.also-buy__list'),
+  creditButton: document.querySelector('.credit-button'),
+  modalTotal: document.querySelectorAll('.modal-table__total'),
+  creditPercent: document.querySelectorAll('.modal-table__credit-text'),
+  priceForMonth: document.querySelectorAll('.modal-table__credit'),
+  modalSelect: document.querySelectorAll('.modal-table__select'),
+  creditModal: document.querySelector('.credit-modal'),
+  bankInputs: document.querySelectorAll('.modal-table__radio'),
+  creditPrice: document.querySelector('.credit-price'),
+  paymentPrice: document.querySelector('.payment-price'),
+  modalButton: document.querySelector('.modal-table__button'),
+  creditPriceBlock: document.querySelector('.credit-block'),
+  paymentPriceBlock: document.querySelector('.payment-block'),
 };
 
 export default refs;

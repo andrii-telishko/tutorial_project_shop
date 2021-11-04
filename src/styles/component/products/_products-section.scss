@@ -5,6 +5,32 @@
     display: flex;
     flex-wrap: wrap;
   }
+
+  &__item {
+    position: relative;
+  }
+}
+
+.product__stock {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 30px;
+  font-size: 18px;
+  color: $white-color;
+  transform: translateY(-100%);
+  transition: transform $animation-duration $animation-timing-function;
+  visibility: hidden;
+}
+
+.products__item:hover .product__stock,
+.products__item:focus .product__stock {
+  visibility: visible;
+  transform: translateY(0);
 }
 
 .categories__header {

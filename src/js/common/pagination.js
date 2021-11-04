@@ -1,5 +1,6 @@
-// import { store } from './store';
 import productsListTpl from '../../templates/common/productsList.hbs';
+import refs from './refs';
+import initStock from './initStock';
 
 const pagination = store => {
   $('.pagination-block').pagination({
@@ -12,10 +13,17 @@ const pagination = store => {
     callback: function (store, pagination) {
       const html = Handlebars.compile(productsListTpl(store));
       $('.products__list').html(html);
+      initStock(store);
       window.scrollTo({
         top: 0,
         behavior: 'smooth',
       });
+      refs.totalProductsInfo.textContent = `Viewing 24 of ${this.dataSource.length} products`;
+    },
+    afterIsLastPage: function () {
+      refs.totalProductsInfo.textContent = `Viewing ${store.length % 24} of ${
+        store.length
+      } products`;
     },
   });
 

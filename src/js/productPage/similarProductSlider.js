@@ -6,13 +6,13 @@ const similarProductSlider = () => {
       autoplaySpeed: 3500,
       responsive: [
         {
-          breakpoint: 360,
+          breakpoint: 400,
           settings: {
             slidesToShow: 1,
           },
         },
         {
-          breakpoint: 360,
+          breakpoint: 400,
           settings: {
             slidesToShow: 4,
           },
