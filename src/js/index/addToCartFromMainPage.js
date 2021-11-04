@@ -1,12 +1,10 @@
-import { openCartMenu } from './sidebar';
+import { openCartMenu } from '../common/sidebar';
 
-import refs from './refs';
-import { getStorageItem, setStorageItem } from './utils';
-import initCart from './initCart';
+import refs from '../common/refs';
+import { getStorageItem, setStorageItem } from '../common/utils';
+import initCart from '../common/initCart';
 
-import pagination from './pagination';
-
-const addToCart = e => {
+const addToCartOnMainPage = e => {
   const id = e.target.dataset.id || e.target.parentNode.dataset.id;
 
   if (refs.searchBackdrop) {
@@ -54,8 +52,7 @@ const addToCart = e => {
     setStorageItem('store', store);
     initCart();
     openCartMenu();
-    pagination(getStorageItem('store'));
   }
 };
 
-export default addToCart;
+export default addToCartOnMainPage;

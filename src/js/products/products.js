@@ -5,7 +5,7 @@ import '../common/modal/modal';
 
 import refs from '../common/refs';
 import addToCart from '../common/addToCart';
-import { store } from '../common/store';
+// import { store } from '../common/store';
 import { openCartMenu, closeCartMenu } from '../common/sidebar';
 import pagination from '../common/pagination';
 import renderCompanies from '../common/renderCompanies';
@@ -13,16 +13,17 @@ import filters from '../common/filters/filters';
 import initCart from '../common/initCart';
 import incrementProducts from '../common/incrementProducts';
 import deleteProduct from '../common/deleteProduct';
+import { getStorageItem } from '../common/utils';
 
-pagination(store);
+pagination(getStorageItem('store'));
 
 initCart();
 
-renderCompanies(store);
+renderCompanies(getStorageItem('store'));
 
 refs.loader.setAttribute('style', 'display:none');
 
-filters(store);
+filters(getStorageItem('store'));
 
 refs.productsList.addEventListener('click', addToCart);
 refs.cartBtn.addEventListener('click', openCartMenu);

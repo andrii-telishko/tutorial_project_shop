@@ -1,11 +1,11 @@
-import { getStorageItem, setStorageItem } from './utils';
-import initCart from './initCart';
-import refs from './refs';
+import { getStorageItem, setStorageItem } from '../common/utils';
+import initCart from '../common/initCart';
+import refs from '../common/refs';
 import cartSidebarItem from '../../templates/common/cartSidebarItem.hbs';
-import pagination from './pagination';
+import pagination from '../common/pagination';
 
 const incrementProducts = e => {
-  let store = getStorageItem('store');
+  let category = getStorageItem('category');
   const { id } = e.target.dataset;
   let cart = getStorageItem('cart');
   if (e.target.dataset.add === 'increment') {
@@ -34,7 +34,7 @@ const incrementProducts = e => {
       return newAmount;
     }).amount;
 
-    store = store.map(product => {
+    category = category.map(product => {
       if (product.id === +id) {
         product.stock -= 1;
       } else {
@@ -71,7 +71,7 @@ const incrementProducts = e => {
       );
     }
 
-    store = store.map(product => {
+    category = category.map(product => {
       if (product.id === +id) {
         product.stock += 1;
       } else {
@@ -82,9 +82,9 @@ const incrementProducts = e => {
   }
 
   setStorageItem('cart', cart);
-  setStorageItem('store', store);
+  setStorageItem('category', category);
   initCart();
-  pagination(getStorageItem('store'));
+  pagination(category);
 };
 
 export default incrementProducts;

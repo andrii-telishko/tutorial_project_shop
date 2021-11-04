@@ -1,12 +1,12 @@
-import { openCartMenu } from './sidebar';
+import { openCartMenu } from '../common/sidebar';
 
-import refs from './refs';
-import { getStorageItem, setStorageItem } from './utils';
-import initCart from './initCart';
+import refs from '../common/refs';
+import { getStorageItem, setStorageItem } from '../common/utils';
+import initCart from '../common/initCart';
 
-import pagination from './pagination';
+import pagination from '../common/pagination';
 
-const addToCart = e => {
+const addToCartOnCategoryPage = e => {
   const id = e.target.dataset.id || e.target.parentNode.dataset.id;
 
   if (refs.searchBackdrop) {
@@ -17,7 +17,7 @@ const addToCart = e => {
   }
 
   let cartStorage = getStorageItem('cart');
-  let store = getStorageItem('store');
+  let category = getStorageItem('category');
 
   if (
     e.target.nodeName === 'BUTTON' ||
@@ -25,9 +25,7 @@ const addToCart = e => {
   ) {
     const item = cartStorage.find(product => product.id === +id);
     if (!item) {
-      let product =
-        store.find(product => product.id === +id) ||
-        getStorageItem('category').find(product => product.id === +id);
+      let product = category.find(product => product.id === +id);
 
       product.stock -= 1;
 
@@ -40,7 +38,7 @@ const addToCart = e => {
       } else {
         item.stock -= 1;
         item.amount += 1;
-        store = store.map(product => {
+        category = category.map(product => {
           if (product.id === item.id) {
             product.stock = item.stock;
           }
@@ -51,11 +49,11 @@ const addToCart = e => {
     }
 
     setStorageItem('cart', cartStorage);
-    setStorageItem('store', store);
+    setStorageItem('category', category);
     initCart();
     openCartMenu();
-    pagination(getStorageItem('store'));
+    pagination(category);
   }
 };
 
-export default addToCart;
+export default addToCartOnCategoryPage;

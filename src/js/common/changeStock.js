@@ -1,17 +1,15 @@
-import { setStorageItem } from './utils';
+import { setStorageItem, getStorageItem } from './utils';
 import { store } from './store';
 
-const changeStock = storeArr => {
-  const cart = storeArr.map(product => {
-    store.forEach(item => {
+const changeStock = stock => {
+  store.map(product => {
+    stock.forEach(item => {
       if (product.id === item.id) {
         product.stock = item.stock;
       }
     });
-    return product;
   });
-
-  setStorageItem('cart', cart);
+  setStorageItem('store', store);
 };
 
 export default changeStock;

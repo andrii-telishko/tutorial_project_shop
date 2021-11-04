@@ -15,12 +15,13 @@ const initCommonRatting = id => {
   let commonRating;
 
   if (ratings.length === 0) {
-    commonRating = 0;
+    commonRating = 0.0;
   } else {
     commonRating =
       ratings.reduce((sum, item) => {
         return sum + item;
       }, 0) / ratings.length;
+    commonRating = (Math.round(commonRating * 100) / 100).toFixed(2);
   }
 
   commonRating = (Math.round(commonRating * 100) / 100).toFixed(2);
