@@ -31,6 +31,13 @@ const refs = {
   errors: document.querySelectorAll('.error'),
   radioBtnPaymentList: document.querySelectorAll('.radio-btn'),
   radioBtnBankList: document.querySelectorAll('.radio-bank-btn'),
+  finalProductList: document.querySelector('.checkout__final-list'),
+  totalCheckout: document.querySelector('.checkout__total-price'),
+  creditInfo: document.querySelector('.checkout__credit-info'),
+  creditCheckout: document.querySelector('.checkout__credit-price'),
+  paymentCheckout: document.querySelector('.checkout__payment-price'),
+  creditCheckoutBlock: document.querySelector('.checkout__credit-block'),
+  paymentCheckoutBlock: document.querySelector('.checkout__payment-block'),
 
   // cart sidebar
 
