@@ -7,8 +7,17 @@ import changePaymentForm from './changePaymentForm';
 import { enableSubmitBtn, errorShowFn } from './formValidation';
 import handlerSubmit from './handlerSubmit';
 import initCartInCheckout from './initCartInCheckout';
+import { getStorageItem } from '../common/utils';
 
 initCartInCheckout();
+
+getStorageItem('magazines').forEach(({ name, lat, lng }) => {
+  refs.magazines.insertAdjacentHTML(
+    'beforeend',
+    `
+  <li data-lat = ${lat} data-lng=${lng} class="magazines-item">${name}</li>`,
+  );
+});
 
 refs.paymentMethodForm[1].addEventListener('click', changePaymentForm);
 refs.form.addEventListener('input', enableSubmitBtn);

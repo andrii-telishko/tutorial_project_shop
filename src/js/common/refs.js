@@ -38,6 +38,8 @@ const refs = {
   paymentCheckout: document.querySelector('.checkout__payment-price'),
   creditCheckoutBlock: document.querySelector('.checkout__credit-block'),
   paymentCheckoutBlock: document.querySelector('.checkout__payment-block'),
+  map: document.querySelector('.map'),
+  magazines: document.querySelector('.magazines-list'),
 
   // cart sidebar
 

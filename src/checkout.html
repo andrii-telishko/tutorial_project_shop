@@ -41,6 +41,7 @@
       <h1 class="checkout__title">Checkout</h1>
       <section>
         <div class="container">
+          <h2>Your Cart</h2>
           <ul class="list checkout__final-list"></ul>
           <div class="checkout__prices">
             <div class="checkout__total-block">
@@ -59,6 +60,36 @@
         <p class="checkout__credit-info"></p>
       </div>
         
+      </section>
+      <section class="delivery-section">
+        <div class="container">
+          <h2>Choose delivery method</h2>
+          <form class="delivery__form">
+            <label class="delivery__label">
+              <input type="radio" class="delivery__input" checked name="delivery">
+              Pick up from magazine
+            </label>
+            <label class="delivery__label">
+              <input type="radio" class="delivery__input" name="delivery">
+              Pick up from post office
+            </label>
+            <label class="delivery__label">
+              <input type="radio" class="delivery__input" name="delivery">
+              Delivery with DHL
+            </label>
+          </form>
+          <div class="delivery__container">
+            <div class="delivery__magazine">
+              <div class="magazine__info">
+                <h4>In this places you can take your game</h4>
+                <ul id="marker-list" class="magazines-list list"></ul>
+                <p id="address-block" class="address-block">Pick up your order from magazine with address: 
+                  <span id="address" class="magazine-address"></span></p>
+              </div>
+              <div class="map" id="map"></div>
+            </div>
+          </div>
+        </div>
       </section>
       <section>
         <div class="container">
@@ -637,7 +668,14 @@
     <div class="loader">
       <h2>Loading...</h2>
     </div>
+    <script src="./js/checkout/initMap.js"></script>
+    <script 
+    async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC9-d_dM3KA2b5ZRhMtfFQWCafk674Hvko&libraries=places&callback=initMap">
+</script>
     <script src=" https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="./js/libs/jquery.maskedinput.min.js"></script>
+    
+
+
   </body>
 </html>

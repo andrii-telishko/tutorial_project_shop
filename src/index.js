@@ -17,10 +17,12 @@ import deleteProductsOnMainPage from './js/index/deleteProductsOnMainPage';
 import addToCartOnMainPage from './js/index/addToCartFromMainPage';
 import { coupons } from './js/cart/coupons';
 import { setStorageItem } from './js/common/utils';
+import magazines from './js/checkout/magazines';
 
 window.addEventListener('DOMContentLoaded', init);
 
 setStorageItem('coupons', coupons);
+setStorageItem('magazines', magazines);
 
 refs.menuBtn.addEventListener('click', openMobileMenu);
 refs.featureSection.addEventListener('click', choosingCard);
