@@ -40,6 +40,12 @@ const refs = {
   paymentCheckoutBlock: document.querySelector('.checkout__payment-block'),
   map: document.querySelector('.map'),
   magazines: document.querySelector('.magazines-list'),
+  deliveryForm: document.querySelector('.delivery__form'),
+  postInput: document.getElementById('post-input'),
+  postInputReset: document.querySelector('.post-input__reset'),
+  magazineContainer: document.querySelector('.delivery-magazine__container'),
+  postContainer: document.querySelector('.delivery-post__container'),
+  dhlContainer: document.querySelector('.delivery-dhl__container'),
 
   // cart sidebar
 

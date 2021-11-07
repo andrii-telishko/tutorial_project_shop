@@ -8,6 +8,7 @@ import { enableSubmitBtn, errorShowFn } from './formValidation';
 import handlerSubmit from './handlerSubmit';
 import initCartInCheckout from './initCartInCheckout';
 import { getStorageItem } from '../common/utils';
+import changeDeliveryContainer from './changeDeliveryContainer';
 
 initCartInCheckout();
 
@@ -43,3 +44,9 @@ window.addEventListener('DOMContentLoaded', () => {
 });
 
 refs.form.addEventListener('submit', handlerSubmit);
+
+refs.deliveryForm.addEventListener('change', changeDeliveryContainer);
+
+refs.postInputReset.addEventListener('click', () => {
+  refs.postInput.value = '';
+});
