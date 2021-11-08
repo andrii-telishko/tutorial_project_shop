@@ -8,8 +8,6 @@ const initModal = () => {
     });
   });
 
-  console.log(selectOptions);
-
   // create array with percents for bank service
 
   const percent = [
