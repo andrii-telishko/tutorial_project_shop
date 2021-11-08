@@ -22,7 +22,7 @@ const initCartInCheckout = () => {
     }
     reducer += total;
 
-    return reducer.toFixed(2);
+    return reducer;
   }, 0);
 
   refs.totalCheckout.textContent = `$${total}`;

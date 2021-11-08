@@ -29,6 +29,10 @@
   padding: 12px;
 }
 
+.magazine-info__address {
+  display: none;
+}
+
 .map {
   width: 100%;
   height: 300px;
@@ -54,6 +58,10 @@
 
 .post-label {
   display: none;
+}
+
+.magazines-list {
+  margin-bottom: 24px;
 }
 
 .magazines-item {

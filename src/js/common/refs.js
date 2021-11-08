@@ -46,6 +46,21 @@ const refs = {
   magazineContainer: document.querySelector('.delivery-magazine__container'),
   postContainer: document.querySelector('.delivery-post__container'),
   dhlContainer: document.querySelector('.delivery-dhl__container'),
+  deliveryInputs: document.querySelectorAll('.delivery__input'),
+  magazineAddress: document.getElementById('magazine-street'),
+  postName: document.getElementById('post-name'),
+  postStreet: document.getElementById('street'),
+  postCity: document.getElementById('city'),
+  postRegion: document.getElementById('region'),
+  postCode: document.getElementById('post-code'),
+  postPhone: document.getElementById('post-phone'),
+  postWeek: document.getElementById('week'),
+  postSaturday: document.getElementById('saturday'),
+  postSunday: document.getElementById('sunday'),
+  dhlForm: document.querySelector('.delivery-dhl__form'),
+  totalPriceInCheckoutPage: document.querySelector('.checkout__total-price'),
+  creditDescription: document.querySelector('.checkout__credit-info'),
+  dhlInputs: document.querySelectorAll('.delivery-dhl__input'),
 
   // cart sidebar
 
@@ -83,6 +98,7 @@ const refs = {
   modalOpenBtn: document.querySelector('.login-button'),
   modalBackdrop: document.querySelector('.backdrop'),
   iconCross: document.querySelector('.modal-cross'),
+  checkoutModal: document.querySelector('.checkout-modal'),
 
   //product page
 

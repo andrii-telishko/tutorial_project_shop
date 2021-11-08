@@ -53,8 +53,13 @@ function initMaps() {
 
       geocoder.geocode({ location: markerPosition }, (res, status) => {
         if (status === 'OK') {
-          document.getElementById('address').textContent = `
-          ${res[0].formatted_address} `;
+          let street;
+          if (e.target.textContent === 'Globus') {
+            street = `${res[1].address_components[1].long_name}, ${res[1].address_components[0].long_name}`;
+          } else {
+            street = `${res[0].address_components[1].long_name}, ${res[0].address_components[0].long_name}`;
+          }
+          document.getElementById('magazine-street').textContent = street;
         } else {
           alert('Problems with geolocation');
         }
@@ -204,7 +209,7 @@ function initMaps() {
         const saturdayEl = document.getElementById('saturday');
         const sundayEl = document.getElementById('sunday');
 
-        const street = `${postPlace.formatted_address.split(',')[0]} ${
+        const street = `${postPlace.formatted_address.split(',')[0]}, ${
           postPlace.formatted_address.split(',')[1]
         }`;
         const city = postPlace.formatted_address.split(',')[2];

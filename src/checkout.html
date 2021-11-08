@@ -84,9 +84,11 @@
               <div class="magazine__info">
                 <h4>In this places you can take your game</h4>
                 <ul id="marker-list" class="magazines-list list"></ul>
-                <p id="address-block" class="address-block">Pick up your order from magazine with address: 
-                  <span id="address" class="magazine-address"></span>
-                </p>
+                <div class="post-info__address magazine-info__address" id='address-block'>
+                    <h5 class="post-info__address-title">Address</h5>
+                    <p class="post-address" >Street: <span id="magazine-street" class="post-address__dinamic"></span></p>
+                    <p class="post-address">City: <span class="post-address__dinamic">Kyiv</span></p>
+                </div>
                 <p>Price for delivery: $0</p>
               </div>
               <div class="map" id="magazine-map"></div>
@@ -97,7 +99,7 @@
               <div class="magazine__info">
                 <label class="autocomplete-label">
                   Choose you city
-                  <input type="text" id="city-input" class="autocomplete-input" placeholder="Search here">
+                  <input type="text" id="city-input" class="autocomplete-input" placeholder="Search here" autocomplete="off">
                 </label>
                 <label class="autocomplete-label post-label" id="post-label">
                   Choose you post office
@@ -139,31 +141,31 @@
               <form class="delivery-dhl__form">
                 <label class="delivery-dhl__label">
                   Street
-                  <input type="text" class="delivery-dhl__input" required>
+                  <input type="text" class="delivery-dhl__input" required name="street">
                 </label>
                 <label class="delivery-dhl__label">
                   Building
-                  <input type="number" class="delivery-dhl__input short-input" required>
+                  <input type="number" class="delivery-dhl__input short-input" required name="building">
                 </label>
                 <label class="delivery-dhl__label">
                   City
-                  <input type="text" class="delivery-dhl__input" required pattern="^[a-zA-Z -]+$">
+                  <input type="text" class="delivery-dhl__input" required pattern="^[a-zA-Z -]+$" name="city">
                 </label>
                 <label class="delivery-dhl__label">
                   Region
-                  <input type="text" class="delivery-dhl__input" required>
+                  <input type="text" class="delivery-dhl__input" required name="region">
                 </label>
                 <label class="delivery-dhl__label">
                   Post Code
-                  <input type="text" class="delivery-dhl__input short-input" id="delivery__post-code" required pattern="^[0-9]{2}(?:-[0-9]{3})?$">
+                  <input type="text" class="delivery-dhl__input short-input" id="delivery__post-code" required pattern="^[0-9]{2}(?:-[0-9]{3})?$" name="post_code">
                 </label>
                 <label class="delivery-dhl__label">
                   Phone Number
-                  <input type="text" class="delivery-dhl__input" id="delivery__phone" required pattern="^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]\d{3}[\s.-]\d{4}$">
+                  <input type="text" class="delivery-dhl__input" id="delivery__phone" required pattern="^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]\d{3}[\s.-]\d{4}$" name="phone">
                 </label>
                 <label class="delivery-dhl__label">
                   How we can call you
-                  <input type="text" class="delivery-dhl__input" required>
+                  <input type="text" class="delivery-dhl__input" required name="name">
                 </label>
               </form>
               <p>Price for delivery: $10</p>
@@ -748,6 +750,15 @@
     </footer>
     <div class="loader">
       <h2>Loading...</h2>
+    </div>
+    <div class="backdrop is-hidden">
+      <div class="modal is-hidden checkout-modal">
+        <div class="checkout-modal">
+          <h2 class="modal-title">Checkout Complete</h2>
+        <p class="checkout-modal__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate eum voluptates, magni maiores dignissimos nulla doloribus quidem debitis facere quam?</p>
+        <a href="index.html" class="link checkout-modal__link">Go Shopping Again</a>
+        </div>
+      </div>
     </div>
     <script src="./js/checkout/initMaps.js"></script>
     <script 
