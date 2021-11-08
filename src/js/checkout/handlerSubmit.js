@@ -8,6 +8,8 @@ const handlerSubmit = e => {
   const credit = getStorageItem('credit');
   let ordersStore = getStorageItem('orders');
 
+  // cerate object orders
+
   let orders = {
     cart: {},
     delivery: {},
@@ -17,6 +19,8 @@ const handlerSubmit = e => {
   };
 
   let { cart, delivery, payment } = orders;
+
+  // wright cart info into object
 
   const products = store.map(item => {
     let product = {};
@@ -37,9 +41,13 @@ const handlerSubmit = e => {
 
   orders.cart = products;
 
+  // wright delivery info into object
+
   const deliveryInput = [...refs.deliveryInputs].find(input => input.checked);
 
   delivery.type = deliveryInput.value;
+
+  // create delivery fields in orders object which depends from delivery type
 
   if (deliveryInput.value === 'magazine') {
     const addressArr = refs.magazineAddress.textContent.split(',');
@@ -73,6 +81,10 @@ const handlerSubmit = e => {
 
   orders.delivery = delivery;
 
+  // add payment info into object orders
+
+  // currentTarget - it is payment form
+
   const buyerData = new FormData(e.currentTarget);
   const value = Object.fromEntries(buyerData.entries());
 
@@ -101,6 +113,8 @@ const handlerSubmit = e => {
   payment = { ...actuallyFormData };
 
   orders.payment = payment;
+
+  // creat price value in orders object which depend from delivery method
 
   let price;
 
@@ -149,8 +163,11 @@ const handlerSubmit = e => {
   orders.price = `$${price}`;
   console.log(JSON.stringify(actuallyFormData));
   console.log(orders);
+  // add current order to orders in local storage
   ordersStore.push(orders);
   setStorageItem('orders', ordersStore);
+
+  // show final modal and delete cart
 
   refs.modalBackdrop.classList.remove('is-hidden');
   refs.checkoutModal.classList.remove('is-hidden');

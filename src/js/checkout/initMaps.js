@@ -13,7 +13,11 @@ function initMaps() {
 
   map = new google.maps.Map(document.getElementById('magazine-map'), options);
 
+  // get array og magazines
+
   const markerList = [...document.getElementById('marker-list').children];
+
+  // create array of markers and put markers on the map
 
   const markers = markerList.map(magazine => {
     return new google.maps.Marker({
@@ -25,6 +29,8 @@ function initMaps() {
       name: magazine.textContent,
     });
   });
+
+  // add event listener on magazines and render info of selected magazine
 
   document.getElementById('marker-list').addEventListener('click', e => {
     if (e.target.nodeName === 'LI') {
@@ -46,10 +52,14 @@ function initMaps() {
 
       const geocoder = new google.maps.Geocoder();
 
+      // find position of selected marker
+
       const markerPosition = {
         lat: selectedMarker.getPosition().lat(),
         lng: selectedMarker.getPosition().lng(),
       };
+
+      // find and render address of selected magazine, using geocoder
 
       geocoder.geocode({ location: markerPosition }, (res, status) => {
         if (status === 'OK') {
@@ -65,6 +75,8 @@ function initMaps() {
         }
       });
 
+      // zoom map on selected marker
+
       const position = new google.maps.LatLng(
         +e.target.dataset.lat,
         +e.target.dataset.lng,
@@ -75,6 +87,8 @@ function initMaps() {
       map.setCenter(position);
     }
   });
+
+  // create window info for each marker
 
   markers.forEach(marker => {
     let markerInfo;
@@ -113,6 +127,8 @@ function initMaps() {
 
   let postMap;
 
+  // find gelocation
+
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(
       loc => {
@@ -135,6 +151,8 @@ function initMaps() {
     postMap = new google.maps.Map(document.getElementById('post-map'), options);
   }
 
+  // create autocomplete of city input
+
   cityAutocomplete = new google.maps.places.Autocomplete(
     document.getElementById('city-input'),
     {
@@ -156,6 +174,8 @@ function initMaps() {
     });
 
     postMap.setCenter(position);
+
+    // create autocomplete of post input
 
     const input = document.getElementById('post-input');
     input.value = `${cityAutocomplete.getPlace().name} Ukrposhta`;
@@ -195,9 +215,12 @@ function initMaps() {
 
       postMap.setCenter(postPosition);
 
+      // create and render all address info of selected post office
+
       if (!postPlace.name.toLowerCase().includes('poshta')) {
         alert('You need to find Ukrposhta office to continue');
       } else {
+        // get all DOM elements
         const info = document.getElementById('post-info');
         const name = document.getElementById('post-name');
         const streetEl = document.getElementById('street');
@@ -208,6 +231,8 @@ function initMaps() {
         const weekEl = document.getElementById('week');
         const saturdayEl = document.getElementById('saturday');
         const sundayEl = document.getElementById('sunday');
+
+        // get all info from autocomplete
 
         const street = `${postPlace.formatted_address.split(',')[0]}, ${
           postPlace.formatted_address.split(',')[1]

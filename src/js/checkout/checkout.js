@@ -10,7 +10,11 @@ import initCartInCheckout from './initCartInCheckout';
 import { getStorageItem } from '../common/utils';
 import changeDeliveryContainer from './changeDeliveryContainer';
 
+//render cart info in checkout page
+
 initCartInCheckout();
+
+//render magazines in first delivery method
 
 getStorageItem('magazines').forEach(({ name, lat, lng }) => {
   refs.magazines.insertAdjacentHTML(
