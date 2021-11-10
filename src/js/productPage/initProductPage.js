@@ -39,6 +39,8 @@ const initProductPage = () => {
       initLatestProducts();
       renderReviews();
       initCommonRatting(id);
+
+      refs.loader.setAttribute('style', 'display: none');
     }
   };
 

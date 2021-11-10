@@ -29,6 +29,7 @@ refs.arrivalList.addEventListener('click', addToCartOnMainPage);
 refs.popularList.addEventListener('click', addToCartOnMainPage);
 refs.categoriesList.addEventListener('click', openRestCategories);
 refs.cartOverlay.addEventListener('click', closeRestCategories);
+window.addEventListener('keydown', closeRestCategories);
 refs.mainSearchInput.addEventListener('input', searchProducts);
 refs.searchBackdrop.addEventListener('click', closeSearchContainer);
 window.addEventListener('keydown', closeSearchContainer);

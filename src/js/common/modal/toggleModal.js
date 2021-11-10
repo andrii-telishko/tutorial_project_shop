@@ -2,6 +2,7 @@ import refs from '../refs';
 
 const openModal = () => {
   refs.modalBackdrop.classList.remove('is-hidden');
+  refs.modal.classList.remove('is-hidden');
 };
 
 const closeModal = e => {
@@ -11,6 +12,7 @@ const closeModal = e => {
     e.target === refs.iconCross
   ) {
     refs.modalBackdrop.classList.add('is-hidden');
+    refs.modal.classList.remove('is-hidden');
     refs.modalForm.reset();
   }
 };
