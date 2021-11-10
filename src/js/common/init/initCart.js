@@ -1,6 +1,6 @@
 import refs from '../refs';
 import { getStorageItem } from '../utils';
-import { countProductsInCart } from '../cart';
+import countProductsInCart from '../countProductsInCart';
 
 const initCart = () => {
   let cart = getStorageItem('cart');

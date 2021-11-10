@@ -9,6 +9,7 @@ import handlerSubmit from './handlerSubmit';
 import initCartInCheckout from './initCartInCheckout';
 import { getStorageItem } from '../common/utils';
 import changeDeliveryContainer from './changeDeliveryContainer';
+import validateFooterInput from '../common/validateFooterInput';
 
 //render cart info in checkout page
 
@@ -54,3 +55,5 @@ refs.deliveryForm.addEventListener('change', changeDeliveryContainer);
 refs.postInputReset.addEventListener('click', () => {
   refs.postInput.value = '';
 });
+
+refs.footerInput.addEventListener('input', validateFooterInput);

@@ -1,5 +1,5 @@
 import { getStorageItem, setStorageItem } from './utils';
-import initCart from './initCart';
+import { initCart } from './init';
 import refs from './refs';
 import cartSidebarItem from '../../templates/common/cartSidebarItem.hbs';
 import pagination from './pagination';
@@ -9,7 +9,7 @@ const incrementProducts = e => {
   const { id } = e.target.dataset;
   let cart = getStorageItem('cart');
   if (e.target.dataset.add === 'increment') {
-    refs.productsList.innerHTML = '';
+    // refs.productsList.innerHTML = '';
     const amount = e.target.previousElementSibling;
 
     cart = cart.map(product => {
@@ -19,9 +19,31 @@ const incrementProducts = e => {
           product.stock -= 1;
           newAmount = product.amount + 1;
           product = { ...product, amount: newAmount };
+          store = store.map(product => {
+            if (product.id === +id) {
+              product.stock -= 1;
+            }
+            return product;
+          });
+        } else if (product.stock === 1) {
+          product.stock -= 0;
+          newAmount = product.amount + 1;
+          product = { ...product, amount: newAmount };
+          store = store.map(product => {
+            if (product.id === +id) {
+              product.stock = 0;
+            }
+            return product;
+          });
         } else {
           alert('There is no more this game in stock');
           product = { ...product };
+          store = store.map(product => {
+            if (product.id === +id) {
+              product.stock = 0;
+            }
+            return product;
+          });
         }
       }
       return product;
@@ -33,17 +55,8 @@ const incrementProducts = e => {
       }
       return newAmount;
     }).amount;
-
-    store = store.map(product => {
-      if (product.id === +id) {
-        product.stock -= 1;
-      } else {
-        product.stock -= 0;
-      }
-      return product;
-    });
   } else if (e.target.dataset.add === 'decrement') {
-    refs.productsList.innerHTML = '';
+    // refs.productsList.innerHTML = '';
     const amount = e.target.nextElementSibling;
     if (amount.textContent > 1) {
       cart = cart.map(product => {
@@ -63,7 +76,7 @@ const incrementProducts = e => {
         return newAmount;
       }).amount;
     } else {
-      refs.cartSidebarList.innerHTML = '';
+      // refs.cartSidebarList.innerHTML = '';
       cart = cart.filter(product => product.id !== +id);
       refs.cartSidebarList.insertAdjacentHTML(
         'beforeend',
@@ -84,7 +97,7 @@ const incrementProducts = e => {
   setStorageItem('cart', cart);
   setStorageItem('store', store);
   initCart();
-  pagination(getStorageItem('store'));
+  // pagination(getStorageItem('store'));
 };
 
 export default incrementProducts;

@@ -2,7 +2,7 @@ import { openCartMenu } from '../common/sidebar';
 // import { store } from '../common/store';
 import refs from '../common/refs';
 import { getStorageItem, setStorageItem } from '../common/utils';
-import initCart from '../common/initCart';
+import { initCart } from '../common/init';
 import renderStock from './renderStock';
 
 const addProductToCart = e => {

@@ -1,7 +1,7 @@
 import { getStorageItem, setStorageItem } from './utils';
 import refs from './refs';
 import cartSidebarItem from '../../templates/common/cartSidebarItem.hbs';
-import initCart from './initCart';
+import { initCart } from './init';
 import pagination from './pagination';
 
 const deleteProduct = e => {
@@ -10,7 +10,7 @@ const deleteProduct = e => {
   let store = getStorageItem('store');
   if (e.target.textContent === 'Remove') {
     refs.cartSidebarList.innerHTML = '';
-    refs.productsList.innerHTML = '';
+    // refs.productsList.innerHTML = '';
 
     const deletedCart = cart.find(product => product.id === +id);
 
@@ -29,7 +29,7 @@ const deleteProduct = e => {
   setStorageItem('cart', cart);
   initCart();
   setStorageItem('store', store);
-  pagination(getStorageItem('store'));
+  // pagination(getStorageItem('store'));
 };
 
 export default deleteProduct;

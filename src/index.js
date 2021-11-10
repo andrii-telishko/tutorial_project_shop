@@ -18,6 +18,7 @@ import addToCartOnMainPage from './js/index/addToCartFromMainPage';
 import { coupons } from './js/cart/coupons';
 import { setStorageItem } from './js/common/utils';
 import magazines from './js/checkout/magazines';
+import validateFooterInput from './js/common/validateFooterInput';
 
 window.addEventListener('DOMContentLoaded', init);
 
@@ -39,3 +40,4 @@ refs.cartBtn.addEventListener('click', openCartMenu);
 refs.sidebarBtn.addEventListener('click', closeCartMenu);
 refs.cartSidebarList.addEventListener('click', incrementProductsOnMainPage);
 refs.cartSidebarList.addEventListener('click', deleteProductsOnMainPage);
+refs.footerInput.addEventListener('input', validateFooterInput);

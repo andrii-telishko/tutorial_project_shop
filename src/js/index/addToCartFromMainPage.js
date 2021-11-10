@@ -2,7 +2,7 @@ import { openCartMenu } from '../common/sidebar';
 
 import refs from '../common/refs';
 import { getStorageItem, setStorageItem } from '../common/utils';
-import initCart from '../common/initCart';
+import { initCart } from '../common/init';
 
 const addToCartOnMainPage = e => {
   const id = e.target.dataset.id || e.target.parentNode.dataset.id;

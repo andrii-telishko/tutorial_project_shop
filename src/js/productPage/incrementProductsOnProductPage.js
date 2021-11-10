@@ -1,5 +1,5 @@
 import { getStorageItem, setStorageItem, findId } from '../common/utils';
-import initCart from '../common/initCart';
+import { initCart } from '../common/init';
 import refs from '../common/refs';
 import cartSidebarItem from '../../templates/common/cartSidebarItem.hbs';
 import renderStock from './renderStock';
@@ -8,6 +8,7 @@ const incrementProductsOnProductPage = e => {
   const productId = findId();
 
   let store = getStorageItem('store');
+  let category = getStorageItem('category');
   const { id } = e.target.dataset;
 
   let cart = getStorageItem('cart');
@@ -21,9 +22,49 @@ const incrementProductsOnProductPage = e => {
           product.stock -= 1;
           newAmount = product.amount + 1;
           product = { ...product, amount: newAmount };
+          store = store.map(product => {
+            if (product.id === +id) {
+              product.stock -= 1;
+            }
+            return product;
+          });
+          category = category.map(product => {
+            if (product.id === +id) {
+              product.stock -= 1;
+            }
+            return product;
+          });
+        } else if (product.stock === 1) {
+          product.stock -= 0;
+          newAmount = product.amount + 1;
+          product = { ...product, amount: newAmount };
+          store = store.map(product => {
+            if (product.id === +id) {
+              product.stock = 0;
+            }
+            return product;
+          });
+          category = category.map(product => {
+            if (product.id === +id) {
+              product.stock = 0;
+            }
+            return product;
+          });
         } else {
           alert('There is no more this game in stock');
           product = { ...product };
+          store = store.map(product => {
+            if (product.id === +id) {
+              product.stock = 0;
+            }
+            return product;
+          });
+          category = category.map(product => {
+            if (product.id === +id) {
+              product.stock = 0;
+            }
+            return product;
+          });
         }
       }
       return product;
@@ -35,15 +76,6 @@ const incrementProductsOnProductPage = e => {
       }
       return newAmount;
     }).amount;
-
-    store = store.map(product => {
-      if (product.id === +id) {
-        product.stock -= 1;
-      } else {
-        product.stock -= 0;
-      }
-      return product;
-    });
   } else if (e.target.dataset.add === 'decrement') {
     const amount = e.target.nextElementSibling;
     if (amount.textContent > 1) {
@@ -53,6 +85,18 @@ const incrementProductsOnProductPage = e => {
           product.stock += 1;
           newAmount = product.amount - 1;
           product = { ...product, amount: newAmount };
+        }
+        return product;
+      });
+      store = store.map(product => {
+        if (product.id === +id) {
+          product.stock += 1;
+        }
+        return product;
+      });
+      category = category.map(product => {
+        if (product.id === +id) {
+          product.stock += 1;
         }
         return product;
       });
@@ -70,24 +114,30 @@ const incrementProductsOnProductPage = e => {
         'beforeend',
         cartSidebarItem(cart),
       );
+      store = store.map(product => {
+        if (product.id === +id) {
+          product.stock += 1;
+        }
+        return product;
+      });
+      category = category.map(product => {
+        if (product.id === +id) {
+          product.stock += 1;
+        }
+        return product;
+      });
     }
-
-    store = store.map(product => {
-      if (product.id === +id) {
-        product.stock += 1;
-      } else {
-        product.stock += 0;
-      }
-      return product;
-    });
   }
 
   setStorageItem('cart', cart);
   setStorageItem('store', store);
+  setStorageItem('category', category);
   initCart();
+  console.log(store[0].stock);
   if (productId === id) {
     renderStock(id, refs.productContainer.lastElementChild.children[1]);
   }
+  console.log(store[0].stock);
 };
 
 export default incrementProductsOnProductPage;

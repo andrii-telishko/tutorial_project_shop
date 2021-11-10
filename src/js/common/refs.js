@@ -14,6 +14,7 @@ const refs = {
   searchList: document.querySelector('.search-list'),
   mainSearchInput: document.querySelector('.main-search__input'),
   loader: document.querySelector('.loader'),
+  footerInput: document.querySelector('.footer__input'),
 
   // checkout page
 

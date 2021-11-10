@@ -3,7 +3,8 @@ import findStockOfProduct from './findStockOfProduct';
 
 const renderStock = (id, selector) => {
   const stockEl = selector;
-  const stock = findStockOfProduct(id).stock;
+  const stock = findStockOfProduct(id);
+  console.log(stock);
 
   if (stock === undefined) {
     stockEl.textContent = "This game didn't left";
