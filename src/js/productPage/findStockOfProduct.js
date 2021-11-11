@@ -3,7 +3,6 @@ import { store } from '../common/store';
 
 const findStockOfProduct = id => {
   let product;
-  console.log(getStorageItem('cart'));
 
   product =
     getStorageItem('cart').find(product => {
