@@ -62,6 +62,7 @@ const refs = {
   totalPriceInCheckoutPage: document.querySelector('.checkout__total-price'),
   creditDescription: document.querySelector('.checkout__credit-info'),
   dhlInputs: document.querySelectorAll('.delivery-dhl__input'),
+  checkoutTolal: document.querySelector('.project-total'),
 
   // cart sidebar
 

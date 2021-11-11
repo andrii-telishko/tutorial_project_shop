@@ -74,9 +74,8 @@ const incrementProductOnCartPage = e => {
   initCartPage(cart);
   setStorageItem('cart', cart);
   setStorageItem('store', store);
-  renderCreditPrice();
-
   initModal();
+  renderCreditPrice();
 };
 
 export default incrementProductOnCartPage;

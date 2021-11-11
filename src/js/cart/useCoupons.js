@@ -1,6 +1,8 @@
 import { getStorageItem, setStorageItem } from '../common/utils';
 import refs from '../common/refs';
 import countTotalPrice from './countTotalPrice';
+import initModal from './initModal';
+import renderCreditPrice from './renderCreditPrice';
 
 const useCoupons = e => {
   e.preventDefault();
@@ -84,6 +86,8 @@ const useCoupons = e => {
   const restCoupons = coupons.filter(coupon => coupon !== value.coupon);
 
   setStorageItem('coupons', restCoupons);
+  initModal();
+  renderCreditPrice();
 };
 
 export default useCoupons;

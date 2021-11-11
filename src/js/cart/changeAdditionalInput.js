@@ -2,6 +2,7 @@ import initCartPage from './initCartPage';
 import { getStorageItem, setStorageItem } from '../common/utils';
 import refs from '../common/refs';
 import initModal from './initModal';
+import renderCreditPrice from './renderCreditPrice';
 
 const changeAdditionalInput = e => {
   refs.tableBody.innerHTML = '';
@@ -29,6 +30,7 @@ const changeAdditionalInput = e => {
   setStorageItem('cart', store);
   initCartPage(store);
   initModal();
+  renderCreditPrice();
 };
 
 export default changeAdditionalInput;
