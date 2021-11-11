@@ -13,6 +13,11 @@ import initCart from '../common/initCart';
 import incrementProducts from '../common/incrementProducts';
 import deleteProduct from '../common/deleteProduct';
 import { getStorageItem } from '../common/utils';
+import initCategories from '../index/initCategories';
+import openRestCategories from '../index/openRestCategories';
+import closeRestCategories from '../index/closeRestCategories';
+
+initCategories();
 
 pagination(getStorageItem('store'));
 
@@ -27,3 +32,5 @@ refs.cartBtn.addEventListener('click', openCartMenu);
 refs.sidebarBtn.addEventListener('click', closeCartMenu);
 refs.cartSidebarList.addEventListener('click', incrementProducts);
 refs.cartSidebarList.addEventListener('click', deleteProduct);
+refs.categoriesList.addEventListener('click', openRestCategories);
+refs.cartOverlay.addEventListener('click', closeRestCategories);
