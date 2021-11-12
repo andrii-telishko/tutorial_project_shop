@@ -4,8 +4,9 @@ const enableReviewForm = () => {
   const emptyInput = [...refs.reviewFormInputs].find(
     input => input.value === '',
   );
+  const checkedStar = [...refs.reviewStars].find(item => item.checked);
 
-  if (!emptyInput) {
+  if (!emptyInput && checkedStar) {
     refs.reviewFormButton.removeAttribute('disabled');
   }
 };

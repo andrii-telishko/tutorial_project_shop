@@ -119,6 +119,7 @@ const refs = {
   latestList: document.querySelector('.latest-slider'),
   similarProductsBlock: document.querySelector('.similar-section'),
   textArea: document.querySelector('.textarea-input'),
+  reviewStars: document.querySelectorAll('.review__rating-item'),
 
   // Cart Page
 
