@@ -9,7 +9,7 @@ const incrementProducts = e => {
   const { id } = e.target.dataset;
   let cart = getStorageItem('cart');
   if (e.target.dataset.add === 'increment') {
-    // refs.productsList.innerHTML = '';
+    refs.productsList.innerHTML = '';
     const amount = e.target.previousElementSibling;
 
     cart = cart.map(product => {
@@ -56,7 +56,7 @@ const incrementProducts = e => {
       return newAmount;
     }).amount;
   } else if (e.target.dataset.add === 'decrement') {
-    // refs.productsList.innerHTML = '';
+    refs.productsList.innerHTML = '';
     const amount = e.target.nextElementSibling;
     if (amount.textContent > 1) {
       cart = cart.map(product => {
@@ -76,7 +76,7 @@ const incrementProducts = e => {
         return newAmount;
       }).amount;
     } else {
-      // refs.cartSidebarList.innerHTML = '';
+      refs.cartSidebarList.innerHTML = '';
       cart = cart.filter(product => product.id !== +id);
       refs.cartSidebarList.insertAdjacentHTML(
         'beforeend',
@@ -97,7 +97,7 @@ const incrementProducts = e => {
   setStorageItem('cart', cart);
   setStorageItem('store', store);
   initCart();
-  // pagination(getStorageItem('store'));
+  pagination(getStorageItem('store'));
 };
 
 export default incrementProducts;

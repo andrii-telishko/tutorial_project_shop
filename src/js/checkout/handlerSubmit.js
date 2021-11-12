@@ -160,10 +160,9 @@ const handlerSubmit = e => {
     }
   }
 
-  orders.price = `$${price}`;
+  orders.price = `${price}`;
   refs.checkoutTolal.textContent = `Price with delivery: ${orders.price}`;
-  console.log(JSON.stringify(actuallyFormData));
-  console.log(orders);
+  console.log(`Orders: ${orders}`);
   // add current order to orders in local storage
   ordersStore.push(orders);
   setStorageItem('orders', ordersStore);
