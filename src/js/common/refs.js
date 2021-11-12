@@ -99,8 +99,10 @@ const refs = {
   modalCloseBtn: document.querySelector('.modal-btn'),
   modalOpenBtn: document.querySelector('.login-button'),
   modalBackdrop: document.querySelector('.backdrop'),
-  iconCross: document.querySelector('.modal-cross'),
+  iconCross: document.querySelector('.modal-cross')
+  modal: document.querySelector('.modal'),
   checkoutModal: document.querySelector('.checkout-modal'),
+
 
   //product page
 

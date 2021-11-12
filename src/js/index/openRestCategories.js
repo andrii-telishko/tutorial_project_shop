@@ -7,6 +7,8 @@ const openRestCategories = e => {
   ) {
     refs.cartOverlay.classList.add('show');
     refs.restCategories.classList.add('open');
+    refs.cartOverlay.classList.remove('is-hidden');
+    refs.restCategories.classList.remove('is-hidden');
   }
 };
 

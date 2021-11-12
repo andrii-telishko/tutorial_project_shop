@@ -28,8 +28,8 @@
               <button type="button" class="login-button">Login</button>
             </li>
           </ul>
-          <div class="cart-overlay">
-          <aside class="cart">
+          <div class="cart-overlay is-hidden">
+          <aside class="cart is-hidden">
            <button class="mobile-btn sidebar-btn" type="button" data-menu-button aria-expanded="false" aria-controls="mobile-conteiner">
                 <svg aria-label="Кнопка меню" class="mobile-img" width="24" height="24" viewBox="0 0 32 32 " fill="none"
                   xmlns="http://www.w3.org/2000/svg">
@@ -65,8 +65,11 @@
     </header>
     <main>
       <section>
-        <div class="container">
+        <div class="container product-container">
            <div class="product"></div>
+           <div class="loader">
+          <h2>Loading...</h2>
+        </div>
         </div>
       </section>
       <section class="similar-section">
@@ -129,7 +132,7 @@
           </form>
           </div>
         </div>
-       
+        
     </main>
     <footer class="footer">
       <div class="container">
@@ -370,6 +373,7 @@
         </span>
       </div>
     </footer>
+    
     <div class="backdrop is-hidden">
       <div class="modal">
         <button class="modal-btn" type="button" data-menu-button aria-expanded="false" aria-controls="mobile-conteiner">
