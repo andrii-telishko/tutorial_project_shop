@@ -16,6 +16,7 @@ import closeModal from './closeModal';
 import initModal from './initModal';
 import enableModalButton from './enableModalButton';
 import renderCreditPrice from './renderCreditPrice';
+import validateFooterInput from '../common/validateFooterInput';
 
 addService(getStorageItem('cart'), 'cart');
 
@@ -48,3 +49,5 @@ refs.creditModal.addEventListener('change', initModal);
 refs.creditModal.addEventListener('change', enableModalButton);
 
 refs.modalButton.addEventListener('click', renderCreditPrice);
+
+refs.footerInput.addEventListener('input', validateFooterInput);

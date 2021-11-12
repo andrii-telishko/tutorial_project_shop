@@ -1,0 +1,28 @@
+.checkout-modal {
+  text-align: center;
+  margin: 12px;
+
+  & .modal-title {
+    font-size: 36px;
+  }
+
+  &__text {
+    font-size: 16px;
+  }
+
+  &__link {
+    border: $border transparent;
+    padding: 4px 6px;
+    font-size: 14px;
+    color: $white-color;
+    background-color: $dark-bcg-color;
+    transition: $animation-duration $animation-timing-function;
+
+    &:hover,
+    &:focus {
+      border-color: $dark-bcg-color;
+      color: $primary-text-color;
+      background-color: $first-photo-bcg;
+    }
+  }
+}

@@ -2,12 +2,12 @@ import { getStorageItem } from '../common/utils';
 import { store } from '../common/store';
 
 const findStockOfProduct = id => {
-  let stock;
+  let product;
 
-  stock =
+  product =
     getStorageItem('cart').find(product => {
       if (product.id === +id) {
-        return product.stock;
+        return product;
       }
     }) ||
     store.find(product => {
@@ -19,15 +19,16 @@ const findStockOfProduct = id => {
       if (product.id === +id) {
         return product.stock;
       }
-    }) ||
-    getStorageItem('game').find(product => {
-      if (product.id === +id) {
-        return product.stock;
-      }
-    }) ||
-    '0';
+    });
+  // ||
+  // getStorageItem('game').find(product => {
+  //   if (product.id === +id) {
+  //     return product.stock;
+  //   }
+  // }) ||
+  // '0';
 
-  return stock;
+  return product.stock;
 };
 
 export default findStockOfProduct;

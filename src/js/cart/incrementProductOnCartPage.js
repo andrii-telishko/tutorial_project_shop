@@ -2,8 +2,6 @@ import { getStorageItem, setStorageItem } from '../common/utils';
 import refs from '../common/refs';
 import initCartPage from './initCartPage';
 import initModal from './initModal';
-import changeStock from '../common/changeStock';
-import renderStock from '../productPage/renderStock';
 import renderCreditPrice from './renderCreditPrice';
 
 const incrementProductOnCartPage = e => {
@@ -19,6 +17,12 @@ const incrementProductOnCartPage = e => {
         if (product.stock === 0) {
           alert('There is no more game in stock');
           newProduct = { ...product };
+          store = store.map(product => {
+            if (product.id === +id) {
+              product.stock = 0;
+            }
+            return product;
+          });
         } else {
           newProduct = {
             ...product,
@@ -51,6 +55,13 @@ const incrementProductOnCartPage = e => {
             amount: product.amount - 1,
             stock: product.stock + 1,
           };
+
+          store = store.map(product => {
+            if (product.id === +id) {
+              product.stock += 1;
+            }
+            return product;
+          });
         } else {
           newProduct = { ...product };
         }
@@ -59,21 +70,12 @@ const incrementProductOnCartPage = e => {
       }
       return newProduct;
     });
-    store = store.map(product => {
-      if (product.id === +id) {
-        product.stock += 1;
-      } else {
-        product.stock += 0;
-      }
-      return product;
-    });
   }
   initCartPage(cart);
   setStorageItem('cart', cart);
   setStorageItem('store', store);
-  renderCreditPrice();
-
   initModal();
+  renderCreditPrice();
 };
 
 export default incrementProductOnCartPage;

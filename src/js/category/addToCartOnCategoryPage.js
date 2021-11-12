@@ -2,7 +2,7 @@ import { openCartMenu } from '../common/sidebar';
 
 import refs from '../common/refs';
 import { getStorageItem, setStorageItem } from '../common/utils';
-import initCart from '../common/initCart';
+import { initCart } from '../common/init';
 
 import pagination from '../common/pagination';
 
@@ -52,7 +52,7 @@ const addToCartOnCategoryPage = e => {
     setStorageItem('category', category);
     initCart();
     openCartMenu();
-    pagination(category);
+    // pagination(category);
   }
 };
 

@@ -2,7 +2,7 @@ import { openCartMenu } from '../common/sidebar';
 // import { store } from '../common/store';
 import refs from '../common/refs';
 import { getStorageItem, setStorageItem } from '../common/utils';
-import initCart from '../common/initCart';
+import { initCart } from '../common/init';
 import renderStock from './renderStock';
 
 const addProductToCart = e => {
@@ -34,19 +34,32 @@ const addProductToCart = e => {
         store.find(product => product.id === +id) ||
         getStorageItem('category').find(product => product.id === +id) ||
         getStorageItem('game').find(product => product.id === +id);
+      console.log(product.stock);
 
       if (!product) {
         alert('Sorry, you can not add this game to cart');
       } else {
         product = { ...product, amount: productCount };
-        product.stock -= productCount;
-        cartStorage = [...cartStorage, product];
-        store = store.map(item => {
-          if (item.id === +id) {
-            item.stock = product.stock;
-          }
-          return item;
-        });
+
+        if (product.stock < product.amount) {
+          alert('Sorry');
+
+          store = store.map(item => {
+            if (item.id === +id) {
+              item.stock = product.stock;
+            }
+            return item;
+          });
+        } else {
+          product.stock -= productCount;
+          cartStorage = [...cartStorage, product];
+          store = store.map(item => {
+            if (item.id === +id) {
+              item.stock = product.stock;
+            }
+            return item;
+          });
+        }
       }
     } else {
       if (productCount > item.stock) {

@@ -1,0 +1,275 @@
+.delivery-section {
+  margin-bottom: 60px;
+}
+
+.delivery__form {
+  display: block;
+  font-size: 18px;
+  padding: 0 20px;
+}
+
+.delivery__label {
+  display: block;
+
+  &:not(:last-child) {
+    margin-bottom: 6px;
+  }
+}
+
+.delivery__container {
+  padding: 24px;
+}
+
+.delivery__magazine {
+  display: block;
+}
+
+.magazine__info {
+  width: 100%;
+  padding: 12px;
+}
+
+.magazine-info__address {
+  display: none;
+}
+
+.map {
+  width: 100%;
+  height: 300px;
+  border: 1px solid black;
+}
+
+.autocomplete-input {
+  padding: 4px;
+  font-size: 16px;
+  margin-top: 6px;
+}
+
+.autocomplete-input::placeholder {
+  font-size: 14px;
+}
+
+.autocomplete-label {
+  margin-bottom: 10px;
+  font-size: 16px;
+  font-weight: 700;
+  display: block;
+}
+
+.post-label {
+  display: none;
+}
+
+.magazines-list {
+  margin-bottom: 24px;
+}
+
+.magazines-item {
+  color: $secondary-text-color;
+  cursor: pointer;
+  font-size: 18px;
+
+  &:hover,
+  &focus {
+    color: $primary-text-color;
+    font-weight: 500;
+  }
+
+  &:not(:last-child) {
+    margin-bottom: 6px;
+  }
+}
+
+.address-block {
+  display: none;
+  font-size: 16px;
+  border: $border green;
+  padding: 6px;
+}
+
+.magazine-address {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.delivery-post__container,
+.delivery-dhl__container {
+  display: none;
+}
+
+.delivery__post {
+  display: block;
+}
+
+.post-info {
+  display: none;
+}
+
+.post-name {
+  color: $secondary-text-color;
+  font-size: 18px;
+
+  &__dinamic {
+    color: $primary-text-color;
+    font-weight: 500;
+  }
+}
+
+.post-info__address-title {
+  margin-top: 0;
+  margin-bottom: 8px;
+}
+
+.post-address {
+  margin: 0;
+  color: $secondary-text-color;
+  font-size: 16px;
+
+  &:last-child {
+    margin-bottom: 8px;
+  }
+
+  &__dinamic {
+    color: $primary-text-color;
+    font-weight: 500;
+  }
+}
+
+.post-worktime {
+  margin: 0;
+  color: $secondary-text-color;
+  font-size: 16px;
+
+  &:last-child {
+    margin-bottom: 8px;
+  }
+
+  &__dinamic {
+    color: $primary-text-color;
+    font-weight: 500;
+  }
+}
+
+.post-input__reset {
+  color: $secondary-text-color;
+  font-size: 14px;
+  display: block;
+}
+
+.delivery-dhl__form {
+  width: 100%;
+}
+
+.delivery-dhl__label {
+  display: inline-block;
+  font-size: 18px;
+}
+
+.delivery-dhl__input {
+  display: block;
+  font-size: 16px;
+  padding: 6px;
+  width: 100%;
+  max-width: 300px;
+
+  &:invalid {
+    border: $border red;
+  }
+
+  &:valid {
+    border: $border green;
+  }
+}
+
+.short-input {
+  width: 100px;
+}
+
+@media screen and (min-width: $desktop) {
+  .delivery__form {
+    display: flex;
+    justify-content: space-between;
+
+    font-size: 24px;
+  }
+
+  .delivery__label {
+    &:not(:last-child) {
+      margin-bottom: 0px;
+    }
+  }
+
+  .delivery__magazine {
+    display: flex;
+  }
+
+  .magazine__info {
+    width: 460px;
+    margin-right: 30px;
+  }
+
+  .map {
+    height: 600px;
+  }
+
+  .autocomplete-input {
+    padding: 6px;
+    font-size: 24px;
+    margin-top: 6px;
+  }
+
+  .autocomplete-input::placeholder {
+    font-size: 18px;
+  }
+
+  .magazines-list {
+    margin-top: 26px;
+    padding-left: 12px;
+  }
+
+  .magazines-item {
+    font-size: 24px;
+
+    &:not(:last-child) {
+      margin-bottom: 12px;
+    }
+  }
+
+  .address-block {
+    font-size: 20px;
+  }
+
+  .magazine-address {
+    font-size: 22px;
+  }
+
+  .delivery__post {
+    display: flex;
+  }
+
+  .post-name {
+    font-size: 24px;
+
+    &__dinamic {
+      color: $primary-text-color;
+      font-weight: 500;
+    }
+  }
+
+  .post-input__reset {
+    color: $secondary-text-color;
+    font-size: 14px;
+  }
+
+  .delivery-dhl__form {
+    width: 500px;
+  }
+
+  .delivery-dhl__input {
+    width: 360px;
+  }
+
+  .short-input {
+    width: 100px;
+  }
+}
