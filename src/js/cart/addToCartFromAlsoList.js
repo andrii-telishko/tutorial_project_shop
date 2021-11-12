@@ -18,7 +18,14 @@ const addToCartFromAlsoList = e => {
         getStorageItem('category').find(product => product.id === +id) ||
         getStorageItem('game').find(product => product.id === +id);
 
-      product = { ...product, amount: 1 };
+      product = {
+        ...product,
+        amount: 1,
+        service: {
+          first: false,
+          second: false,
+        },
+      };
 
       cart = [...cart, product];
     } else {
