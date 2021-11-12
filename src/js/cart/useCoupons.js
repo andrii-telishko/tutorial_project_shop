@@ -39,6 +39,8 @@ const useCoupons = e => {
       countTotalPrice(cart);
       refs.couponForm.reset();
       refs.couponButton.setAttribute('disabled', true);
+      const coupon = refs.cartTotalPriceOnPage.textContent;
+      setStorageItem('shara', coupon);
 
       break;
 
