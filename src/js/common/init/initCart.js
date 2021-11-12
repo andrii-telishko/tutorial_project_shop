@@ -1,12 +1,9 @@
-import refs from './refs';
-import { getStorageItem, setStorageItem } from './utils';
-import countProductsInCart from './countProductsInCart';
-import changeStock from './changeStock';
+import refs from '../refs';
+import { getStorageItem } from '../utils';
+import countProductsInCart from '../countProductsInCart';
 
 const initCart = () => {
   let cart = getStorageItem('cart');
-
-  // changeStock(cart);
 
   refs.productsInCart.innerHTML = countProductsInCart();
 

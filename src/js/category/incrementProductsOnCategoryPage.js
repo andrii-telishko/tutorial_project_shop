@@ -1,5 +1,5 @@
 import { getStorageItem, setStorageItem } from '../common/utils';
-import initCart from '../common/initCart';
+import { initCart } from '../common/init';
 import refs from '../common/refs';
 import cartSidebarItem from '../../templates/common/cartSidebarItem.hbs';
 import pagination from '../common/pagination';
@@ -9,7 +9,7 @@ const incrementProducts = e => {
   const { id } = e.target.dataset;
   let cart = getStorageItem('cart');
   if (e.target.dataset.add === 'increment') {
-    refs.productsList.innerHTML = '';
+    // refs.productsList.innerHTML = '';
     const amount = e.target.previousElementSibling;
 
     cart = cart.map(product => {
@@ -43,7 +43,7 @@ const incrementProducts = e => {
       return product;
     });
   } else if (e.target.dataset.add === 'decrement') {
-    refs.productsList.innerHTML = '';
+    // refs.productsList.innerHTML = '';
     const amount = e.target.nextElementSibling;
     if (amount.textContent > 1) {
       cart = cart.map(product => {
@@ -84,7 +84,7 @@ const incrementProducts = e => {
   setStorageItem('cart', cart);
   setStorageItem('category', category);
   initCart();
-  pagination(category);
+  // pagination(category);
 };
 
 export default incrementProducts;

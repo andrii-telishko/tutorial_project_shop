@@ -2,9 +2,9 @@ import { openCartMenu } from './sidebar';
 
 import refs from './refs';
 import { getStorageItem, setStorageItem } from './utils';
-import initCart from './initCart';
+import { initCart } from './init';
 
-import pagination from './pagination';
+// import pagination from './pagination';
 
 const addToCart = e => {
   const id = e.target.dataset.id || e.target.parentNode.dataset.id;
@@ -54,7 +54,7 @@ const addToCart = e => {
     setStorageItem('store', store);
     initCart();
     openCartMenu();
-    pagination(getStorageItem('store'));
+    // pagination(getStorageItem('store'));
   }
 };
 

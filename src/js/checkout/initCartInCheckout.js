@@ -6,7 +6,11 @@ const initCartInCheckout = () => {
   const store = getStorageItem('cart');
   const credit = getStorageItem('credit');
 
+  // render products from  cart in checkout page
+
   refs.finalProductList.insertAdjacentHTML('beforeend', finalList(store));
+
+  // count and render total price in checkout page
 
   const total = store.reduce((reducer, { amount, price, service }) => {
     let total;
@@ -22,10 +26,12 @@ const initCartInCheckout = () => {
     }
     reducer += total;
 
-    return reducer;
+    return +reducer.toFixed(2);
   }, 0);
 
   refs.totalCheckout.textContent = `$${total}`;
+
+  // render credit info in checkout page
 
   if (credit.length !== 0) {
     refs.totalCheckout.setAttribute('style', 'color: grey');

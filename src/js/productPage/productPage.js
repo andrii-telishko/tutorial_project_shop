@@ -9,10 +9,11 @@ import submitReviewForm from './submitReviewForm';
 import enableReviewForm from './enableReviewForm';
 import addProductToCart from './addProductToCart';
 import { openCartMenu, closeCartMenu } from '../common/sidebar';
-import initCart from '../common/initCart';
+import { initCart } from '../common/init';
 import incrementProductsOnProductPage from './incrementProductsOnProductPage';
 import deleteProductsOnProductPage from './deleteProductsOnProductPage';
 import { message } from '../common/utils';
+import validateFooterInput from '../common/validateFooterInput';
 
 initProductPage();
 
@@ -33,3 +34,5 @@ refs.sidebarBtn.addEventListener('click', closeCartMenu);
 
 refs.cartSidebarList.addEventListener('click', incrementProductsOnProductPage);
 refs.cartSidebarList.addEventListener('click', deleteProductsOnProductPage);
+
+refs.footerInput.addEventListener('input', validateFooterInput);

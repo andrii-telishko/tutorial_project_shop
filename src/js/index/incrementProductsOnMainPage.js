@@ -1,5 +1,5 @@
 import { getStorageItem, setStorageItem } from '../common/utils';
-import initCart from '../common/initCart';
+import { initCart } from '../common/init';
 import refs from '../common/refs';
 import cartSidebarItem from '../../templates/common/cartSidebarItem.hbs';
 

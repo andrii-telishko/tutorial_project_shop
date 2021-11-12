@@ -1,7 +1,7 @@
 import { getStorageItem, setStorageItem } from '../common/utils';
 import refs from '../common//refs';
 import cartSidebarItem from '../../templates/common/cartSidebarItem.hbs';
-import initCart from '../common//initCart';
+import { initCart } from '../common//init';
 
 const deleteProduct = e => {
   const { id } = e.target.dataset;

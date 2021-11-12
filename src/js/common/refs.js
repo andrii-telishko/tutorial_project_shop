@@ -14,6 +14,7 @@ const refs = {
   searchList: document.querySelector('.search-list'),
   mainSearchInput: document.querySelector('.main-search__input'),
   loader: document.querySelector('.loader'),
+  footerInput: document.querySelector('.footer__input'),
 
   // checkout page
 
@@ -38,6 +39,30 @@ const refs = {
   paymentCheckout: document.querySelector('.checkout__payment-price'),
   creditCheckoutBlock: document.querySelector('.checkout__credit-block'),
   paymentCheckoutBlock: document.querySelector('.checkout__payment-block'),
+  map: document.querySelector('.map'),
+  magazines: document.querySelector('.magazines-list'),
+  deliveryForm: document.querySelector('.delivery__form'),
+  postInput: document.getElementById('post-input'),
+  postInputReset: document.querySelector('.post-input__reset'),
+  magazineContainer: document.querySelector('.delivery-magazine__container'),
+  postContainer: document.querySelector('.delivery-post__container'),
+  dhlContainer: document.querySelector('.delivery-dhl__container'),
+  deliveryInputs: document.querySelectorAll('.delivery__input'),
+  magazineAddress: document.getElementById('magazine-street'),
+  postName: document.getElementById('post-name'),
+  postStreet: document.getElementById('street'),
+  postCity: document.getElementById('city'),
+  postRegion: document.getElementById('region'),
+  postCode: document.getElementById('post-code'),
+  postPhone: document.getElementById('post-phone'),
+  postWeek: document.getElementById('week'),
+  postSaturday: document.getElementById('saturday'),
+  postSunday: document.getElementById('sunday'),
+  dhlForm: document.querySelector('.delivery-dhl__form'),
+  totalPriceInCheckoutPage: document.querySelector('.checkout__total-price'),
+  creditDescription: document.querySelector('.checkout__credit-info'),
+  dhlInputs: document.querySelectorAll('.delivery-dhl__input'),
+  checkoutTolal: document.querySelector('.project-total'),
 
   // cart sidebar
 
@@ -74,8 +99,10 @@ const refs = {
   modalCloseBtn: document.querySelector('.modal-btn'),
   modalOpenBtn: document.querySelector('.login-button'),
   modalBackdrop: document.querySelector('.backdrop'),
-  iconCross: document.querySelector('.modal-cross'),
+  iconCross: document.querySelector('.modal-cross')
   modal: document.querySelector('.modal'),
+  checkoutModal: document.querySelector('.checkout-modal'),
+
 
   //product page
 

@@ -17,10 +17,13 @@ import deleteProductsOnMainPage from './js/index/deleteProductsOnMainPage';
 import addToCartOnMainPage from './js/index/addToCartFromMainPage';
 import { coupons } from './js/cart/coupons';
 import { setStorageItem } from './js/common/utils';
+import magazines from './js/checkout/magazines';
+import validateFooterInput from './js/common/validateFooterInput';
 
 window.addEventListener('DOMContentLoaded', init);
 
 setStorageItem('coupons', coupons);
+setStorageItem('magazines', magazines);
 
 refs.menuBtn.addEventListener('click', openMobileMenu);
 refs.featureSection.addEventListener('click', choosingCard);
@@ -38,3 +41,4 @@ refs.cartBtn.addEventListener('click', openCartMenu);
 refs.sidebarBtn.addEventListener('click', closeCartMenu);
 refs.cartSidebarList.addEventListener('click', incrementProductsOnMainPage);
 refs.cartSidebarList.addEventListener('click', deleteProductsOnMainPage);
+refs.footerInput.addEventListener('input', validateFooterInput);

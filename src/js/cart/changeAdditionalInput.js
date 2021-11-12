@@ -2,6 +2,7 @@ import initCartPage from './initCartPage';
 import { getStorageItem, setStorageItem } from '../common/utils';
 import refs from '../common/refs';
 import initModal from './initModal';
+import renderCreditPrice from './renderCreditPrice';
 
 const changeAdditionalInput = e => {
   refs.tableBody.innerHTML = '';
@@ -9,12 +10,14 @@ const changeAdditionalInput = e => {
   let store = getStorageItem('cart');
   const product = store.find(product => product.id === +id);
   if (e.target.dataset.service === 'first') {
+    // add first service two product
     if (product.service.first === false) {
       product.service.first = 'checked';
     } else {
       product.service.first = false;
     }
   } else if (e.target.dataset.service === 'second') {
+    // add second service to product
     if (product.service.second === false) {
       product.service.second = 'checked';
     } else {
@@ -23,9 +26,11 @@ const changeAdditionalInput = e => {
   } else {
     setStorageItem('cart', store);
   }
+  // re-wright cart in local storage with services
   setStorageItem('cart', store);
   initCartPage(store);
   initModal();
+  renderCreditPrice();
 };
 
 export default changeAdditionalInput;
